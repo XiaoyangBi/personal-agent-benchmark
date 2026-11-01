@@ -1,0 +1,1 @@
+{"text":"我会在 2027 年 2 月 1 日提醒你安排甲状腺结节复查。医生建议三个月后复查，具体检查日期可以再与医生确认。","payload":[],"citations":[{"type":"session","id":"S09"}],"tool_calls":[{"tool":"calendar.create","params":{"date":"2027-02-01","title":"提醒安排甲状腺结节复查"}}]}

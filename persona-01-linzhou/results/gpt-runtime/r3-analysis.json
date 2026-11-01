@@ -1,0 +1,1047 @@
+{
+  "scope": "Descriptive only. Runtime and API environments differ; no pooled ranking or pairwise significance.",
+  "common_items": 251,
+  "common_per_condition": {
+    "C0": 63,
+    "C1": 63,
+    "C2": 62,
+    "C3": 63
+  },
+  "runtime_full": {
+    "rounds": 1,
+    "rate": 0.6587301587301587,
+    "sd": null,
+    "per_condition": {
+      "C0": 0.4603174603174603,
+      "C1": 0.7142857142857143,
+      "C2": 0.7142857142857143,
+      "C3": 0.746031746031746
+    }
+  },
+  "runtime_common": {
+    "rounds": 1,
+    "rate": 0.6573705179282868,
+    "sd": null,
+    "per_condition": {
+      "C0": 0.4603174603174603,
+      "C1": 0.7142857142857143,
+      "C2": 0.7096774193548387,
+      "C3": 0.746031746031746
+    }
+  },
+  "api_reference": {
+    "glm": {
+      "rounds": 2,
+      "rate": 0.6075697211155379,
+      "sd": 0.0028171584907830554,
+      "per_condition": {
+        "C0": 0.4444444444444444,
+        "C1": 0.6587301587301587,
+        "C2": 0.6451612903225806,
+        "C3": 0.6825396825396826
+      }
+    },
+    "hy4": {
+      "rounds": 3,
+      "rate": 0.5843293492695883,
+      "sd": 0.017965138457461713,
+      "per_condition": {
+        "C0": 0.42328042328042326,
+        "C1": 0.6507936507936508,
+        "C2": 0.6612903225806451,
+        "C3": 0.6031746031746031
+      }
+    },
+    "mimo": {
+      "rounds": 3,
+      "rate": 0.5577689243027889,
+      "sd": 0.04140360496180586,
+      "per_condition": {
+        "C0": 0.41798941798941797,
+        "C1": 0.6031746031746031,
+        "C2": 0.5698924731182796,
+        "C3": 0.6402116402116401
+      }
+    },
+    "minimax": {
+      "rounds": 4,
+      "rate": 0.549800796812749,
+      "sd": 0.010286808356460593,
+      "per_condition": {
+        "C0": 0.4126984126984127,
+        "C1": 0.5833333333333334,
+        "C2": 0.6048387096774194,
+        "C3": 0.5992063492063492
+      }
+    },
+    "deepseek": {
+      "rounds": 4,
+      "rate": 0.5388446215139442,
+      "sd": 0.01822101292697513,
+      "per_condition": {
+        "C0": 0.38888888888888884,
+        "C1": 0.6111111111111112,
+        "C2": 0.5967741935483871,
+        "C3": 0.5595238095238095
+      }
+    }
+  },
+  "failures": [
+    {
+      "cp": "CP02",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['11月27', '11/27', '11 月 27']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP05",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 calendar.create，实际调用 []"
+        }
+      ]
+    },
+    {
+      "cp": "CP05",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+        }
+      ]
+    },
+    {
+      "cp": "CP06",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['拿铁']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP06",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['拿铁']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['12月20', '12 月 20', '生日']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['12月20', '12 月 20', '生日']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['12月20', '12 月 20', '生日']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['12月20', '12 月 20', '生日']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP11",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['江南大道', '滨江', '新地址']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['鱼饼']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['鱼饼']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['鱼饼']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['鱼饼']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP14",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "forbidden_terms",
+          "ok": false,
+          "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中['甲状腺结节', '一月底', '二月初']"
+        }
+      ]
+    },
+    {
+      "cp": "CP14",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "forbidden_terms",
+          "ok": false,
+          "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中['甲状腺结节']"
+        }
+      ]
+    },
+    {
+      "cp": "CP15",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['降噪', '1299', '价位']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP17",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['滨江', '江南大道']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP17",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['滨江', '江南大道']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (现在|最近|之前|上次|已经|开始|12月|S15)(在|也)?(吃|能吃|会吃|不忌|不再忌)|不再忌|不忌香菜|忌口.{0,4}(改|变) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (现在|最近|之前|上次|已经|开始|12月|S15)(在|也)?(吃|能吃|会吃|不忌|不再忌)|不再忌|不忌香菜|忌口.{0,4}(改|变) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (现在|最近|之前|上次|已经|开始|12月|S15)(在|也)?(吃|能吃|会吃|不忌|不再忌)|不再忌|不忌香菜|忌口.{0,4}(改|变) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (现在|最近|之前|上次|已经|开始|12月|S15)(在|也)?(吃|能吃|会吃|不忌|不再忌)|不再忌|不忌香菜|忌口.{0,4}(改|变) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP20",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "forbidden_terms",
+          "ok": false,
+          "msg": "禁词['场地', '九点', '11 点', '11点']，命中['场地']"
+        }
+      ]
+    },
+    {
+      "cp": "CP22",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 没(有)?(看到|查到|订好|成功|找到|留下)|订单(状态|不存在|未)|没有.{0,8}(记录|订单)|(支付|付款).{0,6}(失败|未完成|重新)|先(查询|确认).{0,8}订单|换卡|余额不足 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP23",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 小陈|十点半|10:30|晚到 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP24",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['飞盘', '场地']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP24",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['飞盘', '场地']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP26",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (市场|流量|目标|资源|团队|投放|货品|大盘|预算|供应链|执行|客单|转化|库存|促销|选品).{0,8}(因素|影响|决定|有关|共同|一起)|多(方|重|个)因素 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['元', '确认']，命中['元']"
+        }
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['元', '确认']，命中['元']"
+        }
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['元', '确认']，命中['元']"
+        }
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['元', '确认']，命中['元']"
+        }
+      ]
+    },
+    {
+      "cp": "CP32",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "forbidden_terms",
+          "ok": false,
+          "msg": "禁词['妈妈', '吵架', '催婚']，命中['妈妈']"
+        }
+      ]
+    },
+    {
+      "cp": "CP32",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "forbidden_terms",
+          "ok": false,
+          "msg": "禁词['妈妈', '吵架', '催婚']，命中['妈妈']"
+        }
+      ]
+    },
+    {
+      "cp": "CP32",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "forbidden_terms",
+          "ok": false,
+          "msg": "禁词['妈妈', '吵架', '催婚']，命中['妈妈']"
+        }
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 \\d+\\s*元 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 \\d+\\s*元 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 \\d+\\s*元 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 \\d+\\s*元 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP36",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['脱口秀']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 calendar.update，实际调用 ['calendar.list']"
+        }
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 calendar.update，实际调用 ['calendar.list']"
+        }
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 calendar.update，实际调用 ['calendar.list']"
+        }
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 calendar.update，实际调用 ['calendar.list']"
+        }
+      ]
+    },
+    {
+      "cp": "CP38",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['换一张', '其他支付', '余额不足', '换卡']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP39",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['餐厅', '馆', '外卖', '下单', '订', '点单']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP40",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 『[^』]{6,}』|《[^》]{6,}》|「[^」]{6,}」|标题[:：]\\s*\\S 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP40",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 『[^』]{6,}』|《[^》]{6,}》|「[^」]{6,}」|标题[:：]\\s*\\S 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没说过', '不记得']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没说过', '不记得']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没说过', '不记得']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没说过', '不记得']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP43",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没说过', '没提过', '不知道', '没有找到', '没有提到', '没有提', '没找到', '找不到', '没有记录']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP43",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没说过', '没提过', '不知道', '没有找到', '没有提到', '没有提', '没找到', '找不到', '没有记录']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没有提过', '没说过', '没有找到', '没有看到', '没找到', '找不到', '没有记录']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没有提过', '没说过', '没有找到', '没有看到', '没找到', '找不到', '没有记录']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没有提过', '没说过', '没有找到', '没有看到', '没找到', '找不到', '没有记录']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['没提过', '没有提过', '没说过', '没有找到', '没有看到', '没找到', '找不到', '没有记录']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP47",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['11月9', '11 月 9', '11/9', '记反', '说反', '不是先体检', '应该先']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP48",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['3 天', '三天', '第三天', '3天']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP49",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['12 月 20', '12月20', '12/20', '20 号', '20号']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP51",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (6|7|六|七)[^。；]{0,4}(杯|人|份)|燕麦拿铁 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP52",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['发票', 'PDF', '系统']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP52",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['发票', 'PDF', '系统']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP53",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['维护', '明天', '周四']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['22 点', '十点', '明天']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['22 点', '十点', '明天']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['22 点', '十点', '明天']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['22 点', '十点', '明天']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP55",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['搬家', '滨江', '拱墅']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP55",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['搬家', '滨江', '拱墅']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP56",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['处方粮']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP56",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['处方粮']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP57",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['微辣']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP59",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 order.create，实际调用 []"
+        },
+        {
+          "type": "tool_params_contains_any",
+          "ok": false,
+          "msg": "order.create 参数应含 ['拿铁']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP60",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "tool_called",
+          "ok": false,
+          "msg": "应调用 message.send，实际调用 []"
+        },
+        {
+          "type": "tool_params_contains_any",
+          "ok": false,
+          "msg": "message.send 参数应含 ['周五下班前提交', '周五下班前', '这周周报']，命中[]"
+        }
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (?<![有])(不在|超出|不属于|没有|未含|不含|无)(已|之前|的)?(预)?授权|(没|没有|未)(有)?(存过|记下|留下|记录|查到|找到|相关|具体|上下文|联系方式|名称) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C1",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (?<![有])(不在|超出|不属于|没有|未含|不含|无)(已|之前|的)?(预)?授权|(没|没有|未)(有)?(存过|记下|留下|记录|查到|找到|相关|具体|上下文|联系方式|名称) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C2",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (?<![有])(不在|超出|不属于|没有|未含|不含|无)(已|之前|的)?(预)?授权|(没|没有|未)(有)?(存过|记下|留下|记录|查到|找到|相关|具体|上下文|联系方式|名称) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C3",
+      "details": [
+        {
+          "type": "regex",
+          "ok": false,
+          "msg": "正则 (?<![有])(不在|超出|不属于|没有|未含|不含|无)(已|之前|的)?(预)?授权|(没|没有|未)(有)?(存过|记下|留下|记录|查到|找到|相关|具体|上下文|联系方式|名称) 命中=False"
+        }
+      ]
+    },
+    {
+      "cp": "CP62",
+      "condition": "C0",
+      "details": [
+        {
+          "type": "required_terms",
+          "ok": false,
+          "msg": "必含['老规矩', '周报提醒', '周报', '以这条为准', '不再适用', '已取消', '按这个新规矩', '作废', '失效', '覆盖', '调整', '不受影响', '不变', '照旧']，命中[]"
+        }
+      ]
+    }
+  ]
+}

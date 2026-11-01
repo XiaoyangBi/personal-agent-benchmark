@@ -1,0 +1,1 @@
+{"text": "明白，回程改为1月1日下午，从温州返回杭州东。之前支付失败，我先查询订单和支付状态，再确认如何调整回程。", "payload": [], "citations": [{"type": "session", "id": "S20"}], "tool_calls": [{"tool": "order.query", "params": {}}]}

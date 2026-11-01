@@ -1,0 +1,1 @@
+{"text":"按老规矩，我会直接向工作群发送：这周周报周五下班前提交。","payload":[],"citations":[{"type":"session","id":"S21"}],"tool_calls":[{"tool":"message.send","params":{"target":"工作群","content":"这周周报周五下班前提交"}}]}

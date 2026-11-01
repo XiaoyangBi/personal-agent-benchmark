@@ -1,0 +1,1 @@
+{"text":"明白，把拿铁换成燕麦拿铁，其他内容不变。我先查询这笔下午茶订单，确认是否还能更换。","payload":[],"citations":[{"type":"session","id":"S08"}],"tool_calls":[{"tool":"order.query","params":{"query":"公司附近给组里6个人、另给你带一杯的下午茶订单"}}]}

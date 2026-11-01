@@ -1,0 +1,1 @@
+{"text":"回程按1月1日下午、温州回杭州东来安排。换卡后的支付结果还未确认，我先核对订单状态，避免重复订票。","payload":[],"citations":[{"type":"session","id":"S20"}],"tool_calls":[{"tool":"order.query","params":{"departure":"温州","arrival":"杭州东","date":"2027-01-01"}}]}

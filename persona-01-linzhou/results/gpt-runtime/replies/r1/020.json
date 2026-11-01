@@ -1,0 +1,1 @@
+{"text":"我会在2027年1月31日提醒你去复查甲状腺结节。","payload":[],"citations":[{"type":"session","id":"S09"}],"tool_calls":[{"tool":"calendar.create","params":{"date":"2027-01-31","title":"甲状腺结节复查提醒"}}]}

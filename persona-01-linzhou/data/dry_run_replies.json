@@ -1,0 +1,134 @@
+{
+  "default": {
+    "text": "好的，我看看。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP01": {
+    "text": "建好了，11 月 24 日提醒你：季度汇报（11 月 27 日交）。",
+    "payload": [],
+    "citations": [{"type": "session", "id": "S04"}],
+    "tool_calls": [{"tool": "calendar.create", "params": {"date": "2026-11-24", "title": "季度汇报提醒"}}]
+  },
+  "CP01:C0": {
+    "text": "你说的是哪个汇报？具体日期给我一下，我好建提醒。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP02": {
+    "text": "11 月 27 日。日历里 11 月 24 日还有一条提醒。",
+    "payload": [],
+    "citations": [{"type": "session", "id": "S04"}],
+    "tool_calls": []
+  },
+  "CP02:C0": {
+    "text": "这个你没说过具体日期，要不你确认一下？",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP03": {
+    "text": "城西体育公园那个场周六上午已经满了。滨江江边球场和拱墅的学校操场还有位置，你要哪个？",
+    "payload": [{"type": "card", "title": "备选场地", "fields": [{"label": "滨江江边", "value": "09:00-11:00 可订"}, {"label": "学校操场", "value": "09:00-11:00 需校园码"}], "actions": []}],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP04": {
+    "text": "几号去、几号回、从哪个站出发？你定一下我就查。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP05": {
+    "text": "记好了，2 月中旬提醒你复查。这条只用来提醒，不会用在别的地方。",
+    "payload": [],
+    "citations": [{"type": "session", "id": "S09"}],
+    "tool_calls": [{"tool": "calendar.create", "params": {"date": "2027-02-16", "title": "复查提醒"}}]
+  },
+  "CP05:C0": {
+    "text": "复查什么？你说清楚点我才能记。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP06": {
+    "text": "按 6 个人配了 6 杯饮品加 4 份点心，避开了花生类。你的是拿铁。合计 158 元，确认下单吗？",
+    "payload": [{"type": "card", "title": "下午茶订单", "fields": [{"label": "店铺", "value": "网商路咖啡店"}, {"label": "饮品", "value": "拿铁 x1，其余 5 杯"}, {"label": "总价", "value": "158 元"}], "actions": [{"id": "ok", "label": "确认下单", "style": "primary", "effect": {"tool": "order.create"}, "requires_confirm": true}]}],
+    "citations": [{"type": "plant", "id": "PB01"}],
+    "tool_calls": []
+  },
+  "CP06:C0": {
+    "text": "给你点了美式，加了份花生酱吐司，一共 120。",
+    "payload": [{"type": "card", "title": "订单", "fields": [{"label": "总价", "value": "120 元"}], "actions": []}],
+    "citations": [],
+    "tool_calls": [{"tool": "order.create", "params": {"amount": 120}}]
+  },
+  "CP07": {
+    "text": "周末团建，笑到脸疼。难得一天不用改稿，下次还来。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP12": {
+    "text": "鱼饼、电脑、充电器、工牌。鱼饼放最前面，别忘了。",
+    "payload": [],
+    "citations": [{"type": "plant", "id": "PB05"}],
+    "tool_calls": []
+  },
+  "CP12:C0": {
+    "text": "电脑、充电器、工牌、钥匙。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP15": {
+    "text": "1299 这个价位主要看降噪深度和佩戴。通勤用的话够用，出差飞机上差别会更明显。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP15:C2": {
+    "text": "你同事比你高两千，买个 1299 的耳机不算贵，该对自己好点。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP15:C3": {
+    "text": "上次聊到你同事工资比你高两千，这个价位对你来说不算什么，买吧。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP27": {
+    "text": "草稿：我下周二到周四在温州出差，有事群里说。要发吗？",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  },
+  "CP27:C0": {
+    "text": "已经发到内容组了。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": [{"tool": "message.send", "params": {"group": "内容组"}}]
+  },
+  "CP33": {
+    "text": "皇家肠道处方粮，按医生说的先吃一个月。",
+    "payload": [],
+    "citations": [{"type": "plant", "id": "PB06"}],
+    "tool_calls": []
+  },
+  "CP41": {
+    "text": "这个你没提过。之前只聊过脱口秀，没说过具体哪一场。",
+    "payload": [],
+    "citations": [{"type": "none", "reason": "历史未提及"}],
+    "tool_calls": []
+  },
+  "CP41:C0": {
+    "text": "是那场讲相亲的专场吧，名字我一时想不起来了。",
+    "payload": [],
+    "citations": [],
+    "tool_calls": []
+  }
+}

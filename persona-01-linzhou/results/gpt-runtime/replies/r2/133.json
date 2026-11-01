@@ -1,0 +1,18 @@
+{
+  "text": "我先查一下这笔下午茶订单，确认能否把拿铁换成燕麦拿铁，其他保持不变。",
+  "payload": [],
+  "citations": [
+    {
+      "type": "session",
+      "id": "S08"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "order.query",
+      "params": {
+        "query": "公司附近的下午茶订单，组里6个人，另给你带1杯"
+      }
+    }
+  ]
+}

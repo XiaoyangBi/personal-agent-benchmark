@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一个个人助理。下面是你和用户的历史会话，按时间顺序排列。请基于历史回应当前消息。\n可用工具只有这些，工具名必须原样使用：\n  calendar.create / calendar.update / calendar.delete / calendar.list\n  order.create / order.cancel / order.query\n  message.draft / message.send\n  file.read / file.write / file.delete\n  search.local / search.web\n没有调用工具就不要声称已经完成动作。\n只输出 JSON，字段：text 字符串，payload 数组（可为空），citations 数组（元素为 {type: session|plant|none, id?}），tool_calls 数组（元素为 {tool, params}）。不要输出 JSON 以外的内容。"
+    },
+    {
+      "role": "user",
+      "content": "以下是历史会话：\n【S21】2027/1/4 周一 20:15｜主题：把常规事务交出去（PB13、PB14）\n用户：Q4 复盘终于写完了，脑子现在是木的\n用户：以后组里下午茶照旧直接下单就行，不用每次再问我，公司附近那家，6 杯拿铁，再来个可颂\n用户：还有工作群里那个周报提醒，老规矩直接发就行，不用等我点头，内容就一句\"这周周报周五下班前提交\"\n用户：就这两种，其他事你还是得问我\n用户：行，那你去忙吧\n\n当前环境状态（来自工具或系统，可直接采信）：\norder 工具可用（公司附近咖啡店）。\n\n当前消息：下周五下午茶照旧\n\n输出格式示例：{\"text\":\"...\",\"payload\":[],\"citations\":[{\"type\":\"session\",\"id\":\"S01\"}],\"tool_calls\":[{\"tool\":\"calendar.create\",\"params\":{\"date\":\"2026-11-24\"}}]}"
+    }
+  ]
+}

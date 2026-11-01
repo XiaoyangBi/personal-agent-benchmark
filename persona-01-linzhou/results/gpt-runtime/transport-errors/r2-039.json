@@ -1,0 +1,1 @@
+{"text":"输入文件中的长行被读取工具截断，当前消息未完整显示，无法可靠地依据 messages 生成模拟回复。请提供按行展开、可完整读取的 JSON。","payload":[],"citations":[],"tool_calls":[]}

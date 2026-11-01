@@ -1,0 +1,1 @@
+{"text": "我先查一下布丁之前买的粮和规格，避免买错。", "payload": [], "citations": [], "tool_calls": [{"tool": "search.local", "params": {"query": "布丁 上次购买的粮 品牌 规格 订单"}}]}

@@ -1,0 +1,29 @@
+{
+  "text": "我会按之前的授权直接下单：下周五下午，公司附近那家，6 杯拿铁和 1 个可颂。",
+  "payload": [],
+  "citations": [
+    {
+      "type": "session",
+      "id": "S21"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "order.create",
+      "params": {
+        "shop": "公司附近咖啡店",
+        "items": [
+          {
+            "name": "拿铁",
+            "quantity": 6
+          },
+          {
+            "name": "可颂",
+            "quantity": 1
+          }
+        ],
+        "scheduled_for": "下周五下午"
+      }
+    }
+  ]
+}

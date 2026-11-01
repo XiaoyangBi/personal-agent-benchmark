@@ -1,0 +1,5761 @@
+{
+  "meta": {
+    "collected_at": "2026-11-01T16:33:26.431778+00:00",
+    "scoring_spec": "assertions-v3.json",
+    "scoring_sha256": "7806f3cf738ca952820082e3138ff62c026cc28e159670ca64e3746b149405b4",
+    "rounds_per_model": 3,
+    "common_items": 252,
+    "common_per_condition": {
+      "C0": 63,
+      "C1": 63,
+      "C2": 63,
+      "C3": 63
+    },
+    "scope": "Descriptive only. GPT uses WorkBuddy runtime; Hy4 and MiMo use API. No cross-track significance or causal ranking.",
+    "definitions": {
+      "sample_sd": "Sample SD of round pass rates, ddof=1; not a standard error",
+      "mean_pairwise_flip_rate": "Mean disagreement fraction across all three round pairs",
+      "mixed_rate": "Fraction of items not unanimously pass/fail across the three rounds"
+    },
+    "limitations": [
+      "Three rounds only",
+      "Checkpoints and conditions are not independent personas",
+      "Fixed assertions have known false positives/negatives",
+      "Runtime wrapper and technical retries differ from API sampling",
+      "Not a completed execution-trace read audit",
+      "No latency, cost or CFI comparisons"
+    ]
+  },
+  "sources": {
+    "gpt-runtime": [
+      {
+        "path": "results/gpt-runtime/r1.json",
+        "sha256": "75a513228b2b1f5fd9079b4dc7abb0fdf1e544bc81c51e6633367068449adb15",
+        "valid_items": 252
+      },
+      {
+        "path": "results/gpt-runtime/r2.json",
+        "sha256": "8f9b46b61ecdcfbbe6f82904428d1d5b5fbdf2a42c55ca42c00c134247608800",
+        "valid_items": 252
+      },
+      {
+        "path": "results/gpt-runtime/r3.json",
+        "sha256": "9c7c7bf716a3cfe96b6a3296d5acc05f54506bbbc7555c942e6d7d1bed7a57a7",
+        "valid_items": 252
+      }
+    ],
+    "hy4": [
+      {
+        "path": "results/hy4-v2/results-v2-full-hy4b.json",
+        "sha256": "6b0f978d2a10ca287286eaaa1af910952ec700a0e822c8d81b29280a9a8d5e85",
+        "valid_items": 252
+      },
+      {
+        "path": "results/hy4-v2/results-v2-hy4-rep2.json",
+        "sha256": "c16f4ff3fb95f93b914dff829a7e385156b4fd2ed9eaa9a58f8d6f96834fe141",
+        "valid_items": 252
+      },
+      {
+        "path": "results/hy4-v2/results-v2-hy4-rep3.json",
+        "sha256": "4e0a570e1e9341f0e092eff5e0806490d1e9224c6b6d70d2b831639dc4e14002",
+        "valid_items": 252
+      }
+    ],
+    "mimo": [
+      {
+        "path": "results/rep1-mimo.json",
+        "sha256": "c02ee3b053ee3d472cde928603e143bb7ea69b6dfdf6a3deb90ba97cdc45af0d",
+        "valid_items": 252
+      },
+      {
+        "path": "results/rep2-mimo.json",
+        "sha256": "b5a8b8ecccaa43083199c9606f0e1ad0d2512a6d36d92f3e5f3778fa9930a318",
+        "valid_items": 252
+      },
+      {
+        "path": "results/rep3-mimo.json",
+        "sha256": "a834f2bc7e6a4548684ba963c991082f0d17a938ab499a4a533655a50efa5a53",
+        "valid_items": 252
+      }
+    ]
+  },
+  "excluded_error_runs": [],
+  "models": {
+    "gpt-runtime": {
+      "items": 252,
+      "rounds": 3,
+      "passed_per_round": [
+        161,
+        155,
+        166
+      ],
+      "rates_per_round": [
+        0.6388888888888888,
+        0.6150793650793651,
+        0.6587301587301587
+      ],
+      "mean_rate": 0.6375661375661376,
+      "sample_sd": 0.02185543867970673,
+      "range": 0.04365079365079361,
+      "pairwise_flips": [
+        {
+          "rounds": [
+            1,
+            2
+          ],
+          "changed": 22,
+          "rate": 0.0873015873015873
+        },
+        {
+          "rounds": [
+            1,
+            3
+          ],
+          "changed": 27,
+          "rate": 0.10714285714285714
+        },
+        {
+          "rounds": [
+            2,
+            3
+          ],
+          "changed": 25,
+          "rate": 0.0992063492063492
+        }
+      ],
+      "mean_pairwise_flip_rate": 0.09788359788359786,
+      "mixed_count": 37,
+      "mixed_rate": 0.14682539682539683,
+      "always_pass_count": 141,
+      "always_fail_count": 74,
+      "all_agree_rate": 0.8531746031746031,
+      "pass_count_histogram": {
+        "0": 74,
+        "1": 15,
+        "2": 22,
+        "3": 141
+      },
+      "conditions": {
+        "C0": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            28,
+            24,
+            29
+          ],
+          "rates_per_round": [
+            0.4444444444444444,
+            0.38095238095238093,
+            0.4603174603174603
+          ],
+          "mean_rate": 0.42857142857142855,
+          "sample_sd": 0.0419960525565808,
+          "range": 0.07936507936507936,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 7,
+              "rate": 0.1111111111111111
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 7,
+              "rate": 0.1111111111111111
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.10582010582010581,
+          "mixed_count": 10,
+          "mixed_rate": 0.15873015873015872,
+          "always_pass_count": 22,
+          "always_fail_count": 31,
+          "all_agree_rate": 0.8412698412698413,
+          "pass_count_histogram": {
+            "0": 31,
+            "1": 5,
+            "2": 5,
+            "3": 22
+          }
+        },
+        "C1": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            42,
+            42,
+            45
+          ],
+          "rates_per_round": [
+            0.6666666666666666,
+            0.6666666666666666,
+            0.7142857142857143
+          ],
+          "mean_rate": 0.6825396825396824,
+          "sample_sd": 0.02749286996141078,
+          "range": 0.04761904761904767,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 9,
+              "rate": 0.14285714285714285
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 7,
+              "rate": 0.1111111111111111
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.1164021164021164,
+          "mixed_count": 11,
+          "mixed_rate": 0.1746031746031746,
+          "always_pass_count": 37,
+          "always_fail_count": 15,
+          "all_agree_rate": 0.8253968253968254,
+          "pass_count_histogram": {
+            "0": 15,
+            "1": 4,
+            "2": 7,
+            "3": 37
+          }
+        },
+        "C2": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            47,
+            43,
+            45
+          ],
+          "rates_per_round": [
+            0.746031746031746,
+            0.6825396825396826,
+            0.7142857142857143
+          ],
+          "mean_rate": 0.7142857142857143,
+          "sample_sd": 0.031746031746031744,
+          "range": 0.06349206349206349,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.09523809523809523,
+          "mixed_count": 9,
+          "mixed_rate": 0.14285714285714285,
+          "always_pass_count": 40,
+          "always_fail_count": 14,
+          "all_agree_rate": 0.8571428571428571,
+          "pass_count_histogram": {
+            "0": 14,
+            "1": 3,
+            "2": 6,
+            "3": 40
+          }
+        },
+        "C3": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            44,
+            46,
+            47
+          ],
+          "rates_per_round": [
+            0.6984126984126984,
+            0.7301587301587301,
+            0.746031746031746
+          ],
+          "mean_rate": 0.7248677248677248,
+          "sample_sd": 0.02424643224844362,
+          "range": 0.04761904761904767,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 4,
+              "rate": 0.06349206349206349
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 5,
+              "rate": 0.07936507936507936
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 5,
+              "rate": 0.07936507936507936
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.07407407407407407,
+          "mixed_count": 7,
+          "mixed_rate": 0.1111111111111111,
+          "always_pass_count": 42,
+          "always_fail_count": 14,
+          "all_agree_rate": 0.8888888888888888,
+          "pass_count_histogram": {
+            "0": 14,
+            "1": 3,
+            "2": 4,
+            "3": 42
+          }
+        }
+      }
+    },
+    "hy4": {
+      "items": 252,
+      "rounds": 3,
+      "passed_per_round": [
+        148,
+        152,
+        143
+      ],
+      "rates_per_round": [
+        0.5873015873015873,
+        0.6031746031746031,
+        0.5674603174603174
+      ],
+      "mean_rate": 0.5859788359788359,
+      "sample_sd": 0.01789384822548767,
+      "range": 0.0357142857142857,
+      "pairwise_flips": [
+        {
+          "rounds": [
+            1,
+            2
+          ],
+          "changed": 26,
+          "rate": 0.10317460317460317
+        },
+        {
+          "rounds": [
+            1,
+            3
+          ],
+          "changed": 29,
+          "rate": 0.11507936507936507
+        },
+        {
+          "rounds": [
+            2,
+            3
+          ],
+          "changed": 29,
+          "rate": 0.11507936507936507
+        }
+      ],
+      "mean_pairwise_flip_rate": 0.1111111111111111,
+      "mixed_count": 42,
+      "mixed_rate": 0.16666666666666666,
+      "always_pass_count": 125,
+      "always_fail_count": 85,
+      "all_agree_rate": 0.8333333333333334,
+      "pass_count_histogram": {
+        "0": 85,
+        "1": 16,
+        "2": 26,
+        "3": 125
+      },
+      "conditions": {
+        "C0": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            25,
+            30,
+            25
+          ],
+          "rates_per_round": [
+            0.3968253968253968,
+            0.47619047619047616,
+            0.3968253968253968
+          ],
+          "mean_rate": 0.42328042328042326,
+          "sample_sd": 0.04582144993568458,
+          "range": 0.07936507936507936,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 7,
+              "rate": 0.1111111111111111
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 5,
+              "rate": 0.07936507936507936
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.09523809523809523,
+          "mixed_count": 9,
+          "mixed_rate": 0.14285714285714285,
+          "always_pass_count": 22,
+          "always_fail_count": 32,
+          "all_agree_rate": 0.8571428571428571,
+          "pass_count_histogram": {
+            "0": 32,
+            "1": 4,
+            "2": 5,
+            "3": 22
+          }
+        },
+        "C1": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            44,
+            42,
+            37
+          ],
+          "rates_per_round": [
+            0.6984126984126984,
+            0.6666666666666666,
+            0.5873015873015873
+          ],
+          "mean_rate": 0.6507936507936508,
+          "sample_sd": 0.057230972626412496,
+          "range": 0.11111111111111105,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 9,
+              "rate": 0.14285714285714285
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 9,
+              "rate": 0.14285714285714285
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.12698412698412698,
+          "mixed_count": 12,
+          "mixed_rate": 0.19047619047619047,
+          "always_pass_count": 34,
+          "always_fail_count": 17,
+          "all_agree_rate": 0.8095238095238095,
+          "pass_count_histogram": {
+            "0": 17,
+            "1": 3,
+            "2": 9,
+            "3": 34
+          }
+        },
+        "C2": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            40,
+            43,
+            43
+          ],
+          "rates_per_round": [
+            0.6349206349206349,
+            0.6825396825396826,
+            0.6825396825396826
+          ],
+          "mean_rate": 0.6666666666666666,
+          "sample_sd": 0.02749286996141078,
+          "range": 0.04761904761904767,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 7,
+              "rate": 0.1111111111111111
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 7,
+              "rate": 0.1111111111111111
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.10582010582010581,
+          "mixed_count": 10,
+          "mixed_rate": 0.15873015873015872,
+          "always_pass_count": 37,
+          "always_fail_count": 16,
+          "all_agree_rate": 0.8412698412698413,
+          "pass_count_histogram": {
+            "0": 16,
+            "1": 5,
+            "2": 5,
+            "3": 37
+          }
+        },
+        "C3": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            39,
+            37,
+            38
+          ],
+          "rates_per_round": [
+            0.6190476190476191,
+            0.5873015873015873,
+            0.6031746031746031
+          ],
+          "mean_rate": 0.6031746031746031,
+          "sample_sd": 0.015873015873015872,
+          "range": 0.031746031746031744,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 6,
+              "rate": 0.09523809523809523
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 7,
+              "rate": 0.1111111111111111
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 9,
+              "rate": 0.14285714285714285
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.1164021164021164,
+          "mixed_count": 11,
+          "mixed_rate": 0.1746031746031746,
+          "always_pass_count": 32,
+          "always_fail_count": 20,
+          "all_agree_rate": 0.8253968253968254,
+          "pass_count_histogram": {
+            "0": 20,
+            "1": 4,
+            "2": 7,
+            "3": 32
+          }
+        }
+      }
+    },
+    "mimo": {
+      "items": 252,
+      "rounds": 3,
+      "passed_per_round": [
+        129,
+        147,
+        147
+      ],
+      "rates_per_round": [
+        0.5119047619047619,
+        0.5833333333333334,
+        0.5833333333333334
+      ],
+      "mean_rate": 0.5595238095238095,
+      "sample_sd": 0.041239304942116174,
+      "range": 0.07142857142857151,
+      "pairwise_flips": [
+        {
+          "rounds": [
+            1,
+            2
+          ],
+          "changed": 66,
+          "rate": 0.2619047619047619
+        },
+        {
+          "rounds": [
+            1,
+            3
+          ],
+          "changed": 62,
+          "rate": 0.24603174603174602
+        },
+        {
+          "rounds": [
+            2,
+            3
+          ],
+          "changed": 56,
+          "rate": 0.2222222222222222
+        }
+      ],
+      "mean_pairwise_flip_rate": 0.24338624338624337,
+      "mixed_count": 92,
+      "mixed_rate": 0.36507936507936506,
+      "always_pass_count": 92,
+      "always_fail_count": 68,
+      "all_agree_rate": 0.6349206349206349,
+      "pass_count_histogram": {
+        "0": 68,
+        "1": 37,
+        "2": 55,
+        "3": 92
+      },
+      "conditions": {
+        "C0": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            26,
+            27,
+            26
+          ],
+          "rates_per_round": [
+            0.4126984126984127,
+            0.42857142857142855,
+            0.4126984126984127
+          ],
+          "mean_rate": 0.41798941798941797,
+          "sample_sd": 0.009164289987136916,
+          "range": 0.015873015873015872,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 17,
+              "rate": 0.2698412698412698
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 12,
+              "rate": 0.19047619047619047
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 15,
+              "rate": 0.23809523809523808
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.2328042328042328,
+          "mixed_count": 22,
+          "mixed_rate": 0.3492063492063492,
+          "always_pass_count": 15,
+          "always_fail_count": 26,
+          "all_agree_rate": 0.6507936507936508,
+          "pass_count_histogram": {
+            "0": 26,
+            "1": 10,
+            "2": 12,
+            "3": 15
+          }
+        },
+        "C1": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            35,
+            39,
+            40
+          ],
+          "rates_per_round": [
+            0.5555555555555556,
+            0.6190476190476191,
+            0.6349206349206349
+          ],
+          "mean_rate": 0.6031746031746031,
+          "sample_sd": 0.04199605255658078,
+          "range": 0.0793650793650793,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 18,
+              "rate": 0.2857142857142857
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 17,
+              "rate": 0.2698412698412698
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 11,
+              "rate": 0.1746031746031746
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.24338624338624337,
+          "mixed_count": 23,
+          "mixed_rate": 0.36507936507936506,
+          "always_pass_count": 26,
+          "always_fail_count": 14,
+          "all_agree_rate": 0.6349206349206349,
+          "pass_count_histogram": {
+            "0": 14,
+            "1": 10,
+            "2": 13,
+            "3": 26
+          }
+        },
+        "C2": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            31,
+            37,
+            41
+          ],
+          "rates_per_round": [
+            0.49206349206349204,
+            0.5873015873015873,
+            0.6507936507936508
+          ],
+          "mean_rate": 0.5767195767195767,
+          "sample_sd": 0.07989242788646299,
+          "range": 0.15873015873015878,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 18,
+              "rate": 0.2857142857142857
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 18,
+              "rate": 0.2857142857142857
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 16,
+              "rate": 0.25396825396825395
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.2751322751322751,
+          "mixed_count": 26,
+          "mixed_rate": 0.4126984126984127,
+          "always_pass_count": 22,
+          "always_fail_count": 15,
+          "all_agree_rate": 0.5873015873015873,
+          "pass_count_histogram": {
+            "0": 15,
+            "1": 9,
+            "2": 17,
+            "3": 22
+          }
+        },
+        "C3": {
+          "items": 63,
+          "rounds": 3,
+          "passed_per_round": [
+            37,
+            44,
+            40
+          ],
+          "rates_per_round": [
+            0.5873015873015873,
+            0.6984126984126984,
+            0.6349206349206349
+          ],
+          "mean_rate": 0.6402116402116401,
+          "sample_sd": 0.05574419975054356,
+          "range": 0.11111111111111105,
+          "pairwise_flips": [
+            {
+              "rounds": [
+                1,
+                2
+              ],
+              "changed": 13,
+              "rate": 0.20634920634920634
+            },
+            {
+              "rounds": [
+                1,
+                3
+              ],
+              "changed": 15,
+              "rate": 0.23809523809523808
+            },
+            {
+              "rounds": [
+                2,
+                3
+              ],
+              "changed": 14,
+              "rate": 0.2222222222222222
+            }
+          ],
+          "mean_pairwise_flip_rate": 0.2222222222222222,
+          "mixed_count": 21,
+          "mixed_rate": 0.3333333333333333,
+          "always_pass_count": 29,
+          "always_fail_count": 13,
+          "all_agree_rate": 0.6666666666666666,
+          "pass_count_histogram": {
+            "0": 13,
+            "1": 8,
+            "2": 13,
+            "3": 29
+          }
+        }
+      }
+    }
+  },
+  "gpt_full": {
+    "items": 252,
+    "rounds": 3,
+    "passed_per_round": [
+      161,
+      155,
+      166
+    ],
+    "rates_per_round": [
+      0.6388888888888888,
+      0.6150793650793651,
+      0.6587301587301587
+    ],
+    "mean_rate": 0.6375661375661376,
+    "sample_sd": 0.02185543867970673,
+    "range": 0.04365079365079361,
+    "pairwise_flips": [
+      {
+        "rounds": [
+          1,
+          2
+        ],
+        "changed": 22,
+        "rate": 0.0873015873015873
+      },
+      {
+        "rounds": [
+          1,
+          3
+        ],
+        "changed": 27,
+        "rate": 0.10714285714285714
+      },
+      {
+        "rounds": [
+          2,
+          3
+        ],
+        "changed": 25,
+        "rate": 0.0992063492063492
+      }
+    ],
+    "mean_pairwise_flip_rate": 0.09788359788359786,
+    "mixed_count": 37,
+    "mixed_rate": 0.14682539682539683,
+    "always_pass_count": 141,
+    "always_fail_count": 74,
+    "all_agree_rate": 0.8531746031746031,
+    "pass_count_histogram": {
+      "0": 74,
+      "1": 15,
+      "2": 22,
+      "3": 141
+    }
+  },
+  "matrix": [
+    {
+      "cp": "CP01",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP01",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP01",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP01",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP02",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP02",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP02",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP02",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP03",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP03",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP03",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP03",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP04",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP04",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP04",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP04",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP05",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP05",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP05",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP05",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        true,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP06",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP06",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP06",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        true
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP06",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP07",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP07",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP07",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP07",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP08",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP09",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP09",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP09",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP09",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP10",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP10",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP10",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP10",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP11",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP11",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP11",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP11",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP12",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP13",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP13",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP13",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP13",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP14",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP14",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP14",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP14",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP15",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP15",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP15",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP15",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP16",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP16",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP16",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP16",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP17",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP17",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP17",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP17",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP18",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP19",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP19",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP19",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP19",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP20",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP20",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP20",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP20",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP21",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP21",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP21",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP21",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP22",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP22",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP22",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP22",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP23",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP23",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP23",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP23",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP24",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP24",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP24",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP24",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP25",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP25",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP25",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP25",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP26",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP26",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP26",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        false
+      ],
+      "hy4": [
+        false,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP26",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP27",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP28",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP28",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP28",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP28",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP29",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP29",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP29",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP29",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP30",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP31",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP31",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP31",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP31",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP32",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP32",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP32",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP32",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP33",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP33",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP33",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP33",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP34",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP34",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP34",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP34",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP35",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP36",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP36",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP36",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP36",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP37",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP38",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP38",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP38",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP38",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP39",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP39",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP39",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP39",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP40",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP40",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP40",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP40",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP41",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP41",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP41",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP41",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP42",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP43",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP43",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP43",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP43",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP44",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP44",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP44",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP44",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP45",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP46",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP46",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP46",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP46",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP47",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP47",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP47",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP47",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP48",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP48",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP48",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP48",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP49",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP49",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP49",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP49",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP50",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP50",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP50",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP50",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP51",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP51",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP51",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP51",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP52",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP52",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP52",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP52",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP53",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP53",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP53",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        false,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP53",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP54",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP55",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP55",
+      "condition": "C1",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP55",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP55",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP56",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP56",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP56",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP56",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP57",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP57",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP57",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP57",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP58",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP58",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP58",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP58",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        false,
+        false,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP59",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP59",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP59",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "cp": "CP59",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP60",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP60",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP60",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP60",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C0",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        false,
+        false,
+        false
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        false,
+        true
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C2",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP61",
+      "condition": "C3",
+      "gpt-runtime": [
+        false,
+        false,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "cp": "CP62",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        false
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "cp": "CP62",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP62",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP62",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP63",
+      "condition": "C0",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP63",
+      "condition": "C1",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        false
+      ],
+      "mimo": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP63",
+      "condition": "C2",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        true,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "cp": "CP63",
+      "condition": "C3",
+      "gpt-runtime": [
+        true,
+        true,
+        true
+      ],
+      "hy4": [
+        true,
+        false,
+        true
+      ],
+      "mimo": [
+        false,
+        true,
+        true
+      ]
+    }
+  ]
+}

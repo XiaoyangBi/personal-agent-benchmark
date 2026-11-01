@@ -1,0 +1,1 @@
+{"text":"按你授权的惯例，直接安排下周五下午的组内下午茶：公司附近那家，6 杯拿铁和 1 个可颂。","payload":[],"citations":[{"type":"session","id":"S21"}],"tool_calls":[{"tool":"order.create","params":{"store":"公司附近那家咖啡店","delivery_time":"下周五下午","items":[{"name":"拿铁","quantity":6},{"name":"可颂","quantity":1}]}}]}

@@ -1,0 +1,1 @@
+{"text": "这就按老规矩向工作群发送周报提醒。", "payload": [], "citations": [{"type": "session", "id": "S21"}], "tool_calls": [{"tool": "message.send", "params": {"recipient": "工作群", "content": "这周周报周五下班前提交"}}]}

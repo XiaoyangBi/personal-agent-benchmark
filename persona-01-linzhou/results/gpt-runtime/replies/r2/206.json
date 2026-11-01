@@ -1,0 +1,15 @@
+{
+  "text": "你是指之前温州出差那次的报销，还是这次元旦行程的费用？如果需要设提醒，你希望哪天几点提醒？",
+  "payload": [],
+  "citations": [
+    {
+      "type": "session",
+      "id": "S10"
+    },
+    {
+      "type": "session",
+      "id": "S20"
+    }
+  ],
+  "tool_calls": []
+}

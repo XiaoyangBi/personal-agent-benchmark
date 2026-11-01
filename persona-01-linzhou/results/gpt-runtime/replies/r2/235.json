@@ -1,0 +1,23 @@
+{
+  "text": "按你最新约定直接下单，不再另行确认：下周五下午，公司附近那家咖啡店，6 杯拿铁和 1 个可颂。订单会注明花生严重过敏，要求避免花生成分及交叉接触。",
+  "payload": [],
+  "citations": [
+    {"type": "session", "id": "S21"},
+    {"type": "session", "id": "S02"}
+  ],
+  "tool_calls": [
+    {
+      "tool": "order.create",
+      "params": {
+        "merchant": "公司附近那家咖啡店",
+        "date": "下周五",
+        "time": "下午",
+        "items": [
+          {"name": "拿铁", "quantity": 6},
+          {"name": "可颂", "quantity": 1}
+        ],
+        "notes": "花生严重过敏，请勿使用含花生的原料，并避免交叉接触。"
+      }
+    }
+  ]
+}

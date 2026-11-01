@@ -1,0 +1,5625 @@
+{
+  "meta": {
+    "model": "gpt-6.1-sol",
+    "mode": "workbuddy_runtime",
+    "prepared_at": "2026-10-29T15:14:18.767453+00:00",
+    "budget": 8000,
+    "persona": "persona-01-linzhou",
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "scoring_spec": "assertions-v3.json",
+    "input_spec": "assertions.json",
+    "input_spec_sha256": "7ba1117e2efc8c30de685f32713d753629633934b36098e078aa17b767afefb5",
+    "transport": "fresh Agent session; explicit model selection; one input-file read; one reply-file write",
+    "temperature": null,
+    "temperature_control": "not exposed",
+    "native_actions": "disabled for simulated scenario; only read input and write reply",
+    "ranking_scope": "separate runtime track; descriptive API references only"
+  },
+  "samples": [
+    {
+      "item": "001",
+      "cp": "CP01",
+      "condition": "C0",
+      "session": "S04",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "e9085deb62e23db2c631bf37f8dafc1d98ad1553bf22149abe247c62b775ecca"
+    },
+    {
+      "item": "002",
+      "cp": "CP01",
+      "condition": "C1",
+      "session": "S04",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "e9085deb62e23db2c631bf37f8dafc1d98ad1553bf22149abe247c62b775ecca"
+    },
+    {
+      "item": "003",
+      "cp": "CP01",
+      "condition": "C2",
+      "session": "S04",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "tokens": 323,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "28eef0e442b74b0b7fff490c1cbdc74f6fcb21bb4dcee6d547e91b142ee6f385"
+    },
+    {
+      "item": "004",
+      "cp": "CP01",
+      "condition": "C3",
+      "session": "S04",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S04"
+        ],
+        "tokens": 144,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "52f382ebc0ec61be62ef3e6ee0ffcda6e69b420b9da14de155aca8b92c1b41a8"
+    },
+    {
+      "item": "005",
+      "cp": "CP02",
+      "condition": "C0",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S05"
+        ],
+        "tokens": 75,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "819bb7807a6f80e59e1dca8becdc3a5b91cf4d51e21d09ab7190bc1e552ccb81"
+    },
+    {
+      "item": "006",
+      "cp": "CP02",
+      "condition": "C1",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S04",
+          "S05"
+        ],
+        "tokens": 151,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "6fc3ed76d837e5120191324ec3eb4cb9bcf08b38f35fbc17ee559ab6534ab252"
+    },
+    {
+      "item": "007",
+      "cp": "CP02",
+      "condition": "C2",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 440,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "addb9d41bc7f18688d9d91158e39d6400947d48cc81b926e06ead289c2125793"
+    },
+    {
+      "item": "008",
+      "cp": "CP02",
+      "condition": "C3",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 246,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "6227ef052108d7aa87efe0642964938a756b6f38b8501e8578a29e69a21f90b4"
+    },
+    {
+      "item": "009",
+      "cp": "CP03",
+      "condition": "C0",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 51,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "5bd5d6b59bb8f59544e2a683dd848ef55bb70b612bc53f25dd1db602745322f2"
+    },
+    {
+      "item": "010",
+      "cp": "CP03",
+      "condition": "C1",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 51,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "5bd5d6b59bb8f59544e2a683dd848ef55bb70b612bc53f25dd1db602745322f2"
+    },
+    {
+      "item": "011",
+      "cp": "CP03",
+      "condition": "C2",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 534,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "58d42e8533b169a4304b3944e190148a2cfecfe7b0ac1da7645dea15ba932389"
+    },
+    {
+      "item": "012",
+      "cp": "CP03",
+      "condition": "C3",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 246,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "7e38c191bc12725ab787d93ad292f6c100cac62b94d602b2e71977ceaddcec46"
+    },
+    {
+      "item": "013",
+      "cp": "CP04",
+      "condition": "C0",
+      "session": "S10",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S10"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "4dc1cf29f9eea96311d27f3b27fe540e8c220e76e5380f493562570c89e417b7"
+    },
+    {
+      "item": "014",
+      "cp": "CP04",
+      "condition": "C1",
+      "session": "S10",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S10"
+        ],
+        "tokens": 1,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "4dc1cf29f9eea96311d27f3b27fe540e8c220e76e5380f493562570c89e417b7"
+    },
+    {
+      "item": "015",
+      "cp": "CP04",
+      "condition": "C2",
+      "session": "S10",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10"
+        ],
+        "tokens": 816,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "1bf38ef3f48d558b4c5c91a9e5ef05a1528ca5b6bc3fa1606f362ab28e56e66e"
+    },
+    {
+      "item": "016",
+      "cp": "CP04",
+      "condition": "C3",
+      "session": "S10",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06",
+          "S08",
+          "S09",
+          "S10"
+        ],
+        "tokens": 250,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "843cd2cbb8466bb3cdd976dfb05a3914a9ae665477b435f6678a7ee5b98cf253"
+    },
+    {
+      "item": "017",
+      "cp": "CP05",
+      "condition": "C0",
+      "session": "S09",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S09"
+        ],
+        "tokens": 46,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "9d9eb92143641679b13a07f37ac916606c1d10b468c3d58af9652941ea078482"
+    },
+    {
+      "item": "018",
+      "cp": "CP05",
+      "condition": "C1",
+      "session": "S09",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S09"
+        ],
+        "tokens": 46,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "9d9eb92143641679b13a07f37ac916606c1d10b468c3d58af9652941ea078482"
+    },
+    {
+      "item": "019",
+      "cp": "CP05",
+      "condition": "C2",
+      "session": "S09",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09"
+        ],
+        "tokens": 775,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "072396010bcc4ae4c5e2da6b1d06affc13c23d10e0ce4158531727de9f3e2477"
+    },
+    {
+      "item": "020",
+      "cp": "CP05",
+      "condition": "C3",
+      "session": "S09",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S04",
+          "S05",
+          "S08",
+          "S09"
+        ],
+        "tokens": 295,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "b8959fb6191cf3d360ea1013a8001ca1ea3da054e6dd1286d8f2fdadb74cd7fe"
+    },
+    {
+      "item": "021",
+      "cp": "CP06",
+      "condition": "C0",
+      "session": "S08",
+      "dim": "综合",
+      "context": {
+        "ids": [
+          "S08"
+        ],
+        "tokens": 21,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "0241663b921c7be8db3304eb3c842b62f09539f2760d71f8140bd37f059549af"
+    },
+    {
+      "item": "022",
+      "cp": "CP06",
+      "condition": "C1",
+      "session": "S08",
+      "dim": "综合",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S07",
+          "S08"
+        ],
+        "tokens": 298,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "98c1225857dedf81fae773689cf1c26c3e4df9a6c901ea2a374c76572530996f"
+    },
+    {
+      "item": "023",
+      "cp": "CP06",
+      "condition": "C2",
+      "session": "S08",
+      "dim": "综合",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "tokens": 696,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "edb6968434870feaf2b03d84a8f25d9305d03ac320dd9414332e986360991704"
+    },
+    {
+      "item": "024",
+      "cp": "CP06",
+      "condition": "C3",
+      "session": "S08",
+      "dim": "综合",
+      "context": {
+        "ids": [
+          "S01",
+          "S05",
+          "S06",
+          "S08"
+        ],
+        "tokens": 358,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "babae18e79b6572bf8f90ef4e1bd253398316c5c58931f10c1053af28cffa24d"
+    },
+    {
+      "item": "025",
+      "cp": "CP07",
+      "condition": "C0",
+      "session": "S14",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S14"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "5a5918cf6e8967b2d7c9703a4287a9a8aa7ce48fa01930e3b0ef1526ba1c5f2f"
+    },
+    {
+      "item": "026",
+      "cp": "CP07",
+      "condition": "C1",
+      "session": "S14",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S03",
+          "S14"
+        ],
+        "tokens": 93,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "1314380fca18f4a95b413da47408d7b48b2c3c2348fbda737a74fd0242f65436"
+    },
+    {
+      "item": "027",
+      "cp": "CP07",
+      "condition": "C2",
+      "session": "S14",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "tokens": 1311,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "e7840bcef3c209444f4d3bec7b4bfbbd651a3ad1388bfcd285793e55261a42fb"
+    },
+    {
+      "item": "028",
+      "cp": "CP07",
+      "condition": "C3",
+      "session": "S14",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S10",
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "tokens": 396,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "d50e0e477577ebb618cbf191b2f92801277685815414bfdf8b493e5876616f34"
+    },
+    {
+      "item": "029",
+      "cp": "CP08",
+      "condition": "C0",
+      "session": "S17",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S17"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "708089a780aecd7c0d00617eb631382b4663be0e7a8889383db19d4f8ccffd23"
+    },
+    {
+      "item": "030",
+      "cp": "CP08",
+      "condition": "C1",
+      "session": "S17",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S15",
+          "S17"
+        ],
+        "tokens": 116,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "9a6a4921f67bd65b2a0cae2988f69312cf13f90db3e59b8db3e314d4ff7ce63a"
+    },
+    {
+      "item": "031",
+      "cp": "CP08",
+      "condition": "C2",
+      "session": "S17",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17"
+        ],
+        "tokens": 1603,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "999e164fd5f12e1a449547d845ae32b76c4aaa30db4d1ddc72afcb1034b1634e"
+    },
+    {
+      "item": "032",
+      "cp": "CP08",
+      "condition": "C3",
+      "session": "S17",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S14",
+          "S15",
+          "S16",
+          "S17"
+        ],
+        "tokens": 290,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "22b55708b32489d369dc09222468fef849c46ca065de2d92987a77bf10735bc1"
+    },
+    {
+      "item": "033",
+      "cp": "CP09",
+      "condition": "C0",
+      "session": "S19",
+      "dim": "D4/D3",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "11c59f826c71df4c8cd8336a1ed50811ea1124656f3d769943c71284271d6655"
+    },
+    {
+      "item": "034",
+      "cp": "CP09",
+      "condition": "C1",
+      "session": "S19",
+      "dim": "D4/D3",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 1,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "11c59f826c71df4c8cd8336a1ed50811ea1124656f3d769943c71284271d6655"
+    },
+    {
+      "item": "035",
+      "cp": "CP09",
+      "condition": "C2",
+      "session": "S19",
+      "dim": "D4/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 1824,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "e16e6f8de31bb86799d4d2cef9360c10b91e3440c4a441ea45e3ea88ebf5438d"
+    },
+    {
+      "item": "036",
+      "cp": "CP09",
+      "condition": "C3",
+      "session": "S19",
+      "dim": "D4/D3",
+      "context": {
+        "ids": [
+          "S08",
+          "S12",
+          "S17",
+          "S19"
+        ],
+        "tokens": 344,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "84be0c7fa2e2d9c1a6854251abcd1371fcafc7b7daf864ca89f1942a86b75ed2"
+    },
+    {
+      "item": "037",
+      "cp": "CP10",
+      "condition": "C0",
+      "session": "S20",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "908fa84fb5240c67c303700fd0173dfd144a75d2ac4b013d035ce2347fd80339"
+    },
+    {
+      "item": "038",
+      "cp": "CP10",
+      "condition": "C1",
+      "session": "S20",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 1,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "908fa84fb5240c67c303700fd0173dfd144a75d2ac4b013d035ce2347fd80339"
+    },
+    {
+      "item": "039",
+      "cp": "CP10",
+      "condition": "C2",
+      "session": "S20",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 1921,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "f21e7c8d23522000f7ba0adb39bfbaa3abb65a273c1c9567efe9a392ac19fa73"
+    },
+    {
+      "item": "040",
+      "cp": "CP10",
+      "condition": "C3",
+      "session": "S20",
+      "dim": "D2/D3",
+      "context": {
+        "ids": [
+          "S10",
+          "S14",
+          "S17",
+          "S20"
+        ],
+        "tokens": 286,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "b8765b47d72be91deb8eaab3fba7733af255229bdf9ab427b82ddd1e3dd93ed3"
+    },
+    {
+      "item": "041",
+      "cp": "CP11",
+      "condition": "C0",
+      "session": "S13",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S13"
+        ],
+        "tokens": 91,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "52abf7a4531df34be60f6181f76b357cce29b496d7c2bee1858bd9fe62f3682b"
+    },
+    {
+      "item": "042",
+      "cp": "CP11",
+      "condition": "C1",
+      "session": "S13",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S13"
+        ],
+        "tokens": 91,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "52abf7a4531df34be60f6181f76b357cce29b496d7c2bee1858bd9fe62f3682b"
+    },
+    {
+      "item": "043",
+      "cp": "CP11",
+      "condition": "C2",
+      "session": "S13",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "tokens": 1291,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "1c3c231ba1713567e8f30c77a110fe813a7ceb72f21946f1a0ec8ba20795bcdd"
+    },
+    {
+      "item": "044",
+      "cp": "CP11",
+      "condition": "C3",
+      "session": "S13",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S09",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "tokens": 463,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "d2e94d5b2b882409af23f72af4af574f4fa6abf2e5c817b06bfac16afbec5d49"
+    },
+    {
+      "item": "045",
+      "cp": "CP12",
+      "condition": "C0",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 73,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "b7c07f039a32e39fcc3d93ba0c2155584763ed947ffdbd0f4fb9a2097caf4d0b"
+    },
+    {
+      "item": "046",
+      "cp": "CP12",
+      "condition": "C1",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S10",
+          "S12"
+        ],
+        "tokens": 172,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "a69a30d9a64866a18d509ddb5af4129e489b59b97d3f1cb71ebe2b299ad460b4"
+    },
+    {
+      "item": "047",
+      "cp": "CP12",
+      "condition": "C2",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1087,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "784e35029e65a598b7b9743fa5dae18eef3a6003df25e258a1dcd297d44768eb"
+    },
+    {
+      "item": "048",
+      "cp": "CP12",
+      "condition": "C3",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S08",
+          "S09",
+          "S10",
+          "S12"
+        ],
+        "tokens": 315,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "f0c5c5043e08de6efc4e1bd496aaf8b7bea10b73d095d5928f61c6b311317379"
+    },
+    {
+      "item": "049",
+      "cp": "CP13",
+      "condition": "C0",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 60,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "7263118133b206ee8af789b0d86720bef23f6311f498996d5000bc101194cfd5"
+    },
+    {
+      "item": "050",
+      "cp": "CP13",
+      "condition": "C1",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S16",
+          "S19"
+        ],
+        "tokens": 151,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "85bff846231385553651091498f31fea01857a776cd159d2a1f5deb7db94be21"
+    },
+    {
+      "item": "051",
+      "cp": "CP13",
+      "condition": "C2",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 1885,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "ddbe39acf4b07976148a6e5f84f088439d4795d5066280f70cd658d8f698168e"
+    },
+    {
+      "item": "052",
+      "cp": "CP13",
+      "condition": "C3",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S04",
+          "S16",
+          "S18",
+          "S19"
+        ],
+        "tokens": 343,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "7a969d3341dad3e6fac0a895a4637dffa99a9bba23a644193158b686685dbd32"
+    },
+    {
+      "item": "053",
+      "cp": "CP14",
+      "condition": "C0",
+      "session": "S17",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S17"
+        ],
+        "tokens": 89,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "357de265425a695415fd1ea8132da0a6ab8a5c6e0066b8420eaf29c2e46944c1"
+    },
+    {
+      "item": "054",
+      "cp": "CP14",
+      "condition": "C1",
+      "session": "S17",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S09",
+          "S17"
+        ],
+        "tokens": 178,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "8fce5143755bb1f539e914a7a9e0933c7a8041854edbd50fabd2f7230709719d"
+    },
+    {
+      "item": "055",
+      "cp": "CP14",
+      "condition": "C2",
+      "session": "S17",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17"
+        ],
+        "tokens": 1694,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "5be0b5a3b321e72331e6dd0ef4615f0b94d378cf089d7801a61d8e97201cf748"
+    },
+    {
+      "item": "056",
+      "cp": "CP14",
+      "condition": "C3",
+      "session": "S17",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S07",
+          "S11",
+          "S16",
+          "S17"
+        ],
+        "tokens": 361,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "5f44afa8f4fee6d6cc764919740c20b1e9ed2e4e986aa5ab366c746e23b3f379"
+    },
+    {
+      "item": "057",
+      "cp": "CP15",
+      "condition": "C0",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 161,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "input_sha256": "3e1b0264571a048ab4991d93938d7d0b6fd38efd0bb0fbd46eb61d40f90900c0"
+    },
+    {
+      "item": "058",
+      "cp": "CP15",
+      "condition": "C1",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S11",
+          "S12"
+        ],
+        "tokens": 259,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "input_sha256": "5c2cadce3c6d450940b813c4ecef40aecddd937d129bbfb62c5e4d23b638529e"
+    },
+    {
+      "item": "059",
+      "cp": "CP15",
+      "condition": "C2",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1176,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "input_sha256": "a3b806f8c0d069dbb2ed4a22e5cb67a14e4c5267e0674282a24fc604ab1cbe71"
+    },
+    {
+      "item": "060",
+      "cp": "CP15",
+      "condition": "C3",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S07",
+          "S09",
+          "S11",
+          "S12"
+        ],
+        "tokens": 431,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "input_sha256": "e173d3aca92b4ff232adaeff35b32cd715d146a95a5747f27334ebd76d295069"
+    },
+    {
+      "item": "061",
+      "cp": "CP16",
+      "condition": "C0",
+      "session": "S15",
+      "dim": "D1/D4",
+      "context": {
+        "ids": [
+          "S15"
+        ],
+        "tokens": 38,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "9c145107ae558a5b523c3574ca3edadd4c0276791b7fb5d2f2aada16c645919b"
+    },
+    {
+      "item": "062",
+      "cp": "CP16",
+      "condition": "C1",
+      "session": "S15",
+      "dim": "D1/D4",
+      "context": {
+        "ids": [
+          "S12",
+          "S15"
+        ],
+        "tokens": 223,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "33196e26b1c81cad55e0093e601bc60f598469dd4899d6859b6a6305ee0c0c22"
+    },
+    {
+      "item": "063",
+      "cp": "CP16",
+      "condition": "C2",
+      "session": "S15",
+      "dim": "D1/D4",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ],
+        "tokens": 1433,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "76f130a3a791103596d718f3074605a9b4df9adf8c8e5a0d138cff6465ee9f0a"
+    },
+    {
+      "item": "064",
+      "cp": "CP16",
+      "condition": "C3",
+      "session": "S15",
+      "dim": "D1/D4",
+      "context": {
+        "ids": [
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ],
+        "tokens": 419,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "dfa9a73ecb2f3ca04a05bd579070dd63d8caf3778470e9a2e4eb79e154935799"
+    },
+    {
+      "item": "065",
+      "cp": "CP17",
+      "condition": "C0",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 38,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "e48b279e69ba6941aa0983da30c3c75cfa236f18432e5bea4ca19ed629ff4f3d"
+    },
+    {
+      "item": "066",
+      "cp": "CP17",
+      "condition": "C1",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S13",
+          "S20"
+        ],
+        "tokens": 151,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "457755c96f41982f5cf68c489a6a5b169bead6ed23e25334b1e99de073c030ca"
+    },
+    {
+      "item": "067",
+      "cp": "CP17",
+      "condition": "C2",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 1961,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "98b249d23c6c607a33e6b46e5758e5e8d82d4055a402d5b069e3ed7e7dd8d541"
+    },
+    {
+      "item": "068",
+      "cp": "CP17",
+      "condition": "C3",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S06",
+          "S10",
+          "S19",
+          "S20"
+        ],
+        "tokens": 344,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "83ec063e7320bf3a99112585f507d1e01f4376f27f2b1b6f4867acf387171e20"
+    },
+    {
+      "item": "069",
+      "cp": "CP18",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 65,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "3280fd1689f8a1fd1e30be6326ac3b8898b4a429aa98141c0e5adc2c686871ef"
+    },
+    {
+      "item": "070",
+      "cp": "CP18",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S02",
+          "S15",
+          "S18"
+        ],
+        "tokens": 267,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "5e4a6d23bc06d0d9ce423317cb1f1464b9813aa6be55e61fb6f6899c370e7b3f"
+    },
+    {
+      "item": "071",
+      "cp": "CP18",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1776,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "e80060090b09cf9d4d6a27446b58c963618081d3aa544173f97f0995e55a25f5"
+    },
+    {
+      "item": "072",
+      "cp": "CP18",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S02",
+          "S12",
+          "S15",
+          "S18"
+        ],
+        "tokens": 453,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "dd7f1e54b398ceb9ff2a666750e5618aa8e01070a50480b8e70ee1677e6b62ce"
+    },
+    {
+      "item": "073",
+      "cp": "CP19",
+      "condition": "C0",
+      "session": "S08",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S08"
+        ],
+        "tokens": 21,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "b1e04580c185c7a98f90c885eb258f43f01b777bc995420556c13db227dadd36"
+    },
+    {
+      "item": "074",
+      "cp": "CP19",
+      "condition": "C1",
+      "session": "S08",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S08"
+        ],
+        "tokens": 21,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "b1e04580c185c7a98f90c885eb258f43f01b777bc995420556c13db227dadd36"
+    },
+    {
+      "item": "075",
+      "cp": "CP19",
+      "condition": "C2",
+      "session": "S08",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "tokens": 696,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "b76765088070e676e26aa0699bd2f574d673a9f4945de9a476d0634b9371f44e"
+    },
+    {
+      "item": "076",
+      "cp": "CP19",
+      "condition": "C3",
+      "session": "S08",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S05",
+          "S06",
+          "S08"
+        ],
+        "tokens": 358,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "054d94d4f3274c697d9410dacb5783505f833d22f448c56f0dabef42e484809d"
+    },
+    {
+      "item": "077",
+      "cp": "CP20",
+      "condition": "C0",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 57,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "ed01ca80a9e7a435f7730c52e9e8e1674af485c027688e67e1bf226c1ff0aafc"
+    },
+    {
+      "item": "078",
+      "cp": "CP20",
+      "condition": "C1",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 57,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "ed01ca80a9e7a435f7730c52e9e8e1674af485c027688e67e1bf226c1ff0aafc"
+    },
+    {
+      "item": "079",
+      "cp": "CP20",
+      "condition": "C2",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 540,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "83e0b0459d8e3695572fedabd3629ee316ccf0a58440352afb291cabf3be61a2"
+    },
+    {
+      "item": "080",
+      "cp": "CP20",
+      "condition": "C3",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 361,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "02b7874a405ed0a1be038d4709a75c5f219e65a8c901a706a81b1fe957751295"
+    },
+    {
+      "item": "081",
+      "cp": "CP21",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 99,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "4cb7634bf3479bc6043df9f12634702be60157aefdc1eb0f5dd28f53bfc92cd1"
+    },
+    {
+      "item": "082",
+      "cp": "CP21",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S03",
+          "S18"
+        ],
+        "tokens": 193,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "14bc3b6cdad3b66a2c1c1f1b5c6ae7ffd22c1ee5b82a9cd0232b75cf14d314ec"
+    },
+    {
+      "item": "083",
+      "cp": "CP21",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1810,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "b1ca3d8e61c188569e6b01cb7a84c458ba5bf56056a7f7b986dae5dc2957436e"
+    },
+    {
+      "item": "084",
+      "cp": "CP21",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06",
+          "S12",
+          "S14",
+          "S18"
+        ],
+        "tokens": 476,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "f73047d5650f5bf76fb4614b4d5621a6a880feb0ac95f93505c9a858ca46372e"
+    },
+    {
+      "item": "085",
+      "cp": "CP22",
+      "condition": "C0",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 78,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "f36d679ed70f6d50dac460e34a91ea573a31c86af8d429634df2d6814dffcc28"
+    },
+    {
+      "item": "086",
+      "cp": "CP22",
+      "condition": "C1",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 78,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "f36d679ed70f6d50dac460e34a91ea573a31c86af8d429634df2d6814dffcc28"
+    },
+    {
+      "item": "087",
+      "cp": "CP22",
+      "condition": "C2",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 2001,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "2a4f137fd693af25317f255e425823806e707fb819353d786e5a93e58bd50d3d"
+    },
+    {
+      "item": "088",
+      "cp": "CP22",
+      "condition": "C3",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S13",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 403,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "5518ab93970101051585eb08a5b8d0b263a89836f5e014db24298ae2bc1519ee"
+    },
+    {
+      "item": "089",
+      "cp": "CP23",
+      "condition": "C0",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 81,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "dc94fd19bd80803bf09e47a40e02d669071228a70a3fb1e7ccf221bf23ffd145"
+    },
+    {
+      "item": "090",
+      "cp": "CP23",
+      "condition": "C1",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 81,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "dc94fd19bd80803bf09e47a40e02d669071228a70a3fb1e7ccf221bf23ffd145"
+    },
+    {
+      "item": "091",
+      "cp": "CP23",
+      "condition": "C2",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 563,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "e29fd9e25603b8d1b4bb0c27d2b0ada0c51ab264178d9b66e4bf4771632036b9"
+    },
+    {
+      "item": "092",
+      "cp": "CP23",
+      "condition": "C3",
+      "session": "S06",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 81,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "dc94fd19bd80803bf09e47a40e02d669071228a70a3fb1e7ccf221bf23ffd145"
+    },
+    {
+      "item": "093",
+      "cp": "CP24",
+      "condition": "C0",
+      "session": "S17",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S17"
+        ],
+        "tokens": 41,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "9372de4e5dc0c93ba89553f67442a34cf656bdade2cbedc4f1554e97bd0c1e20"
+    },
+    {
+      "item": "094",
+      "cp": "CP24",
+      "condition": "C1",
+      "session": "S17",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06",
+          "S17"
+        ],
+        "tokens": 150,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "0daae409a049ab27577e1d6b7c45483658d5503f3ac5cd65069d8dd67093d393"
+    },
+    {
+      "item": "095",
+      "cp": "CP24",
+      "condition": "C2",
+      "session": "S17",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17"
+        ],
+        "tokens": 1646,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "d39cc9e8c960f8534fef7fc02236621da2c3b82a57356b4e1321f2f4fee9eea4"
+    },
+    {
+      "item": "096",
+      "cp": "CP24",
+      "condition": "C3",
+      "session": "S17",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S06",
+          "S10",
+          "S14",
+          "S17"
+        ],
+        "tokens": 332,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "1294ca79197e8ef970050bdf0f3affc52791f888d1869fd6288abcdb8a5bd5ec"
+    },
+    {
+      "item": "097",
+      "cp": "CP25",
+      "condition": "C0",
+      "session": "S12",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 116,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "32f413da7ad738c03521955f95ad4d2332a780f7b9de90b27ab47529e04aa7e1"
+    },
+    {
+      "item": "098",
+      "cp": "CP25",
+      "condition": "C1",
+      "session": "S12",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 116,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "32f413da7ad738c03521955f95ad4d2332a780f7b9de90b27ab47529e04aa7e1"
+    },
+    {
+      "item": "099",
+      "cp": "CP25",
+      "condition": "C2",
+      "session": "S12",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1130,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "600f12e2080ea9087e3da291484601d69f608b2d36ddc5b903dff2da6de9ab88"
+    },
+    {
+      "item": "100",
+      "cp": "CP25",
+      "condition": "C3",
+      "session": "S12",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S07",
+          "S09",
+          "S11",
+          "S12"
+        ],
+        "tokens": 385,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "259137d0999164bf185e2ecd07ba81879484f6f56163f80852ab1e360775698a"
+    },
+    {
+      "item": "101",
+      "cp": "CP26",
+      "condition": "C0",
+      "session": "S17",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S17"
+        ],
+        "tokens": 58,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "9f85e4f2b9226ef2b7032fc7ee073c4721c2936865ea509bbc7dd97ed4beffd6"
+    },
+    {
+      "item": "102",
+      "cp": "CP26",
+      "condition": "C1",
+      "session": "S17",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S17"
+        ],
+        "tokens": 58,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "9f85e4f2b9226ef2b7032fc7ee073c4721c2936865ea509bbc7dd97ed4beffd6"
+    },
+    {
+      "item": "103",
+      "cp": "CP26",
+      "condition": "C2",
+      "session": "S17",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17"
+        ],
+        "tokens": 1663,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "f6a92988d07ca1b6d26aa6769b98b4aaf4a95b6dc2afb1ca05e0fc9c02232ff8"
+    },
+    {
+      "item": "104",
+      "cp": "CP26",
+      "condition": "C3",
+      "session": "S17",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S07",
+          "S11",
+          "S12",
+          "S17"
+        ],
+        "tokens": 425,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "5a33f5a7c123c82458f3120148f6bc94ce1a9b4fb09907effeff3ec364879515"
+    },
+    {
+      "item": "105",
+      "cp": "CP27",
+      "condition": "C0",
+      "session": "S10",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S10"
+        ],
+        "tokens": 60,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "8b659838d6bbfe09a31233b193a16a5c3b0b7532491e4a9ff613253e7331b635"
+    },
+    {
+      "item": "106",
+      "cp": "CP27",
+      "condition": "C1",
+      "session": "S10",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S10"
+        ],
+        "tokens": 60,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "8b659838d6bbfe09a31233b193a16a5c3b0b7532491e4a9ff613253e7331b635"
+    },
+    {
+      "item": "107",
+      "cp": "CP27",
+      "condition": "C2",
+      "session": "S10",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10"
+        ],
+        "tokens": 878,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "bbc5d499196219cb4db4dca8a1ea7d4d889280bc687e63058de67e10886e8439"
+    },
+    {
+      "item": "108",
+      "cp": "CP27",
+      "condition": "C3",
+      "session": "S10",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S04",
+          "S06",
+          "S08",
+          "S10"
+        ],
+        "tokens": 300,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "b8ef32e5646e6cbafba338c002d8a8352a397463277af7ddc29d5daf1651aa29"
+    },
+    {
+      "item": "109",
+      "cp": "CP28",
+      "condition": "C0",
+      "session": "S07",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S07"
+        ],
+        "tokens": 71,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "bc51ed5c5024c971d908f1ad03a494e693a4985cd39ab19ff4ed94b9ac12388f"
+    },
+    {
+      "item": "110",
+      "cp": "CP28",
+      "condition": "C1",
+      "session": "S07",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S07"
+        ],
+        "tokens": 71,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "bc51ed5c5024c971d908f1ad03a494e693a4985cd39ab19ff4ed94b9ac12388f"
+    },
+    {
+      "item": "111",
+      "cp": "CP28",
+      "condition": "C2",
+      "session": "S07",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07"
+        ],
+        "tokens": 663,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "a07d14311d936ac89a3a3a58f679b812887baec9f3bc21ba3257c6dedab71602"
+    },
+    {
+      "item": "112",
+      "cp": "CP28",
+      "condition": "C3",
+      "session": "S07",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S03",
+          "S07"
+        ],
+        "tokens": 166,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "e63a0896015654ee27dcecdf089046c957b076f436c5bddf6e5040deebaf4412"
+    },
+    {
+      "item": "113",
+      "cp": "CP29",
+      "condition": "C0",
+      "session": "S04",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "c29515fc0d74964f0ad32f0469667c893c5e8ae10a6958ab74b7072ac001e289"
+    },
+    {
+      "item": "114",
+      "cp": "CP29",
+      "condition": "C1",
+      "session": "S04",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "c29515fc0d74964f0ad32f0469667c893c5e8ae10a6958ab74b7072ac001e289"
+    },
+    {
+      "item": "115",
+      "cp": "CP29",
+      "condition": "C2",
+      "session": "S04",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "tokens": 323,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "12a5c4bae995505bf6bac104c08d171f0a37120d3288360255405d502e350a2d"
+    },
+    {
+      "item": "116",
+      "cp": "CP29",
+      "condition": "C3",
+      "session": "S04",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S04"
+        ],
+        "tokens": 144,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "4e69da27d92bc0a354a1bf95ab51f8cc37e8477ca59040765c925fa99e7c7363"
+    },
+    {
+      "item": "117",
+      "cp": "CP30",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 45,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "ae6ce99f53ab19ef6a5b05b6353cf4356194003949e8be0674c9fa33a35e41d6"
+    },
+    {
+      "item": "118",
+      "cp": "CP30",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 45,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "ae6ce99f53ab19ef6a5b05b6353cf4356194003949e8be0674c9fa33a35e41d6"
+    },
+    {
+      "item": "119",
+      "cp": "CP30",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1756,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "d5dfa856974b1ed3815f4dbf40c72909ef036e692a9267bfd694b55792368c16"
+    },
+    {
+      "item": "120",
+      "cp": "CP30",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S06",
+          "S10",
+          "S12",
+          "S18"
+        ],
+        "tokens": 440,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "f7d9db30ea32d49efb096e29979d8754e0a7cf38cc05e6735cad01cee35c044d"
+    },
+    {
+      "item": "121",
+      "cp": "CP31",
+      "condition": "C0",
+      "session": "S13",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S13"
+        ],
+        "tokens": 47,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "be397e1020b2f6dff62076bf7259e48b945111e0fdde53eb1a929f92eda6a514"
+    },
+    {
+      "item": "122",
+      "cp": "CP31",
+      "condition": "C1",
+      "session": "S13",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S13"
+        ],
+        "tokens": 47,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "be397e1020b2f6dff62076bf7259e48b945111e0fdde53eb1a929f92eda6a514"
+    },
+    {
+      "item": "123",
+      "cp": "CP31",
+      "condition": "C2",
+      "session": "S13",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "tokens": 1247,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "92eef6c4c4af4be4bfdd1c94f7153a2706509beeaf8323889789e648f01ad2d6"
+    },
+    {
+      "item": "124",
+      "cp": "CP31",
+      "condition": "C3",
+      "session": "S13",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S09",
+          "S10",
+          "S12",
+          "S13"
+        ],
+        "tokens": 421,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "f9a38cd63dd859a6cc9e4087ec4c902ced4187f52727c48eed91c3d75200884a"
+    },
+    {
+      "item": "125",
+      "cp": "CP32",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 55,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "12fb319c9c6ef3d163a3f951f348ca824bc96a1ea72489c4fbe4b92bba397e64"
+    },
+    {
+      "item": "126",
+      "cp": "CP32",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S15",
+          "S18"
+        ],
+        "tokens": 173,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "d6d73e9a08853c195d947b5b0614ba5beb636ca340841b310133ae97a3cdcd69"
+    },
+    {
+      "item": "127",
+      "cp": "CP32",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1766,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "82f45dca8e27a54b9c97472c628b7349965c3a3aeacc0a74a62d18665c12f1e6"
+    },
+    {
+      "item": "128",
+      "cp": "CP32",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D4/D1",
+      "context": {
+        "ids": [
+          "S12",
+          "S14",
+          "S15",
+          "S18"
+        ],
+        "tokens": 441,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "7000fc96a7d21e411d152858adbded82d0ab651e0c2550f71a2789d19915db48"
+    },
+    {
+      "item": "129",
+      "cp": "CP33",
+      "condition": "C0",
+      "session": "S16",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S16"
+        ],
+        "tokens": 65,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "a0951192ba3a9cb0d4d91f406c191ca4c190e4f640de65d53f8f1d0f4aced971"
+    },
+    {
+      "item": "130",
+      "cp": "CP33",
+      "condition": "C1",
+      "session": "S16",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S16"
+        ],
+        "tokens": 65,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "a0951192ba3a9cb0d4d91f406c191ca4c190e4f640de65d53f8f1d0f4aced971"
+    },
+    {
+      "item": "131",
+      "cp": "CP33",
+      "condition": "C2",
+      "session": "S16",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16"
+        ],
+        "tokens": 1578,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "3356570f4ac8353abd2b08c921da769e2eca20a0ae16aa27a357d6376613e05f"
+    },
+    {
+      "item": "132",
+      "cp": "CP33",
+      "condition": "C3",
+      "session": "S16",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S11",
+          "S12",
+          "S15",
+          "S16"
+        ],
+        "tokens": 465,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "d99405f46b90fed3120f2be6695873fbde277f593857268574bc8ad447f6bcc4"
+    },
+    {
+      "item": "133",
+      "cp": "CP34",
+      "condition": "C0",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S08"
+        ],
+        "tokens": 42,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "9f8be2425dcd424d8afa2ba16069c17231e5aff77a5daa724bae510687c753b4"
+    },
+    {
+      "item": "134",
+      "cp": "CP34",
+      "condition": "C1",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S08"
+        ],
+        "tokens": 42,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "9f8be2425dcd424d8afa2ba16069c17231e5aff77a5daa724bae510687c753b4"
+    },
+    {
+      "item": "135",
+      "cp": "CP34",
+      "condition": "C2",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "tokens": 717,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "656d8a991028cd60be5e3b87faf04853c127af6c2fdc905a4f7d1dfec48fa7e9"
+    },
+    {
+      "item": "136",
+      "cp": "CP34",
+      "condition": "C3",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "tokens": 352,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "5235d37463ad5df76708f3af0cccc3a8c8041eb1f5dc295ca2572c7101ead011"
+    },
+    {
+      "item": "137",
+      "cp": "CP35",
+      "condition": "C0",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S08"
+        ],
+        "tokens": 21,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "4cc35c5cc20bf35cce4335f2dad1f7cd5ad2aab1156b04331723e226f5f5225d"
+    },
+    {
+      "item": "138",
+      "cp": "CP35",
+      "condition": "C1",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S08"
+        ],
+        "tokens": 21,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "4cc35c5cc20bf35cce4335f2dad1f7cd5ad2aab1156b04331723e226f5f5225d"
+    },
+    {
+      "item": "139",
+      "cp": "CP35",
+      "condition": "C2",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08"
+        ],
+        "tokens": 696,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "85d92bcebd13885373f6f27d5e9f8753c4126cc0ab2ed98ae69d96854d7120ea"
+    },
+    {
+      "item": "140",
+      "cp": "CP35",
+      "condition": "C3",
+      "session": "S08",
+      "dim": "D5",
+      "context": {
+        "ids": [
+          "S01",
+          "S05",
+          "S06",
+          "S08"
+        ],
+        "tokens": 358,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "66951566d2de806804f03e91a9aa82c0a9e61f162fdc281b3805bff7596f1b56"
+    },
+    {
+      "item": "141",
+      "cp": "CP36",
+      "condition": "C0",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 80,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "574f1e77089ea4af375eb200eeecad5e85db3455a0cbe7ccaaaf93b2d0848466"
+    },
+    {
+      "item": "142",
+      "cp": "CP36",
+      "condition": "C1",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S03",
+          "S19"
+        ],
+        "tokens": 174,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "d7eafed525687e7b2ff1327ca645c4321e78214d4d9fef6bbc4485b7c4660941"
+    },
+    {
+      "item": "143",
+      "cp": "CP36",
+      "condition": "C2",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 1905,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "9266494f543a86528743adc2f39c7f0c137cb30fe15909b9ee6fadd136e9d708"
+    },
+    {
+      "item": "144",
+      "cp": "CP36",
+      "condition": "C3",
+      "session": "S19",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 392,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "134f348421c5116dc42e9d928d82fa030163b8908bb25582e376f4be4b0cdc4f"
+    },
+    {
+      "item": "145",
+      "cp": "CP37",
+      "condition": "C0",
+      "session": "S13",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S13"
+        ],
+        "tokens": 75,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "382f60ee4d09931f6197fcf285a7d1b122b80ad116237efb9137686429a5ee30"
+    },
+    {
+      "item": "146",
+      "cp": "CP37",
+      "condition": "C1",
+      "session": "S13",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S13"
+        ],
+        "tokens": 75,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "382f60ee4d09931f6197fcf285a7d1b122b80ad116237efb9137686429a5ee30"
+    },
+    {
+      "item": "147",
+      "cp": "CP37",
+      "condition": "C2",
+      "session": "S13",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "tokens": 1275,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "17ebad5f50ee7b5463c7134017ead7bf2fe97f7e6d37428fc97efa849004e41a"
+    },
+    {
+      "item": "148",
+      "cp": "CP37",
+      "condition": "C3",
+      "session": "S13",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S08",
+          "S10",
+          "S12",
+          "S13"
+        ],
+        "tokens": 413,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "11c4038ba1ef47dd6a30a07c308afe2c6dfc14acdce89517335c4551f796cc0e"
+    },
+    {
+      "item": "149",
+      "cp": "CP38",
+      "condition": "C0",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 73,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "59778b0e96b5a81d7621f5ee20917d1d5e81322587fb9d0763b25448333fe468"
+    },
+    {
+      "item": "150",
+      "cp": "CP38",
+      "condition": "C1",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 73,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "59778b0e96b5a81d7621f5ee20917d1d5e81322587fb9d0763b25448333fe468"
+    },
+    {
+      "item": "151",
+      "cp": "CP38",
+      "condition": "C2",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 1995,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "9ee330e4f6317258203ddb4c39eef0c0772b74311a555547078d5db40e8344a6"
+    },
+    {
+      "item": "152",
+      "cp": "CP38",
+      "condition": "C3",
+      "session": "S20",
+      "dim": "D2",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 73,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "59778b0e96b5a81d7621f5ee20917d1d5e81322587fb9d0763b25448333fe468"
+    },
+    {
+      "item": "153",
+      "cp": "CP39",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 65,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "3280fd1689f8a1fd1e30be6326ac3b8898b4a429aa98141c0e5adc2c686871ef"
+    },
+    {
+      "item": "154",
+      "cp": "CP39",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S02",
+          "S18"
+        ],
+        "tokens": 150,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "f8a6d861388468d547809fb8e6edb889185c0050ba80b4ce800ecfd540aab0b9"
+    },
+    {
+      "item": "155",
+      "cp": "CP39",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1776,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "e80060090b09cf9d4d6a27446b58c963618081d3aa544173f97f0995e55a25f5"
+    },
+    {
+      "item": "156",
+      "cp": "CP39",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S02",
+          "S12",
+          "S15",
+          "S18"
+        ],
+        "tokens": 453,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "dd7f1e54b398ceb9ff2a666750e5618aa8e01070a50480b8e70ee1677e6b62ce"
+    },
+    {
+      "item": "157",
+      "cp": "CP40",
+      "condition": "C0",
+      "session": "S12",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 59,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "628fcdb38edf75434bc74bd028a4197c543bb4f8c8467f9179cd6e0adeea91d6"
+    },
+    {
+      "item": "158",
+      "cp": "CP40",
+      "condition": "C1",
+      "session": "S12",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 59,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "628fcdb38edf75434bc74bd028a4197c543bb4f8c8467f9179cd6e0adeea91d6"
+    },
+    {
+      "item": "159",
+      "cp": "CP40",
+      "condition": "C2",
+      "session": "S12",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1073,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "6bb36689eb97622d7fc42af5bbfe8e79b7e2a77a04d2e39e239a843ecdc20136"
+    },
+    {
+      "item": "160",
+      "cp": "CP40",
+      "condition": "C3",
+      "session": "S12",
+      "dim": "D4",
+      "context": {
+        "ids": [
+          "S04",
+          "S08",
+          "S09",
+          "S12"
+        ],
+        "tokens": 278,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "a1ba5a8eadce5ad674828be69b231ed7127634f2e5c6522fadcfc03647a9fd15"
+    },
+    {
+      "item": "161",
+      "cp": "CP41",
+      "condition": "C0",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S05"
+        ],
+        "tokens": 96,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "40e00cc3a52d6f0f3c7492a3102427cf3690fb1ad0aa8f2ecc4e7a95b4a23482"
+    },
+    {
+      "item": "162",
+      "cp": "CP41",
+      "condition": "C1",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S03",
+          "S05"
+        ],
+        "tokens": 191,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "cbebbcfe60d8619cc6688eb36aef35770dd671bc9fc5e18b148caccbb681db85"
+    },
+    {
+      "item": "163",
+      "cp": "CP41",
+      "condition": "C2",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 461,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "52afa3fb15b2780e7cc67f27432dfb2ba425fbece94064f3bab40fc6dd5925e4"
+    },
+    {
+      "item": "164",
+      "cp": "CP41",
+      "condition": "C3",
+      "session": "S05",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 352,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "426a0bf21fa8cf5d67117b41ad806c10d92d18dfb51a6eb14e66b2dfff8faef4"
+    },
+    {
+      "item": "165",
+      "cp": "CP42",
+      "condition": "C0",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 105,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "79aae9e51b7bada3e341336414408ac569765ed4242d18716bf5d64954b8ef5a"
+    },
+    {
+      "item": "166",
+      "cp": "CP42",
+      "condition": "C1",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 105,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "79aae9e51b7bada3e341336414408ac569765ed4242d18716bf5d64954b8ef5a"
+    },
+    {
+      "item": "167",
+      "cp": "CP42",
+      "condition": "C2",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1119,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "c6a3fad3356e45b76b640cd85602cc1605795b78b753d4c50f6bd34a4c165498"
+    },
+    {
+      "item": "168",
+      "cp": "CP42",
+      "condition": "C3",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S07",
+          "S09",
+          "S11",
+          "S12"
+        ],
+        "tokens": 374,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "cd4513e6ea6d04f4f7e5b442e1d10b4f7cc8f8053b740a269f3044aca2bcf168"
+    },
+    {
+      "item": "169",
+      "cp": "CP43",
+      "condition": "C0",
+      "session": "S15",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S15"
+        ],
+        "tokens": 53,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "714113cc267195cfa3cc23540f2923388bcced25ed446afd8065da71d5c9ba31"
+    },
+    {
+      "item": "170",
+      "cp": "CP43",
+      "condition": "C1",
+      "session": "S15",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S14",
+          "S15"
+        ],
+        "tokens": 136,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "214edf524f88ce5050caa6fa68e47aac96200202292e3c971ec09fd118351a0d"
+    },
+    {
+      "item": "171",
+      "cp": "CP43",
+      "condition": "C2",
+      "session": "S15",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ],
+        "tokens": 1449,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "c576293154d1b5ff66eac99581720a81c60cef74c72bdac2c6f4bc1b957f7c17"
+    },
+    {
+      "item": "172",
+      "cp": "CP43",
+      "condition": "C3",
+      "session": "S15",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S05",
+          "S10",
+          "S15"
+        ],
+        "tokens": 380,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "533edb50a6558c671659813764d5968284af7fd59abef6f7d7d14ed5c55d203f"
+    },
+    {
+      "item": "173",
+      "cp": "CP44",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 35,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "f7871065a1c692211e9609c935e8efe129deab8762088920811435d312fb8889"
+    },
+    {
+      "item": "174",
+      "cp": "CP44",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S15",
+          "S18"
+        ],
+        "tokens": 153,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "444c3b346370ae37f3877b5b6f9b3b88875c72b433db6b6292019b1bbf4b75c0"
+    },
+    {
+      "item": "175",
+      "cp": "CP44",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1746,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "8aff6a33afbfb1d88d71f1c08b8def01a8f0565e053695568d7db5de1d7038ac"
+    },
+    {
+      "item": "176",
+      "cp": "CP44",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S05",
+          "S15",
+          "S17",
+          "S18"
+        ],
+        "tokens": 376,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "1fc594774c5922beaa61bf2f26dd1759be7801cebf28854b5d9ea7d43a8a2a40"
+    },
+    {
+      "item": "177",
+      "cp": "CP45",
+      "condition": "C0",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 96,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "380a4ca9da51aa5e708c5722d3980ce9bbd282a1eb0d8977a4593889c00fdc1f"
+    },
+    {
+      "item": "178",
+      "cp": "CP45",
+      "condition": "C1",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 96,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "380a4ca9da51aa5e708c5722d3980ce9bbd282a1eb0d8977a4593889c00fdc1f"
+    },
+    {
+      "item": "179",
+      "cp": "CP45",
+      "condition": "C2",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 2018,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "2023499b9cb14494d9a290aadc499648afefd44906f1a259ab365107bb078310"
+    },
+    {
+      "item": "180",
+      "cp": "CP45",
+      "condition": "C3",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S05",
+          "S10",
+          "S18",
+          "S20"
+        ],
+        "tokens": 427,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "a8b8bfe959fbd0e8af0f409d01befebdc76e7488d77246b4acd15c1211bc53fe"
+    },
+    {
+      "item": "181",
+      "cp": "CP46",
+      "condition": "C0",
+      "session": "S09",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S09"
+        ],
+        "tokens": 61,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "1f868fcbe73357700390f7854ac81b26ce251c79039b271836a4ec36d91deb76"
+    },
+    {
+      "item": "182",
+      "cp": "CP46",
+      "condition": "C1",
+      "session": "S09",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S09"
+        ],
+        "tokens": 61,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "1f868fcbe73357700390f7854ac81b26ce251c79039b271836a4ec36d91deb76"
+    },
+    {
+      "item": "183",
+      "cp": "CP46",
+      "condition": "C2",
+      "session": "S09",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09"
+        ],
+        "tokens": 790,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "d5c0f2c92e8d2d9f13980fb4418b46104723418dd6145dee99c34f6ac121e49d"
+    },
+    {
+      "item": "184",
+      "cp": "CP46",
+      "condition": "C3",
+      "session": "S09",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S03",
+          "S06",
+          "S07",
+          "S09"
+        ],
+        "tokens": 348,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "9775cdf4697b3348d59027d4100bed63ff648b26e9b3a919b6632d436890e563"
+    },
+    {
+      "item": "185",
+      "cp": "CP47",
+      "condition": "C0",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 132,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "b5cdcb96c605064cf846c42b21d612122f7b996ed6786e5806562ffc512534cc"
+    },
+    {
+      "item": "186",
+      "cp": "CP47",
+      "condition": "C1",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S09",
+          "S10",
+          "S12"
+        ],
+        "tokens": 320,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "0bf0e8fee1327f7ce6a2f1cafffbab1f2a8b2eab2e754006fd146c4b62b55195"
+    },
+    {
+      "item": "187",
+      "cp": "CP47",
+      "condition": "C2",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1146,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "8d52d20e3d80111f7db14170a7b1cf10bfada75a850af41290fefe5642de31d4"
+    },
+    {
+      "item": "188",
+      "cp": "CP47",
+      "condition": "C3",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S07",
+          "S09",
+          "S11",
+          "S12"
+        ],
+        "tokens": 401,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "input_sha256": "8c6aedc50edf4aff3c606579d894902f67db8c4cddba7ffa13a01bba24108603"
+    },
+    {
+      "item": "189",
+      "cp": "CP48",
+      "condition": "C0",
+      "session": "S14",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S14"
+        ],
+        "tokens": 42,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "eaee966863adec9d616fe2ef013283d123d86c842e44b5779504ef2e2e16ee9e"
+    },
+    {
+      "item": "190",
+      "cp": "CP48",
+      "condition": "C1",
+      "session": "S14",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S13",
+          "S14"
+        ],
+        "tokens": 155,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "a700ec2ce63991c2f6d4bda84ee0eae99a74ff8ae998f07feba3bb29b6016d05"
+    },
+    {
+      "item": "191",
+      "cp": "CP48",
+      "condition": "C2",
+      "session": "S14",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "tokens": 1355,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "4306bedc6ed38765b3f22b3fc00a5e4acbec4531254bd3ea451c770c533db8b9"
+    },
+    {
+      "item": "192",
+      "cp": "CP48",
+      "condition": "C3",
+      "session": "S14",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S11",
+          "S13",
+          "S14"
+        ],
+        "tokens": 362,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "7ee02952a5155d275f4a3e01287bf5332e1fa8d3776a8356d7bd36c5f0504344"
+    },
+    {
+      "item": "193",
+      "cp": "CP49",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "271ad612bc67cb9177660463c7a089f0ba7c72a0fc737355a9d8547eca88e5ff"
+    },
+    {
+      "item": "194",
+      "cp": "CP49",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S15",
+          "S18"
+        ],
+        "tokens": 116,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "6eeb8257f75518b52a3491ff63b053dd14387bdc8a6d2c49192ba14ac7c2668d"
+    },
+    {
+      "item": "195",
+      "cp": "CP49",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1710,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "5ba40494557e7e6d79f95aca2b0d98e208f6b96f27fa4f80fec761609053dc7d"
+    },
+    {
+      "item": "196",
+      "cp": "CP49",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 314,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "afe0b629625bad9fcef81de820684a9801a1526e7b502730357c608f5de36b25"
+    },
+    {
+      "item": "197",
+      "cp": "CP50",
+      "condition": "C0",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 88,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "f0184d951735b64d4d5c98ca3e6f325c2b70682225bd402cde85c5b286c08ee3"
+    },
+    {
+      "item": "198",
+      "cp": "CP50",
+      "condition": "C1",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 88,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "f0184d951735b64d4d5c98ca3e6f325c2b70682225bd402cde85c5b286c08ee3"
+    },
+    {
+      "item": "199",
+      "cp": "CP50",
+      "condition": "C2",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 2010,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "a7a88a0c11531d732a5293aa3e5a5bccc65a70b57529a8e4c4474fd261d4991e"
+    },
+    {
+      "item": "200",
+      "cp": "CP50",
+      "condition": "C3",
+      "session": "S20",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S10",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 398,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 8
+      },
+      "input_sha256": "b0db6cc2471dbb1069bb80a9ecb75b5e8d7a0d92ba7022076681708c8f64c067"
+    },
+    {
+      "item": "201",
+      "cp": "CP51",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 76,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "ff5f1b83ef0faab9639b1de96f71b62fe6463f1c57110d76b6045403f3cbc35b"
+    },
+    {
+      "item": "202",
+      "cp": "CP51",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S08",
+          "S18"
+        ],
+        "tokens": 130,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "2a31433c8ef071ddfe51ec854993d4bbde7cee4b303be664b3e3c08557e7bf3c"
+    },
+    {
+      "item": "203",
+      "cp": "CP51",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1787,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "9acb27764a19c9e7c5520fb41fb858eeec8e6dd15fd420632c7ea150cac5408e"
+    },
+    {
+      "item": "204",
+      "cp": "CP51",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S08",
+          "S10",
+          "S12",
+          "S18"
+        ],
+        "tokens": 415,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "input_sha256": "23272e0b7522c5d8e7caa13a823bfa9ce7a67bc48115614ae72338ad8a4e16e8"
+    },
+    {
+      "item": "205",
+      "cp": "CP52",
+      "condition": "C0",
+      "session": "S20",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S20"
+        ],
+        "tokens": 110,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 10
+      },
+      "input_sha256": "299a41712556e50f94e0a4db633bf0ee54f63430e869c5b4eaebe5d88b52de6f"
+    },
+    {
+      "item": "206",
+      "cp": "CP52",
+      "condition": "C1",
+      "session": "S20",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S10",
+          "S20"
+        ],
+        "tokens": 210,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 10
+      },
+      "input_sha256": "a678fd2f48cd3b6f8ccff89cd80a0b661d970854a9690dcf15031e34f22c03f0"
+    },
+    {
+      "item": "207",
+      "cp": "CP52",
+      "condition": "C2",
+      "session": "S20",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20"
+        ],
+        "tokens": 2033,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 10
+      },
+      "input_sha256": "0500eb96f50fe5f238bf20a910eb13c1928e78f7207b9120bec18754606a68b4"
+    },
+    {
+      "item": "208",
+      "cp": "CP52",
+      "condition": "C3",
+      "session": "S20",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S10",
+          "S12",
+          "S13",
+          "S20"
+        ],
+        "tokens": 508,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 10
+      },
+      "input_sha256": "963ab1c69dc1aad317fc3cfd1ef34acd6315e53c0e3c766e0ad6329921b12a26"
+    },
+    {
+      "item": "209",
+      "cp": "CP53",
+      "condition": "C0",
+      "session": "S13",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S13"
+        ],
+        "tokens": 58,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "ced725205d42bd18c0c6df28616852d4e0d25729bfcf6d081f33a2957437616c"
+    },
+    {
+      "item": "210",
+      "cp": "CP53",
+      "condition": "C1",
+      "session": "S13",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S12",
+          "S13"
+        ],
+        "tokens": 243,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "5eff669f1638b098e1d244bbd58fd2d2308cc1d22f722f6cdd288eb1cb289f22"
+    },
+    {
+      "item": "211",
+      "cp": "CP53",
+      "condition": "C2",
+      "session": "S13",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13"
+        ],
+        "tokens": 1258,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "5adcd3c1374006cebf0d133c62cdb72905d20d20ff70be3524aed4ad3bada6c6"
+    },
+    {
+      "item": "212",
+      "cp": "CP53",
+      "condition": "C3",
+      "session": "S13",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S09",
+          "S10",
+          "S12",
+          "S13"
+        ],
+        "tokens": 431,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "49caf59606d299186ce45bd9ba54857f1a9ad07c1a4fefc74b3436f6cf2e559a"
+    },
+    {
+      "item": "213",
+      "cp": "CP54",
+      "condition": "C0",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 70,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "3f9aeea787cca80bc1ab1b3b54047604bb5572ba424af849924f1dbc313dee00"
+    },
+    {
+      "item": "214",
+      "cp": "CP54",
+      "condition": "C1",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 70,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "3f9aeea787cca80bc1ab1b3b54047604bb5572ba424af849924f1dbc313dee00"
+    },
+    {
+      "item": "215",
+      "cp": "CP54",
+      "condition": "C2",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 1895,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "823422215695ea540eab2632adcac010efbdc82c777e1700bf647c8bb1fded0b"
+    },
+    {
+      "item": "216",
+      "cp": "CP54",
+      "condition": "C3",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S06",
+          "S15",
+          "S18",
+          "S19"
+        ],
+        "tokens": 411,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "input_sha256": "286513ab1b365daf99edbdadd81bd94181eb5be829c9de8044c2ef62c1959e35"
+    },
+    {
+      "item": "217",
+      "cp": "CP55",
+      "condition": "C0",
+      "session": "S14",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S14"
+        ],
+        "tokens": 53,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "8064ab9c27187a3f46562ac0271bab6704df45f442309b876f9a7690fb1bc773"
+    },
+    {
+      "item": "218",
+      "cp": "CP55",
+      "condition": "C1",
+      "session": "S14",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S01",
+          "S13",
+          "S14"
+        ],
+        "tokens": 276,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "7bb5e4050f93589526f92a3e2fdc9648323b2ad4c29a6f31f4c7535e514a7752"
+    },
+    {
+      "item": "219",
+      "cp": "CP55",
+      "condition": "C2",
+      "session": "S14",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "tokens": 1366,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "cb6c9321059c5132c3e51b6dad16162d7c9ec065596c806ef17a9745c9830785"
+    },
+    {
+      "item": "220",
+      "cp": "CP55",
+      "condition": "C3",
+      "session": "S14",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S05",
+          "S10",
+          "S12",
+          "S14"
+        ],
+        "tokens": 456,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "a5a3c82b0613ddd5f8b6864c137e1b1dcb2649293ba817a45b2ba8140488657d"
+    },
+    {
+      "item": "221",
+      "cp": "CP56",
+      "condition": "C0",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 45,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "71f8b060c60f7b6013d668b2c5de0adb8c12e694908d56680ff3a38fa140d574"
+    },
+    {
+      "item": "222",
+      "cp": "CP56",
+      "condition": "C1",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S16",
+          "S19"
+        ],
+        "tokens": 136,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "449c1c4c0f335bad59d3c44051e9f1f12bd69ca904628a223ae9e05e3b236fa6"
+    },
+    {
+      "item": "223",
+      "cp": "CP56",
+      "condition": "C2",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 1870,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "0e481553787a87ff841993f6984a2f44b9b5d2991e827c58c3dbe4bb47787ad7"
+    },
+    {
+      "item": "224",
+      "cp": "CP56",
+      "condition": "C3",
+      "session": "S19",
+      "dim": "D7",
+      "context": {
+        "ids": [
+          "S12",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 451,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "4b2b2aea8d44880b99c7263e394d1a8ec9b26ab8ebca487ce9e9845d032a0dd5"
+    },
+    {
+      "item": "225",
+      "cp": "CP57",
+      "condition": "C0",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 90,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "cee6cafecd14642e1f0295031aefe2484774696d7087e2d4a2d72ade71774e29"
+    },
+    {
+      "item": "226",
+      "cp": "CP57",
+      "condition": "C1",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S05",
+          "S12"
+        ],
+        "tokens": 207,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "580f2164fdbe4b922dc5c7024e6b421e47a213023aa11c10d39c048e38a71602"
+    },
+    {
+      "item": "227",
+      "cp": "CP57",
+      "condition": "C2",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1104,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "75997dcd141042dc13f2c6c838844aa3e393500f0d3563adebb14c4ed72b362c"
+    },
+    {
+      "item": "228",
+      "cp": "CP57",
+      "condition": "C3",
+      "session": "S12",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S05",
+          "S10",
+          "S12"
+        ],
+        "tokens": 416,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 6
+      },
+      "input_sha256": "570d350614a8436ee7f7149264928cf03baa225bdda0b793ba1bed312ecfdef6"
+    },
+    {
+      "item": "229",
+      "cp": "CP58",
+      "condition": "C0",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 25,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "d5698142c5717fa93f61b6c444b53c3ec47290836fc787327796feabd3851070"
+    },
+    {
+      "item": "230",
+      "cp": "CP58",
+      "condition": "C1",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S15",
+          "S18"
+        ],
+        "tokens": 142,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "685dd416263f8d39bd79cb50c044f630c556ee9eb5e76e72ab4250f7ccc828bc"
+    },
+    {
+      "item": "231",
+      "cp": "CP58",
+      "condition": "C2",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18"
+        ],
+        "tokens": 1736,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "4c4d73dede9eae997ec9960ea4eec669361ff3dc5f4a48432c8ab55e2c0ff1c9"
+    },
+    {
+      "item": "232",
+      "cp": "CP58",
+      "condition": "C3",
+      "session": "S18",
+      "dim": "D1",
+      "context": {
+        "ids": [
+          "S14",
+          "S15",
+          "S17",
+          "S18"
+        ],
+        "tokens": 331,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "e39bd0954f2a1e0c9a130481e904593d352ca03fd9016e1e838a0ac586541e78"
+    },
+    {
+      "item": "233",
+      "cp": "CP59",
+      "condition": "C0",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S22"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "ec838015bfe856a85ef9ba2edb098c4f9173fc0880bd4ab3c95db1777d80c7fe"
+    },
+    {
+      "item": "234",
+      "cp": "CP59",
+      "condition": "C1",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S21",
+          "S22"
+        ],
+        "tokens": 120,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "1b6b671985a73653caa0067f47e9e73e635922b08f4d5e4b6a0a2d9f7b9f1f1b"
+    },
+    {
+      "item": "235",
+      "cp": "CP59",
+      "condition": "C2",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22"
+        ],
+        "tokens": 2166,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "cdd42ba41fad02c9ba1c62a240f4e075244f3631c9d4061fc8cf0896828ff05b"
+    },
+    {
+      "item": "236",
+      "cp": "CP59",
+      "condition": "C3",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S08",
+          "S18",
+          "S21",
+          "S22"
+        ],
+        "tokens": 288,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "a3ff6133e9ce161040e894df54dac558b582b4e242f6fabc3d2f8e48edb8edd9"
+    },
+    {
+      "item": "237",
+      "cp": "CP60",
+      "condition": "C0",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S22"
+        ],
+        "tokens": 28,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "62b47099976afd435d2536aad46287c2e8700e6ae89ec00d2bdf6ca075cd552d"
+    },
+    {
+      "item": "238",
+      "cp": "CP60",
+      "condition": "C1",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S21",
+          "S22"
+        ],
+        "tokens": 150,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "b050f76e6b3c229fbc2fe951aa665bad82fb3a03b0782005c7a4b1268cbd66af"
+    },
+    {
+      "item": "239",
+      "cp": "CP60",
+      "condition": "C2",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22"
+        ],
+        "tokens": 2196,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "e9f80c03ac72b99137db7e4bc317d10cd3fd932a2df2612c928b93f85c775556"
+    },
+    {
+      "item": "240",
+      "cp": "CP60",
+      "condition": "C3",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S06",
+          "S15",
+          "S21",
+          "S22"
+        ],
+        "tokens": 377,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "input_sha256": "948a629b0ddb9bbc03d443de678eb9678ec05459464bdf195e577093c88d4d4c"
+    },
+    {
+      "item": "241",
+      "cp": "CP61",
+      "condition": "C0",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S22"
+        ],
+        "tokens": 40,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "95593ed8bc78483d0c225b9d0066f90de7b056e94bdf00ddfac99363bab49ba2"
+    },
+    {
+      "item": "242",
+      "cp": "CP61",
+      "condition": "C1",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S21",
+          "S22"
+        ],
+        "tokens": 161,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "cea3f95c28dfd62c7873a3796a34622ee8cf1b3fe225980aa1734f39c6289f4e"
+    },
+    {
+      "item": "243",
+      "cp": "CP61",
+      "condition": "C2",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22"
+        ],
+        "tokens": 2208,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "9eef1cbef161a83445c8ab4e4b883e914e6537baf451642c19506cd956389541"
+    },
+    {
+      "item": "244",
+      "cp": "CP61",
+      "condition": "C3",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S14",
+          "S16",
+          "S20",
+          "S22"
+        ],
+        "tokens": 338,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "input_sha256": "340df3699d722142aefc7640abdad9543457a6aae4d71329f59fb4b8d18aea56"
+    },
+    {
+      "item": "245",
+      "cp": "CP62",
+      "condition": "C0",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S22"
+        ],
+        "tokens": 53,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "2c8dfb295fe78e93141f374e8ac5cf02be4195f2d081a4985493814d3e121542"
+    },
+    {
+      "item": "246",
+      "cp": "CP62",
+      "condition": "C1",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S21",
+          "S22"
+        ],
+        "tokens": 175,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "66e038cc217da704e96f1051556a0eda11ad64c380ed82d9dfb9f3dab50a4966"
+    },
+    {
+      "item": "247",
+      "cp": "CP62",
+      "condition": "C2",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22"
+        ],
+        "tokens": 2221,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "a764965ff411de232b99285c36e096768c117bdecb39476abd57ce5f8468e092"
+    },
+    {
+      "item": "248",
+      "cp": "CP62",
+      "condition": "C3",
+      "session": "S22",
+      "dim": "D1/D3",
+      "context": {
+        "ids": [
+          "S02",
+          "S20",
+          "S21",
+          "S22"
+        ],
+        "tokens": 383,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "input_sha256": "8e3550c0bb09999854e174a0ee680f576cb5c6a1d04c771ba3d9d39ac384ad41"
+    },
+    {
+      "item": "249",
+      "cp": "CP63",
+      "condition": "C0",
+      "session": "S23",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S23"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "47f847b920dfc1fc7e455319a1dac2ada81d962071497ac08a186e1be4313592"
+    },
+    {
+      "item": "250",
+      "cp": "CP63",
+      "condition": "C1",
+      "session": "S23",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S18",
+          "S23"
+        ],
+        "tokens": 113,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "2271b1e527cfd33f848c730d1879d21444ad89831bcaad925c16302d8818c52d"
+    },
+    {
+      "item": "251",
+      "cp": "CP63",
+      "condition": "C2",
+      "session": "S23",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23"
+        ],
+        "tokens": 2246,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "bd6ee5de5e5652eec60fc2a35c8803e2a753bf4445e83e5fd4a9056457261c62"
+    },
+    {
+      "item": "252",
+      "cp": "CP63",
+      "condition": "C3",
+      "session": "S23",
+      "dim": "D3",
+      "context": {
+        "ids": [
+          "S18",
+          "S20",
+          "S22",
+          "S23"
+        ],
+        "tokens": 316,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "input_sha256": "1dc4b3cb26be0d84a6cb42adfe92b3e5ac8d11a00e10f0bce66ce3ed81d2afd6"
+    }
+  ]
+}

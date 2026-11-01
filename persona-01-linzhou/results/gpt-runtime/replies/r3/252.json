@@ -1,0 +1,18 @@
+{
+  "text": "好的，我按给妈妈的礼物来选，总价控制在500元以内。先查一下上次选的包和购买记录，避免买重。",
+  "payload": [],
+  "citations": [
+    {
+      "type": "session",
+      "id": "S18"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "search.local",
+      "params": {
+        "query": "S18 给妈妈的礼物 第二个包 品牌 款式 购买记录"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"text":"好的，按老规矩直接下单：下周五下午，公司附近那家咖啡店，6 杯拿铁和 1 个可颂。","payload":[],"citations":[{"type":"session","id":"S21"}],"tool_calls":[{"tool":"order.create","params":{"merchant":"公司附近那家咖啡店","items":[{"name":"拿铁","quantity":6},{"name":"可颂","quantity":1}],"scheduled_for":"下周五下午"}}]}

@@ -1,0 +1,1709 @@
+{
+  "meta": {
+    "run_id": "20261028-201348-fcb4",
+    "mode": "api",
+    "model": "hy4-preview",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 63,
+      "total": 63
+    },
+    "persona": "persona-01-linzhou",
+    "workers": 4
+  },
+  "runs": [
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好的，我会在日历上创建一条提醒：2026 年 11 月 24 日（提前三天）提醒你，季度汇报需在 11 月 27 日提交。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 62376,
+        "tokens_in": 292,
+        "tokens_out": 3415
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好的，已为你创建日历提醒：2026年11月24日（提前三天）提醒你，季度汇报任务需在11月27日提交。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 82163,
+        "tokens_in": 292,
+        "tokens_out": 4665
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "tokens": 323,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好的，已为你创建日历提醒：2026-11-24（提前三天）提醒你季度汇报将于 11 月 27 日提交。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24",
+              "title": "汇报提醒：季度汇报 11月27日交",
+              "description": "提前三天提醒，季度汇报任务截止日期为 2026-11-27，请记得提交。"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 77763,
+        "tokens_in": 624,
+        "tokens_out": 4873
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01",
+          "S04"
+        ],
+        "tokens": 144,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好的，已在日历创建提醒：2026-11-24（提前三天）提醒你，季度汇报将于 2026 年 11 月 27 日提交，请提前准备。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 85151,
+        "tokens_in": 419,
+        "tokens_out": 4600
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S05"
+        ],
+        "tokens": 75,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "抱歉，历史会话（S05）里没有提到你汇报的提交日期。我帮你查一下日历中的日程安排，看看是否有相关的‘汇报’截止时间。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S05"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {}
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 72716,
+        "tokens_in": 324,
+        "tokens_out": 4093
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S04",
+          "S05"
+        ],
+        "tokens": 151,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "你的季度汇报是 11 月 27 号交（2026 年 11 月 27 日，周五），内容是 Q4 启动会上说的双 11 项目的季度复盘，别和其他汇报搞混了。之前你让我在日历上建了提前三天的提醒，也就是 11 月 24 号会提醒你准备。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 67706,
+        "tokens_in": 407,
+        "tokens_out": 4040
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 440,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "你的季度汇报是 11 月 27 号交（2026-11-27，周五）。这是 10/30 你提到的那个任务：Q4 启动会上说的双 11 项目季度复盘，别和其他汇报搞混。另外你当时让我在日历建提前三天的提醒，也就是 11 月 24 号提醒你；需要我帮你查一下日历里有没有这个提醒，或者现在补建一个吗？",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 86168,
+        "tokens_in": 739,
+        "tokens_out": 5264
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 246,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "你的季度汇报是 2026 年 11 月 27 号（周五）交，内容是 Q4 启动会上说的双 11 项目的季度复盘，别和其他汇报搞混了。之前你让我在日历上建了提前三天的提醒，也就是 2026 年 11 月 24 号（周二）会提醒你。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 83637,
+        "tokens_in": 517,
+        "tokens_out": 4895
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S10",
+      "dim": "D2",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S10"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "好的，我先查看日历中下周（2026-11-23 至 2026-11-29）的安排，确认去温州出差的具体日期和可能的出发地等信息。为了帮您查票，还需要您补充：1) 出发城市；2) 具体的出发/返回日期（若日历中未明确）；3) 偏好的交通方式（飞机/高铁）以及是否需要往返。收到这些信息后，我会进一步帮您查询票务。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start": "2026-11-23",
+              "end": "2026-11-29"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期', '确认']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 82808,
+        "tokens_in": 239,
+        "tokens_out": 4516
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S10",
+      "dim": "D2",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S10"
+        ],
+        "tokens": 1,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "好的，我先帮您查看下周（2026-11-23 至 2026-11-29）的日历安排，并查询是否已有温州相关的票务订单。为了进一步帮您查票，请告诉我：1) 出发城市；2) 具体出发和返程日期；3) 偏好飞机还是高铁？",
+        "payload": [],
+        "citations": [
+          {
+            "type": "none"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start_date": "2026-11-23",
+              "end_date": "2026-11-29"
+            }
+          },
+          {
+            "tool": "order.query",
+            "params": {
+              "query": "温州"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 98103,
+        "tokens_in": 239,
+        "tokens_out": 5645
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S10",
+      "dim": "D2",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10"
+        ],
+        "tokens": 816,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "好的。按你 11/16（周一）的时间，下周是 11/23（周一）到 11/29（周日）；你公司在杭州滨江（网商路），默认从杭州出发去温州。我先帮你做两件事：1）查一下下周（11/23-11/29）的日历安排，看是否和出差冲突（比如你之前提过的 11/27 季度汇报截止，见 S04）；2）搜一下杭州→温州下周的高铁和机票班次/票价（目前没有直接订票的工具，先查信息）。查到后我再整理给你。如果你有具体出发/返程日期，或只坐高铁/飞机，也告诉我，我帮你细看。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S09"
+          },
+          {
+            "type": "session",
+            "id": "S01"
+          },
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start": "2026-11-23",
+              "end": "2026-11-29"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至11月29日 杭州到温州 高铁 时刻表 票价"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至11月29日 杭州到温州 机票 航班 票价"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 134708,
+        "tokens_in": 1154,
+        "tokens_out": 7822
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S10",
+      "dim": "D2",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S06",
+          "S08",
+          "S09",
+          "S10"
+        ],
+        "tokens": 250,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "好的。按你之前提到的城西/滨江和公司位置，我默认你从杭州出发；下周按 11/16 这周算应是 11/23（周一）到 11/29（周日）。我先帮你检索这周杭州→温州的高铁和机票信息，并看一下日历里下周有没有冲突安排。请再确认：具体出发/返程日期（或当天往返）、偏好高铁还是飞机、以及期望的出发时间段。收到后我帮你细看余票/航班并安排日程。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S06"
+          },
+          {
+            "type": "session",
+            "id": "S08"
+          },
+          {
+            "type": "session",
+            "id": "S09"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start": "2026-11-23",
+              "end": "2026-11-29"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至29日 杭州到温州 高铁 时刻表 票价 余票查询"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至29日 杭州到温州 机票 航班时刻 价格"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期', '确认']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 102747,
+        "tokens_in": 513,
+        "tokens_out": 5851
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 51,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "城西体育公园飞盘场 11/7 周六 09:00-11:00 已被订满，没法按老规矩订那个场。目前滨江江边球场、拱墅某学校操场仍可预订。你想改订哪一个？或者需要我帮你看看其他时间/场地吗？",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S06"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 92283,
+        "tokens_in": 343,
+        "tokens_out": 4860
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 51,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "抱歉，按老规矩要订的城西体育公园飞盘场在 11/7（周六）09:00-11:00 已经订满了，没法直接订。目前还能订的场地有：滨江江边球场、拱墅某学校操场。你想改订哪一个？确认后我马上帮你下单。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S06"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 84567,
+        "tokens_in": 343,
+        "tokens_out": 4658
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 534,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 145909,
+        "tokens_in": 887,
+        "tokens_out": 8192
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 246,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "城西体育公园飞盘场今天（11/7）09:00-11:00 已经订满了，没法按老规矩帮你订那个场。目前滨江江边球场和拱墅某学校操场仍可预订；你之前提到在拱墅这边，拱墅某学校操场可能更方便。你想改订哪一个？确认后我立刻帮你下单。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S06"
+          },
+          {
+            "type": "session",
+            "id": "S05"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 104158,
+        "tokens_in": 555,
+        "tokens_out": 5634
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP01": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好的，我会在日历上创建一条提醒：2026 年 11 月 24 日（提前三天）提醒你，季度汇报需在 11 月 27 日提交。",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S04"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 35,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好的，已为你创建日历提醒：2026年11月24日（提前三天）提醒你，季度汇报任务需在11月27日提交。",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S04"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 35,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好的，已为你创建日历提醒：2026-11-24（提前三天）提醒你季度汇报将于 11 月 27 日提交。",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24",
+              "title": "汇报提醒：季度汇报 11月27日交",
+              "description": "提前三天提醒，季度汇报任务截止日期为 2026-11-27，请记得提交。"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 323,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好的，已在日历创建提醒：2026-11-24（提前三天）提醒你，季度汇报将于 2026 年 11 月 27 日提交，请提前准备。",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S04"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 144,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "非记忆题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [
+          "calendar.create"
+        ],
+        "c3_tools": [
+          "calendar.create"
+        ],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.736
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.843,
+        "c3_text_sim": 0.696,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S04"
+        ],
+        "retrieved": [
+          "S01"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP02": {
+      "C0": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "抱歉，历史会话（S05）里没有提到你汇报的提交日期。我帮你查一下日历中的日程安排，看看是否有相关的‘汇报’截止时间。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {}
+          }
+        ],
+        "context": {
+          "ids": [
+            "S05"
+          ],
+          "text": "【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 75,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "你的季度汇报是 11 月 27 号交（2026 年 11 月 27 日，周五），内容是 Q4 启动会上说的双 11 项目的季度复盘，别和其他汇报搞混了。之前你让我在日历上建了提前三天的提醒，也就是 11 月 24 号会提醒你准备。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S04",
+            "S05"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 151,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "你的季度汇报是 11 月 27 号交（2026-11-27，周五）。这是 10/30 你提到的那个任务：Q4 启动会上说的双 11 项目季度复盘，别和其他汇报搞混。另外你当时让我在日历建提前三天的提醒，也就是 11 月 24 号提醒你；需要我帮你查一下日历里有没有这个提醒，或者现在补建一个吗？",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 440,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "你的季度汇报是 2026 年 11 月 27 号（周五）交，内容是 Q4 启动会上说的双 11 项目的季度复盘，别和其他汇报搞混了。之前你让我在日历上建了提前三天的提醒，也就是 2026 年 11 月 24 号（周二）会提醒你。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 246,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "有效记忆",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": false,
+          "c3_fail": false,
+          "c3_text_sim": 0.093
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.718,
+        "c3_text_sim": 0.873,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S04"
+        ],
+        "retrieved": [
+          "S03",
+          "S04"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP04": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期', '确认']"
+          }
+        ],
+        "text": "好的，我先查看日历中下周（2026-11-23 至 2026-11-29）的安排，确认去温州出差的具体日期和可能的出发地等信息。为了帮您查票，还需要您补充：1) 出发城市；2) 具体的出发/返回日期（若日历中未明确）；3) 偏好的交通方式（飞机/高铁）以及是否需要往返。收到这些信息后，我会进一步帮您查询票务。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start": "2026-11-23",
+              "end": "2026-11-29"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S10"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期']"
+          }
+        ],
+        "text": "好的，我先帮您查看下周（2026-11-23 至 2026-11-29）的日历安排，并查询是否已有温州相关的票务订单。为了进一步帮您查票，请告诉我：1) 出发城市；2) 具体出发和返程日期；3) 偏好飞机还是高铁？",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start_date": "2026-11-23",
+              "end_date": "2026-11-29"
+            }
+          },
+          {
+            "tool": "order.query",
+            "params": {
+              "query": "温州"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S10"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期']"
+          }
+        ],
+        "text": "好的。按你 11/16（周一）的时间，下周是 11/23（周一）到 11/29（周日）；你公司在杭州滨江（网商路），默认从杭州出发去温州。我先帮你做两件事：1）查一下下周（11/23-11/29）的日历安排，看是否和出差冲突（比如你之前提过的 11/27 季度汇报截止，见 S04）；2）搜一下杭州→温州下周的高铁和机票班次/票价（目前没有直接订票的工具，先查信息）。查到后我再整理给你。如果你有具体出发/返程日期，或只坐高铁/飞机，也告诉我，我帮你细看。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start": "2026-11-23",
+              "end": "2026-11-29"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至11月29日 杭州到温州 高铁 时刻表 票价"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至11月29日 杭州到温州 机票 航班 票价"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S07】11/9 周一 22:40｜主题：双 11 前夜\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动",
+          "tokens": 816,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '确认', '调整', '按上次']，命中['日期', '确认']"
+          }
+        ],
+        "text": "好的。按你之前提到的城西/滨江和公司位置，我默认你从杭州出发；下周按 11/16 这周算应是 11/23（周一）到 11/29（周日）。我先帮你检索这周杭州→温州的高铁和机票信息，并看一下日历里下周有没有冲突安排。请再确认：具体出发/返程日期（或当天往返）、偏好高铁还是飞机、以及期望的出发时间段。收到后我帮你细看余票/航班并安排日程。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "start": "2026-11-23",
+              "end": "2026-11-29"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至29日 杭州到温州 高铁 时刻表 票价 余票查询"
+            }
+          },
+          {
+            "tool": "search.web",
+            "params": {
+              "query": "2026年11月23日至29日 杭州到温州 机票 航班时刻 价格"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S06",
+            "S08",
+            "S09",
+            "S10"
+          ],
+          "text": "【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动",
+          "tokens": 250,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "非记忆题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [
+          "calendar.list",
+          "order.query"
+        ],
+        "c3_tools": [
+          "calendar.list",
+          "search.web"
+        ],
+        "tool_diff_c1_c3": true,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.192
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.227,
+        "c3_text_sim": 0.189,
+        "c2_tool_diff": true
+      },
+      "retrieval": {
+        "evidence": [
+          "S10"
+        ],
+        "retrieved": [
+          "S06",
+          "S08",
+          "S09"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP03": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ],
+        "text": "城西体育公园飞盘场 11/7 周六 09:00-11:00 已被订满，没法按老规矩订那个场。目前滨江江边球场、拱墅某学校操场仍可预订。你想改订哪一个？或者需要我帮你看看其他时间/场地吗？",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S06"
+          ],
+          "text": "【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 51,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ],
+        "text": "抱歉，按老规矩要订的城西体育公园飞盘场在 11/7（周六）09:00-11:00 已经订满了，没法直接订。目前还能订的场地有：滨江江边球场、拱墅某学校操场。你想改订哪一个？确认后我马上帮你下单。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S06"
+          ],
+          "text": "【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 51,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中[]"
+          }
+        ],
+        "text": "",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 534,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ],
+        "text": "城西体育公园飞盘场今天（11/7）09:00-11:00 已经订满了，没法按老规矩帮你订那个场。目前滨江江边球场和拱墅某学校操场仍可预订；你之前提到在拱墅这边，拱墅某学校操场可能更方便。你想改订哪一个？确认后我立刻帮你下单。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 246,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "非记忆题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.693
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": true,
+        "c2_text_sim": 0.0,
+        "c3_text_sim": 0.66,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S06"
+        ],
+        "retrieved": [
+          "S04",
+          "S05"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    }
+  }
+}

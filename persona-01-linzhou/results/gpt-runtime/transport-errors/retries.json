@@ -1,0 +1,86 @@
+{
+  "scope": "Transport failures only; no retries triggered by scoring",
+  "round": "r2",
+  "items": [
+    {
+      "item": "027",
+      "original": "r2-027.json",
+      "reason": "Reply explicitly states input read truncated before current message",
+      "retry": "fresh session with complete read of identical frozen JSON"
+    },
+    {
+      "item": "031",
+      "original": "r2-031.json",
+      "reason": "Reply explicitly states input read truncated before current message",
+      "retry": "fresh session with complete read of identical frozen JSON"
+    },
+    {
+      "item": "039",
+      "original": "r2-039.json",
+      "reason": "Reply explicitly states input read truncated before current message",
+      "retry": "fresh session with complete read of identical frozen JSON"
+    },
+    {
+      "item": "060",
+      "original": "r2-060.json",
+      "reason": "Invalid JSON reply schema: Reply must be a JSON object",
+      "retry": "fresh session, same frozen input, no score-based selection"
+    },
+    {
+      "item": "062",
+      "original": "r2-062.json",
+      "reason": "Invalid JSON reply schema: Reply must be a JSON object",
+      "retry": "fresh session, same frozen input, no score-based selection"
+    },
+    {
+      "item": "090",
+      "original": "r2-090.json",
+      "reason": "Invalid JSON reply schema: Reply must be a JSON object",
+      "retry": "fresh session, same frozen input, no score-based selection"
+    },
+    {
+      "item": "097",
+      "original": "r2-097.json",
+      "reason": "Invalid JSON reply schema: Reply must be a JSON object",
+      "retry": "fresh session, same frozen input, no score-based selection"
+    },
+    {
+      "item": "108",
+      "original": "r2-108.json",
+      "reason": "Invalid JSON reply schema: Invalid or missing field: text",
+      "retry": "fresh session, same frozen input, no score-based selection"
+    },
+    {
+      "item": "112",
+      "original": "r2-112.json",
+      "reason": "Invalid JSON reply schema: Invalid or missing field: text",
+      "retry": "fresh session, same frozen input, no score-based selection"
+    },
+    {
+      "item": "119",
+      "original": "r2-119.json",
+      "reason": "Invalid JSON reply schema: Reply must be a JSON object",
+      "retry": "fresh session, same frozen input, no score-based selection"
+    }
+  ],
+  "input_policy": "Do not modify input messages or manifest hashes",
+  "reply_policy": "Retain failed originals; do not repair or rerun scored answers",
+  "trace_audit": "Broad trace search blocked by permission; stopped, no alternate access attempted",
+  "r3_items": [
+    {
+      "item": "218",
+      "original": "restored unchanged to replies/r3/218.json",
+      "original_agent_id": "<runtime-session-ref>",
+      "excluded_retry": "r3-218-unnecessary-retry.json",
+      "excluded_retry_agent_id": "<runtime-session-ref>",
+      "reason": "Coordinator initially misindexed the parallel failure as 218 instead of 219. Corrected against call ordering and missing-file validation; restored original 218 and excluded unnecessary retry irrespective of scores"
+    },
+    {
+      "item": "219",
+      "original": null,
+      "agent_id": "<runtime-session-ref>",
+      "reason": "Agent reports Python reads terminated (SIGTERM, exit 137); output file missing on collector validation",
+      "retry": "fresh session with same frozen input; no score-based selection"
+    }
+  ]
+}

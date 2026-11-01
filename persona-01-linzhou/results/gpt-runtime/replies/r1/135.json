@@ -1,0 +1,1 @@
+{"text":"好的，你那杯改成燕麦拿铁，组里6人的下午茶不变。我先查询这次订单的状态，再处理更改；你的严重花生过敏也需要向商家确认，包括交叉接触风险。","payload":[],"citations":[{"type":"session","id":"S08"},{"type":"session","id":"S07"},{"type":"session","id":"S02"}],"tool_calls":[{"tool":"order.query","params":{"query":"本次公司附近的下午茶订单：组里6人，另给我带1杯"}}]}

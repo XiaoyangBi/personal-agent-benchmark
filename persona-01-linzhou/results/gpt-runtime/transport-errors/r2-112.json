@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Python-print only /tmp/pi/112.json; simulate messages to raw JSON /tmp/p2/112.json. No other reads/network/actions/revision. Reply 1."}, {"role": "assistant", "content": "1"}]}

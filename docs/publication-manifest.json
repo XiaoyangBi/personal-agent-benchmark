@@ -1,0 +1,25 @@
+{
+  "schema": "personal-agent-benchmark-publication-v1",
+  "generated_at": "2026-11-01T16:24:25.366020+00:00",
+  "snapshot_date": "2026-11-02",
+  "synthetic_data": true,
+  "source_modified": false,
+  "source_scope": "All existing Personal Agent benchmark materials in the project outputs directory",
+  "public_file_count": 1201,
+  "public_bytes": 40812912,
+  "transforms": [
+    "Local workspace paths replaced with <workspace>",
+    "Enterprise document links replaced with <removed-enterprise-document-link>",
+    "Internal runtime session references replaced with <runtime-session-ref>",
+    "Synthetic-data notice added to profile",
+    "Root README reorganized; original history preserved in docs/project-history.md"
+  ],
+  "excluded": [
+    "Operating-system metadata",
+    "Python bytecode and cache",
+    "Personal memory",
+    "Real business data",
+    "Credentials"
+  ],
+  "trace_completeness": "See docs/trace-availability.json; structured context and replies are not full execution traces"
+}

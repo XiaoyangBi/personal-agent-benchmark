@@ -1,0 +1,1 @@
+{"text": "提前三天是2026年11月24日，提醒内容为：季度汇报11月27日截止。", "payload": [], "citations": [{"type": "session", "id": "S04"}], "tool_calls": [{"tool": "calendar.create", "params": {"date": "2026-11-24", "title": "季度汇报11月27日截止，提前三天提醒"}}]}

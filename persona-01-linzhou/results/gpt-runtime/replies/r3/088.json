@@ -1,0 +1,1 @@
+{"text": "回程改到1月1日下午，温州回杭州东。我先查原订单和支付状态，再处理改签或重新订票。", "payload": [], "citations": [{"type": "session", "id": "S20"}], "tool_calls": [{"tool": "order.query", "params": {"query": "元旦行程中温州至杭州东的1月1日回程订单及支付状态"}}]}

@@ -1,0 +1,1 @@
+{"text":"今晚按你这次的要求备注“不放香菜”，同时注明“严重花生过敏，不放花生、不用花生油，避免交叉接触”。先查一下之前那家川菜的订单记录；今晚想点哪些菜，送到滨江江南大道附近的新家吗？","payload":[],"citations":[{"type":"session","id":"S02"},{"type":"session","id":"S12"},{"type":"session","id":"S13"}],"tool_calls":[{"tool":"order.query","params":{"query":"之前点过的那家川菜的订单记录"}}]}

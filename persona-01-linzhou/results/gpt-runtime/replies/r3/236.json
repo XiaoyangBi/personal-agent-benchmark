@@ -1,0 +1,1 @@
+{"text": "按你最新的安排直接下单：下周五下午，公司附近那家，6杯拿铁和1个可颂。", "payload": [], "citations": [{"type": "session", "id": "S21"}], "tool_calls": [{"tool": "order.create", "params": {"store": "公司附近那家咖啡店", "scheduled_for": "下周五下午", "items": [{"name": "拿铁", "quantity": 6}, {"name": "可颂", "quantity": 1}]}}]}

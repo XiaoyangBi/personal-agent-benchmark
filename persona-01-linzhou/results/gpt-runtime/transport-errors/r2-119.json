@@ -1,0 +1,1 @@
+[{"role": "user", "content": "<user_query>Python-print only /tmp/pi/119.json; simulate messages to raw JSON /tmp/p2/119.json. No other reads/network/actions/revision. Reply 1.</user_query>"}, {"role": "assistant", "content": "1"}]

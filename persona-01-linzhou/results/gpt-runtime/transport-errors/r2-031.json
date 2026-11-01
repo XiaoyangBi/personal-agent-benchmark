@@ -1,0 +1,1 @@
+{"text":"读取结果在 messages 内容结束前被截断，无法确定当前消息，因而无法可靠模拟回复。请提供未截断的 messages 内容。","payload":[],"citations":[{"type":"none"}],"tool_calls":[]}

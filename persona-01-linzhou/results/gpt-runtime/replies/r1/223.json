@@ -1,0 +1,1 @@
+{"text":"之前给布丁的是皇家肠道处方粮。我先查一下旧订单的型号和包装规格，再按原款买一袋，避免买错猫用或犬用版本。","payload":[],"citations":[{"type":"session","id":"S16"}],"tool_calls":[{"tool":"order.query","params":{"keyword":"皇家肠道处方粮"}}]}

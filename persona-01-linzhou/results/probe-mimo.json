@@ -1,0 +1,1263 @@
+{
+  "meta": {
+    "run_id": "20261029-205304-44e7",
+    "mode": "api",
+    "model": "mimo-v2.6-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 3,
+      "total": 63
+    },
+    "persona": "persona-01-linzhou",
+    "workers": 3,
+    "stats": {
+      "http_500": 0,
+      "retries": 0,
+      "call_errors": 0,
+      "write_retries": 0,
+      "write_failures": 0
+    },
+    "elapsed_s": 65.0
+  },
+  "runs": [
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好的，已在日历上创建提醒：11 月 24 日（提交前 3 天）提醒你准备季度汇报，截止日为 11 月 27 日。需要的话我可以再帮你把汇报拆解成几个准备节点。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "title": "季度汇报提醒（3天后提交）",
+              "date": "2026-11-24",
+              "reminder": true,
+              "note": "季度汇报 11 月 27 日截止，提前准备"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 8295,
+        "tokens_in": 301,
+        "tokens_out": 302
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S04"
+        ],
+        "tokens": 35,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好的，我已在日历上为您创建了提醒：11 月 24 日 提前 3 天提醒——季度汇报 11 月 27 日截止。距离截止还有不到一个月，建议早点开始准备，压力会小很多。需要我帮您拆解汇报任务或设置阶段性提醒吗？",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2025-11-24",
+              "title": "提醒：季度汇报将于 11 月 27 日交（提前3天）",
+              "reminder": "09:00"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": false,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 8674,
+        "tokens_in": 301,
+        "tokens_out": 199
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "tokens": 323,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好，帮你建好了。11 月 24 号（周一）会提醒你一次，距离季度汇报截止还有 3 天，来得及留出周末和修改的时间。要不要临近截止（比如 26 号）再加一个兜底提醒？",
+        "payload": [
+          {
+            "date": "2025-11-24",
+            "title": "季度汇报 提交提醒（DDL 11/27）"
+          }
+        ],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2025-11-24",
+              "title": "季度汇报 提交提醒（DDL 11/27）",
+              "note": "汇报 11 月 27 号交，提前 3 天提醒"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": false,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 8590,
+        "tokens_in": 664,
+        "tokens_out": 301
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S04",
+      "dim": "D2/D3",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01",
+          "S04"
+        ],
+        "tokens": 144,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "好的，已在日历创建提醒：11 月 24 日 提前三天提醒你季度汇报 11 月 27 日交。需要的话我还可以帮你起个汇报大纲。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2025-11-24",
+              "title": "季度汇报提前三天提醒（11/27 交）",
+              "remind": "09:00"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": false,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 9916,
+        "tokens_in": 439,
+        "tokens_out": 188
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 51,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "城西体育公园 11/7 09:00-11:00 已经被订满了，订不了。目前还有两个场可以选：1) 滨江江边球场 2) 拱墅某学校操场。你想订哪个？定了我马上把活动加进日历，方便你在群里回复大家。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "plant",
+            "id": "none"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 12887,
+        "tokens_in": 352,
+        "tokens_out": 246
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S06"
+        ],
+        "tokens": 51,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "城西体育公园周六上午 9:00-11:00 的场已经被订满了，订不了。备选有两个：滨江江边球场和拱墅某学校操场，都还能订。你看定哪个？定了我马上帮你下单并在群里通知。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场', '备选']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 4807,
+        "tokens_in": 352,
+        "tokens_out": 149
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 534,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "城西体育公园那个场这周六已经被订满了，抱歉没能抢到。现在还有两个场地能订：滨江江边球场，和拱墅的一所学校的操场。你周六上午一般在哪边？如果在拱墅住处附近的话，学校操场过去应该更方便，我先帮你把拱墅这个场地占上保底，还是你想要江边那个？说一声我马上订。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S06"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 9023,
+        "tokens_in": 954,
+        "tokens_out": 271
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S06",
+      "dim": "D2",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S04",
+          "S05",
+          "S06"
+        ],
+        "tokens": 246,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "城西那个场 11/7 上午已经被订满了，订不了老规矩。剩下能订的两个：滨江江边球场、拱墅某学校操场。你在拱墅，学校操场离你近一些，而且你们固定在那边打也熟。要我按拱墅学校操场 09:00-11:00 来订吗？还是你想去滨江江边？确认了我再帮你锁场地、在日历上占好时间。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S06"
+          },
+          {
+            "type": "plant",
+            "id": "current_environment"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 11600,
+        "tokens_in": 591,
+        "tokens_out": 407
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S05"
+        ],
+        "tokens": 75,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "我在日历里帮你查一下汇报相关的安排。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "none"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "keyword": "汇报"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 8938,
+        "tokens_in": 329,
+        "tokens_out": 89
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S04",
+          "S05"
+        ],
+        "tokens": 151,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "11 月 27 号（周五）交，我在 11 月 24 号给你设了提前三天的提醒。就是那个双 11 项目的季度复盘，别忘了哈。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 4552,
+        "tokens_in": 428,
+        "tokens_out": 168
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 440,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "11 月 27 号（周五）交。你之前让我建了提前三天的提醒，我先确认下日历里还在不在。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "month": "2025-11"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 44720,
+        "tokens_in": 791,
+        "tokens_out": 130
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 246,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "11 月 27 号（周五）交。之前帮你在日历上建了提前三天的提醒，也就是 11 月 24 号会提醒你一次。是那个双 11 项目的季度复盘，没错。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 6558,
+        "tokens_in": 549,
+        "tokens_out": 220
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP01": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好的，已在日历上创建提醒：11 月 24 日（提交前 3 天）提醒你准备季度汇报，截止日为 11 月 27 日。需要的话我可以再帮你把汇报拆解成几个准备节点。",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "title": "季度汇报提醒（3天后提交）",
+              "date": "2026-11-24",
+              "reminder": true,
+              "note": "季度汇报 11 月 27 日截止，提前准备"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S04"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 35,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": false,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好的，我已在日历上为您创建了提醒：11 月 24 日 提前 3 天提醒——季度汇报 11 月 27 日截止。距离截止还有不到一个月，建议早点开始准备，压力会小很多。需要我帮您拆解汇报任务或设置阶段性提醒吗？",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2025-11-24",
+              "title": "提醒：季度汇报将于 11 月 27 日交（提前3天）",
+              "reminder": "09:00"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S04"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 35,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": false,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好，帮你建好了。11 月 24 号（周一）会提醒你一次，距离季度汇报截止还有 3 天，来得及留出周末和修改的时间。要不要临近截止（比如 26 号）再加一个兜底提醒？",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2025-11-24",
+              "title": "季度汇报 提交提醒（DDL 11/27）",
+              "note": "汇报 11 月 27 号交，提前 3 天提醒"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 323,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": false,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          },
+          {
+            "type": "no_confirm_ask",
+            "ok": true,
+            "msg": "不应出现确认问句，命中[]"
+          }
+        ],
+        "text": "好的，已在日历创建提醒：11 月 24 日 提前三天提醒你季度汇报 11 月 27 日交。需要的话我还可以帮你起个汇报大纲。",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2025-11-24",
+              "title": "季度汇报提前三天提醒（11/27 交）",
+              "remind": "09:00"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S04"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大",
+          "tokens": 144,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "非记忆题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [
+          "calendar.create"
+        ],
+        "c3_tools": [
+          "calendar.create"
+        ],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": true,
+          "c0_pass": true,
+          "c3_fail": true,
+          "c3_text_sim": 0.752
+        },
+        "c1_failure": {
+          "count": 1,
+          "categories": [
+            "未调用工具"
+          ],
+          "rules": [
+            "tool_called"
+          ],
+          "details": [
+            "应调用 calendar.create，实际调用 ['calendar.create']"
+          ],
+          "mode": "以工具查询代替回答"
+        },
+        "c3_failure": {
+          "count": 1,
+          "categories": [
+            "未调用工具"
+          ],
+          "rules": [
+            "tool_called"
+          ],
+          "details": [
+            "应调用 calendar.create，实际调用 ['calendar.create']"
+          ]
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.303,
+        "c3_text_sim": 0.582,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S04"
+        ],
+        "retrieved": [
+          "S01"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP03": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ],
+        "text": "城西体育公园 11/7 09:00-11:00 已经被订满了，订不了。目前还有两个场可以选：1) 滨江江边球场 2) 拱墅某学校操场。你想订哪个？定了我马上把活动加进日历，方便你在群里回复大家。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S06"
+          ],
+          "text": "【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 51,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场', '备选']"
+          }
+        ],
+        "text": "城西体育公园周六上午 9:00-11:00 的场已经被订满了，订不了。备选有两个：滨江江边球场和拱墅某学校操场，都还能订。你看定哪个？定了我马上帮你下单并在群里通知。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S06"
+          ],
+          "text": "【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 51,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ],
+        "text": "城西体育公园那个场这周六已经被订满了，抱歉没能抢到。现在还有两个场地能订：滨江江边球场，和拱墅的一所学校的操场。你周六上午一般在哪边？如果在拱墅住处附近的话，学校操场过去应该更方便，我先帮你把拱墅这个场地占上保底，还是你想要江边那个？说一声我马上订。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 534,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['已满', '满了', '订满', '没有位置', '订不到']，命中['满了', '订满']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['滨江', '学校操场', '备选', '换']，命中['滨江', '学校操场']"
+          }
+        ],
+        "text": "城西那个场 11/7 上午已经被订满了，订不了老规矩。剩下能订的两个：滨江江边球场、拱墅某学校操场。你在拱墅，学校操场离你近一些，而且你们固定在那边打也熟。要我按拱墅学校操场 09:00-11:00 来订吗？还是你想去滨江江边？确认了我再帮你锁场地、在日历上占好时间。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打",
+          "tokens": 246,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "非记忆题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.277
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.394,
+        "c3_text_sim": 0.258,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S06"
+        ],
+        "retrieved": [
+          "S04",
+          "S05"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP02": {
+      "C0": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "我在日历里帮你查一下汇报相关的安排。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "keyword": "汇报"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S05"
+          ],
+          "text": "【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 75,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "11 月 27 号（周五）交，我在 11 月 24 号给你设了提前三天的提醒。就是那个双 11 项目的季度复盘，别忘了哈。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S04",
+            "S05"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 151,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "11 月 27 号（周五）交。你之前让我建了提前三天的提醒，我先确认下日历里还在不在。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "month": "2025-11"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 440,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "11 月 27 号（周五）交。之前帮你在日历上建了提前三天的提醒，也就是 11 月 24 号会提醒你一次。是那个双 11 项目的季度复盘，没错。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "date": "2026-11-24"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 246,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "有效记忆",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [
+          "calendar.list"
+        ],
+        "tool_diff_c1_c3": true,
+        "pollution": {
+          "detected": false,
+          "c0_pass": false,
+          "c3_fail": false,
+          "c3_text_sim": 0.111
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.481,
+        "c3_text_sim": 0.677,
+        "c2_tool_diff": true
+      },
+      "retrieval": {
+        "evidence": [
+          "S04"
+        ],
+        "retrieved": [
+          "S03",
+          "S04"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    }
+  }
+}

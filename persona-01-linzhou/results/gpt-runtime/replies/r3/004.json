@@ -1,0 +1,19 @@
+{
+  "text": "将为你设置 11 月 24 日的提醒：季度汇报于 11 月 27 日提交。",
+  "payload": [],
+  "citations": [
+    {
+      "type": "session",
+      "id": "S04"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "calendar.create",
+      "params": {
+        "date": "2026-11-24",
+        "title": "季度汇报于11月27日提交（提前三天提醒）"
+      }
+    }
+  ]
+}

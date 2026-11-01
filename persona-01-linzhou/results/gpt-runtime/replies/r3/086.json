@@ -1,0 +1,1 @@
+{"text": "好的，回程改看1号下午从温州到杭州东的票，30号早上的去程不变。我先查下午的车次；此前支付失败，暂不重新付款。", "payload": [], "citations": [{"type": "session", "id": "S20"}], "tool_calls": [{"tool": "search.web", "params": {"query": "1月1日下午 温州到杭州东 高铁车次"}}]}

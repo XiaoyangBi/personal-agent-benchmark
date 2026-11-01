@@ -1,0 +1,400 @@
+{
+  "meta": {
+    "run_id": "20261029-141826-842e",
+    "mode": "api",
+    "model": "glm-5.3-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 63,
+      "total": 63
+    },
+    "persona": "persona-01-linzhou",
+    "workers": 3
+  },
+  "runs": [
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S05"
+        ],
+        "tokens": 75,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "历史会话里没提到汇报的截止日期，我查一下你的日历安排。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "keyword": "汇报"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 7490,
+        "tokens_in": 318,
+        "tokens_out": 309
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S04",
+          "S05"
+        ],
+        "tokens": 151,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "你的汇报是 11 月 27 号交，就是 Q4 启动会上说的那个双 11 项目的季度复盘。之前你已经让我在日历上建了提醒，会提前三天（11 月 24 号）提醒你。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 8192,
+        "tokens_in": 403,
+        "tokens_out": 483
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 440,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "你的汇报是 11 月 27 号交——就是 Q4 启动会上说的那个双 11 项目的季度复盘。当时还帮你设了提前三天的提醒，所以 11 月 24 号日历上会提醒你。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 5850,
+        "tokens_in": 734,
+        "tokens_out": 299
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 246,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 5
+      },
+      "reply": {
+        "text": "11月27号（周五）交，就是Q4启动会上说的那个双11项目的季度复盘。你当时还让我提前三天提醒，也就是11月24号。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S04"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11月27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 12501,
+        "tokens_in": 510,
+        "tokens_out": 724
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP02": {
+      "C0": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "历史会话里没提到汇报的截止日期，我查一下你的日历安排。",
+        "tool_calls": [
+          {
+            "tool": "calendar.list",
+            "params": {
+              "keyword": "汇报"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S05"
+          ],
+          "text": "【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 75,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "你的汇报是 11 月 27 号交，就是 Q4 启动会上说的那个双 11 项目的季度复盘。之前你已经让我在日历上建了提醒，会提前三天（11 月 24 号）提醒你。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S04",
+            "S05"
+          ],
+          "text": "【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 151,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11 月 27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "你的汇报是 11 月 27 号交——就是 Q4 启动会上说的那个双 11 项目的季度复盘。当时还帮你设了提前三天的提醒，所以 11 月 24 号日历上会提醒你。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 440,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月27', '11/27', '11 月 27']，命中['11月27']"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "11月27号（周五）交，就是Q4启动会上说的那个双11项目的季度复盘。你当时还让我提前三天提醒，也就是11月24号。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过",
+          "tokens": 246,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 5
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "有效记忆",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": false,
+          "c3_fail": false,
+          "c3_text_sim": 0.071
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.775,
+        "c3_text_sim": 0.594,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S04"
+        ],
+        "retrieved": [
+          "S03",
+          "S04"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    }
+  }
+}

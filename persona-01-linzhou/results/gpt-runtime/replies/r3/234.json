@@ -1,0 +1,29 @@
+{
+  "text": "我会按老规矩下单：公司附近那家咖啡店，6 杯拿铁和 1 个可颂，安排在下周五下午。",
+  "payload": [],
+  "citations": [
+    {
+      "type": "session",
+      "id": "S21"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "order.create",
+      "params": {
+        "store": "公司附近咖啡店",
+        "items": [
+          {
+            "name": "拿铁",
+            "quantity": 6
+          },
+          {
+            "name": "可颂",
+            "quantity": 1
+          }
+        ],
+        "scheduled_time": "下周五下午"
+      }
+    }
+  ]
+}

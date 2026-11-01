@@ -1,0 +1,1 @@
+{"text":"好的，回程选1月1日下午从温州回杭州东，去程仍是12月30日早上。先查换卡后的支付、出票状态和下午车次，避免重复购票。","payload":[],"citations":[{"type":"session","id":"S20"}],"tool_calls":[{"tool":"order.query","params":{"query":"元旦杭州东与温州往返车票订单，核实换卡后的支付及出票状态"}},{"tool":"search.web","params":{"query":"2027年1月1日下午 温州到杭州东 火车车次"}}]}

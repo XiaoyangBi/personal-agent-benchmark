@@ -1,0 +1,1 @@
+{"text":"就选第二个保温杯，299 元，我来提交下单请求。","payload":[],"citations":[{"type":"none"}],"tool_calls":[{"tool":"order.create","params":{"item":"保温杯","price":299,"quantity":1}}]}

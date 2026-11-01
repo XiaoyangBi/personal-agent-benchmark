@@ -1,0 +1,1 @@
+{"text": "我先查一下你上次的川菜外卖订单，确认是哪家店、点了什么。", "payload": [], "citations": [], "tool_calls": [{"tool": "search.local", "params": {"query": "上次川菜外卖订单"}}]}

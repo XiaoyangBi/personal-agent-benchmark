@@ -1,0 +1,1 @@
+{"text":"我先按 2027 年 2 月 1 日安排提醒，内容是“甲状腺结节复查”。","payload":[],"citations":[{"type":"session","id":"S09"}],"tool_calls":[{"tool":"calendar.create","params":{"date":"2027-02-01","title":"甲状腺结节复查提醒"}}]}

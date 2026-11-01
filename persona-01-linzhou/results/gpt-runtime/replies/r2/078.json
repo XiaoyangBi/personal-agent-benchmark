@@ -1,0 +1,1 @@
+{"text":"先暂停订场地，给小陈发消息：我晚点到公司，大概十点半。","payload":[],"citations":[],"tool_calls":[{"tool":"message.send","params":{"recipient":"小陈","content":"我晚点到公司，大概十点半。"}}]}

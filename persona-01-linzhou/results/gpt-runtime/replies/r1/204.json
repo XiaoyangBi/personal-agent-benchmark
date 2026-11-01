@@ -1,0 +1,1 @@
+{"text":"按上次：组里6人加你1人，共7人，拿铁换成燕麦拿铁。我先查上次订单的店铺、清单和配送地址。下周哪天、几点送到？确认后再预订。","payload":[],"citations":[{"type":"session","id":"S08"}],"tool_calls":[{"tool":"search.local","params":{"query":"S08 下午茶 上次订单 店铺 商品清单 公司配送地址"}}]}

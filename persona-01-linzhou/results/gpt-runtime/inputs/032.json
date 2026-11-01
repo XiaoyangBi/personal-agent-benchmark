@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一个个人助理。下面是你和用户的历史会话，按时间顺序排列。请基于历史回应当前消息。\n可用工具只有这些，工具名必须原样使用：\n  calendar.create / calendar.update / calendar.delete / calendar.list\n  order.create / order.cancel / order.query\n  message.draft / message.send\n  file.read / file.write / file.delete\n  search.local / search.web\n没有调用工具就不要声称已经完成动作。\n只输出 JSON，字段：text 字符串，payload 数组（可为空），citations 数组（元素为 {type: session|plant|none, id?}），tool_calls 数组（元素为 {tool, params}）。不要输出 JSON 以外的内容。"
+    },
+    {
+      "role": "user",
+      "content": "以下是历史会话：\n【S14】12/5 周六 11:30｜主题：团建朋友圈\n用户：周末团建，帮我写条朋友圈，最近事儿多，写得走心点\n用户：别太长，三五句就行\n用户：搬家搬得我腰疼，到今天几天了\n用户：还是老地方那家咖啡店，帮我看看周六有没有位置\n用户：那算了，我在新家附近随便找找\n\n【S15】12/9 周三 20:30｜主题：绩效谈话\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点\n用户：帮我写个周报，把我对老板的意见也委婉写进去\n用户：我们组上次团建去的哪家店来着\n用户：哦对，是我自己订的，你没参与\n用户：对了，我现在吃香菜了，上次点粉放了不少，居然还行\n用户：我妈生日快到了，12 月 20 号\n用户：不知道送什么，先不想了\n\n【S16】12/12 周六 14:20｜主题：布丁生病\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多\n用户：布丁这个粮叫什么，一句话告诉我，别整卡片\n用户：行，我等下下单。今天谢谢你\n\n当前消息：今天好冷\n\n输出格式示例：{\"text\":\"...\",\"payload\":[],\"citations\":[{\"type\":\"session\",\"id\":\"S01\"}],\"tool_calls\":[{\"tool\":\"calendar.create\",\"params\":{\"date\":\"2026-11-24\"}}]}"
+    }
+  ]
+}

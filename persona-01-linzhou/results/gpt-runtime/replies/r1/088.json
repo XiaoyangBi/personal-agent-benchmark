@@ -1,0 +1,1 @@
+{"text":"好的，回程按 1 月 1 日下午、温州回杭州东来调整。我先查现有订单状态和下午可选车次，避免重复下单；目前还未完成改票。","payload":[],"citations":[{"type":"session","id":"S20"}],"tool_calls":[{"tool":"order.query","params":{"departure":"温州","arrival":"杭州东","date":"1月1日"}},{"tool":"search.web","params":{"query":"1月1日下午 温州到杭州东 高铁车次 余票"}}]}

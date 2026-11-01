@@ -1,0 +1,1 @@
+{"text":"好的，回程按 1 月 1 日下午、温州回杭州东来调整。我先核对原订单和支付状态，避免重复下单。","payload":[],"citations":[{"type":"session","id":"S20"}],"tool_calls":[{"tool":"order.query","params":{"departure":"温州","destination":"杭州东","date":"1月1日"}}]}

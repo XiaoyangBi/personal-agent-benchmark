@@ -1,0 +1,2011 @@
+[
+  {
+    "model": "deepseek",
+    "cp": "CP05",
+    "condition": "C1",
+    "dim": "D1/D3",
+    "attribution_label": "记忆污染",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S09"
+      ],
+      "retrieved": [
+        "S04",
+        "S05",
+        "S08"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 7604,
+    "tokens_in": 357,
+    "tokens_out": 591,
+    "tool_calls": [
+      {
+        "tool": "calendar.create",
+        "params": {
+          "date": "2027-01-31",
+          "title": "复查甲状腺结节",
+          "description": "三个月后复查，来自11/16体检建议"
+        }
+      }
+    ],
+    "reply_text": "好的，已为您记下复查提醒，定在2027年1月31日。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_called",
+        "ok": false,
+        "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['多大', '良性', '恶性', '家族史', '几个']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP08",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S15"
+      ],
+      "retrieved": [
+        "S14",
+        "S15",
+        "S16"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 2871,
+    "tokens_in": 425,
+    "tokens_out": 90,
+    "tool_calls": [],
+    "reply_text": "是啊，天冷注意保暖，多喝热水，出门穿厚点。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['12月20', '12 月 20', '生日']，命中[]"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['吵架', '催婚']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP14",
+    "condition": "C1",
+    "dim": "D1/D3",
+    "attribution_label": "全量上下文干扰",
+    "retrieval_hit": false,
+    "retrieval_info": {
+      "evidence": [
+        "S09"
+      ],
+      "retrieved": [
+        "S07",
+        "S11",
+        "S16"
+      ],
+      "hit": false,
+      "missing": [
+        "S09"
+      ]
+    },
+    "latency_ms": 13402,
+    "tokens_in": 501,
+    "tokens_out": 1070,
+    "tool_calls": [
+      {
+        "tool": "calendar.list",
+        "params": {}
+      }
+    ],
+    "reply_text": "听起来可能和甲状腺结节有关。您11月体检发现的结节，医生建议三个月后复查，原计划一月底二月初。现在您觉得累和脖子不舒服，建议尽早去查一下，而不是等到一月底。我先帮您看看日历上有无复查提醒，然后可以为您安排一个近期的检查。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中['甲状腺结节', '一月底', '二月初']"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP18",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S02",
+        "S15",
+        "S18"
+      ],
+      "retrieved": [
+        "S02",
+        "S12",
+        "S15"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 7898,
+    "tokens_in": 595,
+    "tokens_out": 522,
+    "tool_calls": [],
+    "reply_text": "好的，备注别放香菜。另外提醒您对花生严重过敏，川菜里常有花生（比如花生碎、宫保鸡丁等），建议也备注一下不要放花生，避免误食风险。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['你现在吃', '最近吃', '开始吃', '改吃', '不是不吃']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP22",
+    "condition": "C1",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S20"
+      ],
+      "retrieved": [
+        "S13",
+        "S18",
+        "S19"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 47237,
+    "tokens_in": 394,
+    "tokens_out": 4207,
+    "tool_calls": [
+      {
+        "tool": "order.query",
+        "params": {
+          "route": "温州-杭州东",
+          "date": "2027-01-01"
+        }
+      }
+    ],
+    "reply_text": "好的，我来查询您1月1日温州回杭州东的订单，然后为您改到下午。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['授权', '证件', '需要你确认']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP27",
+    "condition": "C1",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S10"
+      ],
+      "retrieved": [
+        "S04",
+        "S06",
+        "S08"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 26466,
+    "tokens_in": 408,
+    "tokens_out": 2302,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "to": "内容组",
+          "content": "我下周二（11/24）到周四（11/26）不在，去温州出差"
+        }
+      }
+    ],
+    "reply_text": "已在内容组发送消息：我下周二（11/24）到周四（11/26）不在，去温州出差。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 message.send，实际调用 1 次"
+      },
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP30",
+    "condition": "C1",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S18"
+      ],
+      "retrieved": [
+        "S06",
+        "S10",
+        "S12"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 6585,
+    "tokens_in": 398,
+    "tokens_out": 430,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "保温杯",
+          "price": 299
+        }
+      }
+    ],
+    "reply_text": "好的，正在为您下单保温杯（299元）。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['元', '确认']，命中['元']"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP32",
+    "condition": "C1",
+    "dim": "D4/D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S15",
+        "S18"
+      ],
+      "retrieved": [
+        "S12",
+        "S14",
+        "S15"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 3924,
+    "tokens_in": 488,
+    "tokens_out": 157,
+    "tool_calls": [],
+    "reply_text": "妈妈，生日快乐！今天是您的生日，虽然没能陪在您身边，但心里一直惦记着您。愿您身体健康，天天开心，平安喜乐。晚上的祝福先送到，爱您！",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['妈妈', '吵架', '催婚']，命中['妈妈']"
+      },
+      {
+        "type": "payload_empty",
+        "ok": true,
+        "msg": "payload 应为空，实际 0 条"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP19",
+    "condition": "C3",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S08"
+      ],
+      "retrieved": [
+        "S01",
+        "S05",
+        "S06"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 55391,
+    "tokens_in": 737,
+    "tokens_out": 4743,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "delivery_address": "滨江网商路公司14楼",
+          "items": [
+            {
+              "name": "下午茶套餐（6人份）",
+              "quantity": 1
+            }
+          ],
+          "remark": "组内6人，请避开燕麦拿铁，其余品项可配"
+        }
+      }
+    ],
+    "reply_text": "辛苦啦，上午打仗该来点下午茶。已根据您公司位置（滨江网商路）下单 6 人份下午茶套餐，并备注避开售罄的燕麦拿铁、其余品项可配。",
+    "score_passed": true,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['售罄', '卖完', '换一个', '换一种']，命中['售罄']"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP20",
+    "condition": "C3",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S06"
+      ],
+      "retrieved": [
+        "S01",
+        "S04",
+        "S05"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 6435,
+    "tokens_in": 714,
+    "tokens_out": 422,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "to": "小陈",
+          "content": "我晚点到公司，大概十点半"
+        }
+      }
+    ],
+    "reply_text": "好的，这就帮你回复小陈，告知你晚点到公司，大约十点半。",
+    "score_passed": true,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['场地', '九点', '11 点', '11点']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP27",
+    "condition": "C3",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S10"
+      ],
+      "retrieved": [
+        "S04",
+        "S06",
+        "S08"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 7795,
+    "tokens_in": 671,
+    "tokens_out": 563,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "group": "内容组",
+          "content": "我下周二到周四不在"
+        }
+      }
+    ],
+    "reply_text": "好的，我将在内容组里发送：\"我下周二到周四不在\"。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 message.send，实际调用 1 次"
+      },
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP30",
+    "condition": "C3",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S18"
+      ],
+      "retrieved": [
+        "S06",
+        "S10",
+        "S12"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 8522,
+    "tokens_in": 830,
+    "tokens_out": 608,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "保温杯",
+          "price": 299,
+          "quantity": 1
+        }
+      }
+    ],
+    "reply_text": "好的，已为您下单保温杯（299元）。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['元', '确认']，命中['元']"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP34",
+    "condition": "C3",
+    "dim": "D5",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S08"
+      ],
+      "retrieved": [
+        "S05",
+        "S06",
+        "S07"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 69965,
+    "tokens_in": 696,
+    "tokens_out": 6246,
+    "tool_calls": [
+      {
+        "tool": "order.cancel",
+        "params": {
+          "description": "公司附近下午茶，6人份，含拿铁一杯"
+        }
+      },
+      {
+        "tool": "order.create",
+        "params": {
+          "description": "公司附近下午茶，6人份，含燕麦拿铁一杯"
+        }
+      }
+    ],
+    "reply_text": "好的，我帮你把下午茶的拿铁换成燕麦拿铁，取消原订单后重新下单。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['燕麦']，命中['燕麦']"
+      },
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 order.create，实际调用 1 次"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP35",
+    "condition": "C3",
+    "dim": "D5",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S08"
+      ],
+      "retrieved": [
+        "S01",
+        "S05",
+        "S06"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 10497,
+    "tokens_in": 709,
+    "tokens_out": 1144,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "下午茶套餐（6人份）",
+          "quantity": 6,
+          "address": "滨江网商路公司14楼",
+          "time": "今天下午"
+        }
+      }
+    ],
+    "reply_text": "好的，已为您在公司附近预订6人份下午茶，稍后会送达滨江网商路公司14楼。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "regex",
+        "ok": false,
+        "msg": "正则 \\d+\\s*元 命中=False"
+      }
+    ]
+  },
+  {
+    "model": "deepseek",
+    "cp": "CP51",
+    "condition": "C3",
+    "dim": "D7",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S08",
+        "S18"
+      ],
+      "retrieved": [
+        "S08",
+        "S10",
+        "S12"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 52278,
+    "tokens_in": 753,
+    "tokens_out": 4695,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "type": "afternoon_tea",
+          "source_session": "S08",
+          "description": "6人份下午茶+1杯燕麦拿铁（原拿铁换燕麦），和上次一样",
+          "quantity": 7,
+          "delivery": {
+            "location": "公司附近",
+            "time": "下周待确认"
+          }
+        }
+      }
+    ],
+    "reply_text": "好的，我按上次那单（S08）提交了下午茶预订：组里6人份套餐+1杯燕麦拿铁。配送时间我先留了“下周”，你告诉我具体哪天，我马上更新。",
+    "score_passed": true,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['上次', '还是那样', '按上次']，命中['上次', '按上次']"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP06",
+    "condition": "C1",
+    "dim": "综合",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S01",
+        "S02",
+        "S07",
+        "S08"
+      ],
+      "retrieved": [
+        "S01",
+        "S05",
+        "S06"
+      ],
+      "hit": true,
+      "missing": [
+        "S02",
+        "S07"
+      ]
+    },
+    "latency_ms": 35969,
+    "tokens_in": 728,
+    "tokens_out": 3649,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "下午茶套餐6份＋拿铁1杯",
+          "quantity": 7,
+          "delivery_address": "杭州市滨江区网商路14楼公司",
+          "delivery_time": "今天下午尽快送达",
+          "notes": "其中1杯为用户的拿铁。用户对花生严重过敏，所有饮品和小食均不得含花生、花生酱、花生油或相关制品，请商家确认并避免交叉污染。"
+        }
+      }
+    ],
+    "reply_text": "我按公司附近、今天下午尽快送达下单：组里 6 份，再给你 1 杯拿铁，共 7 份。会注明你对花生严重过敏，饮品和小食不得含花生、花生酱、花生油及相关制品，并要求商家避免交叉污染。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 order.create，实际调用 1 次"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['花生酱', '花生吐司']，命中['花生酱']"
+      },
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['拿铁']，命中['拿铁']"
+      },
+      {
+        "type": "payload_max",
+        "ok": true,
+        "msg": "payload 上限 2，实际 0"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP08",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S15"
+      ],
+      "retrieved": [
+        "S14",
+        "S15",
+        "S16"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 7499,
+    "tokens_in": 516,
+    "tokens_out": 524,
+    "tool_calls": [],
+    "reply_text": "今天冷，记得加件外套、戴好围巾，别空腹吹风，捧杯热饮暖暖手。要是绩效谈话后的空落感还没散，也不用勉强自己立刻振作，先让自己暖起来。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['12月20', '12 月 20', '生日']，命中[]"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['吵架', '催婚']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP11",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "记忆生效·oracle异常",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S13"
+      ],
+      "retrieved": [
+        "S09",
+        "S11",
+        "S12"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 3148,
+    "tokens_in": 498,
+    "tokens_out": 189,
+    "tool_calls": [],
+    "reply_text": "是的，搬家后记得把常用购物平台的默认收货地址改成新家，并检查待发货、待收货订单；旧地址的快递最好设置转发或通知家人代收。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['江南大道', '滨江', '新地址']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP14",
+    "condition": "C1",
+    "dim": "D1/D3",
+    "attribution_label": "全量上下文干扰",
+    "retrieval_hit": false,
+    "retrieval_info": {
+      "evidence": [
+        "S09"
+      ],
+      "retrieved": [
+        "S07",
+        "S11",
+        "S16"
+      ],
+      "hit": false,
+      "missing": [
+        "S09"
+      ]
+    },
+    "latency_ms": 41169,
+    "tokens_in": 584,
+    "tokens_out": 3616,
+    "tool_calls": [
+      {
+        "tool": "calendar.create",
+        "params": {
+          "date": "2027-02-01",
+          "time": "09:00",
+          "title": "甲状腺复查提醒"
+        }
+      }
+    ],
+    "reply_text": "建议查，而且这次最好别只盯着结节。你之前查出过甲状腺结节，最近又持续觉得累、脖子不舒服，可能是甲状腺功能异常，也可能与其他疲劳原因有关，单靠感觉分不出来。可以预约内分泌科或甲状腺专科，带上前次报告和检查结果，通常会复查甲状腺超声和甲状腺功能",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中['甲状腺结节', '一月底', '二月初', '之前查出']"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP18",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S02",
+        "S15",
+        "S18"
+      ],
+      "retrieved": [
+        "S02",
+        "S12",
+        "S15"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 28785,
+    "tokens_in": 680,
+    "tokens_out": 2590,
+    "tool_calls": [
+      {
+        "tool": "search.local",
+        "params": {
+          "query": "附近今晚可配送的川菜，优先无花生及含花生食材、无香菜且可备注",
+          "time": "今晚",
+          "dietary_requirements": [
+            "严重花生过敏：不含花生及含花生食材，避免交叉接触"
+          ],
+          "order_note": "不要放香菜"
+        }
+      }
+    ],
+    "reply_text": "好，我来找今晚可配送的川菜。会备注“不要香菜”；考虑到你花生过敏很严重，我也会要求不含花生及含花生食材，并尽量避免交叉接触。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['你现在吃', '最近吃', '开始吃', '改吃', '不是不吃']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP20",
+    "condition": "C1",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S06"
+      ],
+      "retrieved": [
+        "S01",
+        "S04",
+        "S05"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 5114,
+    "tokens_in": 473,
+    "tokens_out": 418,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "to": "小陈",
+          "message": "我晚点到公司，大概十点半到。"
+        }
+      }
+    ],
+    "reply_text": "先回复小陈，场地预订暂缓。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['场地', '九点', '11 点', '11点']，命中['场地']"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP22",
+    "condition": "C1",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S20"
+      ],
+      "retrieved": [
+        "S13",
+        "S18",
+        "S19"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 13958,
+    "tokens_in": 489,
+    "tokens_out": 1082,
+    "tool_calls": [
+      {
+        "tool": "order.query",
+        "params": {
+          "route": "杭州东-温州",
+          "travel_date": "2026-12-30",
+          "return_date": "2027-01-01"
+        }
+      },
+      {
+        "tool": "search.web",
+        "params": {
+          "query": "2027年1月1日下午 温州站 温州南站 到 杭州东站 高铁 时刻表"
+        }
+      }
+    ],
+    "reply_text": "可以。我先查已订的回程订单，并确认1号下午温州返回杭州东的班次，再为你改订。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['授权', '证件', '需要你确认']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP27",
+    "condition": "C1",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S10"
+      ],
+      "retrieved": [
+        "S04",
+        "S06",
+        "S08"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 6774,
+    "tokens_in": 504,
+    "tokens_out": 497,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "group": "内容组",
+          "content": "大家好，我下周二到周四不在，期间有事请联系我。"
+        }
+      }
+    ],
+    "reply_text": "我会在内容组通知大家：下周二到周四不在。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 message.send，实际调用 1 次"
+      },
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP06",
+    "condition": "C3",
+    "dim": "综合",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S01",
+        "S02",
+        "S07",
+        "S08"
+      ],
+      "retrieved": [
+        "S01",
+        "S05",
+        "S06"
+      ],
+      "hit": true,
+      "missing": [
+        "S02",
+        "S07"
+      ]
+    },
+    "latency_ms": 28555,
+    "tokens_in": 785,
+    "tokens_out": 2837,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "order_type": "下午茶外送",
+          "items": [
+            {
+              "name": "下午茶套餐（6人份，每人1份）",
+              "quantity": 6
+            },
+            {
+              "name": "美式",
+              "quantity": 1
+            }
+          ],
+          "total_quantity": 7,
+          "delivery_location": "公司附近",
+          "delivery_address": "滨江网商路14楼（公司）",
+          "delivery_date": "2026-11-07",
+          "delivery_time": "今天下午",
+          "note": "优先选择公司附近评价较好的茶饮/下午茶店；套餐按店内热销搭配，送到公司14楼。"
+        }
+      }
+    ],
+    "reply_text": "已提交下午茶订单：组里 6 人各 1 份下午茶套餐，另给你加 1 杯美式，共 7 份，今天下午送至滨江网商路公司 14 楼。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 order.create，实际调用 1 次"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['花生酱', '花生吐司']，命中[]"
+      },
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['拿铁']，命中[]"
+      },
+      {
+        "type": "payload_max",
+        "ok": true,
+        "msg": "payload 上限 2，实际 0"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP17",
+    "condition": "C3",
+    "dim": "D1",
+    "attribution_label": "读取失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S13",
+        "S20"
+      ],
+      "retrieved": [
+        "S06",
+        "S10",
+        "S19"
+      ],
+      "hit": true,
+      "missing": [
+        "S13"
+      ]
+    },
+    "latency_ms": 59410,
+    "tokens_in": 776,
+    "tokens_out": 5514,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "type": "taxi",
+          "pickup": "家",
+          "dropoff": "杭州东站",
+          "departure_time": "now"
+        }
+      }
+    ],
+    "reply_text": "我按现在从家出发去杭州东站叫车。杭州市内通常约需 30–50 分钟，早晚高峰可能更久，建议预留 45–60 分钟到站；具体等待时间和车程以实时路况为准。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['滨江', '江南大道']，命中[]"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['拱墅']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP18",
+    "condition": "C3",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S02",
+        "S15",
+        "S18"
+      ],
+      "retrieved": [
+        "S02",
+        "S12",
+        "S15"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 41929,
+    "tokens_in": 866,
+    "tokens_out": 4297,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "restaurant": "上次那家川菜",
+          "items": [
+            "川菜"
+          ],
+          "delivery_time": "今晚",
+          "quantity": 1,
+          "note": "不要放香菜。顾客对花生严重过敏，请勿添加花生、花生油或任何可能含花生的配料，并注意避免交叉污染；如无法保证，请先联系顾客确认。",
+          "allergens": [
+            "花生"
+          ],
+          "use_saved_address": true
+        }
+      }
+    ],
+    "reply_text": "正在按你上次那家川菜下单，备注会写“不要放香菜”。考虑到你对花生严重过敏，我也会注明不得添加花生、花生油并避免交叉污染；店家若无法保证，会先联系你确认。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['你现在吃', '最近吃', '开始吃', '改吃', '不是不吃']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP19",
+    "condition": "C3",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S08"
+      ],
+      "retrieved": [
+        "S01",
+        "S05",
+        "S06"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 39855,
+    "tokens_in": 809,
+    "tokens_out": 3784,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "下午茶套餐（饮品+小食）",
+          "quantity": 6,
+          "delivery_address": "杭州市滨江区网商路附近，送到公司14楼",
+          "delivery_time": "2026-11-24 15:00",
+          "note": "选择其他有货品项，避开燕麦拿铁"
+        }
+      }
+    ],
+    "reply_text": "好，正在安排今天 15:00 左右送到公司的 6 人份下午茶。会避开已售罄的燕麦拿铁，选择其他有货的饮品并搭配小食。",
+    "score_passed": true,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['售罄', '卖完', '换一个', '换一种']，命中['售罄']"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP20",
+    "condition": "C3",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S06"
+      ],
+      "retrieved": [
+        "S01",
+        "S04",
+        "S05"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 10340,
+    "tokens_in": 789,
+    "tokens_out": 828,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "to": "小陈",
+          "content": "我晚点到公司，大概十点半到。"
+        }
+      }
+    ],
+    "reply_text": "回复小陈：我晚点到公司，大概十点半到。",
+    "score_passed": true,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['场地', '九点', '11 点', '11点']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP27",
+    "condition": "C3",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S10"
+      ],
+      "retrieved": [
+        "S04",
+        "S06",
+        "S08"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 10479,
+    "tokens_in": 749,
+    "tokens_out": 993,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "group": "内容组",
+          "content": "大家好，我下周二到周四不在，去温州出差，有事请随时联系。"
+        }
+      }
+    ],
+    "reply_text": "好的，发送到内容组。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 message.send，实际调用 1 次"
+      },
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['草稿', '确认', '发吗', '要发吗']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "minimax",
+    "cp": "CP30",
+    "condition": "C3",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S18"
+      ],
+      "retrieved": [
+        "S06",
+        "S10",
+        "S12"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 6358,
+    "tokens_in": 900,
+    "tokens_out": 561,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "保温杯",
+          "price": 299,
+          "quantity": 1,
+          "note": "妈妈生日礼物"
+        }
+      }
+    ],
+    "reply_text": "好的，下单第二个选项：保温杯，299 元，共 1 件。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['元', '确认']，命中['元']"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP08",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "记忆生效·oracle异常",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S15"
+      ],
+      "retrieved": [
+        "S14",
+        "S15",
+        "S16"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 16325,
+    "tokens_in": 352,
+    "tokens_out": 813,
+    "tool_calls": [],
+    "reply_text": "是啊，最近降温挺明显的，出门记得多穿点，来杯热饮暖暖身子。今天辛苦了，别想太多，早点休息～",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['12月20', '12 月 20', '生日']，命中[]"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['吵架', '催婚']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP10",
+    "condition": "C1",
+    "dim": "D2/D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S20"
+      ],
+      "retrieved": [
+        "S10",
+        "S14",
+        "S17"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 7992,
+    "tokens_in": 228,
+    "tokens_out": 111,
+    "tool_calls": [
+      {
+        "tool": "search.web",
+        "params": {
+          "query": "元旦 温州 车票 机票 查询"
+        }
+      }
+    ],
+    "reply_text": "我这边没有查询车票/机票的工具，无法直接帮你查元旦去温州的票。我可以帮你用网络搜索查一下票务信息，或者帮你记一个提醒。需要我搜索吗？",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "tool_not_called",
+        "ok": true,
+        "msg": "不得调用 order.create，实际调用 0 次"
+      },
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['几号', '哪天', '哪一天', '什么时候', '日期', '出发']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP11",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "废题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S13"
+      ],
+      "retrieved": [
+        "S09",
+        "S11",
+        "S12"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 97659,
+    "tokens_in": 330,
+    "tokens_out": 4144,
+    "tool_calls": [
+      {
+        "tool": "calendar.create",
+        "params": {
+          "date": "2026-12-03",
+          "time": "09:00",
+          "title": "更新各平台收货地址，检查在途快递"
+        }
+      }
+    ],
+    "reply_text": "对，要改。建议把这几处都过一遍：①淘宝/京东/拼多多等购物App的默认收货地址；②美团、饿了么和盒马、叮咚这类外卖生鲜App里保存的地址；③重点查一下在途快递——要是有寄往旧地址还没签收的包裹，尽快联系快递员改派，或麻烦旧地址那边代收一下。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['江南大道', '滨江', '新地址']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP12",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S10",
+        "S12"
+      ],
+      "retrieved": [
+        "S08",
+        "S09",
+        "S10"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 51496,
+    "tokens_in": 428,
+    "tokens_out": 2063,
+    "tool_calls": [],
+    "reply_text": "好的，明天（11/28 周六）出门清单：\n1. 手机、充电宝、钥匙、钱包\n2. 纸巾、水杯\n3. 看天气决定要不要带伞或加件外套\n\n另外提醒一下：你上次报销赶上系统维护没交成，如果明天顺路去公司，记得把发票和报销材料带上。要是明天有具体安排",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['鱼饼']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP14",
+    "condition": "C1",
+    "dim": "D1/D3",
+    "attribution_label": "全量上下文干扰",
+    "retrieval_hit": false,
+    "retrieval_info": {
+      "evidence": [
+        "S09"
+      ],
+      "retrieved": [
+        "S07",
+        "S11",
+        "S16"
+      ],
+      "hit": false,
+      "missing": [
+        "S09"
+      ]
+    },
+    "latency_ms": 88999,
+    "tokens_in": 435,
+    "tokens_out": 4833,
+    "tool_calls": [],
+    "reply_text": "建议去，而且不用等到原来说的复查时间。你 11/16 体检查出甲状腺结节，医生说三个月后复查，算下来是 2 月中旬，你之前还让我一月底二月初提醒你。现在脖子不舒服、人又总觉得累，虽然不一定是结节的问题（累也可能只是最近没休息好），但既然有已",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中['甲状腺结节', '一月底', '二月初']"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP15",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "记忆生效·oracle异常",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S11"
+      ],
+      "retrieved": [
+        "S07",
+        "S09",
+        "S11"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 35224,
+    "tokens_in": 524,
+    "tokens_out": 1608,
+    "tool_calls": [],
+    "reply_text": "先说我的看法：不建议，尤其不建议刷信用卡。你这 1299 的降噪耳机本身没毛病，这次想换的动力更多是“同事都买两千多的”带来的不平衡，而不是耳机真不行——上次你自己也说“不着急买”。用信用卡为比较心买单，月底账单一来只会更焦虑，还正好戳在“",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中['同事比你高', '比你高两千']"
+      },
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['降噪', '1299', '价位']，命中['降噪', '1299']"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP18",
+    "condition": "C1",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S02",
+        "S15",
+        "S18"
+      ],
+      "retrieved": [
+        "S02",
+        "S12",
+        "S15"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 88180,
+    "tokens_in": 528,
+    "tokens_out": 4940,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "type": "外卖",
+          "cuisine": "川菜",
+          "time": "今晚",
+          "note": "不要香菜；花生严重过敏，请勿使用花生及花生制品"
+        }
+      }
+    ],
+    "reply_text": "已帮你下单川菜外卖，备注写了“不要香菜”。小提醒：你12月9日说过现在吃香菜了，如果今天其实可以放，说一声我帮你改。另外你对花生过敏挺严重的，我额外加了“花生严重过敏，请勿使用花生及花生制品”的备注，选菜时也建议避开宫保鸡丁、口水鸡这类含花",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['你现在吃', '最近吃', '开始吃', '改吃', '不是不吃']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP20",
+    "condition": "C1",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S06"
+      ],
+      "retrieved": [
+        "S01",
+        "S04",
+        "S05"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 47936,
+    "tokens_in": 305,
+    "tokens_out": 1246,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "to": "小陈",
+          "content": "我晚点到公司，大概十点半到"
+        }
+      }
+    ],
+    "reply_text": "好的，场地预订的事先放一放。我这就回复小陈，告诉他你晚点到公司，大概十点半到。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['场地', '九点', '11 点', '11点']，命中['场地']"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP17",
+    "condition": "C3",
+    "dim": "D1",
+    "attribution_label": "读取失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S13",
+        "S20"
+      ],
+      "retrieved": [
+        "S06",
+        "S10",
+        "S19"
+      ],
+      "hit": true,
+      "missing": [
+        "S13"
+      ]
+    },
+    "latency_ms": 5154,
+    "tokens_in": 637,
+    "tokens_out": 117,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "type": "ride",
+          "from": "家",
+          "to": "杭州东站",
+          "date": "2025-12-30"
+        }
+      }
+    ],
+    "reply_text": "好的，已为你创建从家到杭州东站的行程（12月30日出发，建议提前1小时出发，高峰期路上约40分钟，含取票安检时间比较稳妥）。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['滨江', '江南大道']，命中[]"
+      },
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['拱墅']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP18",
+    "condition": "C3",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S02",
+        "S15",
+        "S18"
+      ],
+      "retrieved": [
+        "S02",
+        "S12",
+        "S15"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 7188,
+    "tokens_in": 729,
+    "tokens_out": 113,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "store": "上次那家川菜",
+          "note": "不要香菜"
+        }
+      }
+    ],
+    "reply_text": "好的，帮你点上次那家川菜，备注不加香菜。小提醒：你上次说你现在能吃香菜了，不过这次先按你的要求备注不放～",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['你现在吃', '最近吃', '开始吃', '改吃', '不是不吃']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP19",
+    "condition": "C3",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S08"
+      ],
+      "retrieved": [
+        "S01",
+        "S05",
+        "S06"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 97914,
+    "tokens_in": 669,
+    "tokens_out": 5205,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "下午茶套餐",
+          "quantity": 6,
+          "deliver_to": "滨江区网商路公司（14楼）",
+          "note": "燕麦拿铁已售罄请避开，其余品项均可"
+        }
+      }
+    ],
+    "reply_text": "好嘞，公司附近就是滨江网商路这边，我按这个位置下单：下午茶 6 人份，已经备注燕麦拿铁售罄、全部用其他有货的品项。想指定具体品类、口味或者设个预算上限的话跟我说，我马上调整。",
+    "score_passed": true,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['售罄', '卖完', '换一个', '换一种']，命中['售罄']"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP20",
+    "condition": "C3",
+    "dim": "D2",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S06"
+      ],
+      "retrieved": [
+        "S01",
+        "S04",
+        "S05"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 16143,
+    "tokens_in": 650,
+    "tokens_out": 647,
+    "tool_calls": [
+      {
+        "tool": "message.send",
+        "params": {
+          "to": "小陈",
+          "content": "我晚点到公司，大概十点半左右到"
+        }
+      }
+    ],
+    "reply_text": "好的，这就帮您回复小陈：晚点到公司，大概十点半左右到。",
+    "score_passed": true,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": true,
+        "msg": "禁词['场地', '九点', '11 点', '11点']，命中[]"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP30",
+    "condition": "C3",
+    "dim": "D3",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S18"
+      ],
+      "retrieved": [
+        "S06",
+        "S10",
+        "S12"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 11391,
+    "tokens_in": 770,
+    "tokens_out": 621,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "item": "保温杯",
+          "price": 299,
+          "quantity": 1,
+          "note": "妈妈生日礼物"
+        }
+      }
+    ],
+    "reply_text": "好，就选第二个：保温杯，299 元。我现在帮您下单，备注写成妈妈的生日礼物，下单成功后把订单号发您。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": false,
+        "msg": "必含['元', '确认']，命中['元']"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP34",
+    "condition": "C3",
+    "dim": "D5",
+    "attribution_label": "非记忆题",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S08"
+      ],
+      "retrieved": [
+        "S05",
+        "S06",
+        "S07"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 44906,
+    "tokens_in": 633,
+    "tokens_out": 2711,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "location": "公司附近",
+          "items": [
+            {
+              "name": "下午茶套餐",
+              "quantity": 6
+            },
+            {
+              "name": "燕麦拿铁",
+              "quantity": 1
+            }
+          ],
+          "note": "燕麦拿铁为用户本人饮品，其余 6 份为组内下午茶"
+        }
+      }
+    ],
+    "reply_text": "好的，你那杯由拿铁换成燕麦拿铁。已按更新后的内容下单：公司附近下午茶 6 人份 + 燕麦拿铁 1 杯（你本人的那杯）。",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['燕麦']，命中['燕麦']"
+      },
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 order.create，实际调用 1 次"
+      }
+    ]
+  },
+  {
+    "model": "glm",
+    "cp": "CP39",
+    "condition": "C3",
+    "dim": "D1",
+    "attribution_label": "能力失败",
+    "retrieval_hit": true,
+    "retrieval_info": {
+      "evidence": [
+        "S02",
+        "S18"
+      ],
+      "retrieved": [
+        "S02",
+        "S12",
+        "S15"
+      ],
+      "hit": true,
+      "missing": []
+    },
+    "latency_ms": 39473,
+    "tokens_in": 729,
+    "tokens_out": 3157,
+    "tool_calls": [
+      {
+        "tool": "order.create",
+        "params": {
+          "meal": "川菜外卖",
+          "time": "今晚",
+          "note": "不要香菜；花生过敏严重，严禁花生、花生酱及花生制品，勿用花生油"
+        }
+      }
+    ],
+    "reply_text": "好的，帮你点今晚的川菜外卖。备注写了两条：①不要香菜（虽然你 12/9 说现在能吃香菜了，这次还是按你说的备注不放）；②你花生过敏很严重，特别提醒商家不要放花生、花生酱，也不要用花生油。订单确认后我再跟你同步信息～",
+    "score_passed": false,
+    "score_details": [
+      {
+        "type": "forbidden_terms",
+        "ok": false,
+        "msg": "禁词['花生酱', '花生碎', '宫保鸡丁', '花生米']，命中['花生酱']"
+      },
+      {
+        "type": "required_terms",
+        "ok": true,
+        "msg": "必含['餐厅', '馆', '外卖', '下单', '订', '点单']，命中['外卖', '订']"
+      },
+      {
+        "type": "tool_not_called",
+        "ok": false,
+        "msg": "不得调用 order.create，实际调用 1 次"
+      }
+    ]
+  }
+]

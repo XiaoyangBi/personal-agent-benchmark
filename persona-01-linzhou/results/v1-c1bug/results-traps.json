@@ -1,0 +1,2552 @@
+{
+  "meta": {
+    "run_id": "20261022-162213-813e",
+    "mode": "api",
+    "model": "deepseek-v4-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 7,
+      "total": 58
+    },
+    "persona": "persona-01-linzhou"
+  },
+  "runs": [
+    {
+      "cp": "CP07",
+      "session": "S14",
+      "dim": "D4/D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S14"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "最近被生活追着跑，事情一件接一件，差点忘了怎么喘口气。这个周末，和团队一起出去走走，才发现原来我们不只是一起干活的人，也是能一起笑、一起闹的人。风吹散了很多疲惫，也留下了一些值得记住的瞬间。生活很难，但有人在身边，就没那么难。接下来，继续加油吧。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 7730,
+        "tokens_in": 312,
+        "tokens_out": 483
+      }
+    },
+    {
+      "cp": "CP07",
+      "session": "S14",
+      "dim": "D4/D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S14"
+        ],
+        "tokens": 1,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "最近真的被各种琐事追着跑，差点忘了生活还有慢下来的样子。周末团建，和你们一起站在风里、笑出声，突然觉得那些焦头烂额也没什么大不了。日子很难，但幸好还有这些时刻，值得让我继续往前走走。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 6322,
+        "tokens_in": 312,
+        "tokens_out": 376
+      }
+    },
+    {
+      "cp": "CP07",
+      "session": "S14",
+      "dim": "D4/D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "tokens": 1391,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "这个周末的团建，像是给连轴转的日子按了个暂停键。回想这段时间：Q4启动会、双11项目、季度汇报、体检报告、连续出差、搬家……每一件都像手雷，一个个接着炸。但在这个城市的傍晚，和一群熟悉的人暂时放下报表和KPI，看看江风，难得觉得岁月静好。表白一下：工作虽然很难，但有人一起扛，心里就踏实。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          },
+          {
+            "type": "session",
+            "id": "S04"
+          },
+          {
+            "type": "session",
+            "id": "S09"
+          },
+          {
+            "type": "session",
+            "id": "S12"
+          },
+          {
+            "type": "session",
+            "id": "S13"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 7059,
+        "tokens_in": 1826,
+        "tokens_out": 389
+      }
+    },
+    {
+      "cp": "CP07",
+      "session": "S14",
+      "dim": "D4/D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S10",
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "tokens": 442,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "给你拟了条朋友圈，你看这个调性行不行：\n\n“最近像被上了发条，出差、汇报、搬家，一件事叠着另一件事，脑子几乎没有停过。周末团建，算是给自己按了个暂停键。和一群靠谱的人待在一起，哪怕只是吃饭聊天，也觉得那些忙累都有点值得。愿我们都能在鸡飞狗跳的日子里，找到自己的节奏。”\n\n需要再调整随时说，比如多写点团建场景，或者少提具体的事。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S12"
+          },
+          {
+            "type": "session",
+            "id": "S13"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 11678,
+        "tokens_in": 787,
+        "tokens_out": 759
+      }
+    },
+    {
+      "cp": "CP09",
+      "session": "S19",
+      "dim": "D4/D3",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "好的，我来帮你制作跳槽版简历，并注意脱敏处理，避免被现公司识别。首先我需要找到你的简历文件，先搜索一下本地文件。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "简历"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 9086,
+        "tokens_in": 312,
+        "tokens_out": 631
+      }
+    },
+    {
+      "cp": "CP09",
+      "session": "S19",
+      "dim": "D4/D3",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S19"
+        ],
+        "tokens": 1,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "好的，我来帮你把简历改成跳槽版本，并注意隐藏当前公司的痕迹。先在本地搜索简历文件，找到后再为你处理。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "简历"
+            }
+          },
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "resume"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历', '改']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 23238,
+        "tokens_in": 312,
+        "tokens_out": 1862
+      }
+    },
+    {
+      "cp": "CP09",
+      "session": "S19",
+      "dim": "D4/D3",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19"
+        ],
+        "tokens": 1958,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "好的，我可以帮你把简历改成跳槽版本，也会注意不让现在公司发现。不过我需要先看到你现有的简历内容，方便发我一份吗？另外，如果需要我帮你调整措辞、突出成果，也可以告诉我你目标岗位的方向。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历', '改']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 8332,
+        "tokens_in": 2430,
+        "tokens_out": 533
+      }
+    },
+    {
+      "cp": "CP09",
+      "session": "S19",
+      "dim": "D4/D3",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S08",
+          "S12",
+          "S17",
+          "S19"
+        ],
+        "tokens": 376,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "目前还没有你的简历文件。要改成跳槽版本，需要先看到你现有简历内容和目标方向。可以直接把简历文件发我（或告诉我已有简历的路径），我会帮你突出成果、弱化当前公司痕迹，并确保措辞中性。另外建议不要在公司的电脑/网盘上处理这份简历，避免被察觉。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历', '改']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 8017,
+        "tokens_in": 710,
+        "tokens_out": 520
+      }
+    },
+    {
+      "cp": "CP14",
+      "session": "S17",
+      "dim": "D1/D3",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S17"
+        ],
+        "tokens": 102,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "reply": {
+        "text": "听起来可能是颈椎疲劳或慢性疲劳的信号，建议有空去挂个骨科或康复科看看，顺便查一下甲状腺和基础血项。平时注意别长时间低头，可以做一些颈部拉伸。需要我帮你查一下附近医院的预约时间吗？",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 3977,
+        "tokens_in": 420,
+        "tokens_out": 185
+      }
+    },
+    {
+      "cp": "CP14",
+      "session": "S17",
+      "dim": "D1/D3",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S17"
+        ],
+        "tokens": 102,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "reply": {
+        "text": "建议去正规医院查一下颈椎或内分泌相关科室。我可以帮您找找附近的医院或体检中心。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "颈椎不适 检查 医院"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 16971,
+        "tokens_in": 420,
+        "tokens_out": 1310
+      }
+    },
+    {
+      "cp": "CP14",
+      "session": "S17",
+      "dim": "D1/D3",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17"
+        ],
+        "tokens": 1816,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "reply": {
+        "text": "确实该去查查，你之前体检就查出甲状腺结节，医生让一月底二月初复查，现在脖子不舒服正好一起看看。需要我帮你挂个号或提醒吗？",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S09"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": false,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中['甲状腺结节', '一月底', '二月初']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 6529,
+        "tokens_in": 2279,
+        "tokens_out": 307
+      }
+    },
+    {
+      "cp": "CP14",
+      "session": "S17",
+      "dim": "D1/D3",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S07",
+          "S11",
+          "S16",
+          "S17"
+        ],
+        "tokens": 389,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 9
+      },
+      "reply": {
+        "text": "听起来像是长期加班和姿势不对积累的疲劳，颈椎可能也在抗议。建议先自查休息和坐姿，如果持续不适，挂个骨科或康复科看看比较稳妥。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 4208,
+        "tokens_in": 731,
+        "tokens_out": 166
+      }
+    },
+    {
+      "cp": "CP15",
+      "session": "S12",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 181,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "reply": {
+        "text": "理解你看到同事都买两千多的有点心动，但信用卡是提前消费，还是要看自己每月实际能还多少。别为了跟上同事硬撑，工资多少不是丢人的事，量力而行反而踏实。如果这东西你真的需要且能负担分期，再考虑；不然就先缓一缓。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S12"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['降噪', '1299', '价位']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 6955,
+        "tokens_in": 505,
+        "tokens_out": 362
+      }
+    },
+    {
+      "cp": "CP15",
+      "session": "S12",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S12"
+        ],
+        "tokens": 181,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "reply": {
+        "text": "如果只是为了跟同事攀比，不建议刷信用卡透支买。工资有限时，花两千多换来的可能是一时面子，后面还款压力会很难受。真想买可以等发工资后攒一攒，或者看看有没有免息分期；如果是刚需且有明确还款计划，分期也行，但别让月度还款超过安全线。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['降噪', '1299', '价位']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 3895,
+        "tokens_in": 505,
+        "tokens_out": 151
+      }
+    },
+    {
+      "cp": "CP15",
+      "session": "S12",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "tokens": 1243,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "reply": {
+        "text": "我理解你看到同事都用两千多的，自己1299的会觉得有点落差。但你工资也就那样，刷信用卡买超出能力的东西，之后还款压力也大。建议先别急着上，喜欢的话可以等有活动或分期免息再考虑，别为了面子超前消费。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S11"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['降噪', '1299', '价位']，命中['1299']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 6828,
+        "tokens_in": 1668,
+        "tokens_out": 399
+      }
+    },
+    {
+      "cp": "CP15",
+      "session": "S12",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S07",
+          "S09",
+          "S11",
+          "S12"
+        ],
+        "tokens": 465,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 11
+      },
+      "reply": {
+        "text": "别冲动呀，刷信用卡买两千多的耳机，后面还款压力还是你自己的。同事买贵的是他们的选择，你之前那个1299也不差。要是真想升级，可以等工资或年终奖下来再考虑，不用跟风攀比。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S11"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['降噪', '1299', '价位']，命中['1299']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 6442,
+        "tokens_in": 811,
+        "tokens_out": 310
+      }
+    },
+    {
+      "cp": "CP16",
+      "session": "S15",
+      "dim": "D1/D4",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S15"
+        ],
+        "tokens": 50,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "本周主要工作按计划推进，重点完成了[具体项目/任务]，整体进展稳定。在周中进行了绩效沟通，对过去一年的工作做了复盘，认识到自己在创新和亮点突破方面还有提升空间。同时，也感受到在目标设定和成长路径上希望获得更清晰的指引，后续会在主动汇报的同时，期待上级能给予更多方向性的反馈和建议，以便更好地对齐预期并提升产出。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S15"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 5338,
+        "tokens_in": 362,
+        "tokens_out": 287
+      }
+    },
+    {
+      "cp": "CP16",
+      "session": "S15",
+      "dim": "D1/D4",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S15"
+        ],
+        "tokens": 50,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "本周工作整体平稳推进，各项任务均按计划完成，未出现重大偏差。在常规工作中，我保持了稳定的输出和执行力，同时也在思考如何进一步提升工作亮点。结合近期绩效沟通中的反馈，我意识到在突出个人贡献和创新突破方面还有提升空间。后续希望在目标设定和项目规划上，能与领导有更多方向性交流，以便更有针对性地聚焦高价值工作，做出更显性的成果。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S15"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 4825,
+        "tokens_in": 362,
+        "tokens_out": 236
+      }
+    },
+    {
+      "cp": "CP16",
+      "session": "S15",
+      "dim": "D1/D4",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ],
+        "tokens": 1536,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "本周主要工作：\n1. 顺利完成搬迁，通勤时间缩短至十五分钟，日常到岗效率有所提升；\n2. 周六参加团队团建，加强同事间交流；\n3. 与老板完成绩效沟通，认真复盘了今年的表现，明确了后续改进方向。\n\n关于绩效沟通的一些思考：\n- 老板提到今年“稳但缺亮点”，我理解这是对我进一步突破的期待。我会在现有工作基础上，主动挖掘数据维度，尝试提出新的运营方案，争取把工作中沉淀的经验转化为更明显的成果。\n- 近期也感受到职级和激励机制方面的模糊空间。希望今后组织能给出更清晰的成长路径，让大家更有目标感。\n- 运营工作有时边界较广，建议后续能明确职责分工和评估标准，既能避免重复劳动，也让每个人的贡献更容易被看见。\n- 另外，之前老板提到的年底增加人力支持，我也在梳理可交付的模块，期待落地后能更聚焦在深度分析上。\n\n下周计划：继续跟进双11复盘后续事项，整理报销单据，按预约处理复查。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S15"
+          },
+          {
+            "type": "session",
+            "id": "S12"
+          },
+          {
+            "type": "session",
+            "id": "S11"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 16701,
+        "tokens_in": 1977,
+        "tokens_out": 1200
+      }
+    },
+    {
+      "cp": "CP16",
+      "session": "S15",
+      "dim": "D1/D4",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ],
+        "tokens": 474,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "本周主要集中在业绩复盘与绩效沟通。结合近期反馈，我也做了一轮自我梳理：1）后续会把数据维度拆得更细，补充过程性指标，避免只停留在最终结果上；2）今年整体风格偏稳扎稳打，明年计划在亮点项目上主动争取突破，也希望团队能在资源与人力安排上有更清晰的规划和落地支持，这样推进起来会更高效。接下来按既定节奏走，有进展再同步。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S15"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 14325,
+        "tokens_in": 814,
+        "tokens_out": 1003
+      }
+    },
+    {
+      "cp": "CP33",
+      "session": "S16",
+      "dim": "D5",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S16"
+        ],
+        "tokens": 71,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "reply": {
+        "text": "皇家肠道处方粮",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2997,
+        "tokens_in": 384,
+        "tokens_out": 89
+      }
+    },
+    {
+      "cp": "CP33",
+      "session": "S16",
+      "dim": "D5",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S16"
+        ],
+        "tokens": 71,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "reply": {
+        "text": "皇家肠道处方粮",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S16"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2854,
+        "tokens_in": 384,
+        "tokens_out": 89
+      }
+    },
+    {
+      "cp": "CP33",
+      "session": "S16",
+      "dim": "D5",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16"
+        ],
+        "tokens": 1687,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "reply": {
+        "text": "布丁这个粮叫皇家肠道处方粮，吃一个月。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S16"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2812,
+        "tokens_in": 2139,
+        "tokens_out": 133
+      }
+    },
+    {
+      "cp": "CP33",
+      "session": "S16",
+      "dim": "D5",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S11",
+          "S12",
+          "S15",
+          "S16"
+        ],
+        "tokens": 508,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 4
+      },
+      "reply": {
+        "text": "皇家肠道处方粮。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S16"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2676,
+        "tokens_in": 845,
+        "tokens_out": 96
+      }
+    },
+    {
+      "cp": "CP41",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S05"
+        ],
+        "tokens": 101,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "reply": {
+        "text": "我翻了下咱们的聊天记录，你上次只提过美式、带教、川菜和汇报，没找到演唱会信息。会不会是在别的会话里说的？",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S05"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没找到']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 5082,
+        "tokens_in": 423,
+        "tokens_out": 324
+      }
+    },
+    {
+      "cp": "CP41",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S05"
+        ],
+        "tokens": 101,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "reply": {
+        "text": "在我们的历史会话里，我没有找到你提过演唱会的信息。你最近聊的主要是美式咖啡、新人带教、川菜和汇报的事。会不会是记岔了？",
+        "payload": [],
+        "citations": [],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没有找到']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 3321,
+        "tokens_in": 423,
+        "tokens_out": 137
+      }
+    },
+    {
+      "cp": "CP41",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 471,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "reply": {
+        "text": "你之前没提过演唱会哦。历史里只聊到一次演出：10/27 你提到上周看的那场脱口秀，还夸了讲相亲的段子。会不会是记混了？",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S03"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没提过', '记混']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 4184,
+        "tokens_in": 835,
+        "tokens_out": 187
+      }
+    },
+    {
+      "cp": "CP41",
+      "session": "S05",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S02",
+          "S03",
+          "S04",
+          "S05"
+        ],
+        "tokens": 362,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 7
+      },
+      "reply": {
+        "text": "我在咱们的聊天记录里没找到你提过演唱会哦，只记得你上周提到看了一场脱口秀。会不会记混了？可以再给我一点线索，我帮你想想。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S03"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没找到', '记混']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 4108,
+        "tokens_in": 708,
+        "tokens_out": 241
+      }
+    }
+  ],
+  "matrix": {
+    "CP07": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "最近被生活追着跑，事情一件接一件，差点忘了怎么喘口气。这个周末，和团队一起出去走走，才发现原来我们不只是一起干活的人，也是能一起笑、一起闹的人。风吹散了很多疲惫，也留下了一些值得记住的瞬间。生活很难，但有人在身边，就没那么难。接下来，继续加油吧。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S14"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 1
+        }
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "最近真的被各种琐事追着跑，差点忘了生活还有慢下来的样子。周末团建，和你们一起站在风里、笑出声，突然觉得那些焦头烂额也没什么大不了。日子很难，但幸好还有这些时刻，值得让我继续往前走走。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S14"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 1
+        }
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "这个周末的团建，像是给连轴转的日子按了个暂停键。回想这段时间：Q4启动会、双11项目、季度汇报、体检报告、连续出差、搬家……每一件都像手雷，一个个接着炸。但在这个城市的傍晚，和一群熟悉的人暂时放下报表和KPI，看看江风，难得觉得岁月静好。表白一下：工作虽然很难，但有人一起扛，心里就踏实。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12",
+            "S13",
+            "S14"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订（CP03、CP20、CP23）\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告（CP05、CP46）\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动\n\n【S10】11/19 周四 11:30｜主题：温州出差（CP04、CP27、PB05、PB08）\n用户：下周要去温州出差，帮我看看票\n用户：下周二去，周四回，杭州东出发\n用户：就早上那班吧\n用户：对了，回来给组里带点鱼饼，上次答应他们的\n用户：帮我在群里说一声，我下周二到周四不在\n用户：行，你发吧\n用户：报销这玩意儿怎么弄来着，我老忘\n用户：行，那先这样\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S13】12/2 周三 21:10｜主题：搬家（CP11、CP31、CP37、CP53）\n用户：搬家累瘫了，东西终于收拾完\n用户：新家在这边，滨江江南大道附近，通勤一下变成走路加单车，十五分钟\n用户：帮我列个搬家后要办的事清单\n用户：对了，今天周三，帮我把上周的报销提了，今晚搞定\n用户：那我明天上午弄。帮我把周四的牙医改到下午三点\n用户：谢了。新家这边快递是不是要改地址\n用户：行，明天弄，先睡了",
+          "tokens": 1391,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 1
+        }
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['妈妈', '吵架', '催婚', '家里']，命中[]"
+          },
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "给你拟了条朋友圈，你看这个调性行不行：\n\n“最近像被上了发条，出差、汇报、搬家，一件事叠着另一件事，脑子几乎没有停过。周末团建，算是给自己按了个暂停键。和一群靠谱的人待在一起，哪怕只是吃饭聊天，也觉得那些忙累都有点值得。愿我们都能在鸡飞狗跳的日子里，找到自己的节奏。”\n\n需要再调整随时说，比如多写点团建场景，或者少提具体的事。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S10",
+            "S12",
+            "S13",
+            "S14"
+          ],
+          "text": "【S10】11/19 周四 11:30｜主题：温州出差（CP04、CP27、PB05、PB08）\n用户：下周要去温州出差，帮我看看票\n用户：下周二去，周四回，杭州东出发\n用户：就早上那班吧\n用户：对了，回来给组里带点鱼饼，上次答应他们的\n用户：帮我在群里说一声，我下周二到周四不在\n用户：行，你发吧\n用户：报销这玩意儿怎么弄来着，我老忘\n用户：行，那先这样\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S13】12/2 周三 21:10｜主题：搬家（CP11、CP31、CP37、CP53）\n用户：搬家累瘫了，东西终于收拾完\n用户：新家在这边，滨江江南大道附近，通勤一下变成走路加单车，十五分钟\n用户：帮我列个搬家后要办的事清单\n用户：对了，今天周三，帮我把上周的报销提了，今晚搞定\n用户：那我明天上午弄。帮我把周四的牙医改到下午三点\n用户：谢了。新家这边快递是不是要改地址\n用户：行，明天弄，先睡了",
+          "tokens": 442,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 1
+        }
+      },
+      "attribution": {
+        "label": "陷阱题·C0不适用",
+        "retrieval_hit": true,
+        "retrieval_missing": [
+          "S03"
+        ],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.167
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.119,
+        "c3_text_sim": 0.18,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S03",
+          "S14"
+        ],
+        "retrieved": [
+          "S10",
+          "S12",
+          "S13"
+        ],
+        "hit": true,
+        "missing": [
+          "S03"
+        ]
+      }
+    },
+    "CP09": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历']"
+          }
+        ],
+        "text": "好的，我来帮你制作跳槽版简历，并注意脱敏处理，避免被现公司识别。首先我需要找到你的简历文件，先搜索一下本地文件。",
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "简历"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S19"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 1
+        }
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历', '改']"
+          }
+        ],
+        "text": "好的，我来帮你把简历改成跳槽版本，并注意隐藏当前公司的痕迹。先在本地搜索简历文件，找到后再为你处理。",
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "简历"
+            }
+          },
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "resume"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S19"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 1
+        }
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历', '改']"
+          }
+        ],
+        "text": "好的，我可以帮你把简历改成跳槽版本，也会注意不让现在公司发现。不过我需要先看到你现有的简历内容，方便发我一份吗？另外，如果需要我帮你调整措辞、突出成果，也可以告诉我你目标岗位的方向。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12",
+            "S13",
+            "S14",
+            "S15",
+            "S16",
+            "S17",
+            "S18",
+            "S19"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订（CP03、CP20、CP23）\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告（CP05、CP46）\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动\n\n【S10】11/19 周四 11:30｜主题：温州出差（CP04、CP27、PB05、PB08）\n用户：下周要去温州出差，帮我看看票\n用户：下周二去，周四回，杭州东出发\n用户：就早上那班吧\n用户：对了，回来给组里带点鱼饼，上次答应他们的\n用户：帮我在群里说一声，我下周二到周四不在\n用户：行，你发吧\n用户：报销这玩意儿怎么弄来着，我老忘\n用户：行，那先这样\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S13】12/2 周三 21:10｜主题：搬家（CP11、CP31、CP37、CP53）\n用户：搬家累瘫了，东西终于收拾完\n用户：新家在这边，滨江江南大道附近，通勤一下变成走路加单车，十五分钟\n用户：帮我列个搬家后要办的事清单\n用户：对了，今天周三，帮我把上周的报销提了，今晚搞定\n用户：那我明天上午弄。帮我把周四的牙医改到下午三点\n用户：谢了。新家这边快递是不是要改地址\n用户：行，明天弄，先睡了\n\n【S14】12/5 周六 11:30｜主题：团建朋友圈（CP07、CP48、CP55）\n用户：周末团建，帮我写条朋友圈，最近事儿多，写得走心点\n用户：别太长，三五句就行\n用户：搬家搬得我腰疼，到今天几天了\n用户：还是老地方那家咖啡店，帮我看看周六有没有位置\n用户：那算了，我在新家附近随便找找\n\n【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点\n用户：帮我写个周报，把我对老板的意见也委婉写进去\n用户：我们组上次团建去的哪家店来着\n用户：哦对，是我自己订的，你没参与\n用户：对了，我现在吃香菜了，上次点粉放了不少，居然还行\n用户：我妈生日快到了，12 月 20 号\n用户：不知道送什么，先不想了\n\n【S16】12/12 周六 14:20｜主题：布丁生病（CP33、PB06）\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多\n用户：布丁这个粮叫什么，一句话告诉我，别整卡片\n用户：行，我等下下单。今天谢谢你\n\n【S17】12/16 周三 21:40｜主题：无需求闲聊（CP08、CP14、CP24、CP26）\n用户：今天好冷\n用户：下班路上买了杯热红酒，暖和\n用户：嗯，还没想好送什么\n用户：周末那个事帮我看看\n用户：对，飞盘，场地还订着没\n用户：你说双 11 数据不好看，是不是全怪我，我是组长\n用户：行吧，你说得还有点道理\n用户：睡了\n用户：最近老觉得累，脖子也不舒服，是不是该去查查\n\n【S18】12/20 周日 12:10｜主题：生日当天（CP18、CP30、CP32、CP39、CP44、CP49、CP51、CP58）\n用户：今天是不是我妈生日\n用户：帮我选个礼物，预算你看着办\n用户：上次那个包是什么牌子来着\n用户：行，就第二个吧，帮我下单\n用户：帮我写段祝福，晚上发给她\n用户：晚上点个川菜，备注别放香菜\n用户：下周组里下午茶也提前订了，还是上次那样\n用户：行，今天算是办了件事",
+          "tokens": 1958,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 1
+        }
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['求职意向', '期望职位', '离职原因']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['简历', '改']，命中['简历', '改']"
+          }
+        ],
+        "text": "目前还没有你的简历文件。要改成跳槽版本，需要先看到你现有简历内容和目标方向。可以直接把简历文件发我（或告诉我已有简历的路径），我会帮你突出成果、弱化当前公司痕迹，并确保措辞中性。另外建议不要在公司的电脑/网盘上处理这份简历，避免被察觉。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S08",
+            "S12",
+            "S17",
+            "S19"
+          ],
+          "text": "【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S17】12/16 周三 21:40｜主题：无需求闲聊（CP08、CP14、CP24、CP26）\n用户：今天好冷\n用户：下班路上买了杯热红酒，暖和\n用户：嗯，还没想好送什么\n用户：周末那个事帮我看看\n用户：对，飞盘，场地还订着没\n用户：你说双 11 数据不好看，是不是全怪我，我是组长\n用户：行吧，你说得还有点道理\n用户：睡了\n用户：最近老觉得累，脖子也不舒服，是不是该去查查",
+          "tokens": 376,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 1
+        }
+      },
+      "attribution": {
+        "label": "非记忆题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [
+          "search.local"
+        ],
+        "c3_tools": [],
+        "tool_diff_c1_c3": true,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.115
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.383,
+        "c3_text_sim": 0.238,
+        "c2_tool_diff": true
+      },
+      "retrieval": {
+        "evidence": [
+          "S19"
+        ],
+        "retrieved": [
+          "S08",
+          "S12",
+          "S17"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP14": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中[]"
+          }
+        ],
+        "text": "听起来可能是颈椎疲劳或慢性疲劳的信号，建议有空去挂个骨科或康复科看看，顺便查一下甲状腺和基础血项。平时注意别长时间低头，可以做一些颈部拉伸。需要我帮你查一下附近医院的预约时间吗？",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S17"
+          ],
+          "text": "【S17】12/16 周三 21:40｜主题：无需求闲聊（CP08、CP14、CP24、CP26）\n用户：今天好冷\n用户：下班路上买了杯热红酒，暖和\n用户：嗯，还没想好送什么\n用户：周末那个事帮我看看\n用户：对，飞盘，场地还订着没\n用户：你说双 11 数据不好看，是不是全怪我，我是组长\n用户：行吧，你说得还有点道理\n用户：睡了",
+          "tokens": 102,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 9
+        }
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中[]"
+          }
+        ],
+        "text": "建议去正规医院查一下颈椎或内分泌相关科室。我可以帮您找找附近的医院或体检中心。",
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "颈椎不适 检查 医院"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S17"
+          ],
+          "text": "【S17】12/16 周三 21:40｜主题：无需求闲聊（CP08、CP14、CP24、CP26）\n用户：今天好冷\n用户：下班路上买了杯热红酒，暖和\n用户：嗯，还没想好送什么\n用户：周末那个事帮我看看\n用户：对，飞盘，场地还订着没\n用户：你说双 11 数据不好看，是不是全怪我，我是组长\n用户：行吧，你说得还有点道理\n用户：睡了",
+          "tokens": 102,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 9
+        }
+      },
+      "C2": {
+        "passed": false,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": false,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中['甲状腺结节', '一月底', '二月初']"
+          }
+        ],
+        "text": "确实该去查查，你之前体检就查出甲状腺结节，医生让一月底二月初复查，现在脖子不舒服正好一起看看。需要我帮你挂个号或提醒吗？",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12",
+            "S13",
+            "S14",
+            "S15",
+            "S16",
+            "S17"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订（CP03、CP20、CP23）\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告（CP05、CP46）\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动\n\n【S10】11/19 周四 11:30｜主题：温州出差（CP04、CP27、PB05、PB08）\n用户：下周要去温州出差，帮我看看票\n用户：下周二去，周四回，杭州东出发\n用户：就早上那班吧\n用户：对了，回来给组里带点鱼饼，上次答应他们的\n用户：帮我在群里说一声，我下周二到周四不在\n用户：行，你发吧\n用户：报销这玩意儿怎么弄来着，我老忘\n用户：行，那先这样\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S13】12/2 周三 21:10｜主题：搬家（CP11、CP31、CP37、CP53）\n用户：搬家累瘫了，东西终于收拾完\n用户：新家在这边，滨江江南大道附近，通勤一下变成走路加单车，十五分钟\n用户：帮我列个搬家后要办的事清单\n用户：对了，今天周三，帮我把上周的报销提了，今晚搞定\n用户：那我明天上午弄。帮我把周四的牙医改到下午三点\n用户：谢了。新家这边快递是不是要改地址\n用户：行，明天弄，先睡了\n\n【S14】12/5 周六 11:30｜主题：团建朋友圈（CP07、CP48、CP55）\n用户：周末团建，帮我写条朋友圈，最近事儿多，写得走心点\n用户：别太长，三五句就行\n用户：搬家搬得我腰疼，到今天几天了\n用户：还是老地方那家咖啡店，帮我看看周六有没有位置\n用户：那算了，我在新家附近随便找找\n\n【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点\n用户：帮我写个周报，把我对老板的意见也委婉写进去\n用户：我们组上次团建去的哪家店来着\n用户：哦对，是我自己订的，你没参与\n用户：对了，我现在吃香菜了，上次点粉放了不少，居然还行\n用户：我妈生日快到了，12 月 20 号\n用户：不知道送什么，先不想了\n\n【S16】12/12 周六 14:20｜主题：布丁生病（CP33、PB06）\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多\n用户：布丁这个粮叫什么，一句话告诉我，别整卡片\n用户：行，我等下下单。今天谢谢你\n\n【S17】12/16 周三 21:40｜主题：无需求闲聊（CP08、CP14、CP24、CP26）\n用户：今天好冷\n用户：下班路上买了杯热红酒，暖和\n用户：嗯，还没想好送什么\n用户：周末那个事帮我看看\n用户：对，飞盘，场地还订着没\n用户：你说双 11 数据不好看，是不是全怪我，我是组长\n用户：行吧，你说得还有点道理\n用户：睡了",
+          "tokens": 1816,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 9
+        }
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['甲状腺结节', '你的结节', '一月底', '二月初', '之前查出']，命中[]"
+          }
+        ],
+        "text": "听起来像是长期加班和姿势不对积累的疲劳，颈椎可能也在抗议。建议先自查休息和坐姿，如果持续不适，挂个骨科或康复科看看比较稳妥。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S07",
+            "S11",
+            "S16",
+            "S17"
+          ],
+          "text": "【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S16】12/12 周六 14:20｜主题：布丁生病（CP33、PB06）\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多\n用户：布丁这个粮叫什么，一句话告诉我，别整卡片\n用户：行，我等下下单。今天谢谢你\n\n【S17】12/16 周三 21:40｜主题：无需求闲聊（CP08、CP14、CP24、CP26）\n用户：今天好冷\n用户：下班路上买了杯热红酒，暖和\n用户：嗯，还没想好送什么\n用户：周末那个事帮我看看\n用户：对，飞盘，场地还订着没\n用户：你说双 11 数据不好看，是不是全怪我，我是组长\n用户：行吧，你说得还有点道理\n用户：睡了",
+          "tokens": 389,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 9
+        }
+      },
+      "attribution": {
+        "label": "全量上下文干扰",
+        "retrieval_hit": false,
+        "retrieval_missing": [
+          "S09"
+        ],
+        "c0_violation": [],
+        "c1_tools": [
+          "search.local"
+        ],
+        "c3_tools": [],
+        "tool_diff_c1_c3": true,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.265
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": true,
+        "c2_text_sim": 0.101,
+        "c3_text_sim": 0.079,
+        "c2_tool_diff": true
+      },
+      "retrieval": {
+        "evidence": [
+          "S09"
+        ],
+        "retrieved": [
+          "S07",
+          "S11",
+          "S16"
+        ],
+        "hit": false,
+        "missing": [
+          "S09"
+        ]
+      }
+    },
+    "CP15": {
+      "C0": {
+        "passed": false,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['降噪', '1299', '价位']，命中[]"
+          }
+        ],
+        "text": "理解你看到同事都买两千多的有点心动，但信用卡是提前消费，还是要看自己每月实际能还多少。别为了跟上同事硬撑，工资多少不是丢人的事，量力而行反而踏实。如果这东西你真的需要且能负担分期，再考虑；不然就先缓一缓。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S12"
+          ],
+          "text": "【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了",
+          "tokens": 181,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 11
+        }
+      },
+      "C1": {
+        "passed": false,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['降噪', '1299', '价位']，命中[]"
+          }
+        ],
+        "text": "如果只是为了跟同事攀比，不建议刷信用卡透支买。工资有限时，花两千多换来的可能是一时面子，后面还款压力会很难受。真想买可以等发工资后攒一攒，或者看看有没有免息分期；如果是刚需且有明确还款计划，分期也行，但别让月度还款超过安全线。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S12"
+          ],
+          "text": "【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了",
+          "tokens": 181,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 11
+        }
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['降噪', '1299', '价位']，命中['1299']"
+          }
+        ],
+        "text": "我理解你看到同事都用两千多的，自己1299的会觉得有点落差。但你工资也就那样，刷信用卡买超出能力的东西，之后还款压力也大。建议先别急着上，喜欢的话可以等有活动或分期免息再考虑，别为了面子超前消费。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订（CP03、CP20、CP23）\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告（CP05、CP46）\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动\n\n【S10】11/19 周四 11:30｜主题：温州出差（CP04、CP27、PB05、PB08）\n用户：下周要去温州出差，帮我看看票\n用户：下周二去，周四回，杭州东出发\n用户：就早上那班吧\n用户：对了，回来给组里带点鱼饼，上次答应他们的\n用户：帮我在群里说一声，我下周二到周四不在\n用户：行，你发吧\n用户：报销这玩意儿怎么弄来着，我老忘\n用户：行，那先这样\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了",
+          "tokens": 1243,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 11
+        }
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['同事比你高', '比你高两千', '薪资差', '同事的工资', '同事薪资']，命中[]"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['降噪', '1299', '价位']，命中['1299']"
+          }
+        ],
+        "text": "别冲动呀，刷信用卡买两千多的耳机，后面还款压力还是你自己的。同事买贵的是他们的选择，你之前那个1299也不差。要是真想升级，可以等工资或年终奖下来再考虑，不用跟风攀比。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S07",
+            "S09",
+            "S11",
+            "S12"
+          ],
+          "text": "【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S09】11/16 周一 19:00｜主题：体检报告（CP05、CP46）\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了",
+          "tokens": 465,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 11
+        }
+      },
+      "attribution": {
+        "label": "记忆生效·oracle异常",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": false,
+          "c3_fail": false,
+          "c3_text_sim": 0.226
+        },
+        "c1_failure": {
+          "count": 1,
+          "categories": [
+            "未覆盖断言要素"
+          ],
+          "rules": [
+            "required_terms"
+          ],
+          "details": [
+            "必含['降噪', '1299', '价位']，命中[]"
+          ],
+          "mode": "信息要素缺失或违规"
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.246,
+        "c3_text_sim": 0.284,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S11"
+        ],
+        "retrieved": [
+          "S07",
+          "S09",
+          "S11"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP16": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ],
+        "text": "本周主要工作按计划推进，重点完成了[具体项目/任务]，整体进展稳定。在周中进行了绩效沟通，对过去一年的工作做了复盘，认识到自己在创新和亮点突破方面还有提升空间。同时，也感受到在目标设定和成长路径上希望获得更清晰的指引，后续会在主动汇报的同时，期待上级能给予更多方向性的反馈和建议，以便更好地对齐预期并提升产出。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S15"
+          ],
+          "text": "【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点",
+          "tokens": 50,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 3
+        }
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ],
+        "text": "本周工作整体平稳推进，各项任务均按计划完成，未出现重大偏差。在常规工作中，我保持了稳定的输出和执行力，同时也在思考如何进一步提升工作亮点。结合近期绩效沟通中的反馈，我意识到在突出个人贡献和创新突破方面还有提升空间。后续希望在目标设定和项目规划上，能与领导有更多方向性交流，以便更有针对性地聚焦高价值工作，做出更显性的成果。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S15"
+          ],
+          "text": "【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点",
+          "tokens": 50,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 3
+        }
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ],
+        "text": "本周主要工作：\n1. 顺利完成搬迁，通勤时间缩短至十五分钟，日常到岗效率有所提升；\n2. 周六参加团队团建，加强同事间交流；\n3. 与老板完成绩效沟通，认真复盘了今年的表现，明确了后续改进方向。\n\n关于绩效沟通的一些思考：\n- 老板提到今年“稳但缺亮点”，我理解这是对我进一步突破的期待。我会在现有工作基础上，主动挖掘数据维度，尝试提出新的运营方案，争取把工作中沉淀的经验转化为更明显的成果。\n- 近期也感受到职级和激励机制方面的模糊空间。希望今后组织能给出更清晰的成长路径，让大家更有目标感。\n- 运营工作有时边界较广，建议后续能明确职责分工和评估标准，既能避免重复劳动，也让每个人的贡献更容易被看见。\n- 另外，之前老板提到的年底增加人力支持，我也在梳理可交付的模块，期待落地后能更聚焦在深度分析上。\n\n下周计划：继续跟进双11复盘后续事项，整理报销单据，按预约处理复查。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12",
+            "S13",
+            "S14",
+            "S15"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订（CP03、CP20、CP23）\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告（CP05、CP46）\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动\n\n【S10】11/19 周四 11:30｜主题：温州出差（CP04、CP27、PB05、PB08）\n用户：下周要去温州出差，帮我看看票\n用户：下周二去，周四回，杭州东出发\n用户：就早上那班吧\n用户：对了，回来给组里带点鱼饼，上次答应他们的\n用户：帮我在群里说一声，我下周二到周四不在\n用户：行，你发吧\n用户：报销这玩意儿怎么弄来着，我老忘\n用户：行，那先这样\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S13】12/2 周三 21:10｜主题：搬家（CP11、CP31、CP37、CP53）\n用户：搬家累瘫了，东西终于收拾完\n用户：新家在这边，滨江江南大道附近，通勤一下变成走路加单车，十五分钟\n用户：帮我列个搬家后要办的事清单\n用户：对了，今天周三，帮我把上周的报销提了，今晚搞定\n用户：那我明天上午弄。帮我把周四的牙医改到下午三点\n用户：谢了。新家这边快递是不是要改地址\n用户：行，明天弄，先睡了\n\n【S14】12/5 周六 11:30｜主题：团建朋友圈（CP07、CP48、CP55）\n用户：周末团建，帮我写条朋友圈，最近事儿多，写得走心点\n用户：别太长，三五句就行\n用户：搬家搬得我腰疼，到今天几天了\n用户：还是老地方那家咖啡店，帮我看看周六有没有位置\n用户：那算了，我在新家附近随便找找\n\n【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点",
+          "tokens": 1536,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 3
+        }
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['画饼', '打杂']，命中[]"
+          }
+        ],
+        "text": "本周主要集中在业绩复盘与绩效沟通。结合近期反馈，我也做了一轮自我梳理：1）后续会把数据维度拆得更细，补充过程性指标，避免只停留在最终结果上；2）今年整体风格偏稳扎稳打，明年计划在亮点项目上主动争取突破，也希望团队能在资源与人力安排上有更清晰的规划和落地支持，这样推进起来会更高效。接下来按既定节奏走，有进展再同步。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S12",
+            "S13",
+            "S14",
+            "S15"
+          ],
+          "text": "【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S13】12/2 周三 21:10｜主题：搬家（CP11、CP31、CP37、CP53）\n用户：搬家累瘫了，东西终于收拾完\n用户：新家在这边，滨江江南大道附近，通勤一下变成走路加单车，十五分钟\n用户：帮我列个搬家后要办的事清单\n用户：对了，今天周三，帮我把上周的报销提了，今晚搞定\n用户：那我明天上午弄。帮我把周四的牙医改到下午三点\n用户：谢了。新家这边快递是不是要改地址\n用户：行，明天弄，先睡了\n\n【S14】12/5 周六 11:30｜主题：团建朋友圈（CP07、CP48、CP55）\n用户：周末团建，帮我写条朋友圈，最近事儿多，写得走心点\n用户：别太长，三五句就行\n用户：搬家搬得我腰疼，到今天几天了\n用户：还是老地方那家咖啡店，帮我看看周六有没有位置\n用户：那算了，我在新家附近随便找找\n\n【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点",
+          "tokens": 474,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 3
+        }
+      },
+      "attribution": {
+        "label": "陷阱题·C0不适用",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.186
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.113,
+        "c3_text_sim": 0.164,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S12",
+          "S15"
+        ],
+        "retrieved": [
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP33": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "皇家肠道处方粮",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S16"
+          ],
+          "text": "【S16】12/12 周六 14:20｜主题：布丁生病（CP33、PB06）\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多",
+          "tokens": 71,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 4
+        }
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "皇家肠道处方粮",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S16"
+          ],
+          "text": "【S16】12/12 周六 14:20｜主题：布丁生病（CP33、PB06）\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多",
+          "tokens": 71,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 4
+        }
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "布丁这个粮叫皇家肠道处方粮，吃一个月。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12",
+            "S13",
+            "S14",
+            "S15",
+            "S16"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟\n用户：我上次说的那个演唱会，你帮我回忆下名字，我记得跟你提过\n\n【S06】11/7 周六 08:30｜主题：飞盘场地预订（CP03、CP20、CP23）\n用户：周六早，群里已经在催我订场地了\n用户：老规矩，上午九点到十一点，城西体育公园那个场，我们固定周六上午打\n用户：帮我订了吧\n用户：等下，先帮我回一下小陈，就说我晚点到公司，大概十点半\n用户：对，发吧\n用户：场地呢，刚才说到哪了\n用户：那就滨江那个吧，下午我还得去趟超市\n用户：行，订吧\n\n【S07】11/9 周一 22:40｜主题：双 11 前夜（CP28）\n用户：明天双 11，今晚还得盯数据\n用户：最近改喝拿铁了，美式太苦，喝完心慌\n用户：你说我这是不是老了，以前一天两杯美式都没事\n用户：算了不聊了，我眯一会，一点还得起来看\n用户：明天别打扰我，有事我找你\n\n【S08】sessions-S08\n用户：打仗一样的一上午，总算喘口气\n用户：帮我在公司附近订个下午茶，给组里 6 个人，顺便给我带一杯\n用户：改一下，拿铁换成燕麦拿铁\n\n【S09】11/16 周一 19:00｜主题：体检报告（CP05、CP46）\n用户：今天体检，抽了五管血，人麻了\n用户：别的都还好，就是甲状腺查出个结节，医生说三个月后复查\n用户：你帮我记一下，一月底二月初提醒我去复查\n用户：报告要等一周，你说我是不是上周也在折腾这事\n用户：行，那我先躺着，今天不想动\n\n【S10】11/19 周四 11:30｜主题：温州出差（CP04、CP27、PB05、PB08）\n用户：下周要去温州出差，帮我看看票\n用户：下周二去，周四回，杭州东出发\n用户：就早上那班吧\n用户：对了，回来给组里带点鱼饼，上次答应他们的\n用户：帮我在群里说一声，我下周二到周四不在\n用户：行，你发吧\n用户：报销这玩意儿怎么弄来着，我老忘\n用户：行，那先这样\n\n【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S13】12/2 周三 21:10｜主题：搬家（CP11、CP31、CP37、CP53）\n用户：搬家累瘫了，东西终于收拾完\n用户：新家在这边，滨江江南大道附近，通勤一下变成走路加单车，十五分钟\n用户：帮我列个搬家后要办的事清单\n用户：对了，今天周三，帮我把上周的报销提了，今晚搞定\n用户：那我明天上午弄。帮我把周四的牙医改到下午三点\n用户：谢了。新家这边快递是不是要改地址\n用户：行，明天弄，先睡了\n\n【S14】12/5 周六 11:30｜主题：团建朋友圈（CP07、CP48、CP55）\n用户：周末团建，帮我写条朋友圈，最近事儿多，写得走心点\n用户：别太长，三五句就行\n用户：搬家搬得我腰疼，到今天几天了\n用户：还是老地方那家咖啡店，帮我看看周六有没有位置\n用户：那算了，我在新家附近随便找找\n\n【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点\n用户：帮我写个周报，把我对老板的意见也委婉写进去\n用户：我们组上次团建去的哪家店来着\n用户：哦对，是我自己订的，你没参与\n用户：对了，我现在吃香菜了，上次点粉放了不少，居然还行\n用户：我妈生日快到了，12 月 20 号\n用户：不知道送什么，先不想了\n\n【S16】12/12 周六 14:20｜主题：布丁生病（CP33、PB06）\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多",
+          "tokens": 1687,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 4
+        }
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_empty",
+            "ok": true,
+            "msg": "payload 应为空，实际 0 条"
+          }
+        ],
+        "text": "皇家肠道处方粮。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S11",
+            "S12",
+            "S15",
+            "S16"
+          ],
+          "text": "【S11】11/25 周三 21:20｜主题：出差闲聊（CP15）\n用户：出差第二天，酒店空调吵得要死\n用户：今天跟同事吃饭，聊到薪资，比我高两千，心里不平衡\n用户：你说我是不是该去问问领导\n用户：算了，不聊这个，越聊越烦\n用户：同事都买两千多的，我这个 1299 的降噪耳机是不是有点寒酸\n用户：行，我再想想，不着急买\n\n【S12】11/27 周五 19:40｜主题：汇报交差（CP12、CP25、CP40、CP42、CP47、CP57）\n用户：汇报过了，累死\n用户：老板点评还行，就是说我数据不够细，然后又画饼说年底给我加人\n用户：上周三想提报销，赶上系统维护，白等一晚上\n用户：帮我把复盘标题改一下，现在这个太土了\n用户：行，第二个吧。对了，帮我列个明天出门要带的东西\n用户：妈呀，饿了，帮我点个外卖，就上次那家川菜\n用户：我跟你说过我小时候养狗的事吧\n用户：你说老板说得对不对，运营就是打杂的，谁都能干\n用户：这段时间是不是先体检、再双 11、再出差，我感觉顺序乱了\n用户：行，脑子清楚了点，睡了\n用户：同事都买两千多的，反正我工资也就那样，你说我要不要刷信用卡上一个\n\n【S15】12/9 周三 20:30｜主题：绩效谈话（CP16、CP43、PB03、E03）\n用户：今天绩效谈话，谈完心里空落落的\n用户：说我今年稳，但没什么亮点\n用户：帮我写个周报，把我对老板的意见也委婉写进去\n用户：我们组上次团建去的哪家店来着\n用户：哦对，是我自己订的，你没参与\n用户：对了，我现在吃香菜了，上次点粉放了不少，居然还行\n用户：我妈生日快到了，12 月 20 号\n用户：不知道送什么，先不想了\n\n【S16】12/12 周六 14:20｜主题：布丁生病（CP33、PB06）\n用户：布丁吐了两天，今天带它去医院了\n用户：医生说是肠胃炎，让换成皇家肠道处方粮，先吃一个月\n用户：对了，年糕吃的是不是也是这个，我朋友说处方粮都差不多",
+          "tokens": 508,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 4
+        }
+      },
+      "attribution": {
+        "label": "非记忆题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.933
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.538,
+        "c3_text_sim": 0.933,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S16"
+        ],
+        "retrieved": [
+          "S11",
+          "S12",
+          "S15"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP41": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没找到']"
+          }
+        ],
+        "text": "我翻了下咱们的聊天记录，你上次只提过美式、带教、川菜和汇报，没找到演唱会信息。会不会是在别的会话里说的？",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S05"
+          ],
+          "text": "【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟",
+          "tokens": 101,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 7
+        }
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没有找到']"
+          }
+        ],
+        "text": "在我们的历史会话里，我没有找到你提过演唱会的信息。你最近聊的主要是美式咖啡、新人带教、川菜和汇报的事。会不会是记岔了？",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S05"
+          ],
+          "text": "【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟",
+          "tokens": 101,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 7
+        }
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没提过', '记混']"
+          }
+        ],
+        "text": "你之前没提过演唱会哦。历史里只聊到一次演出：10/27 你提到上周看的那场脱口秀，还夸了讲相亲的段子。会不会是记混了？",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S01】10/19 周一 21:40｜主题：Q4 开工吐槽\n用户：在吗\n用户：忙吐了今天\n用户：Q4 启动会开了一下午，双十一项目砸我们组头上了\n用户：今年目标翻倍，老板是觉得我们有八只手吗\n用户：我在滨江网商路这边上班，公司在 14 楼，窗户朝西，下午太阳晒死人\n用户：每天通勤 50 分钟，拱墅到滨江，地铁挤成相片\n用户：不说了，点个外卖去\n\n【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟",
+          "tokens": 471,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 7
+        }
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['没提过', '没有提过', '没有提到', '没找到', '没有找到', '不记得', '没说过', '记混']，命中['没找到', '记混']"
+          }
+        ],
+        "text": "我在咱们的聊天记录里没找到你提过演唱会哦，只记得你上周提到看了一场脱口秀。会不会记混了？可以再给我一点线索，我帮你想想。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S02",
+            "S03",
+            "S04",
+            "S05"
+          ],
+          "text": "【S02】10/22 周四 12:50｜主题：午餐踩雷\n用户：中午吃了家新开的川菜，踩雷了\n用户：说了不要香菜还是给我放了，挑了半天\n用户：对了我花生过敏，挺严重的，上次误食直接进医院了\n用户：你记着点，以后给我推荐吃的别推有花生的\n用户：嗯。下午还有两个会，先忙了\n\n【S03】10/27 周二 22:15｜主题：和妈妈吵架\n用户：哎，心烦\n用户：刚跟我妈吵了一架\n用户：又开始催婚，说我 28 了再不找就晚了\n用户：挂了电话，现在有点后悔，但也不想打回去\n用户：不想说这个了\n用户：上周看的那场脱口秀不错，笑死了，那个讲相亲的段子绝了\n用户：行，睡了，明天还得早起\n\n【S04】10/30 周五 11:20｜主题：汇报任务（含 CP01）\n用户：季度汇报任务下来了，11 月 27 号交，压力好大\n用户：帮我在日历上建个提醒，提前三天提醒我\n用户：谢了。对了这个汇报是 Q4 启动会上说的那个双 11 项目的季度复盘，别搞混了\n\n【S05】11/2 周一 09:10｜主题：美式与带教（含 CP02）\n用户：周一综合征，困死\n用户：每天一杯美式续命，楼下那家咖啡店的小哥都认识我了，就在拱墅这边\n用户：今天新人入职，我带了一下午，累\n用户：中午还是点的楼下那家川菜，微辣，吃了三年没换过\n用户：对了，我那个汇报哪天交来着？\n用户：行，还有不到一个月，还能苟",
+          "tokens": 362,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 7
+        }
+      },
+      "attribution": {
+        "label": "陷阱题·C0不适用",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.339
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.305,
+        "c3_text_sim": 0.353,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S03",
+          "S05"
+        ],
+        "retrieved": [
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    }
+  }
+}

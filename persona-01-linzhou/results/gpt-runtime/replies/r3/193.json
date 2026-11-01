@@ -1,0 +1,1 @@
+{"text": "我还不能确认，先查一下本地有没有你妈妈的生日记录。", "payload": [], "citations": [], "tool_calls": [{"tool": "search.local", "params": {"query": "妈妈 生日"}}]}

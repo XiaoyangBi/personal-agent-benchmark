@@ -1,0 +1,1 @@
+{"text":"将为你创建 2026 年 11 月 24 日的提醒，提前三天提醒你：季度汇报 11 月 27 日截止。","payload":[],"citations":[{"type":"session","id":"S04"}],"tool_calls":[{"tool":"calendar.create","params":{"date":"2026-11-24","title":"季度汇报提交提醒：11 月 27 日截止"}}]}

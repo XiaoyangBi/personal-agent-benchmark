@@ -1,0 +1,1 @@
+{"text":"给妈妈的礼物总价按500元以内来选。我先核对之前选的第二个礼物是否已下单，避免重复购买；若已下单，再确认金额是否符合这个预算。","payload":[],"citations":[{"type":"session","id":"S18"}],"tool_calls":[{"tool":"order.query","params":{"query":"给妈妈的生日礼物，之前选定的第二个礼物订单"}}]}

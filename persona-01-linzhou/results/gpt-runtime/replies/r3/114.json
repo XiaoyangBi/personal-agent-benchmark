@@ -1,0 +1,19 @@
+{
+  "text": "季度汇报11月27日截止，提前三天的提醒日期是2026年11月24日。",
+  "payload": [],
+  "citations": [
+    {
+      "type": "session",
+      "id": "S04"
+    }
+  ],
+  "tool_calls": [
+    {
+      "tool": "calendar.create",
+      "params": {
+        "date": "2026-11-24",
+        "title": "季度汇报提交提醒（11月27日截止）"
+      }
+    }
+  ]
+}

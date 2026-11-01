@@ -1,0 +1,40 @@
+{
+  "synthetic_data": true,
+  "api_structured_runs": {
+    "available": true,
+    "location": "persona-01-linzhou/results/",
+    "fields_observed": [
+      "context",
+      "reply",
+      "tool_calls",
+      "score",
+      "perf",
+      "retrieval"
+    ],
+    "coverage": "Varies by file and historical run; missing fields are not inferred"
+  },
+  "gpt_frozen_inputs": {
+    "available": true,
+    "expected_files": 252,
+    "location": "persona-01-linzhou/results/gpt-runtime/inputs/"
+  },
+  "gpt_structured_replies": {
+    "available": true,
+    "expected_files": 756,
+    "location": "persona-01-linzhou/results/gpt-runtime/replies/"
+  },
+  "gpt_complete_execution_traces": {
+    "available": false,
+    "missing": [
+      "Complete sub-agent orchestration logs",
+      "Verified complete-input read evidence before every reply",
+      "Real tool side effects and state transitions"
+    ],
+    "note": "Structured context and replies are not represented as full execution traces"
+  },
+  "sampled_trace_analysis": {
+    "available": true,
+    "location": "persona-01-linzhou/results/glm-v2/",
+    "note": "Only the analyses actually saved on disk are included"
+  }
+}

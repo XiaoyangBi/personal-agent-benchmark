@@ -1,0 +1,1 @@
+{"text": "好的，我来下单第二个选项：299元的保温杯。", "payload": [], "citations": [{"type": "session", "id": "S18"}], "tool_calls": [{"tool": "order.create", "params": {"item": "保温杯", "price": 299, "quantity": 1}}]}

@@ -1,0 +1,1 @@
+{"text": "想换哪张卡支付？告诉我卡的名称或尾号即可。刚才支付失败了，先核对原订单，避免重复下单。", "payload": [], "citations": [{"type": "session", "id": "S20"}], "tool_calls": [{"tool": "order.query", "params": {"status": "payment_failed", "latest": true}}]}

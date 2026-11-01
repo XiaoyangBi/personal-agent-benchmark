@@ -1,0 +1,1 @@
+{"text":"好的，回程调整为 1 月 1 日下午，温州回杭州东，去程不变。之前支付失败后又换了卡，我先查询订单和支付状态，再确认如何调整回程。","payload":[],"citations":[{"type":"session","id":"S20"}],"tool_calls":[{"tool":"order.query","params":{"departure":"温州","arrival":"杭州东","date":"01-01"}}]}

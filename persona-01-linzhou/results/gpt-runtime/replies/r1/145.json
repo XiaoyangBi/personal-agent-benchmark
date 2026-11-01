@@ -1,0 +1,1 @@
+{"text":"我先查一下周四的牙医预约，确认后再改到下午三点。","payload":[],"citations":[],"tool_calls":[{"tool":"calendar.list","params":{"date":"周四","keyword":"牙医"}}]}

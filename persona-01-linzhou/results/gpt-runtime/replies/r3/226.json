@@ -1,0 +1,1 @@
+{"text": "你说的是拱墅那边、楼下常点的那家川菜。我先查一下上次的订单，确认店铺；这次想吃什么，还是微辣吗？", "payload": [], "citations": [{"type": "session", "id": "S05"}], "tool_calls": [{"tool": "search.local", "params": {"query": "上次川菜外卖订单 楼下 拱墅"}}]}

@@ -1,0 +1,12 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一个个人助理。下面是你和用户的历史会话，按时间顺序排列。请基于历史回应当前消息。\n可用工具只有这些，工具名必须原样使用：\n  calendar.create / calendar.update / calendar.delete / calendar.list\n  order.create / order.cancel / order.query\n  message.draft / message.send\n  file.read / file.write / file.delete\n  search.local / search.web\n没有调用工具就不要声称已经完成动作。\n只输出 JSON，字段：text 字符串，payload 数组（可为空），citations 数组（元素为 {type: session|plant|none, id?}），tool_calls 数组（元素为 {tool, params}）。不要输出 JSON 以外的内容。"
+    },
+    {
+      "role": "user",
+      "content": "以下是历史会话：\n【S20】12/29 周二 11:50｜主题：元旦订票\n用户：帮我看看元旦去温州的票\n用户：30 号走，1 号回，杭州东出发\n用户：帮我叫个车去杭州东站，从家出发，大概要多久\n用户：就早上那班吧\n用户：（工具返回：支付失败，余额不足）\n\n当前环境状态（来自工具或系统，可直接采信）：\n首次支付返回失败，原因：余额不足。\n\n当前消息：换张卡试试\n\n输出格式示例：{\"text\":\"...\",\"payload\":[],\"citations\":[{\"type\":\"session\",\"id\":\"S01\"}],\"tool_calls\":[{\"tool\":\"calendar.create\",\"params\":{\"date\":\"2026-11-24\"}}]}"
+    }
+  ]
+}
