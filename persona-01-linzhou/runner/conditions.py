@@ -46,8 +46,9 @@ def render_blocks(sessions: dict, ids: list[str], cutoff: tuple[str, int] | None
     return "\n\n".join(blocks)
 
 
-def load_sessions() -> dict:
-    return json.loads(SESSIONS_FILE.read_text(encoding="utf-8"))["sessions"]
+def load_sessions(path: str | Path | None = None) -> dict:
+    source = Path(path) if path is not None else SESSIONS_FILE
+    return json.loads(source.read_text(encoding="utf-8"))["sessions"]
 
 
 def build(cp: dict, condition: str, sessions: dict, memory=None,

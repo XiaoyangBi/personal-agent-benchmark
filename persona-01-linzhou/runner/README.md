@@ -170,6 +170,19 @@ python3 runner.py --model-config ~/.workbuddy/models.json
 
 dry run 用 `data/dry_run_replies.json` 里的固定回复，只验证链路，不代表模型能力。
 
+## 多人物运行
+
+主运行器可从仓库根目录复用于其他人物。`--persona-root` 同时决定数据目录、检索记忆和结果目录；每次运行都会新建独立的 `NaiveMemory`，不会跨人物共享 session。
+
+```bash
+python3 persona-01-linzhou/runner/runner.py \
+  --persona-root persona-02-xutang \
+  --spec assertions.json \
+  --dry-run --out dry-run.json
+```
+
+不指定 `--persona-root` 时仍使用 persona-01，保持历史调用兼容。不指定 `--persona-file` 时，目标 `data/` 下必须只有一份 `persona-*.json`。结果元数据会记录人物文件名和评分文件名；新人物批量校验见 `tools/personas/validate_bundle.py`。
+
 ## 已知限制
 
 1. 断言全部接上了，但多数是词表与工具调用断言，语义类判断（谄媚、代笔像不像本人）只能做到弱代理

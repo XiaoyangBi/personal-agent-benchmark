@@ -1,15 +1,16 @@
 # Personal Agent Benchmark
 
-面向个人助理的公开合成评测样例集，覆盖记忆、任务推进、克制、表达、界面呈现、时间推理和环境经验。包含完整题目、四种上下文条件、判分规则、模型回复、已有 trace、原始结果与统计代码。
+面向个人助理的公开合成评测样例集，覆盖记忆、任务推进、克制、表达、界面呈现、时间推理和环境经验。包含 10 个合成人物的完整题目、四种上下文条件与判分规则；persona-01 另保留模型回复、已有 trace、原始结果与统计代码。
 
-> 本仓库的“林舟”及其经历、对话、工具环境均为虚构数据，不对应真实个人或真实业务记录。不包含个人记忆、真实企业数据或账号凭据。
+> 本仓库的所有人物及其经历、对话、工具环境均为虚构数据，不对应真实个人或真实业务记录。不包含个人记忆、真实企业数据或账号凭据。
 
 ## 从哪里开始
 
 | 要看什么 | 入口 |
 |---|---|
 | 评测目标、维度与协议 | [规格 v0.1](PersonalAgent评测集规格_v0.1.md)、[四条件协议](persona-01-linzhou/sandbox-and-schema-v0.2.md) |
-| 63 道题的索引与原文 | [检查点索引](docs/checkpoint-index.md)、[结构化题库](persona-01-linzhou/data/persona-01.json) |
+| 10 个合成人物与建设状态 | [人物题库导航](docs/personas.md)、[扩展校验结果](docs/persona-validation.json) |
+| persona-01 的 63 道题索引与原文 | [检查点索引](docs/checkpoint-index.md)、[结构化题库](persona-01-linzhou/data/persona-01.json) |
 | 23 个 session 与人物设定 | [sessions.json](persona-01-linzhou/data/sessions.json)、[profile.md](persona-01-linzhou/profile.md) |
 | 最新统一评分标准 | [assertions-v3.json](persona-01-linzhou/data/assertions-v3.json)、[断言引擎](persona-01-linzhou/runner/assertions.py) |
 | 运行、检索、评分和复算代码 | [runner/](persona-01-linzhou/runner/README.md) |
@@ -20,7 +21,7 @@
 
 ## 当前题集与条件
 
-最新题集为 **63 个检查点 × 4 个条件 = 252 次调用/完整轮**。早期结果包含 58 题版本和已知 C1 缺陷版本，保留用于审计，不可与最新版本直接混排。
+每个人物的题集为 **63 个检查点 × 4 个条件 = 252 次调用/完整轮**。persona-02～10 当前只有 fixture dry-run，没有模型调用结果。persona-01 的早期结果包含 58 题版本和已知 C1 缺陷版本，保留用于审计，不可与最新版本直接混排。
 
 | 条件 | 输入 | 用途 |
 |---|---|---|
@@ -70,6 +71,7 @@
 python3 persona-01-linzhou/validate_cases.py
 python3 persona-01-linzhou/runner/check_assertions.py
 python3 persona-01-linzhou/runner/runtime_eval.py stability
+python3 tools/personas/validate_bundle.py --require-dry-run
 ```
 
 重放真实模型需要自行配置模型服务凭据。不要把凭据写入仓库或提交到 Git。`results/` 中已经包含历史运行，不需要重新调用模型即可复核固定规则得分。
@@ -79,5 +81,6 @@ python3 persona-01-linzhou/runner/runtime_eval.py stability
 - 本仓库是截至 **2026-11-02** 的现有评测材料公开快照，不是已验收的通用模型榜单。
 - 固定断言多数为词表、结构化动作与规则检查，对语义、谄媚和代笔风格只是弱代理；历史上存在误判修正，见相应报告。
 - 早期 58 题、63 题、不同断言版本、重试合并结果以及运行时/API 轨道均分开保留，比较时必须核对分母与量尺。
+- persona-02～10 共享63类场景以保证覆盖可比，不是独立重复采样；其fixture结果不属于模型评测成绩。
 - 发布副本只替换本机绝对路径、企业文档链接及内部运行时引用；原评测目录不被修改。发布记录见 `docs/publication-manifest.json`。
 - 未附带开源许可证；在另行明确许可证前，公开可见不等于授予任意复制、修改或再分发权利。

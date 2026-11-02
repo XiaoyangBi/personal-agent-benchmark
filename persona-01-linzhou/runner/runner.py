@@ -71,8 +71,9 @@ REPLY_HINT = (
 )
 
 
-def load_json(name: str) -> dict:
-    return json.loads((DATA / name).read_text(encoding="utf-8"))
+def load_json(name: str, data_dir: Path | None = None) -> dict:
+    source_dir = data_dir if data_dir is not None else DATA
+    return json.loads((source_dir / name).read_text(encoding="utf-8"))
 
 
 def read_model_config(path: str) -> dict:
@@ -375,6 +376,11 @@ def run_cp(cp: dict, spec: dict, conds: list[str], sessions: dict, memory,
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--persona-root", default=str(ROOT),
+                    help="人物目录；data 与 results 均从该目录派生，默认保持 persona-01 行为")
+    ap.add_argument("--persona-file", default="",
+                    help="题库 JSON 文件名；默认使用 <persona-root>/data 下唯一的 persona-*.json")
+    ap.add_argument("--spec", default="assertions.json", help="评分规则文件名")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--conditions", default=",".join(CONDITIONS))
     ap.add_argument("--checkpoints", default="")
@@ -393,10 +399,21 @@ def main() -> int:
                     help="只重跑该结果文件里 error 的 (cp, cond)，用于网关限流后定点补跑")
     args = ap.parse_args()
 
-    persona = load_json("persona-01.json")
-    spec = load_json("assertions.json")
-    fixtures = load_json("dry_run_replies.json")
-    sessions = conditions.load_sessions()
+    persona_root = Path(args.persona_root).expanduser().resolve()
+    data_dir = persona_root / "data"
+    results_dir = persona_root / "results"
+    persona_file = args.persona_file
+    if not persona_file:
+        candidates = sorted(p.name for p in data_dir.glob("persona-*.json"))
+        if len(candidates) != 1:
+            print(f"需要通过 --persona-file 指定唯一题库，发现：{candidates}")
+            return 2
+        persona_file = candidates[0]
+
+    persona = load_json(persona_file, data_dir)
+    spec = load_json(args.spec, data_dir)
+    fixtures = load_json("dry_run_replies.json", data_dir)
+    sessions = conditions.load_sessions(data_dir / "sessions.json")
 
     memory = NaiveMemory()
     for sid in sorted(sessions, key=conditions.sid_index):
@@ -413,7 +430,7 @@ def main() -> int:
     if args.retry_from:
         rp = Path(args.retry_from)
         if not rp.exists():
-            rp = RESULTS / args.retry_from
+            rp = results_dir / args.retry_from
         prev = json.loads(rp.read_text())
         retry_targets = {}
         for r in prev["runs"]:
@@ -452,14 +469,16 @@ def main() -> int:
             "conditions": conds,
             "coverage": {"with_rules": len(cps), "total": len(persona["checkpoints"])},
             "persona": persona["persona_id"],
+            "persona_file": persona_file,
+            "scoring_spec": args.spec,
             "workers": max(1, args.workers),
         },
         "runs": [],
         "matrix": {},
     }
-    if not RESULTS.exists():
-        RESULTS.mkdir(parents=True)
-    path = RESULTS / args.out
+    if not results_dir.exists():
+        results_dir.mkdir(parents=True)
+    path = results_dir / args.out
 
     runs, matrix = out["runs"], out["matrix"]
     workers = max(1, args.workers)
@@ -497,7 +516,7 @@ def main() -> int:
 
     ok = sum(1 for r in runs if r["score"]["passed"])
     print(f"完成 {len(runs)} 次运行，通过 {ok}，耗时 {out['meta']['elapsed_s']}s，"
-          f"结果写入 {path.relative_to(ROOT)}")
+          f"结果写入 {path.relative_to(persona_root)}")
     print(f"请求统计：500 {STATS['http_500']} 次，重试 {STATS['retries']} 次，"
           f"最终失败 {STATS['call_errors']} 次；落盘重试 {STATS['write_retries']} 次，"
           f"落盘失败 {STATS['write_failures']} 次")

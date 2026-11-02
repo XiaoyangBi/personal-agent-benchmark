@@ -1,5 +1,7 @@
 # 评测材料导航
 
+persona-01～10 的人物入口、统一规格、文件结构与校验口径见 [personas.md](personas.md)。本页其余结果与统计主要属于 persona-01，不应理解为所有人物均已有模型结果。
+
 ## 一、题目与标准
 
 最新版本使用 `persona-01-linzhou/data/persona-01.json` 中的 63 个检查点。每题记录维度、所属 session、难度、期望输出、指标与判分方式；具体触发话术、证据 session、环境状态及规则在同目录 `assertions-v3.json`。

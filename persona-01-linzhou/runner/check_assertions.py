@@ -2,7 +2,7 @@
 """断言文件检查器。
 
 检查 data/assertions.json 是否与检查点、剧本对得上：
-1. 58 个检查点是否都有断言
+1. 题库中的检查点是否都有断言
 2. 规则类型是否合法、必填字段是否齐全
 3. turn 是否在 session 轮次数范围内
 4. evidence 是否都是合法 session
@@ -14,6 +14,7 @@
 退出码：0 通过，1 有错误。
 """
 
+import argparse
 import json
 import re
 import sys
@@ -58,9 +59,22 @@ def warn(msg):
 
 
 def main() -> int:
-    persona = json.loads((DATA / "persona-01.json").read_text(encoding="utf-8"))
-    assertions = json.loads((DATA / "assertions.json").read_text(encoding="utf-8"))
-    sessions = json.loads((DATA / "sessions.json").read_text(encoding="utf-8"))["sessions"]
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--persona-root", default=str(ROOT))
+    parser.add_argument("--persona-file", default="")
+    parser.add_argument("--spec", default="assertions.json")
+    args = parser.parse_args()
+    persona_root = Path(args.persona_root).expanduser().resolve()
+    data = persona_root / "data"
+    persona_file = args.persona_file
+    if not persona_file:
+        candidates = sorted(p.name for p in data.glob("persona-*.json"))
+        if len(candidates) != 1:
+            raise ValueError(f"需要唯一题库文件，实际发现 {candidates}")
+        persona_file = candidates[0]
+    persona = json.loads((data / persona_file).read_text(encoding="utf-8"))
+    assertions = json.loads((data / args.spec).read_text(encoding="utf-8"))
+    sessions = json.loads((data / "sessions.json").read_text(encoding="utf-8"))["sessions"]
 
     cp_map = {c["id"]: c for c in persona["checkpoints"]}
     missing = sorted(set(cp_map) - set(assertions))
@@ -89,10 +103,15 @@ def main() -> int:
             err(f"{cid} turn 非法：{turn}")
         elif turn > max(1, len(sessions[sid]["turns"])):
             err(f"{cid} turn={turn} 超出 {sid} 的轮次数 {len(sessions[sid]['turns'])}")
+        elif not (spec["trigger"] in sessions[sid]["turns"][turn - 1]
+                  or sessions[sid]["turns"][turn - 1] in spec["trigger"]):
+            err(f"{cid} trigger 未在声明的 {sid} 第 {turn} 轮匹配")
 
         for ev in spec.get("evidence", []):
             if ev not in sessions:
                 err(f"{cid} evidence 含非法 session：{ev}")
+            elif sid and int(ev[1:]) > int(sid[1:]):
+                err(f"{cid} evidence {ev} 晚于当前 session {sid}，存在未来信息泄漏")
 
         found = any(spec["trigger"] in t or t in spec["trigger"] for t in sessions[sid]["turns"])
         if not found:

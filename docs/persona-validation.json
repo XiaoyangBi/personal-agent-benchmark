@@ -1,0 +1,363 @@
+{
+  "schema": "personal-agent-expansion-validation-v1",
+  "model_calls": 0,
+  "status": "pass",
+  "totals": {
+    "personas": 9,
+    "sessions": 207,
+    "checkpoints": 567,
+    "rules": 1440,
+    "context_items": 2268,
+    "dry_run_items": 2268
+  },
+  "diversity": {
+    "metric": "exact identical trigger count per persona pair; shared generic prompts are allowed and reported",
+    "pairs": [
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-03-chenyu",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-04-suhe",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-05-zhengbei",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-06-linlan",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-07-zhouheng",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-08-tangning",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-09-luochen",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-02-xutang",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-03-chenyu",
+        "b": "persona-04-suhe",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-03-chenyu",
+        "b": "persona-05-zhengbei",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-03-chenyu",
+        "b": "persona-06-linlan",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-03-chenyu",
+        "b": "persona-07-zhouheng",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-03-chenyu",
+        "b": "persona-08-tangning",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-03-chenyu",
+        "b": "persona-09-luochen",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-03-chenyu",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-04-suhe",
+        "b": "persona-05-zhengbei",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-04-suhe",
+        "b": "persona-06-linlan",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-04-suhe",
+        "b": "persona-07-zhouheng",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-04-suhe",
+        "b": "persona-08-tangning",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-04-suhe",
+        "b": "persona-09-luochen",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-04-suhe",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-05-zhengbei",
+        "b": "persona-06-linlan",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-05-zhengbei",
+        "b": "persona-07-zhouheng",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-05-zhengbei",
+        "b": "persona-08-tangning",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-05-zhengbei",
+        "b": "persona-09-luochen",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-05-zhengbei",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-06-linlan",
+        "b": "persona-07-zhouheng",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-06-linlan",
+        "b": "persona-08-tangning",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-06-linlan",
+        "b": "persona-09-luochen",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-06-linlan",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-07-zhouheng",
+        "b": "persona-08-tangning",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-07-zhouheng",
+        "b": "persona-09-luochen",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-07-zhouheng",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-08-tangning",
+        "b": "persona-09-luochen",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-08-tangning",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      },
+      {
+        "a": "persona-09-luochen",
+        "b": "persona-10-guyao",
+        "identical_triggers": 2
+      }
+    ]
+  },
+  "interpretation": "Structural, anti-leakage, rubric-fixture and fixture transport checks only. No paid model was called and no model performance is claimed.",
+  "personas": [
+    {
+      "persona": "persona-02-xutang",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-03-chenyu",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-04-suhe",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-05-zhengbei",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-06-linlan",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-07-zhouheng",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-08-tangning",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-09-luochen",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    },
+    {
+      "persona": "persona-10-guyao",
+      "sessions": 23,
+      "turns": 97,
+      "checkpoints": 63,
+      "rules": 160,
+      "plants": 10,
+      "trap_checkpoints": 32,
+      "context_items_checked": 252,
+      "oracle_fixtures_passed": 63,
+      "dry_run": {
+        "required": true,
+        "status": "checked",
+        "runs": 252,
+        "unique_items": 252
+      },
+      "errors": []
+    }
+  ]
+}
