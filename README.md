@@ -13,7 +13,7 @@
 | 23 个 session 与人物设定 | [sessions.json](persona-01-linzhou/data/sessions.json)、[profile.md](persona-01-linzhou/profile.md) |
 | 最新统一评分标准 | [assertions-v3.json](persona-01-linzhou/data/assertions-v3.json)、[断言引擎](persona-01-linzhou/runner/assertions.py) |
 | 运行、检索、评分和复算代码 | [runner/](persona-01-linzhou/runner/README.md) |
-| 全模型结果与报告 | [results/](persona-01-linzhou/results/)、[材料导航](docs/data-guide.md) |
+| 全模型结果与报告 | [按模型查看结果](docs/model-results.md)、[results/](persona-01-linzhou/results/)、[材料导航](docs/data-guide.md) |
 | GPT 三轮输入、回复与稳定性 | [gpt-runtime/](persona-01-linzhou/results/gpt-runtime/)、[三轮统计](persona-01-linzhou/results/gpt-runtime/stability-three-models.json) |
 | 历次结果文件清单 | [run-inventory.json](docs/run-inventory.json) |
 | 发布范围与历史口径 | [publication-manifest.json](docs/publication-manifest.json)、[项目变更记录](docs/project-history.md) |

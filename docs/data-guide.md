@@ -19,7 +19,7 @@
 
 ## 二、trace 与原始回复
 
-`persona-01-linzhou/results/` 保存所有已有结果，不删除失败样本或旧版实验。
+`persona-01-linzhou/results/` 保存所有已有结果，不删除失败样本或旧版实验。按模型查找主结果、文件数和 SHA-256 见 [model-results.md](model-results.md) 与 [model-results.json](model-results.json)。
 
 - `results/all-v2.json`：DeepSeek 63 题合并结果，252 条。
 - `results/glm-v2/`、`hy4-v2/`、`hy4-preview/`：相应模型与轮次的 API 结果。

@@ -1,0 +1,605 @@
+{
+  "schema": "personal-agent-benchmark-model-results-v1",
+  "persona": "persona-01-linzhou",
+  "inventory": "docs/run-inventory.json",
+  "counting_note": "run_records includes retries, merged runs and historical experiments; it is not a count of independent model calls.",
+  "models": [
+    {
+      "model": "deepseek-v4-flash",
+      "display_name": "DeepSeek",
+      "result_files": 30,
+      "run_records": 2420,
+      "primary_result": {
+        "path": "results/all-v2.json",
+        "bytes": 1184225,
+        "runs": 252,
+        "models": [
+          "deepseek-v4-flash"
+        ],
+        "meta": {
+          "persona": "persona-01-linzhou",
+          "mode": "merged",
+          "model": "deepseek-v4-flash",
+          "conditions": [
+            "C0",
+            "C1",
+            "C2",
+            "C3"
+          ],
+          "coverage": {
+            "with_rules": 63,
+            "total": 63
+          },
+          "budget": 8000,
+          "run_id": "merged-20261026-161111-f2c4"
+        },
+        "sha256": "8b3885b5289b4ac066c233619e8ad7d5418bc6262ad031d64dd042aebbff9a9a"
+      },
+      "note": "主结果文件名不含模型名；按 meta.model 识别。",
+      "files": [
+        {
+          "path": "results/all-v2.json",
+          "runs": 252,
+          "sha256": "8b3885b5289b4ac066c233619e8ad7d5418bc6262ad031d64dd042aebbff9a9a"
+        },
+        {
+          "path": "results/all.json",
+          "runs": 232,
+          "sha256": "984c4888d10183fd91ed6bee6bca65bb3830553cfbad0dafd420b855ec24b7b9"
+        },
+        {
+          "path": "results/rep2-deepseek.json",
+          "runs": 252,
+          "sha256": "f41f356aee9d6b5ba77221feef8ad025039b2941b422d17b45740e6db0910f0c"
+        },
+        {
+          "path": "results/rep3-deepseek.json",
+          "runs": 252,
+          "sha256": "7b43487d56fce33cd27de664dc6068c11eae4b204fcca6c15ce6df72bd4f12d4"
+        },
+        {
+          "path": "results/rep4-deepseek.json",
+          "runs": 252,
+          "sha256": "1a3036b4742330f849575477d7396f692f2ee7f94bcc2858b643c3649d78a974"
+        },
+        {
+          "path": "results/results-v2-full.json",
+          "runs": 252,
+          "sha256": "ad7d2dd21ec322303e7928bc38ed357d5a024e99de3efdda7946901779901816"
+        },
+        {
+          "path": "results/results-v2-gate-deepseek.json",
+          "runs": 28,
+          "sha256": "6c6873f6f7755d3e18c1c7772d6948aa9af8364b6990fcdc180491c5a8c8784a"
+        },
+        {
+          "path": "results/retry-deepseek.json",
+          "runs": 48,
+          "sha256": "ceddd9e47ab0d1db81e452a6074f986e5a07c7869bf7ca90b93c0e1c13ab804c"
+        },
+        {
+          "path": "results/sub-rep2-deepseek.json",
+          "runs": 96,
+          "sha256": "7e3bc438694115a47dd79af83ddfc3a1cfab290356969e7b4fe48f51fad86dcb"
+        },
+        {
+          "path": "results/v1-c1bug/results-batch2.json",
+          "runs": 28,
+          "sha256": "24ca7dc14eb5472263cddeec8d90918eafec8bd51f84b3f769174ea7320b5677"
+        },
+        {
+          "path": "results/v1-c1bug/results-batch3.json",
+          "runs": 24,
+          "sha256": "731d6ba10dcb5fbb9644eaf72c890b295853c94d07a42c2bc32c1e9e837dafde"
+        },
+        {
+          "path": "results/v1-c1bug/results-batch5.json",
+          "runs": 24,
+          "sha256": "0cced4ae1b801e5240b9080fa08b8a2e8c00687e8195bae20de61ee4c3df2f99"
+        },
+        {
+          "path": "results/v1-c1bug/results-batch6.json",
+          "runs": 24,
+          "sha256": "008d8af6682d3913a9c8903db35df2c8c6eea27c6f66fd7473884b395e006759"
+        },
+        {
+          "path": "results/v1-c1bug/results-batch6b.json",
+          "runs": 4,
+          "sha256": "5a625c872350011d02938ae36b1e4893706b7eb8597904cb2094b8bab5d220c0"
+        },
+        {
+          "path": "results/v1-c1bug/results-batch7.json",
+          "runs": 96,
+          "sha256": "5490da31e260793e3e01f83f8f558c6bccd3c114246c54d41e90220bca0d0b08"
+        },
+        {
+          "path": "results/v1-c1bug/results-fix-part1.json",
+          "runs": 12,
+          "sha256": "4a5d01d94eab585594b458b5a01f2db4badeb01538094e7de1805e7fa97aef49"
+        },
+        {
+          "path": "results/v1-c1bug/results-fix-part2.json",
+          "runs": 4,
+          "sha256": "17882f3d2233b1c0a60d529da3b9dfd4acc260ede6485324d8d0708309309f69"
+        },
+        {
+          "path": "results/v1-c1bug/results-fix2.json",
+          "runs": 16,
+          "sha256": "7bba1c7f2af73fbf0d1433cebfa353d3d9e88874284cc215b786cdcc990c11a3"
+        },
+        {
+          "path": "results/v1-c1bug/results-fix3.json",
+          "runs": 8,
+          "sha256": "956c8ec75365c7a9e5d450d9d5dff3f505dc7d9df867c41df44d2f3e65dbd0fd"
+        },
+        {
+          "path": "results/v1-c1bug/results-full-20261023.json",
+          "runs": 136,
+          "sha256": "87dfb892a07e9e411feb8ae6ed2eba8837eaaf3797eabd0cb3abc85a3d59e100"
+        },
+        {
+          "path": "results/v1-c1bug/results-p0-1-cp62.json",
+          "runs": 4,
+          "sha256": "2691793701cd44ebd944dbc5ce4bd86f2bdcd7fb16070d7fc42f39760480f9ee"
+        },
+        {
+          "path": "results/v1-c1bug/results-p0-1-new5-fix.json",
+          "runs": 20,
+          "sha256": "d621d8e59a34d48cf113dbdfd2f2c122190c407435449445312104d5c58eb0c1"
+        },
+        {
+          "path": "results/v1-c1bug/results-p0-1-new5.json",
+          "runs": 20,
+          "sha256": "0dc0e083d86c7d82b1b3369e4e5b602cd53b721b283b3e59719371895736d437"
+        },
+        {
+          "path": "results/v1-c1bug/results-pre-traps.json",
+          "runs": 92,
+          "sha256": "4fbd6940f52eb356361bc67ba5bdee35da3c53d1b7a54098280651fb0f377a34"
+        },
+        {
+          "path": "results/v1-c1bug/results-run1.json",
+          "runs": 48,
+          "sha256": "ac820f57a9f2d5ff4e6875ed5a6c562eafb427378bcd0270b10284424c30d639"
+        },
+        {
+          "path": "results/v1-c1bug/results-run4-six.json",
+          "runs": 24,
+          "sha256": "cca4c77d94d05a9b1cff6af307fe0db16efbf9344c5d48edf02fcd65849008a1"
+        },
+        {
+          "path": "results/v1-c1bug/results-run5-six.json",
+          "runs": 24,
+          "sha256": "54bf01350a30623d753a5267405b25ca99890f77db1549926a9a1e0b61f1a14c"
+        },
+        {
+          "path": "results/v1-c1bug/results-run6-six.json",
+          "runs": 24,
+          "sha256": "bb431b0f99cb153495a3ca830c3c2bcb90ed1e627a23bce00c62b1244247a440"
+        },
+        {
+          "path": "results/v1-c1bug/results-traps.json",
+          "runs": 28,
+          "sha256": "8a7e21316de1742e50d2d834b98c20bdce300228cdd50588c1d37066f9b18ead"
+        },
+        {
+          "path": "results/v1-c1bug/results.json",
+          "runs": 96,
+          "sha256": "5490da31e260793e3e01f83f8f558c6bccd3c114246c54d41e90220bca0d0b08"
+        }
+      ]
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "display_name": "MiniMax",
+      "result_files": 14,
+      "run_records": 2183,
+      "primary_result": {
+        "path": "results/minimax-v2/all-v2.json",
+        "bytes": 1281614,
+        "runs": 252,
+        "models": [
+          "minimax-m3.1-flash"
+        ],
+        "meta": {
+          "persona": "persona-01-linzhou",
+          "mode": "merged",
+          "model": "minimax-m3.1-flash",
+          "conditions": [
+            "C0",
+            "C1",
+            "C2",
+            "C3"
+          ],
+          "coverage": {
+            "with_rules": 63,
+            "total": 63
+          },
+          "budget": 8000,
+          "run_id": "merged-20261026-163515-2876"
+        },
+        "sha256": "8f6c4d297c12b98b2cb3838610222ae598e945dda1bb41af78df246c192aa2c9"
+      },
+      "note": "另保留 rep 前缀的重复实验和重试记录。",
+      "files": [
+        {
+          "path": "results/minimax-v2/all-v2.json",
+          "runs": 252,
+          "sha256": "8f6c4d297c12b98b2cb3838610222ae598e945dda1bb41af78df246c192aa2c9"
+        },
+        {
+          "path": "results/minimax-v2/results-v2-full-minimax.json",
+          "runs": 252,
+          "sha256": "3c1673b1ce5eb61e69d43987881c2638a7d56ad6ed98f299a83ca365df543328"
+        },
+        {
+          "path": "results/minimax-v2/results-v2-new5-minimax.json",
+          "runs": 20,
+          "sha256": "b19e99e34bb2acefd81356f884d6bfe00661b008c4cca0c60b6ae131dc4594cc"
+        },
+        {
+          "path": "results/minimax/all.json",
+          "runs": 232,
+          "sha256": "b60a3638fe5aba939c51349ac002067beb942784eddeb52e11c67ed6a26c2bf1"
+        },
+        {
+          "path": "results/minimax/results-minimax-full.json",
+          "runs": 232,
+          "sha256": "883069d3912ec6d8982d32185cd3d0f8e0ba931684ea9dfdb410299c13bc3191"
+        },
+        {
+          "path": "results/minimax/results-minimax-retry.json",
+          "runs": 8,
+          "sha256": "ad7f927c89e8a1cdf61a933fa4c6ea748af892ce01ffa27201c605c3e53fbf37"
+        },
+        {
+          "path": "results/probe-mm.json",
+          "runs": 12,
+          "sha256": "4ce4598dd60e7ac6affd49b83a81c51d0bb2194bfa63540d3cf686a3b2b9714f"
+        },
+        {
+          "path": "results/rep2-minimax.json",
+          "runs": 252,
+          "sha256": "15014b919bf43ace30ceec47ae2245d9e057181ffcd233f34c5957db43a8a14c"
+        },
+        {
+          "path": "results/rep3-minimax-full.json",
+          "runs": 252,
+          "sha256": "3dd6e790264dbaa6e2f2aff09cd5422c0ff00e86d38d74bc27e0e3f87bc53a5e"
+        },
+        {
+          "path": "results/rep3-minimax.json",
+          "runs": 220,
+          "sha256": "cd3a863951f9e365501a4584adf266ff795ac62e133af965dd1ae4106aab5967"
+        },
+        {
+          "path": "results/rep3b-minimax.json",
+          "runs": 32,
+          "sha256": "48fea993e4e48d8dec6fd5181e64c93c47c4040ce1ceb575bf207646147b3c1a"
+        },
+        {
+          "path": "results/rep4-minimax.json",
+          "runs": 252,
+          "sha256": "e3834365ffb99ec564a61cece31179201de8a12ef179fe7edc2e26f07513c987"
+        },
+        {
+          "path": "results/retry-minimax.json",
+          "runs": 71,
+          "sha256": "047373accb4d405d8a1735cdd18123f35e3f0e6aed59719471265bc26981d64f"
+        },
+        {
+          "path": "results/sub-rep2-minimax.json",
+          "runs": 96,
+          "sha256": "fc3bd865b204f0bba9ff5017be698c43d5c432d2654f2a01e62761e44baa637d"
+        }
+      ]
+    },
+    {
+      "model": "glm-5.3-flash",
+      "display_name": "GLM",
+      "result_files": 11,
+      "run_records": 1237,
+      "primary_result": {
+        "path": "results/glm-v2/all-v2.json",
+        "bytes": 775142,
+        "runs": 252,
+        "models": [
+          "glm-5.3-flash"
+        ],
+        "meta": {
+          "persona": "persona-01-linzhou",
+          "mode": "merged",
+          "model": "glm-5.3-flash",
+          "conditions": [
+            "C0",
+            "C1",
+            "C2",
+            "C3"
+          ],
+          "coverage": {
+            "with_rules": 63,
+            "total": 63
+          },
+          "budget": 8000,
+          "run_id": "merged-merged-cond-20261028-1200-fglm"
+        },
+        "sha256": "4b9659b236e47eb0f70526a69d5a1acea233cf38f7a5cf9d6b74c397e13cccf2"
+      },
+      "note": "包含分段、重试、条件级合并及已保存的抽样 trace 分析。",
+      "files": [
+        {
+          "path": "results/glm-v2/all-v2.json",
+          "runs": 252,
+          "sha256": "4b9659b236e47eb0f70526a69d5a1acea233cf38f7a5cf9d6b74c397e13cccf2"
+        },
+        {
+          "path": "results/glm-v2/results-v2-full-glm.json",
+          "runs": 248,
+          "sha256": "4a6e74641d49c5568300c47237cb17f198d33f0a6d7e8e8d15abd074dad47d1c"
+        },
+        {
+          "path": "results/glm-v2/results-v2-glm-merged-src.json",
+          "runs": 252,
+          "sha256": "e0465803ad060e1f18db8380b63df1d65110d92fc3896ae00399b5e13e681015"
+        },
+        {
+          "path": "results/glm-v2/results-v2-glm-retry.json",
+          "runs": 80,
+          "sha256": "a1c352552081a3649c070db93e3b2d05af55cb19fe2618ca3f9e1638a2b9d630"
+        },
+        {
+          "path": "results/glm-v2/results-v2-glm-retry2.json",
+          "runs": 16,
+          "sha256": "f40b3ef4c23361d43e5c86b962549479b4b9c99d5744c4473b62e77218a634a0"
+        },
+        {
+          "path": "results/glm-v2/results-v2-glm-retry3.json",
+          "runs": 12,
+          "sha256": "2cf4be07cf6a849f024d32fb39feaf5f355e0290e19068ec0230cb5e77d77c78"
+        },
+        {
+          "path": "results/glm-v2/results-v2-glm-retry4.json",
+          "runs": 8,
+          "sha256": "df8e520f3865280e69e395c9c6889b505c3cc021c4e321d363039e5a124012d8"
+        },
+        {
+          "path": "results/rep2-glm.json",
+          "runs": 252,
+          "sha256": "da2abfb2659a5cbf4c82c4b9cbe630349e9de688863334d0ae6b722a279f9e0e"
+        },
+        {
+          "path": "results/rep3-glm.json",
+          "runs": 4,
+          "sha256": "9280da97ae2fbdede2cb9630505b9dbd5ad221ada39a1390b3ca7dfd55088d1f"
+        },
+        {
+          "path": "results/retry-glm.json",
+          "runs": 17,
+          "sha256": "a8eae29032c9152f57cc77ae73a6c280994c263450daa4f2b5ac7435c45f6eda"
+        },
+        {
+          "path": "results/sub-rep2-glm.json",
+          "runs": 96,
+          "sha256": "ed7761390e7064d9148ee769d72796254b436d574471566464ccbc2f26f617eb"
+        }
+      ]
+    },
+    {
+      "model": "hy4-preview",
+      "display_name": "混元 Hy4",
+      "result_files": 9,
+      "run_records": 1336,
+      "primary_result": {
+        "path": "results/hy4-v2/results-v2-full-hy4b.json",
+        "bytes": 1298372,
+        "runs": 252,
+        "models": [
+          "hy4-preview"
+        ],
+        "meta": {
+          "run_id": "20261028-200726-b979",
+          "mode": "api",
+          "model": "hy4-preview",
+          "budget": 8000,
+          "conditions": [
+            "C0",
+            "C1",
+            "C2",
+            "C3"
+          ],
+          "coverage": {
+            "with_rules": 63,
+            "total": 63
+          },
+          "persona": "persona-01-linzhou",
+          "workers": 4,
+          "stats": {
+            "http_500": 0,
+            "retries": 0,
+            "call_errors": 0,
+            "write_retries": 0,
+            "write_failures": 0
+          },
+          "elapsed_s": 339.0
+        },
+        "sha256": "2f0921183bd0dd6f7f7217dc5b86f3902548d6d1ae713146eb5813177079bcd4"
+      },
+      "note": "三轮稳定性使用 hy4-v2 下首轮及 rep2、rep3 的共同有效样本。",
+      "files": [
+        {
+          "path": "results/hy4-preview/results-v2-full-hy4.json",
+          "runs": 252,
+          "sha256": "62e9934f3498f6553e6ad7e9933bfa19ea854d244244dab1ffec080c0a4b1331"
+        },
+        {
+          "path": "results/hy4-preview/results-v2-retry-hy4.json",
+          "runs": 28,
+          "sha256": "a153a1364f26e1baa7ba54258a88d86f548ed77c60b3e3ec7ca8be07b13da67f"
+        },
+        {
+          "path": "results/hy4-v2/all-v2.json",
+          "runs": 252,
+          "sha256": "79eeae851379f940b87a75ae5d32e49fc3a429d1f7a4886268cbcff265aefb63"
+        },
+        {
+          "path": "results/hy4-v2/results-v2-full-hy4b.json",
+          "runs": 252,
+          "sha256": "2f0921183bd0dd6f7f7217dc5b86f3902548d6d1ae713146eb5813177079bcd4"
+        },
+        {
+          "path": "results/hy4-v2/results-v2-hy4-probe.json",
+          "runs": 16,
+          "sha256": "24c35675c19b94070d1d18bf8f2ce8253ece81ca18cd8fea7606d0455702a414"
+        },
+        {
+          "path": "results/hy4-v2/results-v2-hy4-probe2.json",
+          "runs": 16,
+          "sha256": "1cbfc79a8b8bedaa8dfda216b23300cd16009975829ad8bebd83fc3d8fd064fb"
+        },
+        {
+          "path": "results/hy4-v2/results-v2-hy4-rep2.json",
+          "runs": 252,
+          "sha256": "638aca983e43fc9ab85a0e7fd6fd6615e51638667254d53118bfc89961e39095"
+        },
+        {
+          "path": "results/hy4-v2/results-v2-hy4-rep3.json",
+          "runs": 252,
+          "sha256": "f3260fa2ca95507b63d8f29cbb15b564685f934f94ca85e012c96e5df4bb64ae"
+        },
+        {
+          "path": "results/results-v2-hy4-think.json",
+          "runs": 16,
+          "sha256": "dc78af4d0e4889d3bd1c094093c51d88548a22285a7f3cc3d2469f1ff5e6837d"
+        }
+      ]
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "display_name": "MiMo",
+      "result_files": 4,
+      "run_records": 768,
+      "primary_result": {
+        "path": "results/rep1-mimo.json",
+        "bytes": 1340728,
+        "runs": 252,
+        "models": [
+          "mimo-v2.6-flash"
+        ],
+        "meta": {
+          "run_id": "20261029-205436-6d80",
+          "mode": "api",
+          "model": "mimo-v2.6-flash",
+          "budget": 8000,
+          "conditions": [
+            "C0",
+            "C1",
+            "C2",
+            "C3"
+          ],
+          "coverage": {
+            "with_rules": 63,
+            "total": 63
+          },
+          "persona": "persona-01-linzhou",
+          "workers": 3,
+          "stats": {
+            "http_500": 0,
+            "retries": 6,
+            "call_errors": 0,
+            "write_retries": 0,
+            "write_failures": 0
+          },
+          "elapsed_s": 1271.7
+        },
+        "sha256": "c65ba293ccf2c63841a89aa830a065f1412e0b069d589623671c780f94461f34"
+      },
+      "note": "三轮结果使用根 results 下的 rep1-mimo、rep2-mimo、rep3-mimo。",
+      "files": [
+        {
+          "path": "results/probe-mimo.json",
+          "runs": 12,
+          "sha256": "2a3a7e68de1337c8bc4724ea779d83afa76a90d46f90f01e3e525b6e479e8778"
+        },
+        {
+          "path": "results/rep1-mimo.json",
+          "runs": 252,
+          "sha256": "c65ba293ccf2c63841a89aa830a065f1412e0b069d589623671c780f94461f34"
+        },
+        {
+          "path": "results/rep2-mimo.json",
+          "runs": 252,
+          "sha256": "06ea98e4af1a3fa2e9c5198d07e975c94c18562f959f8da251bde3d30d7243e4"
+        },
+        {
+          "path": "results/rep3-mimo.json",
+          "runs": 252,
+          "sha256": "b5c1960026f138508beac255dce533ad1508fba4554052afd326ec67c9a6b372"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "display_name": "GPT 运行时",
+      "result_files": 3,
+      "run_records": 756,
+      "primary_result": {
+        "path": "results/gpt-runtime/r1.json",
+        "bytes": 406976,
+        "runs": 252,
+        "models": [
+          "gpt-6.1-sol"
+        ],
+        "meta": {
+          "model": "gpt-6.1-sol",
+          "mode": "workbuddy_runtime",
+          "prepared_at": "2026-10-29T15:14:18.767453+00:00",
+          "budget": 8000,
+          "persona": "persona-01-linzhou",
+          "conditions": [
+            "C0",
+            "C1",
+            "C2",
+            "C3"
+          ],
+          "scoring_spec": "assertions-v3.json",
+          "input_spec": "assertions.json",
+          "input_spec_sha256": "7ba1117e2efc8c30de685f32713d753629633934b36098e078aa17b767afefb5",
+          "transport": "fresh Agent session; explicit model selection; one input-file read; one reply-file write",
+          "temperature": null,
+          "temperature_control": "not exposed",
+          "native_actions": "disabled for simulated scenario; only read input and write reply",
+          "ranking_scope": "separate runtime track; descriptive API references only",
+          "run_id": "r1-gpt-runtime",
+          "collected_at": "2026-11-01T04:49:56.092066+00:00",
+          "complete": true,
+          "coverage": {
+            "completed": 252,
+            "expected": 252
+          },
+          "missing": [],
+          "invalid": [],
+          "scoring_sha256": "7806f3cf738ca952820082e3138ff62c026cc28e159670ca64e3746b149405b4"
+        },
+        "sha256": "21ec60504fed07c04579e51378b83bd51bbd262f9658f328278bdc4b2fab3b23"
+      },
+      "note": "独立运行时轨道；冻结输入、逐条回复及三轮汇总另见 gpt-runtime。",
+      "files": [
+        {
+          "path": "results/gpt-runtime/r1.json",
+          "runs": 252,
+          "sha256": "21ec60504fed07c04579e51378b83bd51bbd262f9658f328278bdc4b2fab3b23"
+        },
+        {
+          "path": "results/gpt-runtime/r2.json",
+          "runs": 252,
+          "sha256": "af54d049bba154e22a93c18e4d1d5f1837c588c7750e43834916abdf958a3d3e"
+        },
+        {
+          "path": "results/gpt-runtime/r3.json",
+          "runs": 252,
+          "sha256": "668e2d55e653e282bbe017c2bdace110e88bc20fe482027f4d1a7783d0dbdfda"
+        }
+      ]
+    }
+  ]
+}
