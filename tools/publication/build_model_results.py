@@ -67,9 +67,19 @@ def main() -> None:
 
     payload = {
         "schema": "personal-agent-benchmark-model-results-v1",
+        "scope": "Historical persona-01 experiments only. This index does not cover the api-v2-nothink formal round.",
         "persona": "persona-01-linzhou",
         "inventory": "docs/run-inventory.json",
         "counting_note": "run_records includes retries, merged runs and historical experiments; it is not a count of independent model calls.",
+        "formal_round": {
+            "tag": "api-v2-nothink",
+            "description": "Single-round formal evaluation of five API models across ten synthetic personas",
+            "ranking": "docs/api-v2-nothink-ranking.md",
+            "ranking_json": "docs/api-v2-nothink-ranking.json",
+            "validation": "docs/api-v2-nothink-validation.json",
+            "sensitivity": "docs/api-v2-nothink-sensitivity.json",
+            "result_pattern": "persona-*/results/api-v2-nothink-<model>.json",
+        },
         "models": output,
     }
     (ROOT / "docs" / "model-results.json").write_text(
