@@ -1,6 +1,12 @@
 # 按模型查看结果
 
-本页由 `docs/run-inventory.json` 的结果元数据生成，解决通用文件名和历史目录造成的查找困难。所有文件均属于 persona-01 的已有实验，不代表这些模型已在其他 persona 上运行。
+## 本轮正式统一评测（五模型 × 十人物单轮）
+
+正式轨道 `api-v2-nothink`：五家 API 模型在 10 个人物上各跑一轮，结果位于各人物 `results/api-v2-nothink-<模型>.json`。统一排名见 [排名报告](api-v2-nothink-ranking.md)、[机器可读结果](api-v2-nothink-ranking.json)、[口径校验](api-v2-nothink-validation.json) 与 [敏感性分析](api-v2-nothink-sensitivity.json)。这一轨道与下方历史 persona-01 实验分母、量尺、题集均不同，不可混排。
+
+## 历史 persona-01 实验索引
+
+下表由 `docs/run-inventory.json` 的结果元数据生成，解决通用文件名和历史目录造成的查找困难。这些文件均属于 persona-01 的早期实验与三轮稳定性素材。
 
 文件中的 run 记录包含重试、合并和历史实验，不能解释为独立模型调用次数。不同题集、评分版本和运行轨道不可直接混排。
 

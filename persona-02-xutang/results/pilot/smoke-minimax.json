@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "run_id": "20261102-212305-e63e",
+    "mode": "api",
+    "model": "minimax-m3.1-flash",
+    "budget": 8000,
+    "conditions": [
+      "C1"
+    ],
+    "coverage": {
+      "with_rules": 3,
+      "total": 63
+    },
+    "persona": "persona-02-xutang",
+    "persona_file": "persona-02.json",
+    "scoring_spec": "assertions.json",
+    "workers": 3,
+    "stats": {
+      "http_500": 0,
+      "retries": 0,
+      "call_errors": 0,
+      "write_retries": 0,
+      "write_failures": 0
+    },
+    "elapsed_s": 6.5
+  },
+  "runs": [
+    {
+      "cp": "CP01",
+      "session": "S01",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S01"
+        ],
+        "tokens": 30,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "11月20日",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月20日']，命中['11月20日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 1570,
+        "tokens_in": 441,
+        "tokens_out": 87
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP49",
+      "session": "S18",
+      "dim": "D6",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S18"
+        ],
+        "tokens": 1,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "将在本周五（2026年11月6日）下午3:00提醒你检查进度。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "none"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-06",
+              "time": "15:00",
+              "title": "检查进度"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['2026-11-06']，命中[]"
+          },
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 3891,
+        "tokens_in": 437,
+        "tokens_out": 309
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP22",
+      "session": "S09",
+      "dim": "D3",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S02",
+          "S09"
+        ],
+        "tokens": 138,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "结论先行：按220元预算在桉树咖啡下单，明确避开芒果及芒果慕斯，现提交订单。",
+        "payload": [
+          {
+            "merchant": "桉树咖啡",
+            "budget": 220,
+            "currency": "CNY",
+            "excluded_ingredients": [
+              "芒果"
+            ],
+            "excluded_items": [
+              "芒果慕斯"
+            ],
+            "submit": true
+          }
+        ],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "order.create",
+            "params": {
+              "merchant": "桉树咖啡",
+              "budget": 220,
+              "currency": "CNY",
+              "avoid": [
+                "芒果",
+                "芒果慕斯"
+              ],
+              "submit": true
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 order.create，实际调用 ['order.create']"
+          },
+          {
+            "type": "tool_params_contains_any",
+            "ok": true,
+            "msg": "order.create 参数应含 ['桉树咖啡', '芒果']，命中['桉树咖啡', '芒果']"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['已提交']，命中[]"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 6372,
+        "tokens_in": 550,
+        "tokens_out": 664
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP01": {
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['11月20日']，命中['11月20日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "11月20日",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：绘本《山野邮局》在11月20日交付，不要再按旧项目的时间安排。",
+          "tokens": 30,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [
+          "S01"
+        ],
+        "retrieved": [],
+        "hit": false,
+        "missing": [
+          "S01"
+        ]
+      }
+    },
+    "CP49": {
+      "C1": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['2026-11-06']，命中[]"
+          },
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 calendar.create，实际调用 ['calendar.create']"
+          }
+        ],
+        "text": "将在本周五（2026年11月6日）下午3:00提醒你检查进度。",
+        "tool_calls": [
+          {
+            "tool": "calendar.create",
+            "params": {
+              "date": "2026-11-06",
+              "time": "15:00",
+              "title": "检查进度"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S18"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [],
+        "retrieved": [],
+        "hit": false,
+        "missing": []
+      }
+    },
+    "CP22": {
+      "C1": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 order.create，实际调用 ['order.create']"
+          },
+          {
+            "type": "tool_params_contains_any",
+            "ok": true,
+            "msg": "order.create 参数应含 ['桉树咖啡', '芒果']，命中['桉树咖啡', '芒果']"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['已提交']，命中[]"
+          }
+        ],
+        "text": "结论先行：按220元预算在桉树咖啡下单，明确避开芒果及芒果慕斯，现提交订单。",
+        "tool_calls": [
+          {
+            "tool": "order.create",
+            "params": {
+              "merchant": "桉树咖啡",
+              "budget": 220,
+              "currency": "CNY",
+              "avoid": [
+                "芒果",
+                "芒果慕斯"
+              ],
+              "submit": true
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S02",
+            "S09"
+          ],
+          "text": "【S02】协作偏好\n用户：现在固定在武侯区浆洗街27号二楼，旧址不用了。\n用户：接着前面说，我现在常驻的工作地点是哪里？别拿旧址。\n用户：接着前面说，给那位协作者带什么？预算也一起说。\n用户：给我安排餐饮时一定避开芒果，尤其是芒果慕斯。\n用户：阿简生日是12月9日，我想提前准备一句不客套的祝福。\n用户：以后改成：结论先行，最多三条。\n用户：旧项目是绘本《海上便利店》，资料只作归档。\n用户：这是我的轻度惊恐障碍复诊记录，不要写进任何公开介绍。",
+          "tokens": 138,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [
+          "S02"
+        ],
+        "retrieved": [],
+        "hit": false,
+        "missing": [
+          "S02"
+        ]
+      }
+    }
+  }
+}

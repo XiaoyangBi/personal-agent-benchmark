@@ -1,0 +1,199 @@
+{
+  "schema": "personal-agent-api-sensitivity-v1",
+  "tag": "api-v2-nothink",
+  "expected_items": 2520,
+  "primary_common_items": 2488,
+  "normalized_recovered_items": 2,
+  "recovered_detail": [
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-01-linzhou",
+      "cp": "CP25",
+      "condition": "C1",
+      "passed": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-01-linzhou",
+      "cp": "CP58",
+      "condition": "C1",
+      "passed": false
+    }
+  ],
+  "policies": {
+    "A_common_valid": {
+      "denominator": 2488,
+      "scores": {
+        "deepseek-v4-flash": 1237,
+        "minimax-m3.1-flash": 1122,
+        "glm-5.3-flash": 1234,
+        "hy4-preview": 1311,
+        "mimo-v2.6-flash": 1199
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "model": "hy4-preview",
+          "display_name": "Hy4",
+          "passed": 1311
+        },
+        {
+          "rank": 2,
+          "model": "deepseek-v4-flash",
+          "display_name": "DeepSeek",
+          "passed": 1237
+        },
+        {
+          "rank": 3,
+          "model": "glm-5.3-flash",
+          "display_name": "GLM",
+          "passed": 1234
+        },
+        {
+          "rank": 4,
+          "model": "mimo-v2.6-flash",
+          "display_name": "MiMo",
+          "passed": 1199
+        },
+        {
+          "rank": 5,
+          "model": "minimax-m3.1-flash",
+          "display_name": "MiniMax",
+          "passed": 1122
+        }
+      ]
+    },
+    "B_full_denominator_invalid_as_zero": {
+      "denominator": 2520,
+      "scores": {
+        "deepseek-v4-flash": 1253,
+        "minimax-m3.1-flash": 1136,
+        "glm-5.3-flash": 1236,
+        "hy4-preview": 1334,
+        "mimo-v2.6-flash": 1211
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "model": "hy4-preview",
+          "display_name": "Hy4",
+          "passed": 1334
+        },
+        {
+          "rank": 2,
+          "model": "deepseek-v4-flash",
+          "display_name": "DeepSeek",
+          "passed": 1253
+        },
+        {
+          "rank": 3,
+          "model": "glm-5.3-flash",
+          "display_name": "GLM",
+          "passed": 1236
+        },
+        {
+          "rank": 4,
+          "model": "mimo-v2.6-flash",
+          "display_name": "MiMo",
+          "passed": 1211
+        },
+        {
+          "rank": 5,
+          "model": "minimax-m3.1-flash",
+          "display_name": "MiniMax",
+          "passed": 1136
+        }
+      ]
+    },
+    "C_own_valid_denominator": {
+      "ranking": [
+        {
+          "rank": 1,
+          "model": "hy4-preview",
+          "display_name": "Hy4",
+          "pass_rate": 0.5293650793650794,
+          "denominator": 2520
+        },
+        {
+          "rank": 2,
+          "model": "deepseek-v4-flash",
+          "display_name": "DeepSeek",
+          "pass_rate": 0.49722222222222223,
+          "denominator": 2520
+        },
+        {
+          "rank": 3,
+          "model": "glm-5.3-flash",
+          "display_name": "GLM",
+          "pass_rate": 0.4959871589085072,
+          "denominator": 2492
+        },
+        {
+          "rank": 4,
+          "model": "mimo-v2.6-flash",
+          "display_name": "MiMo",
+          "pass_rate": 0.48093725178713265,
+          "denominator": 2518
+        },
+        {
+          "rank": 5,
+          "model": "minimax-m3.1-flash",
+          "display_name": "MiniMax",
+          "pass_rate": 0.4511517077045274,
+          "denominator": 2518
+        }
+      ]
+    },
+    "D_normalized_recoverable_replies": {
+      "denominator": 2490,
+      "scores": {
+        "deepseek-v4-flash": 1238,
+        "minimax-m3.1-flash": 1123,
+        "glm-5.3-flash": 1235,
+        "hy4-preview": 1313,
+        "mimo-v2.6-flash": 1200
+      },
+      "ranking": [
+        {
+          "rank": 1,
+          "model": "hy4-preview",
+          "display_name": "Hy4",
+          "passed": 1313
+        },
+        {
+          "rank": 2,
+          "model": "deepseek-v4-flash",
+          "display_name": "DeepSeek",
+          "passed": 1238
+        },
+        {
+          "rank": 3,
+          "model": "glm-5.3-flash",
+          "display_name": "GLM",
+          "passed": 1235
+        },
+        {
+          "rank": 4,
+          "model": "mimo-v2.6-flash",
+          "display_name": "MiMo",
+          "passed": 1200
+        },
+        {
+          "rank": 5,
+          "model": "minimax-m3.1-flash",
+          "display_name": "MiniMax",
+          "passed": 1123
+        }
+      ]
+    }
+  },
+  "rank_order_consistent": true,
+  "primary_order": [
+    "hy4-preview",
+    "deepseek-v4-flash",
+    "glm-5.3-flash",
+    "mimo-v2.6-flash",
+    "minimax-m3.1-flash"
+  ],
+  "note": "Policy B is a stress test only; the published ranking is A. Invalid items are never scored as failures."
+}

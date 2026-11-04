@@ -1,0 +1,118 @@
+{
+  "schema": "personal-agent-api-suite-v1",
+  "tag": "api-v2-nothink",
+  "model": "minimax-m3.1-flash",
+  "personas": [
+    {
+      "persona": "persona-01-linzhou",
+      "valid_items": 251,
+      "complete": false,
+      "path": "persona-01-linzhou/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "attempts": [
+        "api-v2-nothink-minimax-m3.1-flash-attempt1.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt2.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt3.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt4.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt5.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt6.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt7.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt8.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt9.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt10.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt11.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt12.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt13.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt14.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt15.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt16.json"
+      ]
+    },
+    {
+      "persona": "persona-02-xutang",
+      "valid_items": 252,
+      "complete": true,
+      "path": "persona-02-xutang/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "attempts": [
+        "api-v2-nothink-minimax-m3.1-flash-attempt1.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt2.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt3.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt4.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt5.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt6.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt7.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt8.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt9.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt10.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt11.json"
+      ]
+    },
+    {
+      "persona": "persona-03-chenyu",
+      "valid_items": 252,
+      "complete": true,
+      "path": "persona-03-chenyu/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "attempts": [
+        "api-v2-nothink-minimax-m3.1-flash-attempt1.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt2.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt3.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt4.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt5.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt6.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt7.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt8.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt9.json"
+      ]
+    },
+    {
+      "persona": "persona-04-suhe",
+      "valid_items": 252,
+      "complete": true,
+      "path": "persona-04-suhe/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "attempts": [
+        "api-v2-nothink-minimax-m3.1-flash-attempt1.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt2.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt3.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt4.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt5.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt6.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt7.json"
+      ]
+    },
+    {
+      "persona": "persona-05-zhengbei",
+      "valid_items": 252,
+      "complete": true,
+      "path": "persona-05-zhengbei/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "attempts": [
+        "api-v2-nothink-minimax-m3.1-flash-attempt1.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt2.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt3.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt4.json"
+      ]
+    },
+    {
+      "persona": "persona-06-linlan",
+      "valid_items": 252,
+      "complete": true,
+      "path": "persona-06-linlan/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "attempts": [
+        "api-v2-nothink-minimax-m3.1-flash-attempt1.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt2.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt3.json"
+      ]
+    },
+    {
+      "persona": "persona-07-zhouheng",
+      "valid_items": 251,
+      "complete": false,
+      "path": "persona-07-zhouheng/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "attempts": [
+        "api-v2-nothink-minimax-m3.1-flash-attempt1.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt2.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt3.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt4.json",
+        "api-v2-nothink-minimax-m3.1-flash-attempt5.json"
+      ]
+    }
+  ]
+}

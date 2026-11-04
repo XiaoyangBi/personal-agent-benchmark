@@ -1,18 +1,19 @@
 {
   "schema": "personal-agent-benchmark-publication-v1",
-  "generated_at": "2026-11-01T16:24:25.366020+00:00",
-  "snapshot_date": "2026-11-02",
+  "generated_at": "2026-11-04T09:12:46.100924+00:00",
+  "snapshot_date": "2026-11-04",
   "synthetic_data": true,
   "source_modified": false,
-  "source_scope": "All existing Personal Agent benchmark materials in the project outputs directory",
-  "public_file_count": 1201,
-  "public_bytes": 40812912,
+  "source_scope": "All existing Personal Agent benchmark materials plus the api-v2-nothink single-round formal evaluation of five API models across ten synthetic personas",
+  "public_file_count": 1563,
+  "public_bytes": 210845124,
   "transforms": [
-    "Local workspace paths replaced with <workspace>",
+    "Local workspace paths replaced with <workspace> or <local-path>",
     "Enterprise document links replaced with <removed-enterprise-document-link>",
     "Internal runtime session references replaced with <runtime-session-ref>",
     "Synthetic-data notice added to profile",
-    "Root README reorganized; original history preserved in docs/project-history.md"
+    "Root README reorganized; original history preserved in docs/project-history.md",
+    "Deprecated pilot and smoke results archived under persona-*/results/pilot/ and desensitized"
   ],
   "excluded": [
     "Operating-system metadata",
@@ -21,5 +22,9 @@
     "Real business data",
     "Credentials"
   ],
-  "trace_completeness": "See docs/trace-availability.json; structured context and replies are not full execution traces"
+  "trace_completeness": "See docs/trace-availability.json; structured context and replies are not full execution traces",
+  "evaluation_rounds": {
+    "gpt_runtime": "Three-round stability on 252 common items for GPT, Hy4 and MiMo",
+    "api_v2_nothink": "Single-round formal evaluation of five API models over ten personas; see docs/api-v2-nothink-ranking.md"
+  }
 }

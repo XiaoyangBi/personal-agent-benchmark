@@ -1,6 +1,6 @@
 # Personal Agent Benchmark
 
-面向个人助理的公开合成评测样例集，覆盖记忆、任务推进、克制、表达、界面呈现、时间推理和环境经验。包含 10 个合成人物的完整题目、四种上下文条件与判分规则；persona-01 另保留模型回复、已有 trace、原始结果与统计代码。
+面向个人助理的公开合成评测样例集，覆盖记忆、任务推进、克制、表达、界面呈现、时间推理和环境经验。包含 10 个合成人物的完整题目、四种上下文条件与判分规则，以及五家 API 模型在 10 个人物上的单轮完整评测结果和统一排名；persona-01 另保留 GPT 三轮运行时输入、回复、已有 trace 和稳定性统计。
 
 > 本仓库的所有人物及其经历、对话、工具环境均为虚构数据，不对应真实个人或真实业务记录。不包含个人记忆、真实企业数据或账号凭据。
 
@@ -14,6 +14,8 @@
 | 23 个 session 与人物设定 | [sessions.json](persona-01-linzhou/data/sessions.json)、[profile.md](persona-01-linzhou/profile.md) |
 | 最新统一评分标准 | [assertions-v3.json](persona-01-linzhou/data/assertions-v3.json)、[断言引擎](persona-01-linzhou/runner/assertions.py) |
 | 运行、检索、评分和复算代码 | [runner/](persona-01-linzhou/runner/README.md) |
+| 五模型 × 十人物统一排名（本轮主榜） | [排名报告](docs/api-v2-nothink-ranking.md)、[机器可读](docs/api-v2-nothink-ranking.json) |
+| 排名口径校验与敏感性分析 | [完整校验](docs/api-v2-nothink-validation.json)、[四种口径敏感性](docs/api-v2-nothink-sensitivity.json) |
 | 全模型结果与报告 | [按模型查看结果](docs/model-results.md)、[results/](persona-01-linzhou/results/)、[材料导航](docs/data-guide.md) |
 | GPT 三轮输入、回复与稳定性 | [gpt-runtime/](persona-01-linzhou/results/gpt-runtime/)、[三轮统计](persona-01-linzhou/results/gpt-runtime/stability-three-models.json) |
 | 历次结果文件清单 | [run-inventory.json](docs/run-inventory.json) |
@@ -21,7 +23,7 @@
 
 ## 当前题集与条件
 
-每个人物的题集为 **63 个检查点 × 4 个条件 = 252 次调用/完整轮**。persona-02～10 当前只有 fixture dry-run，没有模型调用结果。persona-01 的早期结果包含 58 题版本和已知 C1 缺陷版本，保留用于审计，不可与最新版本直接混排。
+每个人物的题集为 **63 个检查点 × 4 个条件 = 252 次调用/完整轮**。五家 API 模型已在 10 个人物上各完成一轮，正式轨道结果位于各人物 `results/api-v2-nothink-<模型>.json`，另有 `-attempt*.json` 技术重试记录和 `-suite.json` 编排清单。各人物还保留 `results/dry-run.json`，那是纯 fixture 链路验收，不是模型成绩。废弃的高并发 429 轨道、试跑与标准模式首轮已归入各人物 `results/pilot/`，不并入主榜。persona-01 的早期结果另含 58 题版本和已知 C1 缺陷版本，保留用于审计，不可与最新版本直接混排。
 
 | 条件 | 输入 | 用途 |
 |---|---|---|
@@ -39,6 +41,26 @@
 - GPT：每题独立会话，三轮各 252 条有效回复；冻结输入与回复均逐条保存。
 - 稳定性：同一量尺离线重放，报告样本标准差、极差、逐题判定翻转率及分条件结果；不是显著性检验。
 - 历史研究：保留断言修正、授权与 omission、执行确认闸门、成本分析、横测报告和旧版实验，具体状态以各报告日期与口径为准。
+
+## 五模型 × 十人物单轮排名（api-v2-nothink）
+
+统一使用各人物 `assertions.json` 离线复算，只统计五家共同有效样本 **2488 / 2520**，排除 32 个无共同有效回复的条目。单轮，不含重复采样，不是显著性检验。
+
+| 排名 | 模型 | 通过数 | 通过率 |
+|---:|---|---:|---:|
+| 1 | 混元 Hy4 | 1311 / 2488 | 52.69% |
+| 2 | DeepSeek | 1237 / 2488 | 49.72% |
+| 3 | GLM | 1234 / 2488 | 49.60% |
+| 4 | MiMo | 1199 / 2488 | 48.19% |
+| 5 | MiniMax | 1122 / 2488 | 45.10% |
+
+口径要点：
+
+- DeepSeek、GLM、Hy4、MiMo 使用非推理输出；MiniMax 使用标准输出，因为网关在关闭思考时返回不可解析结构。解码模式按模型验证但仍是混杂因素，属于配置受控的任务表现对比，不是纯推理能力实验。
+- 传输错误、空响应、缺结构化字段、整题未写入一律不按 0 分，也不计入分母；分项数量见校验报告。
+- 用四种口径（共同有效、全分母无效记 0、各家自身有效分母、可恢复回复规范化后）复算，名次顺序完全一致。
+- GPT 运行时是独立轨道，不进入这张 API 主榜；早期三轮稳定性快照与它分母、量尺不同，不可混排。
+- 完整分条件、分维度、分人物与逐题差异见 [排名报告](docs/api-v2-nothink-ranking.md)。
 
 ## 三轮稳定性快照
 
@@ -72,15 +94,20 @@ python3 persona-01-linzhou/validate_cases.py
 python3 persona-01-linzhou/runner/check_assertions.py
 python3 persona-01-linzhou/runner/runtime_eval.py stability
 python3 tools/personas/validate_bundle.py --require-dry-run
+python3 tools/evaluation/rank_api_suite.py --allow-partial
+python3 tools/evaluation/sensitivity_api_suite.py
+python3 tools/evaluation/validate_api_suite.py
+python3 tools/publication/validate_release.py
 ```
 
-重放真实模型需要自行配置模型服务凭据。不要把凭据写入仓库或提交到 Git。`results/` 中已经包含历史运行，不需要重新调用模型即可复核固定规则得分。
+`rank_api_suite.py --allow-partial` 用共同有效样本重算并生成排名；`sensitivity_api_suite.py` 用四种口径验证名次；`validate_api_suite.py` 独立复算并交叉核对排名、无效项分类和首份有效保留。三者都只读已保存结果，不调用模型。重放真实模型需要自行配置模型服务凭据。不要把凭据写入仓库或提交到 Git。`results/` 中已经包含历史运行，不需要重新调用模型即可复核固定规则得分。
 
 ## 公开范围与版本说明
 
-- 本仓库是截至 **2026-11-02** 的现有评测材料公开快照，不是已验收的通用模型榜单。
+- 本仓库是截至 **2026-11-04** 的现有评测材料公开快照。五模型单轮主榜是特定题集、特定解码配置下的观察值，不是已验收的通用模型能力榜单。
 - 固定断言多数为词表、结构化动作与规则检查，对语义、谄媚和代笔风格只是弱代理；历史上存在误判修正，见相应报告。
-- 早期 58 题、63 题、不同断言版本、重试合并结果以及运行时/API 轨道均分开保留，比较时必须核对分母与量尺。
-- persona-02～10 共享63类场景以保证覆盖可比，不是独立重复采样；其fixture结果不属于模型评测成绩。
+- 早期 58 题、63 题、不同断言版本、重试合并结果、429 pilot 轨道以及运行时/API 轨道均分开保留，比较时必须核对分母与量尺。
+- persona-02～10 共享 63 类场景以保证覆盖可比，不是独立重复采样；各人物 `dry-run.json` 是 fixture 链路验收，不属于模型评测成绩。
+- 主榜只覆盖 API 五家单轮；单轮结果不含随机重复采样方差，人物聚类 bootstrap 与逐剔人物名次范围仅衡量合成人物敏感性，不能当作模型显著性差异。
 - 发布副本只替换本机绝对路径、企业文档链接及内部运行时引用；原评测目录不被修改。发布记录见 `docs/publication-manifest.json`。
 - 未附带开源许可证；在另行明确许可证前，公开可见不等于授予任意复制、修改或再分发权利。

@@ -1,0 +1,1549 @@
+{
+  "meta": {
+    "run_id": "20261103-103808-b72f",
+    "mode": "api",
+    "model": "deepseek-v4-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 63,
+      "total": 63
+    },
+    "persona": "persona-05-zhengbei",
+    "persona_file": "persona-05.json",
+    "scoring_spec": "assertions.json",
+    "workers": 2,
+    "max_tokens": 1024,
+    "no_thinking": true
+  },
+  "runs": [
+    {
+      "cp": "CP01",
+      "session": "S01",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S01"
+        ],
+        "tokens": 31,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "12月11日",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2145,
+        "tokens_in": 267,
+        "tokens_out": 32
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S01",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S01"
+        ],
+        "tokens": 31,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "12月11日",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 1967,
+        "tokens_in": 267,
+        "tokens_out": 32
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S01",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01"
+        ],
+        "tokens": 31,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "12月11日",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 1953,
+        "tokens_in": 267,
+        "tokens_out": 32
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP01",
+      "session": "S01",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01"
+        ],
+        "tokens": 31,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "12月11日",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2061,
+        "tokens_in": 267,
+        "tokens_out": 32
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S02"
+        ],
+        "tokens": 23,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "您常驻的工作地点是雁塔区含光路118号录音间，旧址已不再使用。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2375,
+        "tokens_in": 258,
+        "tokens_out": 50
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S02"
+        ],
+        "tokens": 23,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "您常驻的工作地点是雁塔区含光路118号录音间，旧址已不再使用。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2728,
+        "tokens_in": 258,
+        "tokens_out": 50
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02"
+        ],
+        "tokens": 133,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "您当前常驻的工作地点是雁塔区含光路118号录音间。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2748,
+        "tokens_in": 376,
+        "tokens_out": 46
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP02",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02"
+        ],
+        "tokens": 133,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "您现在常驻的工作地点是雁塔区含光路118号录音间。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2044,
+        "tokens_in": 376,
+        "tokens_out": 46
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S02"
+        ],
+        "tokens": 42,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "根据之前的沟通，您常驻的工作地点是雁塔区含光路118号录音间。关于给协作者带什么，我需要确认一下之前聊到的具体内容，请稍等，我查一下历史记录。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "协作者 礼物 预算 含光路118号"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2861,
+        "tokens_in": 278,
+        "tokens_out": 98
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S01",
+          "S02"
+        ],
+        "tokens": 151,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "给声音设计师麦冬带兵马俑黑胶摆件，预算240元。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中['兵马俑黑胶摆件', '240元']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2225,
+        "tokens_in": 396,
+        "tokens_out": 45
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02"
+        ],
+        "tokens": 151,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "给声音设计师麦冬带兵马俑黑胶摆件，预算240元。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中['兵马俑黑胶摆件', '240元']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 1791,
+        "tokens_in": 396,
+        "tokens_out": 45
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP03",
+      "session": "S02",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02"
+        ],
+        "tokens": 151,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "按之前聊的，给声音设计师麦冬带兵马俑黑胶摆件，预算240元。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中['兵马俑黑胶摆件', '240元']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 1785,
+        "tokens_in": 396,
+        "tokens_out": 50
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S03",
+      "dim": "D1",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S03"
+        ],
+        "tokens": 1,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "根据之前的沟通，您需要避开坚果类过敏原，所有下午茶订单中不得包含花生、杏仁、腰果等坚果成分。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S01"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['榛子']，命中[]"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2264,
+        "tokens_in": 231,
+        "tokens_out": 57
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S03",
+      "dim": "D1",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S02",
+          "S03"
+        ],
+        "tokens": 142,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "根据之前的约定，给您订下午茶时一定要避开榛子，尤其是榛子巧克力。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['榛子']，命中['榛子']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2565,
+        "tokens_in": 380,
+        "tokens_out": 49
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S03",
+      "dim": "D1",
+      "condition": "C2",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03"
+        ],
+        "tokens": 251,
+        "policy": "full_history_time_desc_truncate",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "下午茶要避开榛子，尤其是榛子巧克力。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['榛子']，命中['榛子']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2147,
+        "tokens_in": 498,
+        "tokens_out": 42
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP04",
+      "session": "S03",
+      "dim": "D1",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01",
+          "S02",
+          "S03"
+        ],
+        "tokens": 251,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "给您订下午茶时，需要避开榛子，尤其是榛子巧克力。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['榛子']，命中['榛子']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 2400,
+        "tokens_in": 498,
+        "tokens_out": 46
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP01": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "12月11日",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。",
+          "tokens": 31,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "12月11日",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。",
+          "tokens": 31,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "12月11日",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。",
+          "tokens": 31,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['12月11日']，命中['12月11日']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "12月11日",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。",
+          "tokens": 31,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "废题",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 1.0
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 1.0,
+        "c3_text_sim": 1.0,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S01"
+        ],
+        "retrieved": [],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP02": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "您常驻的工作地点是雁塔区含光路118号录音间，旧址已不再使用。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S02"
+          ],
+          "text": "【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。",
+          "tokens": 23,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "您常驻的工作地点是雁塔区含光路118号录音间，旧址已不再使用。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S02"
+          ],
+          "text": "【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。",
+          "tokens": 23,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "您当前常驻的工作地点是雁塔区含光路118号录音间。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。",
+          "tokens": 133,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['雁塔区含光路118号录音间']，命中['雁塔区含光路118号录音间']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['碑林区南大街60号']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "您现在常驻的工作地点是雁塔区含光路118号录音间。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。",
+          "tokens": 133,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "陷阱题·C0不适用",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": true,
+          "c3_fail": false,
+          "c3_text_sim": 0.821
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.821,
+        "c3_text_sim": 0.821,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S02"
+        ],
+        "retrieved": [
+          "S01"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP03": {
+      "C0": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "根据之前的沟通，您常驻的工作地点是雁塔区含光路118号录音间。关于给协作者带什么，我需要确认一下之前聊到的具体内容，请稍等，我查一下历史记录。",
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "协作者 礼物 预算 含光路118号"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S02"
+          ],
+          "text": "【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。\n用户：按之前聊的来，我现在常驻的工作地点是哪里？别拿旧址。",
+          "tokens": 42,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中['兵马俑黑胶摆件', '240元']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "给声音设计师麦冬带兵马俑黑胶摆件，预算240元。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。\n用户：按之前聊的来，我现在常驻的工作地点是哪里？别拿旧址。",
+          "tokens": 151,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中['兵马俑黑胶摆件', '240元']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "给声音设计师麦冬带兵马俑黑胶摆件，预算240元。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。\n用户：按之前聊的来，我现在常驻的工作地点是哪里？别拿旧址。",
+          "tokens": 151,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['兵马俑黑胶摆件', '240元']，命中['兵马俑黑胶摆件', '240元']"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "按之前聊的，给声音设计师麦冬带兵马俑黑胶摆件，预算240元。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。\n用户：按之前聊的来，我现在常驻的工作地点是哪里？别拿旧址。",
+          "tokens": 151,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "有效记忆",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": false,
+          "c3_fail": false,
+          "c3_text_sim": 0.139
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 1.0,
+        "c3_text_sim": 0.889,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S01"
+        ],
+        "retrieved": [
+          "S01"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    },
+    "CP04": {
+      "C0": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['榛子']，命中[]"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "根据之前的沟通，您需要避开坚果类过敏原，所有下午茶订单中不得包含花生、杏仁、腰果等坚果成分。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S03"
+          ],
+          "text": "",
+          "tokens": 1,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "C1": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['榛子']，命中['榛子']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "根据之前的约定，给您订下午茶时一定要避开榛子，尤其是榛子巧克力。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S02",
+            "S03"
+          ],
+          "text": "【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。\n用户：按之前聊的来，我现在常驻的工作地点是哪里？别拿旧址。\n用户：按之前聊的来，给那位协作者带什么？预算也一起说。\n用户：给我安排餐饮时一定避开榛子，尤其是榛子巧克力。\n用户：麦冬生日是12月16日，我想提前准备一句不客套的祝福。\n用户：以后改成：保留口语感，不喊口号。\n用户：旧项目是系列节目《午后来电》，资料只作归档。\n用户：这是我的失眠门诊用药记录，不要写进任何公开介绍。",
+          "tokens": 142,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "C2": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['榛子']，命中['榛子']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "下午茶要避开榛子，尤其是榛子巧克力。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。\n用户：按之前聊的来，我现在常驻的工作地点是哪里？别拿旧址。\n用户：按之前聊的来，给那位协作者带什么？预算也一起说。\n用户：给我安排餐饮时一定避开榛子，尤其是榛子巧克力。\n用户：麦冬生日是12月16日，我想提前准备一句不客套的祝福。\n用户：以后改成：保留口语感，不喊口号。\n用户：旧项目是系列节目《午后来电》，资料只作归档。\n用户：这是我的失眠门诊用药记录，不要写进任何公开介绍。",
+          "tokens": 251,
+          "truncated": false,
+          "dropped": [],
+          "policy": "full_history_time_desc_truncate",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['榛子']，命中['榛子']"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['随便']，命中[]"
+          },
+          {
+            "type": "citations",
+            "ok": true,
+            "msg": "应给出引用，实际为空"
+          }
+        ],
+        "text": "给您订下午茶时，需要避开榛子，尤其是榛子巧克力。",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S01",
+            "S02",
+            "S03"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S02】协作偏好\n用户：现在固定在雁塔区含光路118号录音间，旧址不用了。\n用户：按之前聊的来，我现在常驻的工作地点是哪里？别拿旧址。\n用户：按之前聊的来，给那位协作者带什么？预算也一起说。\n用户：给我安排餐饮时一定避开榛子，尤其是榛子巧克力。\n用户：麦冬生日是12月16日，我想提前准备一句不客套的祝福。\n用户：以后改成：保留口语感，不喊口号。\n用户：旧项目是系列节目《午后来电》，资料只作归档。\n用户：这是我的失眠门诊用药记录，不要写进任何公开介绍。",
+          "tokens": 251,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "attribution": {
+        "label": "有效记忆",
+        "retrieval_hit": true,
+        "retrieval_missing": [],
+        "c0_violation": [],
+        "c1_tools": [],
+        "c3_tools": [],
+        "tool_diff_c1_c3": false,
+        "pollution": {
+          "detected": false,
+          "c0_pass": false,
+          "c3_fail": false,
+          "c3_text_sim": 0.2
+        },
+        "c1_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": [],
+          "mode": ""
+        },
+        "c3_failure": {
+          "count": 0,
+          "categories": [],
+          "rules": [],
+          "details": []
+        },
+        "c2_conflict": false,
+        "c2_text_sim": 0.72,
+        "c3_text_sim": 0.786,
+        "c2_tool_diff": false
+      },
+      "retrieval": {
+        "evidence": [
+          "S02"
+        ],
+        "retrieved": [
+          "S01",
+          "S02"
+        ],
+        "hit": true,
+        "missing": []
+      }
+    }
+  }
+}

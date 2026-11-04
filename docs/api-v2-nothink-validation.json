@@ -1,0 +1,60 @@
+{
+  "schema": "personal-agent-api-validation-v1",
+  "status": "pass",
+  "tag": "api-v2-nothink",
+  "expected_items": 2520,
+  "common_items": 2488,
+  "excluded_items": 32,
+  "models": [
+    {
+      "model": "deepseek-v4-flash",
+      "valid_items": 2520,
+      "absent_keys": 0,
+      "invalid_by_reason": {},
+      "recorded_http_attempts": 2900,
+      "attempt_files": 16
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "valid_items": 2518,
+      "absent_keys": 0,
+      "invalid_by_reason": {
+        "empty_response": 2
+      },
+      "recorded_http_attempts": 8177,
+      "attempt_files": 68
+    },
+    {
+      "model": "glm-5.3-flash",
+      "valid_items": 2492,
+      "absent_keys": 8,
+      "invalid_by_reason": {
+        "transport_error": 20
+      },
+      "recorded_http_attempts": 9930,
+      "attempt_files": 49
+    },
+    {
+      "model": "hy4-preview",
+      "valid_items": 2520,
+      "absent_keys": 0,
+      "invalid_by_reason": {},
+      "recorded_http_attempts": 3046,
+      "attempt_files": 17
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "valid_items": 2518,
+      "absent_keys": 0,
+      "invalid_by_reason": {
+        "missing_structured_fields": 2
+      },
+      "recorded_http_attempts": 2534,
+      "attempt_files": 10
+    }
+  ],
+  "recorded_http_note": "Recorded attempts equal saved runs plus runner-recorded transport retries; interrupted in-flight calls and smoke tests are excluded.",
+  "first_valid_policy": "A later attempt can only fill a missing or technically invalid key; valid replies are never replaced by score.",
+  "invalid_item_policy": "Transport errors, empty replies, missing structured arrays and checkpoints dropped by task failure are classified, excluded from the common denominator, and never scored as failures.",
+  "errors": []
+}

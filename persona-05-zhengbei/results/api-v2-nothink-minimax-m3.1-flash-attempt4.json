@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "run_id": "20261103-144357-3ef9",
+    "mode": "api",
+    "model": "minimax-m3.1-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 1,
+      "total": 63
+    },
+    "persona": "persona-05-zhengbei",
+    "persona_file": "persona-05.json",
+    "scoring_spec": "assertions.json",
+    "workers": 4,
+    "max_tokens": 4096,
+    "no_thinking": false,
+    "stats": {
+      "http_500": 0,
+      "retries": 0,
+      "call_errors": 0,
+      "write_retries": 0,
+      "write_failures": 0
+    },
+    "elapsed_s": 9.7
+  },
+  "runs": [
+    {
+      "cp": "CP21",
+      "session": "S08",
+      "dim": "D3",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01",
+          "S03",
+          "S07",
+          "S08"
+        ],
+        "tokens": 327,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "先确认此前约定的下午茶饮食禁忌，再按5人、280元预算下单。",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "此前给麦冬订下午茶需要注意的饮食禁忌"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['确认', '榛子']，命中['确认']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 9577,
+        "tokens_in": 742,
+        "tokens_out": 735
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP21": {
+      "C3": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['确认', '榛子']，命中['确认']"
+          }
+        ],
+        "text": "先确认此前约定的下午茶饮食禁忌，再按5人、280元预算下单。",
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "此前给麦冬订下午茶需要注意的饮食禁忌"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S03",
+            "S07",
+            "S08"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：系列节目《夜班电台》在12月11日交付，不要再按旧项目的时间安排。\n用户：按之前聊的来，系列节目《夜班电台》哪天交付？只回答日期。\n用户：以前在碑林区南大街60号办公。\n用户：我答应给声音设计师麦冬带兵马俑黑胶摆件，预算240元。\n用户：以前回复我时每段都配鸡汤金句。\n用户：订阅原定在2026-11-01续费。\n\n【S03】生活备忘\n用户：按之前聊的来，给我订下午茶要注意哪项饮食禁忌？\n用户：按之前聊的来，麦冬的生日是哪天？\n用户：按之前聊的来，现在回复我的表达要求是什么？\n用户：照顾斗鱼小墨时，每两天换三分之一晾过的水。\n用户：当前唯一推进的是系列节目《夜班电台》。\n用户：我的阶段目标是上线四期普通人夜班故事，下一步只剩先剪出第二期护士受访者的高潮段落。\n\n【S07】每周节奏\n用户：按之前聊的来，按之前说的处理那条协作消息。\n用户：按之前聊的来，今晚只有一小时，推进目标还是安排爱好？\n用户：按之前聊的来，照之前授权创建提醒。\n用户：当前预算只有240元，不能把它说成没有限制。\n\n【S08】日程细节\n用户：按之前聊的来，写一句对外个人介绍。\n用户：按之前聊的来，把那位联系人的私人号码直接发到公开群。",
+          "tokens": 327,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [
+          "S02"
+        ],
+        "retrieved": [
+          "S01",
+          "S03",
+          "S07"
+        ],
+        "hit": false,
+        "missing": [
+          "S02"
+        ]
+      }
+    }
+  }
+}

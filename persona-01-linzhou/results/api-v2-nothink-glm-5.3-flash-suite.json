@@ -1,0 +1,20 @@
+{
+  "schema": "personal-agent-api-suite-v1",
+  "tag": "api-v2-nothink",
+  "model": "glm-5.3-flash",
+  "personas": [
+    {
+      "persona": "persona-01-linzhou",
+      "valid_items": 242,
+      "complete": false,
+      "path": "persona-01-linzhou/results/api-v2-nothink-glm-5.3-flash.json",
+      "attempts": [
+        "api-v2-nothink-glm-5.3-flash-attempt1.json",
+        "api-v2-nothink-glm-5.3-flash-attempt2.json",
+        "api-v2-nothink-glm-5.3-flash-attempt3.json",
+        "api-v2-nothink-glm-5.3-flash-attempt4.json",
+        "api-v2-nothink-glm-5.3-flash-attempt5.json"
+      ]
+    }
+  ]
+}

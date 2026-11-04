@@ -4,20 +4,20 @@
 
 仓库现包含 persona-01～10。所有人物、对话、项目、地址、订单号和健康信息均为合成数据，不对应真实个人或业务记录。
 
-persona-01 保留原有题目、历史模型结果和统计，不用新数据覆盖。persona-02～10 是本轮新增题库，只完成结构、反泄漏、规则自洽和 fixture dry-run 校验；尚未调用任何付费模型，因此没有这些人物的模型通过率或横测排名。
+persona-01 保留原有题目、历史模型结果和统计，不用新数据覆盖。persona-02～10 是本轮新增题库，先完成结构、反泄漏、规则自洽和 fixture dry-run 校验，随后与 persona-01 一同完成五家 API 模型的单轮正式评测（api-v2-nothink）。dry-run 只验证链路，不代表模型能力；本轮通过率与统一排名见 docs/api-v2-nothink-ranking.md。十个人物均为合成数据，评测为单轮结果，不是通用模型能力榜单。
 
 | 人物 | 合成角色 | 数据入口 | 当前状态 |
 |---|---|---|---|
-| persona-01 林舟 | 原有人物 | [题库](../persona-01-linzhou/data/persona-01.json) | 63题；保留历史模型结果 |
-| persona-02 许棠 | 成都独立插画师 | [profile](../persona-02-xutang/profile.md)、[题库](../persona-02-xutang/data/persona-02.json) | 63题；fixture dry-run通过 |
-| persona-03 陈屿 | 武汉硬件工程师 | [profile](../persona-03-chenyu/profile.md)、[题库](../persona-03-chenyu/data/persona-03.json) | 63题；fixture dry-run通过 |
-| persona-04 苏禾 | 南京高中地理教师 | [profile](../persona-04-suhe/profile.md)、[题库](../persona-04-suhe/data/persona-04.json) | 63题；fixture dry-run通过 |
-| persona-05 郑北 | 西安独立播客主播 | [profile](../persona-05-zhengbei/profile.md)、[题库](../persona-05-zhengbei/data/persona-05.json) | 63题；fixture dry-run通过 |
-| persona-06 林澜 | 厦门社区咖啡店店主 | [profile](../persona-06-linlan/profile.md)、[题库](../persona-06-linlan/data/persona-06.json) | 63题；fixture dry-run通过 |
-| persona-07 周衡 | 青岛海洋科研助理 | [profile](../persona-07-zhouheng/profile.md)、[题库](../persona-07-zhouheng/data/persona-07.json) | 63题；fixture dry-run通过 |
-| persona-08 唐宁 | 苏州非遗策展协调员 | [profile](../persona-08-tangning/profile.md)、[题库](../persona-08-tangning/data/persona-08.json) | 63题；fixture dry-run通过 |
-| persona-09 罗晨 | 重庆越野跑教练 | [profile](../persona-09-luochen/profile.md)、[题库](../persona-09-luochen/data/persona-09.json) | 63题；fixture dry-run通过 |
-| persona-10 顾遥 | 北京纪录片剪辑师 | [profile](../persona-10-guyao/profile.md)、[题库](../persona-10-guyao/data/persona-10.json) | 63题；fixture dry-run通过 |
+| persona-01 林舟 | 原有人物 | [题库](../persona-01-linzhou/data/persona-01.json) | 63题；保留历史模型结果；本轮五家API单轮评测 |
+| persona-02 许棠 | 成都独立插画师 | [profile](../persona-02-xutang/profile.md)、[题库](../persona-02-xutang/data/persona-02.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-03 陈屿 | 武汉硬件工程师 | [profile](../persona-03-chenyu/profile.md)、[题库](../persona-03-chenyu/data/persona-03.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-04 苏禾 | 南京高中地理教师 | [profile](../persona-04-suhe/profile.md)、[题库](../persona-04-suhe/data/persona-04.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-05 郑北 | 西安独立播客主播 | [profile](../persona-05-zhengbei/profile.md)、[题库](../persona-05-zhengbei/data/persona-05.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-06 林澜 | 厦门社区咖啡店店主 | [profile](../persona-06-linlan/profile.md)、[题库](../persona-06-linlan/data/persona-06.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-07 周衡 | 青岛海洋科研助理 | [profile](../persona-07-zhouheng/profile.md)、[题库](../persona-07-zhouheng/data/persona-07.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-08 唐宁 | 苏州非遗策展协调员 | [profile](../persona-08-tangning/profile.md)、[题库](../persona-08-tangning/data/persona-08.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-09 罗晨 | 重庆越野跑教练 | [profile](../persona-09-luochen/profile.md)、[题库](../persona-09-luochen/data/persona-09.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
+| persona-10 顾遥 | 北京纪录片剪辑师 | [profile](../persona-10-guyao/profile.md)、[题库](../persona-10-guyao/data/persona-10.json) | 63题；fixture dry-run通过；本轮五家API单轮评测 |
 
 ## 新人物的统一规格
 
@@ -77,4 +77,4 @@ python3 persona-01-linzhou/runner/runner.py \
 python3 tools/personas/validate_bundle.py --require-dry-run
 ```
 
-真实模型运行需要另行明确模型、轮次和预算，并自行配置服务凭据。不要把凭据写入人物数据或提交到Git。
+本轮已完成五家 API 模型的单轮正式评测，结果见 docs/api-v2-nothink-ranking.md。若要追加轮次、模型或复跑，仍需另行明确范围与预算，并自行配置服务凭据。不要把凭据写入人物数据或提交到 Git。

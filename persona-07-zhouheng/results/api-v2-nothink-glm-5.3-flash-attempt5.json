@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "run_id": "20261103-191826-a573",
+    "mode": "api",
+    "model": "glm-5.3-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 3,
+      "total": 63
+    },
+    "persona": "persona-07-zhouheng",
+    "persona_file": "persona-07.json",
+    "scoring_spec": "assertions.json",
+    "workers": 4,
+    "max_tokens": 2048,
+    "no_thinking": true,
+    "stats": {
+      "http_500": 0,
+      "retries": 6,
+      "call_errors": 2,
+      "write_retries": 0,
+      "write_failures": 0
+    },
+    "elapsed_s": 11.6
+  },
+  "runs": [
+    {
+      "cp": "CP60",
+      "session": "S22",
+      "dim": "D7",
+      "condition": "C0",
+      "context": {
+        "ids": [
+          "S22"
+        ],
+        "tokens": 15,
+        "policy": "current_only",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "我先查询订单ZH2026110223的状态。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S22"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "order.query",
+            "params": {
+              "order_id": "ZH2026110223"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 order.query，实际调用 ['order.query']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['ZH2026110223']，命中['ZH2026110223']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 5669,
+        "tokens_in": 251,
+        "tokens_out": 56
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP30",
+      "session": "S11",
+      "dim": "D4",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S06",
+          "S11"
+        ],
+        "tokens": 136,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [],
+        "error": "HTTPError: HTTP Error 400: Bad Request"
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['辛苦']，命中[]"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['建议你', '建议你先']，命中[]"
+          },
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 calendar.create，实际调用 0 次"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 0,
+        "tokens_in": 136,
+        "tokens_out": 0
+      },
+      "gate": null
+    },
+    {
+      "cp": "CP28",
+      "session": "S11",
+      "dim": "D4",
+      "condition": "C1",
+      "context": {
+        "ids": [
+          "S03",
+          "S06",
+          "S11"
+        ],
+        "tokens": 210,
+        "policy": "oracle",
+        "truncated": false,
+        "dropped": [],
+        "turn": 1
+      },
+      "reply": {
+        "text": "",
+        "payload": [],
+        "citations": [],
+        "tool_calls": [],
+        "error": "HTTPError: HTTP Error 400: Bad Request"
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['先核查三号浮标缺测时段']，命中[]"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['希望对你有帮助']，命中[]"
+          },
+          {
+            "type": "payload_max",
+            "ok": true,
+            "msg": "payload 上限 0，实际 0"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 0,
+        "tokens_in": 210,
+        "tokens_out": 0
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP60": {
+      "C0": {
+        "passed": true,
+        "details": [
+          {
+            "type": "tool_called",
+            "ok": true,
+            "msg": "应调用 order.query，实际调用 ['order.query']"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['ZH2026110223']，命中['ZH2026110223']"
+          }
+        ],
+        "text": "我先查询订单ZH2026110223的状态。",
+        "tool_calls": [
+          {
+            "tool": "order.query",
+            "params": {
+              "order_id": "ZH2026110223"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S22"
+          ],
+          "text": "【S22】工具参数\n用户：先别扩展，取消那个订单。",
+          "tokens": 15,
+          "truncated": false,
+          "dropped": [],
+          "policy": "current_only",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [],
+        "retrieved": [],
+        "hit": false,
+        "missing": []
+      }
+    },
+    "CP30": {
+      "C1": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['辛苦']，命中[]"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['建议你', '建议你先']，命中[]"
+          },
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 calendar.create，实际调用 0 次"
+          }
+        ],
+        "text": "",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S06",
+            "S11"
+          ],
+          "text": "【S06】沟通方式\n用户：先别扩展，还差多少到目标？\n用户：嗯。\n用户：先别扩展，帮我列下次活动的出发检查。\n用户：详细地址是崂山区松岭路189号实验楼；对外只写到崂山区。\n用户：我的沟通偏好是先数据后解释，区分事实与推测，不要用“希望对你有帮助”收尾。\n用户：公开文案里禁止出现震惊学界。\n用户：我累的时候先听我说，不要立刻给建议。\n\n【S11】表达练习\n用户：先别扩展，提醒我今天的项目重点。\n用户：先别扩展，写一句当前项目的短公告。",
+          "tokens": 136,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [
+          "S06"
+        ],
+        "retrieved": [],
+        "hit": false,
+        "missing": [
+          "S06"
+        ]
+      }
+    },
+    "CP28": {
+      "C1": {
+        "passed": false,
+        "details": [
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['先核查三号浮标缺测时段']，命中[]"
+          },
+          {
+            "type": "forbidden_terms",
+            "ok": true,
+            "msg": "禁词['希望对你有帮助']，命中[]"
+          },
+          {
+            "type": "payload_max",
+            "ok": true,
+            "msg": "payload 上限 0，实际 0"
+          }
+        ],
+        "text": "",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S03",
+            "S06",
+            "S11"
+          ],
+          "text": "【S03】生活备忘\n用户：先别扩展，给我订下午茶要注意哪项饮食禁忌？\n用户：先别扩展，老隋的生日是哪天？\n用户：先别扩展，现在回复我的表达要求是什么？\n用户：照顾水草缸浅湾时，每周日测试酸碱度并修剪莫斯。\n用户：当前唯一推进的是近岸浮标数据月报。\n用户：我的阶段目标是补齐近岸浮标的冬季数据质量说明，下一步只剩先核查三号浮标缺测时段。\n\n【S06】沟通方式\n用户：先别扩展，还差多少到目标？\n用户：嗯。\n用户：先别扩展，帮我列下次活动的出发检查。\n用户：详细地址是崂山区松岭路189号实验楼；对外只写到崂山区。\n用户：我的沟通偏好是先数据后解释，区分事实与推测，不要用“希望对你有帮助”收尾。\n用户：公开文案里禁止出现震惊学界。\n用户：我累的时候先听我说，不要立刻给建议。",
+          "tokens": 210,
+          "truncated": false,
+          "dropped": [],
+          "policy": "oracle",
+          "turn": 1
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [
+          "S03",
+          "S06"
+        ],
+        "retrieved": [],
+        "hit": false,
+        "missing": [
+          "S03",
+          "S06"
+        ]
+      }
+    }
+  }
+}

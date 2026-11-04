@@ -1,0 +1,25 @@
+{
+  "schema": "personal-agent-api-suite-v1",
+  "tag": "api-v2-nothink",
+  "model": "mimo-v2.6-flash",
+  "personas": [
+    {
+      "persona": "persona-01-linzhou",
+      "valid_items": 250,
+      "complete": false,
+      "path": "persona-01-linzhou/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "attempts": [
+        "api-v2-nothink-mimo-v2.6-flash-attempt1.json"
+      ]
+    },
+    {
+      "persona": "persona-02-xutang",
+      "valid_items": 252,
+      "complete": true,
+      "path": "persona-02-xutang/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "attempts": [
+        "api-v2-nothink-mimo-v2.6-flash-attempt1.json"
+      ]
+    }
+  ]
+}

@@ -133,7 +133,15 @@ def call_chat(messages: list[dict], model: str, base: str, key: str,
             if attempt == retries - 1:
                 bump("call_errors")
                 raise
-            time.sleep(2 * (attempt + 1))
+            if exc.code == 429:
+                retry_after = exc.headers.get("Retry-After", "")
+                try:
+                    delay = float(retry_after)
+                except ValueError:
+                    delay = min(60, 5 * (2 ** attempt))
+                time.sleep(max(1, delay))
+            else:
+                time.sleep(2 * (attempt + 1))
         except Exception as exc:  # 网络错误
             last_error = exc
             bump("retries")
@@ -159,7 +167,16 @@ def call_chat(messages: list[dict], model: str, base: str, key: str,
     try:
         reply = json.loads(content)
     except json.JSONDecodeError:
-        reply = {"text": content, "payload": [], "citations": [], "tool_calls": []}
+        reply = {"text": content}
+    # 模型可能只输出 {"text": "..."} 或字段类型不合规；统一规范化，
+    # 避免合法 JSON 缺 payload/citations/tool_calls 时被下游判为结构无效。
+    if not isinstance(reply, dict):
+        reply = {"text": content}
+    if not isinstance(reply.get("text"), str):
+        reply["text"] = content if isinstance(content, str) else ""
+    for key in ("payload", "citations", "tool_calls"):
+        if not isinstance(reply.get(key), list):
+            reply[key] = []
     return reply, {"latency_ms": latency, "tokens_in": usage.get("prompt_tokens", 0),
                    "tokens_out": usage.get("completion_tokens", 0)}
 
@@ -396,7 +413,7 @@ def main() -> int:
     ap.add_argument("--no-thinking", action="store_true",
                     help="关闭思考；reasoning 模型在额度不足时 content 恒空，可用本开关兜底")
     ap.add_argument("--retry-from", default="",
-                    help="只重跑该结果文件里 error 的 (cp, cond)，用于网关限流后定点补跑")
+                    help="只重跑该结果文件里 error 或空响应的 (cp, cond)，用于技术无效样本定点补跑")
     args = ap.parse_args()
 
     persona_root = Path(args.persona_root).expanduser().resolve()
@@ -434,10 +451,12 @@ def main() -> int:
         prev = json.loads(rp.read_text())
         retry_targets = {}
         for r in prev["runs"]:
-            if (r.get("reply") or {}).get("error"):
+            reply = r.get("reply") or {}
+            empty = (not str(reply.get("text") or "").strip() and not reply.get("tool_calls"))
+            if reply.get("error") or empty:
                 retry_targets.setdefault(r["cp"], set()).add(r["condition"])
         n = sum(len(v) for v in retry_targets.values())
-        print(f"补跑模式：{rp.name} 里 {n} 条 error，只重跑这些条目")
+        print(f"补跑模式：{rp.name} 里 {n} 条技术无效样本，只重跑这些条目")
         cps = [c for c in cps if c["id"] in retry_targets]
         if not cps:
             print("没有需要补跑的条目")
@@ -472,6 +491,8 @@ def main() -> int:
             "persona_file": persona_file,
             "scoring_spec": args.spec,
             "workers": max(1, args.workers),
+            "max_tokens": args.max_tokens or None,
+            "no_thinking": bool(args.no_thinking),
         },
         "runs": [],
         "matrix": {},
@@ -501,8 +522,28 @@ def main() -> int:
                 try:
                     cid, row, cp_runs = fut.result()
                 except Exception as exc:
+                    # 不能静默丢掉整个 checkpoint：conditions.build 等在 try 块之外抛错时，
+                    # 该 cp 的全部条件都会没有 run，下游无法区分「模型无回复」与「任务崩溃」。
+                    # 为每个待跑条件写带 error 的占位 run，标明是执行层失败，不冒充模型回复。
                     bump("call_errors")
                     print(f"  [任务失败] {cp['id']} {type(exc).__name__}: {exc}")
+                    cid, s = cp["id"], spec[cp["id"]]
+                    todo = conds
+                    if retry_targets is not None:
+                        todo = [c for c in conds if c in retry_targets.get(cid, set())]
+                    for cond in todo:
+                        failed_reply = {
+                            "text": "", "payload": [], "citations": [], "tool_calls": [],
+                            "error": f"TaskError: {type(exc).__name__}: {exc}",
+                        }
+                        runs.append({
+                            "cp": cid, "session": cp["session"], "dim": cp["dim"],
+                            "condition": cond, "context": {},
+                            "reply": failed_reply,
+                            "score": assertions.evaluate(failed_reply, s["rules"]),
+                            "perf": {"latency_ms": 0, "tokens_in": 0, "tokens_out": 0},
+                            "gate": None,
+                        })
                     continue
                 matrix[cid] = row
                 runs.extend(cp_runs)

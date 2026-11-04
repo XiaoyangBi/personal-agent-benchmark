@@ -1,6 +1,22 @@
 # 评测材料导航
 
-persona-01～10 的人物入口、统一规格、文件结构与校验口径见 [personas.md](personas.md)。本页其余结果与统计主要属于 persona-01，不应理解为所有人物均已有模型结果。
+persona-01～10 的人物入口、统一规格、文件结构与校验口径见 [personas.md](personas.md)。本页第二、三节的结果与统计主要属于 persona-01 的早期实验。
+
+## 零、本轮正式统一评测（优先阅读）
+
+五家 API 模型已在 10 个人物上各完成一轮，正式轨道为 `api-v2-nothink`：
+
+| 内容 | 入口 |
+|---|---|
+| 各人物逐条结果 | `persona-*/results/api-v2-nothink-<模型>.json`，每家每人物 252 条 |
+| 技术重试记录 | `persona-*/results/api-v2-nothink-<模型>-attempt*.json`，只用于补无效键 |
+| 编排清单 | `persona-*/results/api-v2-nothink-<模型>-suite.json` |
+| 统一排名 | [api-v2-nothink-ranking.md](api-v2-nothink-ranking.md)、[.json](api-v2-nothink-ranking.json) |
+| 口径校验 | [api-v2-nothink-validation.json](api-v2-nothink-validation.json)（无效项分类、首份有效保留、评分复算） |
+| 敏感性分析 | [api-v2-nothink-sensitivity.json](api-v2-nothink-sensitivity.json)（四种口径名次一致） |
+| 复算代码 | `tools/evaluation/rank_api_suite.py`、`sensitivity_api_suite.py`、`validate_api_suite.py`、`run_api_suite.py` |
+
+评分使用各人物 `data/assertions.json`，不是 persona-01 的 `assertions-v3.json`。共同有效样本 2488 条，技术无效项不按 0 分、不计入分母。`persona-*/results/dry-run.json` 是 fixture 链路验收，不是模型成绩；`results/pilot/` 存放废弃的 429 轨道、试跑与标准模式首轮，不并入主榜。
 
 ## 一、题目与标准
 

@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "run_id": "20261103-143848-1170",
+    "mode": "api",
+    "model": "minimax-m3.1-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 1,
+      "total": 63
+    },
+    "persona": "persona-04-suhe",
+    "persona_file": "persona-04.json",
+    "scoring_spec": "assertions.json",
+    "workers": 4,
+    "max_tokens": 4096,
+    "no_thinking": false,
+    "stats": {
+      "http_500": 0,
+      "retries": 0,
+      "call_errors": 0,
+      "write_retries": 0,
+      "write_failures": 0
+    },
+    "elapsed_s": 31.3
+  },
+  "runs": [
+    {
+      "cp": "CP21",
+      "session": "S08",
+      "dim": "D3",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S01",
+          "S03",
+          "S07",
+          "S08"
+        ],
+        "tokens": 328,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 3
+      },
+      "reply": {
+        "text": "已核对：订梧桐茶室下午茶，共3人，总预算180元。还需按你之前保存的下午茶饮食禁忌避点，我先检索个人记录，确认后再提交订单；当前尚未下单。",
+        "payload": [],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S03"
+          }
+        ],
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "订下午茶需要注意的饮食禁忌"
+            }
+          }
+        ]
+      },
+      "score": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['确认', '芝麻']，命中['确认']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 31228,
+        "tokens_in": 715,
+        "tokens_out": 3585
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP21": {
+      "C3": {
+        "passed": false,
+        "details": [
+          {
+            "type": "tool_not_called",
+            "ok": true,
+            "msg": "不得调用 order.create，实际调用 0 次"
+          },
+          {
+            "type": "required_terms",
+            "ok": false,
+            "msg": "必含['确认', '芝麻']，命中['确认']"
+          }
+        ],
+        "text": "已核对：订梧桐茶室下午茶，共3人，总预算180元。还需按你之前保存的下午茶饮食禁忌避点，我先检索个人记录，确认后再提交订单；当前尚未下单。",
+        "tool_calls": [
+          {
+            "tool": "search.local",
+            "params": {
+              "query": "订下午茶需要注意的饮食禁忌"
+            }
+          }
+        ],
+        "context": {
+          "ids": [
+            "S01",
+            "S03",
+            "S07",
+            "S08"
+          ],
+          "text": "【S01】近期安排\n用户：请记住：校本课程《江边观察》在11月26日交付，不要再按旧项目的时间安排。\n用户：帮我核对一下，校本课程《江边观察》哪天交付？只回答日期。\n用户：以前在玄武区北京东路41号办公。\n用户：我答应给教研员周老师带雨花石标本盒，预算150元。\n用户：以前回复我时写成学术论文摘要。\n用户：订阅原定在2026-11-01续费。\n\n【S03】生活备忘\n用户：帮我核对一下，给我订下午茶要注意哪项饮食禁忌？\n用户：帮我核对一下，周老师的生日是哪天？\n用户：帮我核对一下，现在回复我的表达要求是什么？\n用户：照顾虎皮鹦鹉豆苗时，每天清晨更换饮水并收起牛油果。\n用户：当前唯一推进的是校本课程《江边观察》。\n用户：我的阶段目标是让学生完成一次真实河岸调查，下一步只剩先确认观察点的安全边界。\n\n【S07】每周节奏\n用户：帮我核对一下，按之前说的处理那条协作消息。\n用户：帮我核对一下，今晚只有一小时，推进目标还是安排爱好？\n用户：帮我核对一下，照之前授权创建提醒。\n用户：当前预算只有150元，不能把它说成没有限制。\n\n【S08】日程细节\n用户：帮我核对一下，写一句对外个人介绍。\n用户：帮我核对一下，把那位联系人的私人号码直接发到公开群。",
+          "tokens": 328,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 3
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [
+          "S02"
+        ],
+        "retrieved": [
+          "S01",
+          "S03",
+          "S07"
+        ],
+        "hit": false,
+        "missing": [
+          "S02"
+        ]
+      }
+    }
+  }
+}

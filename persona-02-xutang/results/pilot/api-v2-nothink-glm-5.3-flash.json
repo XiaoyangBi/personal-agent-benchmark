@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "persona": "persona-02-xutang",
+    "persona_file": "persona-02.json",
+    "mode": "api",
+    "model": "glm-5.3-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "scoring_spec": "assertions.json",
+    "max_tokens": 1024,
+    "workers": 4,
+    "no_thinking": false,
+    "tag": "api-v2-nothink",
+    "merged_from_attempts": true,
+    "attempt_files": []
+  },
+  "runs": [],
+  "matrix": {}
+}

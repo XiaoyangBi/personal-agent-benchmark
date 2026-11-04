@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "persona": "persona-01-linzhou",
+    "persona_file": "persona-01.json",
+    "mode": "api",
+    "model": "glm-5.3-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "scoring_spec": "assertions.json",
+    "max_tokens": 2048,
+    "workers": 4,
+    "merged_from_attempts": true,
+    "attempt_files": []
+  },
+  "runs": [],
+  "matrix": {}
+}

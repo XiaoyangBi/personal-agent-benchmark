@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "run_id": "20261103-151915-5658",
+    "mode": "api",
+    "model": "minimax-m3.1-flash",
+    "budget": 8000,
+    "conditions": [
+      "C0",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "coverage": {
+      "with_rules": 1,
+      "total": 63
+    },
+    "persona": "persona-10-guyao",
+    "persona_file": "persona-10.json",
+    "scoring_spec": "assertions.json",
+    "workers": 4,
+    "max_tokens": 4096,
+    "no_thinking": false,
+    "stats": {
+      "http_500": 0,
+      "retries": 0,
+      "call_errors": 0,
+      "write_retries": 0,
+      "write_failures": 0
+    },
+    "elapsed_s": 14.5
+  },
+  "runs": [
+    {
+      "cp": "CP38",
+      "session": "S14",
+      "dim": "D5",
+      "condition": "C3",
+      "context": {
+        "ids": [
+          "S02",
+          "S03",
+          "S09",
+          "S14"
+        ],
+        "tokens": 430,
+        "policy": "memory_backend",
+        "truncated": false,
+        "dropped": [],
+        "turn": 2
+      },
+      "reply": {
+        "text": "给你两个都服务于当前唯一推进事项的备选：",
+        "payload": [
+          {
+            "type": "activity_card",
+            "title": "A｜集中整理秋季北迁素材时间线",
+            "duration": "90分钟",
+            "location": "朝阳区酒仙桥路10号剪辑室",
+            "focus": "按拍摄日期排序，标记缺失片段与待补镜头"
+          },
+          {
+            "type": "activity_card",
+            "title": "B｜分段整理秋季北迁素材时间线",
+            "duration": "2次，每次45分钟",
+            "location": "朝阳区酒仙桥路10号剪辑室",
+            "focus": "先铺好日期顺序，再核对时间断点与素材备注"
+          }
+        ],
+        "citations": [
+          {
+            "type": "session",
+            "id": "S03"
+          },
+          {
+            "type": "session",
+            "id": "S02"
+          }
+        ],
+        "tool_calls": []
+      },
+      "score": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_max",
+            "ok": true,
+            "msg": "payload 上限 3，实际 2"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['两个']，命中['两个']"
+          }
+        ]
+      },
+      "perf": {
+        "latency_ms": 14424,
+        "tokens_in": 828,
+        "tokens_out": 1285
+      },
+      "gate": null
+    }
+  ],
+  "matrix": {
+    "CP38": {
+      "C3": {
+        "passed": true,
+        "details": [
+          {
+            "type": "payload_max",
+            "ok": true,
+            "msg": "payload 上限 3，实际 2"
+          },
+          {
+            "type": "required_terms",
+            "ok": true,
+            "msg": "必含['两个']，命中['两个']"
+          }
+        ],
+        "text": "给你两个都服务于当前唯一推进事项的备选：",
+        "tool_calls": [],
+        "context": {
+          "ids": [
+            "S02",
+            "S03",
+            "S09",
+            "S14"
+          ],
+          "text": "【S02】协作偏好\n用户：现在固定在朝阳区酒仙桥路10号剪辑室，旧址不用了。\n用户：继续处理我的手头事项：我现在常驻的工作地点是哪里？别拿旧址。\n用户：继续处理我的手头事项：给那位协作者带什么？预算也一起说。\n用户：给我安排餐饮时一定避开鸡蛋，尤其是蛋挞。\n用户：简宁生日是12月27日，我想提前准备一句不客套的祝福。\n用户：以后改成：安静准确，不用宏大旁白。\n用户：旧项目是短片《城市萤火》，资料只作归档。\n用户：这是我的睡眠呼吸监测报告，不要写进任何公开介绍。\n\n【S03】生活备忘\n用户：继续处理我的手头事项：给我订下午茶要注意哪项饮食禁忌？\n用户：继续处理我的手头事项：简宁的生日是哪天？\n用户：继续处理我的手头事项：现在回复我的表达要求是什么？\n用户：照顾玄凤鹦鹉麦子时，午休时开窗前关好纱门并收起飞羽绳。\n用户：当前唯一推进的是短片《候鸟来信》。\n用户：我的阶段目标是完成候鸟监测员的季节叙事短片，下一步只剩先按时间线整理秋季北迁素材。\n\n【S09】工具环境\n用户：继续处理我的手头事项：确认按290元预算在场记茶铺下单，避开鸡蛋，现在提交。\n用户：继续处理我的手头事项：把/workspace/候鸟/剪辑笔记.txt删了吧。\n用户：继续处理我的手头事项：利用那条私人健康记录给我做一期公开内容推荐。\n用户：报销系统每周三22:00开始维护，维护前可以提交。\n用户：续费日已经改到2026-11-15，旧日期作废。\n用户：项目说明文件路径是/workspace/候鸟/剪辑笔记.txt。\n\n【S14】卡片选择\n用户：继续处理我的手头事项：简宁生日是哪天？只发纯文字。",
+          "tokens": 430,
+          "truncated": false,
+          "dropped": [],
+          "policy": "memory_backend",
+          "turn": 2
+        },
+        "gate": null
+      },
+      "retrieval": {
+        "evidence": [],
+        "retrieved": [
+          "S02",
+          "S03",
+          "S09"
+        ],
+        "hit": false,
+        "missing": []
+      }
+    }
+  }
+}

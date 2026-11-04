@@ -1,0 +1,1397 @@
+{
+  "schema": "personal-agent-api-ranking-v1",
+  "status": "complete",
+  "tag": "api-v2-nothink",
+  "scope": "Five API models, ten synthetic personas, 63 checkpoints, C0-C3, one round, validated model-specific decoding, assertions.json",
+  "expected_items": 2520,
+  "common_items": 2488,
+  "coverage": {
+    "deepseek-v4-flash": {
+      "valid": 2520,
+      "expected": 2520,
+      "passed": 1253
+    },
+    "minimax-m3.1-flash": {
+      "valid": 2518,
+      "expected": 2520,
+      "passed": 1136
+    },
+    "glm-5.3-flash": {
+      "valid": 2492,
+      "expected": 2520,
+      "passed": 1236
+    },
+    "hy4-preview": {
+      "valid": 2520,
+      "expected": 2520,
+      "passed": 1334
+    },
+    "mimo-v2.6-flash": {
+      "valid": 2518,
+      "expected": 2520,
+      "passed": 1211
+    }
+  },
+  "excluded_items": [
+    [
+      "persona-01-linzhou",
+      "CP17",
+      "C2"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP25",
+      "C1"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP29",
+      "C0"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP29",
+      "C1"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP29",
+      "C2"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP29",
+      "C3"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP34",
+      "C2"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP44",
+      "C3"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP45",
+      "C0"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP45",
+      "C2"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP47",
+      "C3"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP55",
+      "C1"
+    ],
+    [
+      "persona-01-linzhou",
+      "CP58",
+      "C1"
+    ],
+    [
+      "persona-02-xutang",
+      "CP05",
+      "C0"
+    ],
+    [
+      "persona-02-xutang",
+      "CP21",
+      "C0"
+    ],
+    [
+      "persona-02-xutang",
+      "CP25",
+      "C0"
+    ],
+    [
+      "persona-02-xutang",
+      "CP25",
+      "C1"
+    ],
+    [
+      "persona-02-xutang",
+      "CP25",
+      "C2"
+    ],
+    [
+      "persona-02-xutang",
+      "CP25",
+      "C3"
+    ],
+    [
+      "persona-02-xutang",
+      "CP35",
+      "C0"
+    ],
+    [
+      "persona-03-chenyu",
+      "CP23",
+      "C3"
+    ],
+    [
+      "persona-04-suhe",
+      "CP04",
+      "C2"
+    ],
+    [
+      "persona-04-suhe",
+      "CP13",
+      "C3"
+    ],
+    [
+      "persona-04-suhe",
+      "CP40",
+      "C0"
+    ],
+    [
+      "persona-05-zhengbei",
+      "CP09",
+      "C3"
+    ],
+    [
+      "persona-05-zhengbei",
+      "CP63",
+      "C1"
+    ],
+    [
+      "persona-06-linlan",
+      "CP41",
+      "C1"
+    ],
+    [
+      "persona-07-zhouheng",
+      "CP28",
+      "C1"
+    ],
+    [
+      "persona-07-zhouheng",
+      "CP30",
+      "C1"
+    ],
+    [
+      "persona-07-zhouheng",
+      "CP40",
+      "C3"
+    ],
+    [
+      "persona-09-luochen",
+      "CP15",
+      "C1"
+    ],
+    [
+      "persona-09-luochen",
+      "CP49",
+      "C1"
+    ]
+  ],
+  "ranking_metric": "Pooled pass rate over the common valid items; equal item counts per persona also make this the persona macro average.",
+  "uncertainty": "Persona SD, min/max, deterministic persona-cluster bootstrap 95% interval and leave-one-persona-out rank range. Not a repeated-sample significance test.",
+  "models": [
+    {
+      "model": "hy4-preview",
+      "display_name": "Hy4",
+      "passed": 1311,
+      "total": 2488,
+      "no_thinking": [
+        true
+      ],
+      "pass_rate": 0.5269292604501608,
+      "persona_rates": {
+        "persona-01-linzhou": 0.6468253968253969,
+        "persona-02-xutang": 0.49206349206349204,
+        "persona-03-chenyu": 0.5277777777777778,
+        "persona-04-suhe": 0.503968253968254,
+        "persona-05-zhengbei": 0.5158730158730159,
+        "persona-06-linlan": 0.5238095238095238,
+        "persona-07-zhouheng": 0.503968253968254,
+        "persona-08-tangning": 0.5238095238095238,
+        "persona-09-luochen": 0.5277777777777778,
+        "persona-10-guyao": 0.5277777777777778
+      },
+      "persona_sd": 0.04311438896817644,
+      "persona_min": 0.49206349206349204,
+      "persona_max": 0.6468253968253969,
+      "persona_bootstrap_95": [
+        0.5103174603174603,
+        0.5575396825396826
+      ],
+      "condition": {
+        "C0": {
+          "passed": 166,
+          "total": 630,
+          "rate": 0.2634920634920635
+        },
+        "C1": {
+          "passed": 405,
+          "total": 630,
+          "rate": 0.6428571428571429
+        },
+        "C2": {
+          "passed": 396,
+          "total": 630,
+          "rate": 0.6285714285714286
+        },
+        "C3": {
+          "passed": 367,
+          "total": 630,
+          "rate": 0.5825396825396826
+        }
+      },
+      "dimension": {
+        "D2/D3": {
+          "passed": 2,
+          "total": 8,
+          "rate": 0.25
+        },
+        "D1": {
+          "passed": 300,
+          "total": 412,
+          "rate": 0.7281553398058253
+        },
+        "D2": {
+          "passed": 193,
+          "total": 360,
+          "rate": 0.5361111111111111
+        },
+        "D1/D3": {
+          "passed": 18,
+          "total": 24,
+          "rate": 0.75
+        },
+        "综合": {
+          "passed": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "D4/D1": {
+          "passed": 6,
+          "total": 8,
+          "rate": 0.75
+        },
+        "D4/D3": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "D1/D4": {
+          "passed": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "D3": {
+          "passed": 74,
+          "total": 356,
+          "rate": 0.20786516853932585
+        },
+        "D4": {
+          "passed": 193,
+          "total": 332,
+          "rate": 0.5813253012048193
+        },
+        "D5": {
+          "passed": 155,
+          "total": 336,
+          "rate": 0.46130952380952384
+        },
+        "D7": {
+          "passed": 193,
+          "total": 348,
+          "rate": 0.5545977011494253
+        },
+        "D6": {
+          "passed": 191,
+          "total": 324,
+          "rate": 0.5895061728395061
+        }
+      },
+      "tokens_in": 1668434,
+      "tokens_out": 237231,
+      "latency_ms": {
+        "mean": 6137.340476190476,
+        "p50": 3815.5,
+        "p95": 10593.999999999989
+      },
+      "rank": 1,
+      "lopo_rank_min": 1,
+      "lopo_rank_max": 1
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "display_name": "DeepSeek",
+      "passed": 1237,
+      "total": 2488,
+      "no_thinking": [
+        true
+      ],
+      "pass_rate": 0.4971864951768489,
+      "persona_rates": {
+        "persona-01-linzhou": 0.6071428571428571,
+        "persona-02-xutang": 0.46825396825396826,
+        "persona-03-chenyu": 0.5079365079365079,
+        "persona-04-suhe": 0.45634920634920634,
+        "persona-05-zhengbei": 0.5079365079365079,
+        "persona-06-linlan": 0.49603174603174605,
+        "persona-07-zhouheng": 0.49206349206349204,
+        "persona-08-tangning": 0.4523809523809524,
+        "persona-09-luochen": 0.5,
+        "persona-10-guyao": 0.48412698412698413
+      },
+      "persona_sd": 0.043512286265116745,
+      "persona_min": 0.4523809523809524,
+      "persona_max": 0.6071428571428571,
+      "persona_bootstrap_95": [
+        0.47579365079365077,
+        0.5257936507936508
+      ],
+      "condition": {
+        "C0": {
+          "passed": 163,
+          "total": 630,
+          "rate": 0.25873015873015875
+        },
+        "C1": {
+          "passed": 375,
+          "total": 630,
+          "rate": 0.5952380952380952
+        },
+        "C2": {
+          "passed": 373,
+          "total": 630,
+          "rate": 0.5920634920634921
+        },
+        "C3": {
+          "passed": 342,
+          "total": 630,
+          "rate": 0.5428571428571428
+        }
+      },
+      "dimension": {
+        "D2/D3": {
+          "passed": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "D1": {
+          "passed": 287,
+          "total": 412,
+          "rate": 0.6966019417475728
+        },
+        "D2": {
+          "passed": 177,
+          "total": 360,
+          "rate": 0.49166666666666664
+        },
+        "D1/D3": {
+          "passed": 16,
+          "total": 24,
+          "rate": 0.6666666666666666
+        },
+        "综合": {
+          "passed": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "D4/D1": {
+          "passed": 3,
+          "total": 8,
+          "rate": 0.375
+        },
+        "D4/D3": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "D1/D4": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "D3": {
+          "passed": 59,
+          "total": 356,
+          "rate": 0.16573033707865167
+        },
+        "D4": {
+          "passed": 205,
+          "total": 332,
+          "rate": 0.6174698795180723
+        },
+        "D5": {
+          "passed": 162,
+          "total": 336,
+          "rate": 0.48214285714285715
+        },
+        "D7": {
+          "passed": 164,
+          "total": 348,
+          "rate": 0.47126436781609193
+        },
+        "D6": {
+          "passed": 163,
+          "total": 324,
+          "rate": 0.5030864197530864
+        }
+      },
+      "tokens_in": 1624616,
+      "tokens_out": 172811,
+      "latency_ms": {
+        "mean": 3055.4626984126985,
+        "p50": 2400.0,
+        "p95": 3629.0999999999995
+      },
+      "rank": 2,
+      "lopo_rank_min": 2,
+      "lopo_rank_max": 3
+    },
+    {
+      "model": "glm-5.3-flash",
+      "display_name": "GLM",
+      "passed": 1234,
+      "total": 2488,
+      "no_thinking": [
+        true
+      ],
+      "pass_rate": 0.4959807073954984,
+      "persona_rates": {
+        "persona-01-linzhou": 0.5950413223140496,
+        "persona-02-xutang": 0.4857142857142857,
+        "persona-03-chenyu": 0.5099601593625498,
+        "persona-04-suhe": 0.4738955823293173,
+        "persona-05-zhengbei": 0.484,
+        "persona-06-linlan": 0.4701195219123506,
+        "persona-07-zhouheng": 0.476,
+        "persona-08-tangning": 0.49603174603174605,
+        "persona-09-luochen": 0.488,
+        "persona-10-guyao": 0.48412698412698413
+      },
+      "persona_sd": 0.03653978722494165,
+      "persona_min": 0.4701195219123506,
+      "persona_max": 0.5950413223140496,
+      "persona_bootstrap_95": [
+        0.4803910686570985,
+        0.5201273851283156
+      ],
+      "condition": {
+        "C0": {
+          "passed": 181,
+          "total": 623,
+          "rate": 0.29052969502407705
+        },
+        "C1": {
+          "passed": 375,
+          "total": 621,
+          "rate": 0.6038647342995169
+        },
+        "C2": {
+          "passed": 346,
+          "total": 625,
+          "rate": 0.5536
+        },
+        "C3": {
+          "passed": 334,
+          "total": 623,
+          "rate": 0.536115569823435
+        }
+      },
+      "dimension": {
+        "D2/D3": {
+          "passed": 3,
+          "total": 8,
+          "rate": 0.375
+        },
+        "D1": {
+          "passed": 265,
+          "total": 405,
+          "rate": 0.654320987654321
+        },
+        "D2": {
+          "passed": 146,
+          "total": 358,
+          "rate": 0.40782122905027934
+        },
+        "D1/D3": {
+          "passed": 16,
+          "total": 24,
+          "rate": 0.6666666666666666
+        },
+        "综合": {
+          "passed": 0,
+          "total": 4,
+          "rate": 0.0
+        },
+        "D4/D1": {
+          "passed": 5,
+          "total": 8,
+          "rate": 0.625
+        },
+        "D4/D3": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "D1/D4": {
+          "passed": 3,
+          "total": 4,
+          "rate": 0.75
+        },
+        "D3": {
+          "passed": 72,
+          "total": 346,
+          "rate": 0.20809248554913296
+        },
+        "D4": {
+          "passed": 215,
+          "total": 329,
+          "rate": 0.6534954407294833
+        },
+        "D5": {
+          "passed": 166,
+          "total": 333,
+          "rate": 0.4984984984984985
+        },
+        "D7": {
+          "passed": 178,
+          "total": 346,
+          "rate": 0.5144508670520231
+        },
+        "D6": {
+          "passed": 163,
+          "total": 323,
+          "rate": 0.5046439628482973
+        }
+      },
+      "tokens_in": 1740312,
+      "tokens_out": 264602,
+      "latency_ms": {
+        "mean": 5253.923354735152,
+        "p50": 4738.0,
+        "p95": 8665.499999999998
+      },
+      "rank": 3,
+      "lopo_rank_min": 2,
+      "lopo_rank_max": 3
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "display_name": "MiMo",
+      "passed": 1199,
+      "total": 2488,
+      "no_thinking": [
+        true
+      ],
+      "pass_rate": 0.48191318327974275,
+      "persona_rates": {
+        "persona-01-linzhou": 0.58,
+        "persona-02-xutang": 0.43253968253968256,
+        "persona-03-chenyu": 0.47619047619047616,
+        "persona-04-suhe": 0.4523809523809524,
+        "persona-05-zhengbei": 0.45634920634920634,
+        "persona-06-linlan": 0.5079365079365079,
+        "persona-07-zhouheng": 0.47619047619047616,
+        "persona-08-tangning": 0.4603174603174603,
+        "persona-09-luochen": 0.5158730158730159,
+        "persona-10-guyao": 0.4523809523809524
+      },
+      "persona_sd": 0.0432189444467827,
+      "persona_min": 0.43253968253968256,
+      "persona_max": 0.58,
+      "persona_bootstrap_95": [
+        0.4583333333333333,
+        0.5085238095238095
+      ],
+      "condition": {
+        "C0": {
+          "passed": 184,
+          "total": 630,
+          "rate": 0.2920634920634921
+        },
+        "C1": {
+          "passed": 351,
+          "total": 628,
+          "rate": 0.5589171974522293
+        },
+        "C2": {
+          "passed": 342,
+          "total": 630,
+          "rate": 0.5428571428571428
+        },
+        "C3": {
+          "passed": 334,
+          "total": 630,
+          "rate": 0.5301587301587302
+        }
+      },
+      "dimension": {
+        "D2/D3": {
+          "passed": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "D1": {
+          "passed": 278,
+          "total": 411,
+          "rate": 0.6763990267639902
+        },
+        "D2": {
+          "passed": 129,
+          "total": 360,
+          "rate": 0.35833333333333334
+        },
+        "D1/D3": {
+          "passed": 16,
+          "total": 24,
+          "rate": 0.6666666666666666
+        },
+        "综合": {
+          "passed": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "D4/D1": {
+          "passed": 7,
+          "total": 8,
+          "rate": 0.875
+        },
+        "D4/D3": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "D1/D4": {
+          "passed": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "D3": {
+          "passed": 59,
+          "total": 355,
+          "rate": 0.16619718309859155
+        },
+        "D4": {
+          "passed": 208,
+          "total": 332,
+          "rate": 0.6265060240963856
+        },
+        "D5": {
+          "passed": 166,
+          "total": 336,
+          "rate": 0.49404761904761907
+        },
+        "D7": {
+          "passed": 184,
+          "total": 348,
+          "rate": 0.5287356321839081
+        },
+        "D6": {
+          "passed": 149,
+          "total": 324,
+          "rate": 0.45987654320987653
+        }
+      },
+      "tokens_in": 1754051,
+      "tokens_out": 234460,
+      "latency_ms": {
+        "mean": 7363.960683081811,
+        "p50": 5156.5,
+        "p95": 20218.600000000006
+      },
+      "rank": 4,
+      "lopo_rank_min": 4,
+      "lopo_rank_max": 4
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "display_name": "MiniMax",
+      "passed": 1122,
+      "total": 2488,
+      "no_thinking": [
+        false
+      ],
+      "pass_rate": 0.4509646302250804,
+      "persona_rates": {
+        "persona-01-linzhou": 0.5577689243027888,
+        "persona-02-xutang": 0.4365079365079365,
+        "persona-03-chenyu": 0.44841269841269843,
+        "persona-04-suhe": 0.4246031746031746,
+        "persona-05-zhengbei": 0.4365079365079365,
+        "persona-06-linlan": 0.44047619047619047,
+        "persona-07-zhouheng": 0.42231075697211157,
+        "persona-08-tangning": 0.4523809523809524,
+        "persona-09-luochen": 0.4523809523809524,
+        "persona-10-guyao": 0.44047619047619047
+      },
+      "persona_sd": 0.03883180835529083,
+      "persona_min": 0.42231075697211157,
+      "persona_max": 0.5577689243027888,
+      "persona_bootstrap_95": [
+        0.43462973502814145,
+        0.47685867640548907
+      ],
+      "condition": {
+        "C0": {
+          "passed": 154,
+          "total": 630,
+          "rate": 0.24444444444444444
+        },
+        "C1": {
+          "passed": 339,
+          "total": 630,
+          "rate": 0.5380952380952381
+        },
+        "C2": {
+          "passed": 322,
+          "total": 629,
+          "rate": 0.5119236883942766
+        },
+        "C3": {
+          "passed": 321,
+          "total": 629,
+          "rate": 0.5103338632750397
+        }
+      },
+      "dimension": {
+        "D2/D3": {
+          "passed": 8,
+          "total": 8,
+          "rate": 1.0
+        },
+        "D1": {
+          "passed": 265,
+          "total": 411,
+          "rate": 0.6447688564476886
+        },
+        "D2": {
+          "passed": 157,
+          "total": 360,
+          "rate": 0.4361111111111111
+        },
+        "D1/D3": {
+          "passed": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        },
+        "综合": {
+          "passed": 2,
+          "total": 4,
+          "rate": 0.5
+        },
+        "D4/D1": {
+          "passed": 4,
+          "total": 8,
+          "rate": 0.5
+        },
+        "D4/D3": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "D1/D4": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "D3": {
+          "passed": 56,
+          "total": 356,
+          "rate": 0.15730337078651685
+        },
+        "D4": {
+          "passed": 175,
+          "total": 332,
+          "rate": 0.5271084337349398
+        },
+        "D5": {
+          "passed": 176,
+          "total": 335,
+          "rate": 0.5253731343283582
+        },
+        "D7": {
+          "passed": 145,
+          "total": 348,
+          "rate": 0.4166666666666667
+        },
+        "D6": {
+          "passed": 123,
+          "total": 324,
+          "rate": 0.37962962962962965
+        }
+      },
+      "tokens_in": 2029806,
+      "tokens_out": 1436054,
+      "latency_ms": {
+        "mean": 5789.550039714059,
+        "p50": 4237.0,
+        "p95": 16282.450000000006
+      },
+      "rank": 5,
+      "lopo_rank_min": 5,
+      "lopo_rank_max": 5
+    }
+  ],
+  "pairwise": [
+    {
+      "a": "deepseek-v4-flash",
+      "b": "minimax-m3.1-flash",
+      "a_only": 286,
+      "b_only": 171,
+      "both_pass": 951,
+      "both_fail": 1080
+    },
+    {
+      "a": "deepseek-v4-flash",
+      "b": "glm-5.3-flash",
+      "a_only": 199,
+      "b_only": 196,
+      "both_pass": 1038,
+      "both_fail": 1055
+    },
+    {
+      "a": "deepseek-v4-flash",
+      "b": "hy4-preview",
+      "a_only": 148,
+      "b_only": 222,
+      "both_pass": 1089,
+      "both_fail": 1029
+    },
+    {
+      "a": "deepseek-v4-flash",
+      "b": "mimo-v2.6-flash",
+      "a_only": 201,
+      "b_only": 163,
+      "both_pass": 1036,
+      "both_fail": 1088
+    },
+    {
+      "a": "glm-5.3-flash",
+      "b": "minimax-m3.1-flash",
+      "a_only": 296,
+      "b_only": 184,
+      "both_pass": 938,
+      "both_fail": 1070
+    },
+    {
+      "a": "glm-5.3-flash",
+      "b": "hy4-preview",
+      "a_only": 162,
+      "b_only": 239,
+      "both_pass": 1072,
+      "both_fail": 1015
+    },
+    {
+      "a": "glm-5.3-flash",
+      "b": "mimo-v2.6-flash",
+      "a_only": 194,
+      "b_only": 159,
+      "both_pass": 1040,
+      "both_fail": 1095
+    },
+    {
+      "a": "hy4-preview",
+      "b": "minimax-m3.1-flash",
+      "a_only": 333,
+      "b_only": 144,
+      "both_pass": 978,
+      "both_fail": 1033
+    },
+    {
+      "a": "hy4-preview",
+      "b": "mimo-v2.6-flash",
+      "a_only": 258,
+      "b_only": 146,
+      "both_pass": 1053,
+      "both_fail": 1031
+    },
+    {
+      "a": "mimo-v2.6-flash",
+      "b": "minimax-m3.1-flash",
+      "a_only": 264,
+      "b_only": 187,
+      "both_pass": 935,
+      "both_fail": 1102
+    }
+  ],
+  "sources": [
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-01-linzhou",
+      "path": "persona-01-linzhou/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "4654b792d8d1768f7e37a2623150faae26771e0dd3724f76daaa09ca2f5aad54",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-02-xutang",
+      "path": "persona-02-xutang/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "8a7390da03a92972620a8cb3a33329c5df897a1944ed08a186077847fcc3cdcf",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-03-chenyu",
+      "path": "persona-03-chenyu/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "c5659bfd67a8a64d16e3d08dfeb0ffd4dc8123efec8c3441caf9f00581a5245a",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-04-suhe",
+      "path": "persona-04-suhe/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "50f4c9058643a8e1b944ac9973bf0a567f301be6ab70fb0eb0101fc652375a34",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-05-zhengbei",
+      "path": "persona-05-zhengbei/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "4fc68b0a600a7147c6ba763df31e608382d28820e8c5bddb11ac4e5d6eaa1359",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-06-linlan",
+      "path": "persona-06-linlan/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "340b90705f1a8a335c6e9eed55018da52f91186deed1eb6e13b6a68789e80605",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-07-zhouheng",
+      "path": "persona-07-zhouheng/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "17f849dac29c74b9a7160c3e0a54f5d19aaf306c9ca5724edf15f475795e7f82",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-08-tangning",
+      "path": "persona-08-tangning/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "8f97eebc884eff7f10c47f34a7639e66f88e03606cce676c6179ba98e3036e34",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-09-luochen",
+      "path": "persona-09-luochen/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "b587b839a335f142a570424a5f9f6fd602458dd00c7b40580fb082023c000847",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "persona": "persona-10-guyao",
+      "path": "persona-10-guyao/results/api-v2-nothink-deepseek-v4-flash.json",
+      "sha256": "452236e341607056b6257c5c8c929187d5d73485b8813f0209aae35277c550fa",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-01-linzhou",
+      "path": "persona-01-linzhou/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "a255e597b934d3e8c63d1ac0c0043c06f5018f94cd835850041dc0e9cf4d6cd1",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": false
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-02-xutang",
+      "path": "persona-02-xutang/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "3bc1c8dc1a1e4460a74b9744dc93a26b6828ec6e69920d04dc8be61a7cde2a6a",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-03-chenyu",
+      "path": "persona-03-chenyu/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "fce90e48a4128326d40af2cd8c62cf815acc70180d55ae4e3bc338c494625d4b",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-04-suhe",
+      "path": "persona-04-suhe/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "bf72b601f873f62f373e0f365eb2e3cd92069dac287032d62dcf251c909cf833",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-05-zhengbei",
+      "path": "persona-05-zhengbei/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "903c062871948c6ca53935954ed4da122d28dbb42615439611786906b33ff507",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-06-linlan",
+      "path": "persona-06-linlan/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "b817c7b82bf875dbcf5f038036227f406de8c9e9eb7c1415826ad062b996af4d",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-07-zhouheng",
+      "path": "persona-07-zhouheng/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "171d9608d80dfddc16c0554e59052c45ee9406e87159e7da3886f41b2d0a59aa",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": false
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-08-tangning",
+      "path": "persona-08-tangning/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "e70bcbf44d6b3d7719dd0b33f61b67b87c3f899bb50f565befd0f0ba17dc87cc",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-09-luochen",
+      "path": "persona-09-luochen/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "22057cc014c6c00be13f011b0c2932a9a5301c60dc4c082e8dfc1705fbbcd19d",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "minimax-m3.1-flash",
+      "persona": "persona-10-guyao",
+      "path": "persona-10-guyao/results/api-v2-nothink-minimax-m3.1-flash.json",
+      "sha256": "32133ef0c0a07c247537e9c8ba1fd8e8dd39cbf38764e5b7d56bc1d7aeb687e8",
+      "runs": 252,
+      "no_thinking": false,
+      "meta_complete": true
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-01-linzhou",
+      "path": "persona-01-linzhou/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "528fd26c730db79e4aafa8ad11d1ff271b7f9fd8e9fde3ff8263c1edb29cf174",
+      "runs": 248,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-02-xutang",
+      "path": "persona-02-xutang/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "2390442df59207870e97665a10b9f62dcc6e869584b868d22ba0319f52e683da",
+      "runs": 248,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-03-chenyu",
+      "path": "persona-03-chenyu/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "fdf64e61cf4f4fb00ab154ed2281cf0703aa4e8ac6ea09ec9b9cbfa4cefbbd94",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-04-suhe",
+      "path": "persona-04-suhe/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "5e3556a82b66f9d81938aab37027314828f0a579f6a90c4cd7173363471f4646",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-05-zhengbei",
+      "path": "persona-05-zhengbei/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "a29185ce350881083324f542c908a8040b76f32614af4e6292b6b915d20ea3a2",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-06-linlan",
+      "path": "persona-06-linlan/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "9b6db73fa031ab2335c9f3d1514e69229b366f35f94e069ccf1b16bbc9748c37",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-07-zhouheng",
+      "path": "persona-07-zhouheng/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "f088e6f7627e47bc2cac6cd9471c605b442ac3a029aab116f04a7c0e711b9a85",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-08-tangning",
+      "path": "persona-08-tangning/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "78bc60f39e7a450f0eac33ad9459fed75fa680e977a852b3071347d768606c26",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-09-luochen",
+      "path": "persona-09-luochen/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "7b136fc1bd5a379d44c3aa418408209dd1ce8920afeb3d66531b163b7c31e472",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "glm-5.3-flash",
+      "persona": "persona-10-guyao",
+      "path": "persona-10-guyao/results/api-v2-nothink-glm-5.3-flash.json",
+      "sha256": "85563699584adf404ff8069f25f93935cb35f08bcd499a847954555b32a38464",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-01-linzhou",
+      "path": "persona-01-linzhou/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "ddcf6f76e790cfbc68d11057fe9aed117298ba6671024e26df3c1756516a918f",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-02-xutang",
+      "path": "persona-02-xutang/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "d9388c814d27629947bc204df3962045d9b53af39101912e096506e73a1edda0",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-03-chenyu",
+      "path": "persona-03-chenyu/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "5690c0115df3d80a673e1b8447a656c84ac996e71eaade3201ce2549771c6dd7",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-04-suhe",
+      "path": "persona-04-suhe/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "0ec701c58e39b909aa55d1534e286fa7f894efde928f074bfec3bdc09c3fa65f",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-05-zhengbei",
+      "path": "persona-05-zhengbei/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "4dc4671e007590f534408d9ac7edd0cba30d5e6130cfbbe470f73cdc0b1bb487",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-06-linlan",
+      "path": "persona-06-linlan/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "1548531e6e15c0049a421a5fd8a962e3eef2868a04f27a943f55529905827e94",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-07-zhouheng",
+      "path": "persona-07-zhouheng/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "c2d97676f5b014087870bb78889e12865c34ab897f882a25b0ac5bff65d5a473",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-08-tangning",
+      "path": "persona-08-tangning/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "f39073a0e9f5029931aa5f325fe74d3c0fdb219a9cd53e37224874583ff24685",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-09-luochen",
+      "path": "persona-09-luochen/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "34db1c5ec8180fd638b20c7a7d1a3a1c0cf8730ad24bb6f83b58bd60cf5db26b",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "hy4-preview",
+      "persona": "persona-10-guyao",
+      "path": "persona-10-guyao/results/api-v2-nothink-hy4-preview.json",
+      "sha256": "77b1710b4a478d31c2498ad4cd34e1b73d86b292efd767bb979e44598525ca8c",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-01-linzhou",
+      "path": "persona-01-linzhou/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "c061f34ec936bbfab36e8724666ffc9a6ae491822a5a4f5c99e64cb76f271e5d",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": false
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-02-xutang",
+      "path": "persona-02-xutang/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "b6c28f1c5d602a5e08785506d6d750dc2b1f17fac8320db477a71733e0f6396f",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-03-chenyu",
+      "path": "persona-03-chenyu/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "bbe9b7d5b7912ecc09926d41084779930a5e0faeb2458f93f8663e67ead58617",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-04-suhe",
+      "path": "persona-04-suhe/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "3c7ee83c17ca650da3dc81fbdae28de4a74248d78f4448844297bd47b0cb20d3",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-05-zhengbei",
+      "path": "persona-05-zhengbei/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "f7489fe989e3c891385c573ff031152afff3ad9e4a39bc0d6fb4aabc907b1e98",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-06-linlan",
+      "path": "persona-06-linlan/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "c7f089010278cad4e59fe110b6ce2752391f87d2339479cbe07102b6af37a7e2",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-07-zhouheng",
+      "path": "persona-07-zhouheng/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "60282432ac2efe657f0d9effa2a07eba06d01d857dd855af187ac2c3edd6d17a",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-08-tangning",
+      "path": "persona-08-tangning/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "35eca7add704f0c5bfbbff50ddef5cbdf379c7cdf5d113f37836f711f4bb52c1",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-09-luochen",
+      "path": "persona-09-luochen/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "f9e81c4901c6573105ead34c2c69e476efa219890d91117dcae23583889c1059",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    },
+    {
+      "model": "mimo-v2.6-flash",
+      "persona": "persona-10-guyao",
+      "path": "persona-10-guyao/results/api-v2-nothink-mimo-v2.6-flash.json",
+      "sha256": "66ae355d0dad9d51aadde55633b030229cf194adc5b7968433a9231edf19bfd4",
+      "runs": 252,
+      "no_thinking": true,
+      "meta_complete": true
+    }
+  ],
+  "scoring_sha256": {
+    "persona-01-linzhou": "c3f0ffeecc56ba6e50b6f8b3f993f222a63bf863ab011a522c366969a870f7b0",
+    "persona-02-xutang": "c453f9570bd15aceea16f96e08681f6c953afd8534eb8a07f61f95dcb85388f1",
+    "persona-03-chenyu": "70fc2c0a5647aec4b994b0571dd7dee4c9a6d13b8d1b075332040ae34392ffd5",
+    "persona-04-suhe": "6f7d6c4a286a16810e206de1fa69633c280c927268cd91ac561ddd5de7da7c57",
+    "persona-05-zhengbei": "025252e443b594a92f0f00486b4b363bea04cec1fd72ad2fd6c812b39e914bfa",
+    "persona-06-linlan": "937d34f1cadbcfe69c320b4a98a36918ced706ec9eefb5b51be900994c44aa5b",
+    "persona-07-zhouheng": "710af785b2d75b20a5b80463a3271564c940467af6986eeb6899548fc7b5dc38",
+    "persona-08-tangning": "dbb45c6d31861be98471ddde3d7a00450f6189ac91b95bbe5adbed7faf5c3a70",
+    "persona-09-luochen": "cd80ebf3b70f0eca82bebdc4b842efc4219a5b09bd982d46e66f8c413c62b43f",
+    "persona-10-guyao": "81213da0d130fc4f75c2bc700b866202ccf5ed59a20b0f6274434a2122b3d447"
+  },
+  "limitations": [
+    "One API round per model; no stochastic repeat variance or significance claim.",
+    "DeepSeek, GLM, Hy4 and MiMo use non-thinking output. MiniMax uses standard output because the gateway returns an unparsable payload when thinking is disabled. Decoding mode is per-model validated but remains a confound.",
+    "Fixed lexical, structural and tool assertions are weak proxies for semantic quality.",
+    "Synthetic personas share scenario archetypes and are not independent real-user samples.",
+    "C3 uses the naive bigram retriever, not a production memory system.",
+    "GPT runtime results are a separate track and are excluded from this API ranking.",
+    "Items with no valid reply from any model are excluded from the common denominator rather than scored as failures.",
+    "Token usage and latency are descriptive; no price table or cost ranking is inferred."
+  ]
+}
