@@ -5,15 +5,16 @@
   "synthetic_data": true,
   "source_modified": false,
   "source_scope": "All existing Personal Agent benchmark materials plus the api-v2-nothink single-round formal evaluation of five API models across ten synthetic personas",
-  "public_file_count": 1563,
-  "public_bytes": 210845124,
+  "public_file_count": 1536,
+  "public_bytes": 210575996,
   "transforms": [
     "Local workspace paths replaced with <workspace> or <local-path>",
     "Enterprise document links replaced with <removed-enterprise-document-link>",
     "Internal runtime session references replaced with <runtime-session-ref>",
     "Synthetic-data notice added to profile",
-    "Root README reorganized; original history preserved in docs/project-history.md",
-    "Deprecated pilot and smoke results archived under persona-*/results/pilot/ and desensitized"
+    "Root rewritten as a standalone bilingual benchmark README (English + Simplified Chinese)",
+    "Deprecated pilot and smoke results archived under persona-*/results/pilot/ and desensitized",
+    "Process drafts, research notes and legacy reports removed from the public snapshot"
   ],
   "excluded": [
     "Operating-system metadata",

@@ -52,7 +52,9 @@ def publish(source: Path, workspace: Path, extra_files: list[Path]) -> dict:
     for path in [*source_files(source), *extra_files]:
         relative = path.relative_to(source) if path.is_relative_to(source) else Path(path.name)
         if relative == Path("README.md"):
-            relative = Path("docs/project-history.md")
+            # The public README is maintained here; do not overwrite it
+            # with the source snapshot or keep a legacy copy.
+            continue
         destination = REPO_ROOT / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         source_hash = digest(path)

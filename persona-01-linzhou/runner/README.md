@@ -4,7 +4,7 @@
 
 ```
 runner/
-├── build_sessions.py   剧本 md → data/sessions.json（只保留用户话术）
+├── build_sessions.py   早期剧本 md → data/sessions.json（剧本原文不随仓库发布）
 ├── conditions.py       四条件上下文组装与预算截断
 ├── memory.py           C3 的记忆后端接口 + 朴素检索基线
 ├── assertions.py       规则断言引擎
@@ -139,7 +139,7 @@ python3 report.py --input ../results/all.json --out ../results/report-all.html
 `all.json` 多一个 `stats` 字段：模型侧异常题数与占比、含 C0 越权的合并口径、题目待修（废题）、陷阱未触发的题数与清单、标签分布、C0 越权题、C1 失败题与行为模式分布。
 
 ```bash
-python3 make_summary.py   # 从 all.json 生成 results/summary.md
+python3 make_summary.py   # 从 all.json 生成汇总 Markdown（本地产物，不随仓库发布）
 ```
 
 改断言口径后不要重跑模型，先离线重判：

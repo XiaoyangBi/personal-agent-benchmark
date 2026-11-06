@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import assertions as A  # noqa: E402
 
 CONDITIONS = ["C0", "C1", "C2", "C3"]
-NOISE_LINE = 0.15  # blueprint v0.4 验收线：单题通过率标准差 < 0.15
+NOISE_LINE = 0.15  # 验收线：单题通过率标准差 < 0.15
 
 SPEC = None  # 若指定另一份 spec，则用它的规则重新判分（离线重放，零调用）
 

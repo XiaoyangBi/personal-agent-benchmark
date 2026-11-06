@@ -79,7 +79,7 @@ def main() -> None:
     counts = validate_json_and_inputs()
     scores = validate_scores()
     validate_sensitive_data()
-    assert (ROOT / "PersonalAgent评测集规格_v0.1.md").is_file()
+    assert (ROOT / "docs" / "specification.md").is_file()
     assert len(read_json(ROOT / "docs" / "run-inventory.json")) > 0
     print(json.dumps({"status": "pass", **counts, **scores, "sensitive_scan": "pass"}, ensure_ascii=False))
 

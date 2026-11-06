@@ -148,7 +148,7 @@ def session_scripts() -> dict[str, str]:
 def check_scripts(plants: list[dict]) -> None:
     scripts = session_scripts()
     if not scripts:
-        warn("未找到任何 session 剧本，跳过剧本级检查")
+        warn("公开副本不含 session 剧本原文，跳过剧本级检查；结构化数据校验照常执行")
         return
 
     declared = {p["id"]: p for p in plants}

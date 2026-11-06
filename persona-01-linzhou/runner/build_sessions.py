@@ -63,6 +63,11 @@ def main() -> None:
     sessions: dict[str, dict] = {}
     for path in sorted(ROOT.glob("sessions-S*.md")):
         sessions.update(parse_file(path))
+    if not sessions:
+        raise SystemExit(
+            "No sessions-S*.md scripts found. Structured sessions are shipped "
+            "in data/sessions.json; refusing to overwrite them."
+        )
 
     ordered = {sid: sessions[sid] for sid in sorted(sessions)}
     OUT.parent.mkdir(parents=True, exist_ok=True)

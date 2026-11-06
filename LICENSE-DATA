@@ -1,0 +1,38 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+The datasets, question banks, scoring rules, persona profiles, saved model
+responses, reports, and other evaluation materials in this repository are
+licensed under the Creative Commons Attribution 4.0 International License.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+You are free to:
+
+  Share   - copy and redistribute the material in any medium or format.
+  Adapt   - remix, transform, and build upon the material for any purpose,
+            even commercially.
+
+Under the following terms:
+
+  Attribution - You must give appropriate credit, provide a link to the
+                license, and indicate if changes were made. You may do so in
+                any reasonable manner, but not in any way that suggests the
+                licensor endorses you or your use.
+  No additional restrictions - You may not apply legal terms or technological
+                measures that legally restrict others from doing anything the
+                license permits.
+
+Notices:
+
+  * No warranties are given. The material is provided as recorded; see the
+    Scope and Limitations section of README.md for known constraints.
+  * All personas, conversations, tool environments, canary strings, and
+    results are synthetic. No personal data or real business records are
+    included.
+  * Source code is licensed separately under the MIT License; see LICENSE.
+
+Suggested attribution:
+
+  Personal Agent Benchmark by XiaoyangBi, licensed under CC BY 4.0.
+  https://github.com/XiaoyangBi/personal-agent-benchmark
