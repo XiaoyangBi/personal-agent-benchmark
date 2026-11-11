@@ -1,12 +1,12 @@
 {
   "schema": "personal-agent-benchmark-publication-v1",
-  "generated_at": "2026-11-04T09:12:46.100924+00:00",
-  "snapshot_date": "2026-11-04",
+  "generated_at": "2026-11-11T15:27:00.000000+00:00",
+  "snapshot_date": "2026-11-11",
   "synthetic_data": true,
   "source_modified": false,
-  "source_scope": "All existing Personal Agent benchmark materials plus the api-v2-nothink single-round formal evaluation of five API models across ten synthetic personas",
-  "public_file_count": 1536,
-  "public_bytes": 210575996,
+  "source_scope": "All existing Personal Agent benchmark materials, the api-v2-nothink single-round formal evaluation of five API models across ten synthetic personas, and the product review layer (case library, white-box question grid, role cards, domain taxonomy and review instruments)",
+  "public_file_count": 1557,
+  "public_bytes": 214871978,
   "transforms": [
     "Local workspace paths replaced with <workspace> or <local-path>",
     "Enterprise document links replaced with <removed-enterprise-document-link>",
@@ -14,7 +14,10 @@
     "Synthetic-data notice added to profile",
     "Root rewritten as a standalone bilingual benchmark README (English + Simplified Chinese)",
     "Deprecated pilot and smoke results archived under persona-*/results/pilot/ and desensitized",
-    "Process drafts, research notes and legacy reports removed from the public snapshot"
+    "Process drafts, research notes and legacy reports removed from the public snapshot",
+    "Product review layer normalised from an internal case export: verbatim end-user quotes, external links, platform handles, contact records, reviewer names, internal product names and internal document paths removed",
+    "Segment profiles rewritten so that no named individual or vendor survives into the published data",
+    "Automated two-level domain tags withheld: spot-check agreement was around half, so the column is omitted rather than published as noise"
   ],
   "excluded": [
     "Operating-system metadata",
@@ -26,6 +29,7 @@
   "trace_completeness": "See docs/trace-availability.json; structured context and replies are not full execution traces",
   "evaluation_rounds": {
     "gpt_runtime": "Three-round stability on 252 common items for GPT, Hy4 and MiMo",
-    "api_v2_nothink": "Single-round formal evaluation of five API models over ten personas; see docs/api-v2-nothink-ranking.md"
+    "api_v2_nothink": "Single-round formal evaluation of five API models over ten personas; see docs/api-v2-nothink-ranking.md",
+    "product_review": "White-box case library and question grid; no human review scores have been collected yet, see docs/product-review.md"
   }
 }

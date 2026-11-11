@@ -4,6 +4,8 @@
 import hashlib
 import json
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -75,13 +77,38 @@ def validate_sensitive_data() -> None:
             assert not pattern.search(text), f"Sensitive pattern {label}: {path.relative_to(ROOT)}"
 
 
+def validate_product_cases() -> dict:
+    """Delegate the product review layer to its own validator."""
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "product-cases" / "validate_cases.py")],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
+    cases = read_json(ROOT / "product-cases" / "data" / "cases.json")
+    questions = read_json(ROOT / "product-cases" / "data" / "questions.json")
+    taxonomy = read_json(ROOT / "product-cases" / "data" / "taxonomy.json")
+    links = read_json(ROOT / "product-cases" / "persona-links.json")
+    assert len(cases) == 3026
+    assert len(questions) == 392
+    assert len(taxonomy["level1"]) == 11 and len(taxonomy["level2"]) == 97
+    assert len(links["personas"]) == 10
+    return {
+        "product_cases": len(cases),
+        "whitebox_questions": len(questions),
+        "persona_case_links": sum(len(p["cases"]) for p in links["personas"]),
+    }
+
+
 def main() -> None:
     counts = validate_json_and_inputs()
     scores = validate_scores()
+    product = validate_product_cases()
     validate_sensitive_data()
     assert (ROOT / "docs" / "specification.md").is_file()
+    assert (ROOT / "docs" / "product-review.md").is_file()
     assert len(read_json(ROOT / "docs" / "run-inventory.json")) > 0
-    print(json.dumps({"status": "pass", **counts, **scores, "sensitive_scan": "pass"}, ensure_ascii=False))
+    print(json.dumps({"status": "pass", **counts, **scores, **product, "sensitive_scan": "pass"}, ensure_ascii=False))
 
 
 if __name__ == "__main__":

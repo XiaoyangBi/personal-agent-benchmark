@@ -9,7 +9,7 @@
 
 > A synthetic, rule-scored benchmark for personal-assistant agents. Ten personas, 63 checkpoints each, four context conditions, deterministic offline scoring, and a reproducible five-model leaderboard.
 
-**Contents:** [Overview](#overview) · [At a Glance](#at-a-glance) · [Dimensions](#dimensions) · [Evaluation Protocol](#evaluation-protocol) · [Dataset](#dataset) · [Repository Structure](#repository-structure) · [Quickstart](#quickstart) · [Leaderboard](#leaderboard) · [Reproducibility](#reproducibility) · [Scope and Limitations](#scope-and-limitations) · [Citation](#citation) · [License](#license)
+**Contents:** [Overview](#overview) · [At a Glance](#at-a-glance) · [Dimensions](#dimensions) · [Evaluation Protocol](#evaluation-protocol) · [Product Review Track](#product-review-track) · [Dataset](#dataset) · [Repository Structure](#repository-structure) · [Quickstart](#quickstart) · [Leaderboard](#leaderboard) · [Reproducibility](#reproducibility) · [Scope and Limitations](#scope-and-limitations) · [Citation](#citation) · [License](#license)
 
 ---
 
@@ -33,6 +33,9 @@ All personas, conversations, tool environments, canary strings, and results are 
 | Reply schema | `text`, `payload`, `citations`, `tool_calls` |
 | Scoring | Deterministic, offline, no LLM judge |
 | Runtime dependencies | Python standard library only |
+| Product cases | 3,026 (1,930 reviewed, 1,096 pending) |
+| White-box questions | 392 (245 complete specs over 35 grid cells) |
+| Domain taxonomy | 11 top-level, 97 sub-domains |
 
 ## Dimensions
 
@@ -63,6 +66,28 @@ Construction, retrieval, and budgeting are implemented in `persona-01-linzhou/ru
 
 A checkpoint passes when all of its rules pass. These rules are lexical, structural, and tool-parameter checks, so they are a weak proxy for semantic quality. See [Limitations](#scope-and-limitations).
 
+## Product Review Track
+
+Model scores answer how well an assistant performs on known checkpoints. They do not answer whether a task is worth doing, or whether the assistant behaves acceptably towards the person on the other side. `product-cases/` is a second, orthogonal track for that question: a human plays the counterpart, and the exchange is scored against a written verdict scheme.
+
+| Layer | File | Role |
+|---|---|---|
+| Case | `product-cases/data/cases.json` | A task a real segment wants an agent to complete |
+| Question | `product-cases/data/questions.json` | Turns a case into a scoreable session: who the counterpart is, what they hide, where the agent must stop |
+| Role card | `product-cases/data/role-cards.json` | A replayable script so different reviewers meet the same counterpart |
+
+Each case sits on three axes: a two-level domain taxonomy (11 top-level, 97 sub-domains, each with an explicit exclusion clause), a 5 × 7 grid of counterpart relation against purpose, and a capability level (L0 basic, L1–L3 single-shot outreach, L4 goal-driven). The question set fills every grid cell with seven questions, so 245 complete specs cover the space evenly instead of clustering in familiar scenarios.
+
+Verdicts have three states — reached, stopped appropriately, failed — so that stopping at a clear refusal scores better than pushing through it. A veto rule overrides every other score, and confirmation points mark actions that must be handed back to the user. A nine-cell matrix maps refusal intensity against goal necessity, and a five-dimension scale records how the counterpart experienced the exchange.
+
+Method: [docs/product-review.md](docs/product-review.md). Data guide: [product-cases/README.md](product-cases/README.md).
+
+```bash
+python3 product-cases/validate_cases.py
+```
+
+The two tracks are never merged into a single ranking. `product-cases/persona-links.json` links them instead: each of the ten personas is tied to three cases drawn from its own life, and 18 of those 30 cases already have a runnable question.
+
 ## Dataset
 
 | Path | Contents |
@@ -88,6 +113,7 @@ personal-agent-benchmark/
 ├── docs/
 │   ├── specification.md           # dimensions, scoring, data schema (Chinese)
 │   ├── protocol.md                # four-condition protocol (Chinese)
+│   ├── product-review.md          # product review method: gates, verdicts, scales (Chinese)
 │   ├── checkpoint-index.md        # 63-checkpoint index
 │   ├── personas.md                # persona navigation
 │   ├── api-v2-nothink-ranking.md/json      # leaderboard
@@ -96,6 +122,11 @@ personal-agent-benchmark/
 │   ├── model-results.md/json      # historical persona-01 experiment index
 │   ├── run-inventory.json         # every result file with source SHA-256
 │   └── trace-availability.json    # what trace material exists and what does not
+├── product-cases/                 # product review track: cases, questions, role cards
+│   ├── data/                      # normalised case library and review instruments
+│   ├── schema/                    # JSON Schema for case, question, role card
+│   ├── persona-links.json         # ten personas to cases, hand-checked
+│   └── validate_cases.py
 ├── persona-01-linzhou/            # original persona; also hosts the shared runner
 │   ├── runner/                    # conditions, assertions, execution, replay
 │   ├── data/                      # question bank and scoring rules
@@ -104,6 +135,7 @@ personal-agent-benchmark/
 └── tools/
     ├── evaluation/                # suite runner, ranking, sensitivity, validation
     ├── personas/                  # persona generation and bundle validation
+    ├── product-cases/             # case importer and persona link builder
     └── publication/               # release indexes and integrity checks
 ```
 
@@ -123,6 +155,9 @@ python3 tools/evaluation/sensitivity_api_suite.py
 # Validate the question bank and the release snapshot
 python3 tools/personas/validate_bundle.py --require-dry-run
 python3 tools/publication/validate_release.py
+
+# Validate the product review layer
+python3 product-cases/validate_cases.py
 ```
 
 To evaluate your own system, see `tools/evaluation/run_api_suite.py --help`. It requires your own model credentials and writes results alongside the published ones. Keep credentials out of the repository. To verify the scoring pipeline without a model, run the runner in dry-run mode as described in [persona-01-linzhou/runner/README.md](persona-01-linzhou/runner/README.md).
@@ -161,6 +196,8 @@ The three evaluation scripts read saved results only and never call a model. `va
 - Early 58-item and 63-item variants, different assertion versions, retry-merged runs, pilot tracks, and runtime versus API tracks are kept separate. Always check the denominator and scoring scale before comparing.
 - The complete underlying execution trace for the GPT runtime was not obtained; structured inputs and outputs are not presented as full traces.
 - The public snapshot is current as of 2026-11-04. It is an observation under a specific question bank and decoding configuration, not a validated general capability benchmark.
+- The product review layer ships no human review scores yet. Its question set specifies the reached verdict and a veto for every item, but the stopped-appropriately and failed verdicts are still empty. The 245 complete specs keep the counterpart setup inline and can be played; the other 147 questions are flagged as awaiting a role card and cannot.
+- The 3,026 shipped cases carry no domain label. An automated two-level tagger agreed with spot checks only about half the time, so the column was dropped rather than published as noise. Domain codes appear only on the 30 hand-checked persona links.
 
 ## Citation
 

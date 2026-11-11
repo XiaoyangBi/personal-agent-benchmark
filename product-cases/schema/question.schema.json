@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/hardness1020/personal-agent-benchmark/product-cases/schema/question.schema.json",
+  "title": "White-box test question",
+  "description": "一道测试题：把用例变成可以让人扮演对方、按判定标准打分的一次对局。规格完整度为「完整规格」时，下面所有判定字段都必须存在。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "question_id",
+    "set",
+    "difficulty",
+    "task_type",
+    "spec_completeness",
+    "case_id",
+    "user_preconditions",
+    "constraints",
+    "verdict_reached",
+    "may_build_app",
+    "half_set"
+  ],
+  "properties": {
+    "question_id": {
+      "type": "string",
+      "pattern": "^[\\w-]+$"
+    },
+    "set": {
+      "type": "string",
+      "enum": [
+        "白盒",
+        "黑盒"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "P1_ACQUIRE",
+        "P2_COORDINATE",
+        "P3_CONNECT",
+        "P4_MAINTAIN",
+        "P5_SEEK_HELP",
+        "P6_INFLUENCE",
+        "P7_DEESCALATE"
+      ],
+      "description": "要达成什么。获取 / 协调 / 连接 / 维系 / 求助 / 影响 / 化解。"
+    },
+    "relation": {
+      "type": "string",
+      "enum": [
+        "PUBLIC",
+        "MARKET",
+        "INSTITUTION",
+        "PEER",
+        "SHARED"
+      ],
+      "description": "对方是谁。公众 / 市场 / 机构 / 对等 / 共享。"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L4"
+      ]
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "即时任务",
+        "长程任务",
+        "监控任务"
+      ]
+    },
+    "spec_completeness": {
+      "type": "string",
+      "enum": [
+        "完整规格",
+        "只有一句话",
+        "待补角色卡"
+      ],
+      "description": "只有「完整规格」才能直接开跑；其余缺角色卡或对方设定。"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "segment": {
+      "type": "string"
+    },
+    "value_area": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "user_preconditions": {
+      "type": "string"
+    },
+    "counterpart_setting": {
+      "type": "string",
+      "description": "扮演方需要知道的事实：对方是谁、初始态度、会被什么改变。"
+    },
+    "counterpart_hidden": {
+      "type": "string",
+      "description": "对方握着但不会主动说的信息，以及披露条件。"
+    },
+    "disclosure_condition": {
+      "type": "string"
+    },
+    "midway_event": {
+      "type": "string"
+    },
+    "checkpoints": {
+      "type": "string",
+      "description": "必须交回用户确认的动作点；越过即扣分或判失败。"
+    },
+    "veto": {
+      "type": "string",
+      "description": "一票否决：一旦出现，整题判失败，不看其他得分。"
+    },
+    "constraints": {
+      "type": "string"
+    },
+    "knobs": {
+      "type": "object",
+      "description": "同一道题的可调参数：对方态度、信息完整度、时间压力、媒介、语言、用户中途变卦。",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "verdict_reached": {
+      "type": "string"
+    },
+    "verdict_stopped": {
+      "type": "string",
+      "description": "得体止步：目标没达成，但在该停的地方停下，判为合格。"
+    },
+    "verdict_failed": {
+      "type": "string"
+    },
+    "scoring_notes": {
+      "type": "string"
+    },
+    "medium": {
+      "type": "string"
+    },
+    "authorization_scope": {
+      "type": "string"
+    },
+    "offline_part": {
+      "type": "string"
+    },
+    "may_build_app": {
+      "type": "string",
+      "enum": [
+        "是",
+        "否"
+      ]
+    },
+    "half_set": {
+      "type": "string",
+      "enum": [
+        "是",
+        "否"
+      ]
+    },
+    "role_card": {
+      "type": "string"
+    }
+  }
+}

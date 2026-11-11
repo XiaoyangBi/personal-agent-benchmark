@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/hardness1020/personal-agent-benchmark/product-cases/schema/case.schema.json",
+  "title": "White-box product case",
+  "description": "一个用例：某个真实人群希望 agent 替自己办成的一件事。用例不绑定具体模型，也不含任何原始用户发言。",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "case_id",
+    "curation",
+    "level",
+    "social_tier",
+    "identity_mode",
+    "capabilities"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^[\\w-]+$",
+      "description": "用例主键。自建用例的编号里带目的与关系，例如 P2-市场-07 表示 P2 协调 × 市场。"
+    },
+    "curation": {
+      "type": "string",
+      "enum": [
+        "curated",
+        "raw"
+      ],
+      "description": "curated 表示已补齐标题与适配判断；raw 表示只登记了任务与能力，尚未进入评审池。"
+    },
+    "title": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string",
+      "minLength": 4
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "L0",
+        "L1_L3",
+        "L4"
+      ],
+      "description": "L0 只和信息工具打交道；L1_L3 单点对外沟通；L4 需要跨渠道持续推进。"
+    },
+    "social_tier": {
+      "type": "string",
+      "enum": [
+        "主指标",
+        "社交建议",
+        "不对外",
+        "平台交易"
+      ],
+      "description": "主指标=agent 与外部的人往来并拿到结果；社交建议=只起草，由用户发出；不对外=只和系统或资料打交道；平台交易=替用户在平台上完成交易并拿到结果。"
+    },
+    "identity_mode": {
+      "type": "string",
+      "enum": [
+        "接管用户",
+        "自有身份",
+        "都行"
+      ]
+    },
+    "counterpart": {
+      "type": "string"
+    },
+    "scenario_bucket": {
+      "type": "string"
+    },
+    "success_criteria": {
+      "type": "string"
+    },
+    "stop_points": {
+      "type": "string"
+    },
+    "reference_steps": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "所需基础能力，指向 capabilities.json 的编号。"
+    },
+    "authorization": {
+      "type": "string"
+    },
+    "card_type": {
+      "type": "string"
+    },
+    "card_boundary": {
+      "type": "boolean"
+    },
+    "card_reason": {
+      "type": "string"
+    },
+    "tools": {
+      "type": "string"
+    },
+    "tool_channel": {
+      "type": "string"
+    },
+    "trigger": {
+      "type": "string"
+    },
+    "frequency": {
+      "type": "string"
+    },
+    "user_minutes": {
+      "type": "number"
+    },
+    "loss_ceiling": {
+      "type": "string"
+    },
+    "result_value": {
+      "type": "string"
+    },
+    "fit": {
+      "type": "string"
+    },
+    "fit_reason": {
+      "type": "string"
+    },
+    "highlight": {
+      "type": "string"
+    },
+    "profile_source": {
+      "type": "string"
+    },
+    "solution_source": {
+      "type": "string"
+    },
+    "learning_track": {
+      "type": "string",
+      "description": "目标学习人群，只有一个枚举值。"
+    },
+    "source_type": {
+      "type": "string"
+    },
+    "segment": {
+      "type": "string"
+    },
+    "need_unit": {
+      "type": "string"
+    },
+    "value_goal": {
+      "type": "string"
+    },
+    "question_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "该用例已出的测试题编号。没有测试题的用例还不能直接跑。"
+    },
+    "scores": {
+      "type": "object",
+      "description": "V1–V5 为五种选题视角下的排序分，其余为分维度打分。",
+      "additionalProperties": {
+        "type": "number"
+      }
+    }
+  }
+}

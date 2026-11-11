@@ -9,7 +9,7 @@
 
 > 面向个人助理的合成评测集：10 个合成人物，每人 63 个检查点，四种上下文条件，离线确定性判分，并提供可复现的五模型排行榜。
 
-**目录：** [概览](#概览) · [规模一览](#规模一览) · [评测维度](#评测维度) · [评测协议](#评测协议) · [数据集](#数据集) · [仓库结构](#仓库结构) · [快速开始](#快速开始) · [排行榜](#排行榜) · [可复现性](#可复现性) · [范围与局限](#范围与局限) · [引用](#引用) · [许可](#许可)
+**目录：** [概览](#概览) · [规模一览](#规模一览) · [评测维度](#评测维度) · [评测协议](#评测协议) · [产品评审轨道](#产品评审轨道) · [数据集](#数据集) · [仓库结构](#仓库结构) · [快速开始](#快速开始) · [排行榜](#排行榜) · [可复现性](#可复现性) · [范围与局限](#范围与局限) · [引用](#引用) · [许可](#许可)
 
 ---
 
@@ -33,6 +33,9 @@
 | 回复 schema | `text`、`payload`、`citations`、`tool_calls` |
 | 判分 | 离线确定性，无 LLM 裁判 |
 | 运行依赖 | 仅 Python 标准库 |
+| 产品用例 | 3,026 条（1,930 已评审、1,096 待评审） |
+| 白盒测试题 | 392 道（245 道完整规格，铺满 35 个格子） |
+| 领域分类 | 11 个一级领域、97 个二级领域 |
 
 ## 评测维度
 
@@ -63,6 +66,28 @@
 
 一个检查点通过等于该题全部规则通过。规则为词表、结构与工具参数检查，对语义质量只是弱代理，详见[范围与局限](#范围与局限)。
 
+## 产品评审轨道
+
+模型跑分回答的是「在已知检查点上答得怎么样」，回答不了另外两个问题：这件事值不值得做，以及办的过程是否让对方舒服。`product-cases/` 是为此建立的第二条轨道，两者正交：由人扮演对方，按写好的判定口径打分。
+
+| 层 | 文件 | 作用 |
+|---|---|---|
+| 用例 | `product-cases/data/cases.json` | 某个真实人群希望 agent 替自己办成的一件事 |
+| 测试题 | `product-cases/data/questions.json` | 把用例变成可打分对局：对方是谁、藏了什么、什么时候必须停 |
+| 角色卡 | `product-cases/data/role-cards.json` | 可复现的扮演脚本，保证不同评审者遇到同一个对方 |
+
+每条用例落在三个轴上：两级领域分类（11 个一级、97 个二级，每个二级都写了排除与转归条款）、对方关系（5 档）与目的（7 档）交叉的 35 格矩阵，以及能力层级（L0 基础、L1–L3 单点对外、L4 目标驱动）。题目按格子铺满，每格 7 题，245 道完整规格题因此能均匀覆盖，而不是挤在熟悉场景里。
+
+判定分三态：达成、得体止步、失败。对方明确拒绝时停下来可以得分，硬推才扣分。一票否决优先于其他所有得分，确认点标出必须先交回用户的动作。另有 9 格拒绝强度与目标必要性矩阵，以及 5 个维度的对方体验量表。
+
+方法说明见 [docs/product-review.md](docs/product-review.md)，数据说明见 [product-cases/README.md](product-cases/README.md)。
+
+```bash
+python3 product-cases/validate_cases.py
+```
+
+两条轨道不合并成一张榜。`product-cases/persona-links.json` 只做索引：10 个人物各挂 3 条来自其本人生活的用例，其中 18 条已有可跑的测试题。
+
 ## 数据集
 
 | 路径 | 内容 |
@@ -88,6 +113,7 @@ personal-agent-benchmark/
 ├── docs/
 │   ├── specification.md           # 维度、判分、数据结构（中文）
 │   ├── protocol.md                # 四条件协议（中文）
+│   ├── product-review.md          # 产品评审方法：六道门、判定、量表（中文）
 │   ├── checkpoint-index.md        # 63 题索引
 │   ├── personas.md                # 人物导航
 │   ├── api-v2-nothink-ranking.md/json      # 排行榜
@@ -96,6 +122,11 @@ personal-agent-benchmark/
 │   ├── model-results.md/json      # 历史 persona-01 实验索引
 │   ├── run-inventory.json         # 全部结果文件及源 SHA-256
 │   └── trace-availability.json    # trace 可得范围
+├── product-cases/                 # 产品评审轨道：用例、测试题、角色卡
+│   ├── data/                      # 规范化用例库与评审工具表
+│   ├── schema/                    # 用例、测试题、角色卡的 JSON Schema
+│   ├── persona-links.json         # 10 个人物到用例的映射，人工核对
+│   └── validate_cases.py
 ├── persona-01-linzhou/            # 原有人物，同时承载共享 runner
 │   ├── runner/                    # 条件、断言、执行、重放
 │   ├── data/                      # 题库与判分规则
@@ -104,6 +135,7 @@ personal-agent-benchmark/
 └── tools/
     ├── evaluation/                # 编排、排名、敏感性、校验
     ├── personas/                  # 人物生成与题库校验
+    ├── product-cases/             # 用例导入与人物映射构建
     └── publication/               # 发布索引与一致性检查
 ```
 
@@ -123,6 +155,9 @@ python3 tools/evaluation/sensitivity_api_suite.py
 # 校验题库与发布快照
 python3 tools/personas/validate_bundle.py --require-dry-run
 python3 tools/publication/validate_release.py
+
+# 校验产品评审层
+python3 product-cases/validate_cases.py
 ```
 
 评测自己的系统见 `tools/evaluation/run_api_suite.py --help`，需自行配置模型凭据，且不要写入仓库。不调用模型即可验证判分链路时，按 [persona-01-linzhou/runner/README.md](persona-01-linzhou/runner/README.md) 使用 dry-run 模式。
@@ -161,6 +196,8 @@ python3 tools/publication/validate_release.py
 - 早期 58 题与 63 题版本、不同断言版本、重试合并结果、pilot 轨道、运行时与 API 轨道均分开保留；比较前必须核对分母与量尺。
 - GPT 运行时完整底层执行 trace 未取得，结构化输入输出不冒充完整 trace。
 - 公开快照截至 2026-11-04，是特定题集与解码配置下的观察值，不是已验收的通用能力基准。
+- 产品评审层尚无人工评分记录。已有测试题全部填了达成判定与一票否决，但得体止步与失败两档为空。245 道完整规格题的对方设定内嵌在题面，可以直接开跑；另 147 道标为待补角色卡，缺对方设定，还不能跑。
+- 3,026 条用例不带领域标签。曾用两级自动标注试点，抽查一致率只有约五成，因此没有把该列当噪声发布；领域编码只出现在 30 条人工核对的映射里。
 
 ## 引用
 

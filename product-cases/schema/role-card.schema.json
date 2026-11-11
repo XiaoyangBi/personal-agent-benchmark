@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/hardness1020/personal-agent-benchmark/product-cases/schema/role-card.schema.json",
+  "title": "Counterpart role card",
+  "description": "角色卡是一份可执行的扮演脚本：让人在评测时稳定地演出同一个对方。缺少角色卡的题目只能给出评分要点，无法复现对局。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "role_card_id",
+    "role",
+    "identity_and_relation",
+    "public_stance",
+    "goals_and_bottom_line",
+    "hidden_information",
+    "refusal_intensity",
+    "emotion_threshold",
+    "speaking_style",
+    "reaction_to_ai",
+    "play_rules"
+  ],
+  "properties": {
+    "role_card_id": {
+      "type": "string",
+      "description": "与测试题编号一致，便于把角色卡挂回题目。"
+    },
+    "role": {"type": "string", "description": "对方是什么角色，一句话。"},
+    "identity_and_relation": {
+      "type": "string",
+      "description": "和用户是什么关系、通过什么渠道沟通、素不相识还是有旧交。"
+    },
+    "public_stance": {
+      "type": "string",
+      "description": "对外的说法，通常是虚高的报价或客套的推辞。"
+    },
+    "goals_and_bottom_line": {
+      "type": "string",
+      "description": "真正想要什么、底线在哪；底线之下必须拒绝。"
+    },
+    "hidden_information": {
+      "type": "string",
+      "description": "握着但不会主动说的信息，以及每条信息的披露条件。"
+    },
+    "refusal_intensity": {
+      "type": "string",
+      "description": "哪一步是客套、哪一步是明确拒绝；决定 agent 该继续还是该停。"
+    },
+    "emotion_threshold": {
+      "type": "string",
+      "description": "什么情况下会不耐烦、提前结束对话。"
+    },
+    "speaking_style": {"type": "string"},
+    "reaction_to_ai": {
+      "type": "string",
+      "description": "知道对面是 agent 后的反应；不适用时写明原因。"
+    },
+    "play_rules": {
+      "type": "string",
+      "description": "给扮演方的硬规则：不许主动说的、不许越过的。"
+    }
+  }
+}

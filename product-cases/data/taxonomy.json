@@ -1,0 +1,2052 @@
+{
+  "schema": "personal-agent-benchmark-domain-taxonomy-v1",
+  "axes": {
+    "domain": "生活领域，两级：11 个一级领域、97 个二级领域。",
+    "relation": "对方是谁。公众 / 市场 / 机构 / 对等 / 共享。",
+    "purpose": "要达成什么。P1 获取 / P2 协调 / P3 连接 / P4 维系 / P5 求助 / P6 影响 / P7 化解。",
+    "level": "需要的能力层级。L0 基础能力 / L1–L3 单点社交 / L4 目标驱动。",
+    "task_type": "即时任务 / 长程任务 / 监控任务。"
+  },
+  "relations": [
+    {
+      "code": "PUBLIC",
+      "name": "公众"
+    },
+    {
+      "code": "MARKET",
+      "name": "市场"
+    },
+    {
+      "code": "INSTITUTION",
+      "name": "机构"
+    },
+    {
+      "code": "PEER",
+      "name": "对等"
+    },
+    {
+      "code": "SHARED",
+      "name": "共享"
+    }
+  ],
+  "purposes": [
+    {
+      "code": "P1_ACQUIRE",
+      "name": "P1 获取"
+    },
+    {
+      "code": "P2_COORDINATE",
+      "name": "P2 协调"
+    },
+    {
+      "code": "P3_CONNECT",
+      "name": "P3 连接"
+    },
+    {
+      "code": "P4_MAINTAIN",
+      "name": "P4 维系"
+    },
+    {
+      "code": "P5_SEEK_HELP",
+      "name": "P5 求助"
+    },
+    {
+      "code": "P6_INFLUENCE",
+      "name": "P6 影响"
+    },
+    {
+      "code": "P7_DEESCALATE",
+      "name": "P7 化解"
+    }
+  ],
+  "levels": [
+    {
+      "code": "L0",
+      "name": "L0 基础能力",
+      "definition": "只和信息工具或系统打交道，不涉及对外沟通，用来守住基础能力下限。"
+    },
+    {
+      "code": "L1_L3",
+      "name": "L1–L3",
+      "definition": "目标单一、对方明确，靠一次或少数几轮对外沟通完成。"
+    },
+    {
+      "code": "L4",
+      "name": "L4 目标驱动",
+      "definition": "目标需要跨渠道、跨多轮推进，agent 要自己拆解并盯住结果。"
+    }
+  ],
+  "level1": [
+    {
+      "code": "HEALTH",
+      "name": "健康与照护",
+      "definition": "维护本人或照护对象的健康，组织医疗与照护支持。",
+      "level2_count": 12
+    },
+    {
+      "code": "REL",
+      "name": "家庭、人际与社会参与",
+      "definition": "维护关系、协商家庭责任，以及参与社区和社会生活。",
+      "level2_count": 8
+    },
+    {
+      "code": "HOME",
+      "name": "居住与日常生活",
+      "definition": "安排住所、家庭设施及日常生活运营。",
+      "level2_count": 10
+    },
+    {
+      "code": "FIN",
+      "name": "个人财务与保障",
+      "definition": "管理个人或家庭资金、财务义务和保障。",
+      "level2_count": 10
+    },
+    {
+      "code": "ADMIN",
+      "name": "身份、权益与公共服务",
+      "definition": "办理身份资格、公共服务与权益相关事项。",
+      "level2_count": 10
+    },
+    {
+      "code": "TRAVEL",
+      "name": "出行与旅行",
+      "definition": "组织人员移动、行程和交通资源。",
+      "level2_count": 7
+    },
+    {
+      "code": "CON",
+      "name": "购物与消费服务",
+      "definition": "取得与使用商品、消费服务，并处理相关交易问题。",
+      "level2_count": 7
+    },
+    {
+      "code": "LEARN",
+      "name": "学习与教育",
+      "definition": "获得知识技能，选择教育路径并处理教育安排。",
+      "level2_count": 6
+    },
+    {
+      "code": "WORK",
+      "name": "工作与职业",
+      "definition": "完成职业或经营交付，以及个人职业发展。",
+      "level2_count": 13
+    },
+    {
+      "code": "INTEREST",
+      "name": "兴趣、休闲与个人表达",
+      "definition": "参与兴趣活动、文化休闲和个人创作。",
+      "level2_count": 8
+    },
+    {
+      "code": "SELF",
+      "name": "个人管理与数字生活",
+      "definition": "独立管理跨域个人信息、承诺、账户、设备与助手。",
+      "level2_count": 6
+    }
+  ],
+  "level2": [
+    {
+      "code": "HEALTH.SCREEN",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "健康检查与筛查",
+      "definition": "围绕体检、风险筛查及检查结果复核形成的健康服务需求。",
+      "in_scope": [
+        "体检项目与机构选择",
+        "检查资料、预约和结果复核"
+      ],
+      "out_of_scope": [
+        "已有疾病的持续监测归 HEALTH.CONDITION",
+        "疫苗接种归 HEALTH.VACCINE"
+      ],
+      "need_examples": [
+        "安排适合个人情况的年度体检",
+        "跟进一项体检异常的复查安排"
+      ]
+    },
+    {
+      "code": "HEALTH.VACCINE",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "免疫接种与健康预防服务",
+      "definition": "围绕接种记录、接种安排及其他有明确方案的预防服务形成的需求。",
+      "in_scope": [
+        "接种记录与程序核对",
+        "预防服务预约和后续安排"
+      ],
+      "out_of_scope": [
+        "实际注射不由数字 PA 执行",
+        "疾病治疗归 HEALTH.CLINICAL"
+      ],
+      "need_examples": [
+        "核对家庭成员接种记录与待办项目",
+        "安排旅行前已确认需要的接种服务"
+      ]
+    },
+    {
+      "code": "HEALTH.CLINICAL",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "就诊与诊疗协调",
+      "definition": "围绕一次诊疗目标组织就医资料、科室和机构衔接、住院及复诊事项。",
+      "in_scope": [
+        "就诊材料与问题准备",
+        "挂号、检查、转诊和出院衔接"
+      ],
+      "out_of_scope": [
+        "独立用药管理归 HEALTH.MEDICATION",
+        "医疗费用理赔归 FIN.INSURANCE 或 ADMIN.SOCIAL_INSURANCE"
+      ],
+      "need_examples": [
+        "准备一次跨院就诊所需的资料",
+        "衔接出院后的复诊和检查安排"
+      ]
+    },
+    {
+      "code": "HEALTH.MEDICATION",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "用药与医嘱管理",
+      "definition": "围绕已获得的处方、医嘱和药品供应进行核对、记录及执行支持。",
+      "in_scope": [
+        "处方清单与医嘱整理",
+        "补药、有效期、用药记录与待确认问题"
+      ],
+      "out_of_scope": [
+        "独立诊断、开方或变更医嘱不计作此类数字执行",
+        "疾病总体管理归 HEALTH.CONDITION"
+      ],
+      "need_examples": [
+        "整理多次就诊后的有效用药清单",
+        "按已确认医嘱安排复配药与用药记录"
+      ]
+    },
+    {
+      "code": "HEALTH.CONDITION",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "慢性病与症状管理",
+      "definition": "以某项持续健康状况为目标，组织记录、随访和既有管理方案。",
+      "in_scope": [
+        "症状与指标记录",
+        "慢病随访和既有方案的日常落实"
+      ],
+      "out_of_scope": [
+        "一次独立就诊归 HEALTH.CLINICAL",
+        "心理压力与情绪支持归 HEALTH.PSYCH"
+      ],
+      "need_examples": [
+        "整理一段时间的血压记录供复诊使用",
+        "围绕既有慢病管理方案跟进日常事项"
+      ]
+    },
+    {
+      "code": "HEALTH.REHAB",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "康复与功能恢复",
+      "definition": "围绕专业康复方案及恢复日常功能的目标组织服务和执行支持。",
+      "in_scope": [
+        "康复服务安排",
+        "康复计划记录、生活活动适应"
+      ],
+      "out_of_scope": [
+        "替代治疗师实施临床操作不属于数字 PA",
+        "长期护理排班归 HEALTH.NURSING"
+      ],
+      "need_examples": [
+        "安排术后康复服务及进度记录",
+        "按既有康复建议协调居家活动安排"
+      ]
+    },
+    {
+      "code": "HEALTH.NURSING",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "医疗护理与照护服务",
+      "definition": "以病情照护、护理服务连续性和交接为主要目标组织照护资源。",
+      "in_scope": [
+        "居家护理与专业照护安排",
+        "护理交接和医疗照护需求协调"
+      ],
+      "out_of_scope": [
+        "非医疗的托育和生活照料归 REL",
+        "实际身体照护由本人或服务人员完成"
+      ],
+      "need_examples": [
+        "衔接出院后的居家护理服务",
+        "整理老人护理交接中的待确认事项"
+      ]
+    },
+    {
+      "code": "HEALTH.NUTRITION",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "营养与饮食健康",
+      "definition": "以营养、体重或既有健康要求为目标组织饮食信息和方案。",
+      "in_scope": [
+        "营养目标与饮食记录",
+        "健康约束下的食谱和膳食安排"
+      ],
+      "out_of_scope": [
+        "一般家庭做饭与备餐归 HOME.MEALS",
+        "独立食品购买归 CON"
+      ],
+      "need_examples": [
+        "根据已确认饮食要求安排一周食谱",
+        "整理饮食记录并核对个人营养目标"
+      ]
+    },
+    {
+      "code": "HEALTH.FITNESS",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "运动与体能健康",
+      "definition": "以健康、体能或日常运动习惯为目标组织可执行的活动安排。",
+      "in_scope": [
+        "运动计划与个人约束",
+        "锻炼记录和目标调整支持"
+      ],
+      "out_of_scope": [
+        "以赛事或兴趣体验为主要目标归 INTEREST",
+        "替用户进行身体运动不属于数字 PA"
+      ],
+      "need_examples": [
+        "安排与工作日程兼容的锻炼计划",
+        "整理运动记录并调整下一阶段安排"
+      ]
+    },
+    {
+      "code": "HEALTH.SLEEP",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "睡眠与休息管理",
+      "definition": "围绕作息、睡眠记录和休息安排的健康目标提供支持。",
+      "in_scope": [
+        "作息记录与安排",
+        "轮班、跨时区等情况下的休息规划"
+      ],
+      "out_of_scope": [
+        "睡眠本身不可委托",
+        "仅协调多个日程且无睡眠目标归 SELF"
+      ],
+      "need_examples": [
+        "整理影响休息的日常安排并制定作息计划",
+        "跟踪一段时间的睡眠记录以供就诊沟通"
+      ]
+    },
+    {
+      "code": "HEALTH.PSYCH",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "心理与情绪支持",
+      "definition": "围绕心理压力、情绪困扰和支持资源形成的个人需求。",
+      "in_scope": [
+        "倾诉、应对方法和资源寻找",
+        "心理支持服务的选择与安排"
+      ],
+      "out_of_scope": [
+        "以改善特定关系沟通为目标归 REL.BOND",
+        "临床治疗效果不能由一次聊天完成率替代"
+      ],
+      "need_examples": [
+        "针对近期压力梳理可采取的应对办法",
+        "寻找并安排符合个人条件的心理支持服务"
+      ]
+    },
+    {
+      "code": "HEALTH.DEVICES",
+      "level1_code": "HEALTH",
+      "level1_name": "健康与照护",
+      "name": "辅助器具与健康设备",
+      "definition": "围绕维持健康或功能所需的个人器具、监测设备及其使用管理形成的需求。",
+      "in_scope": [
+        "辅助器具适配需求与服务安排",
+        "健康设备资料、维护与使用记录"
+      ],
+      "out_of_scope": [
+        "只验收普通商品购买归 CON",
+        "全屋改造项目归 HOME.RENOVATE"
+      ],
+      "need_examples": [
+        "安排助听设备复调与维护服务",
+        "整理家用监测设备的记录和维护事项"
+      ]
+    },
+    {
+      "code": "REL.BOND",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "亲友相处",
+      "definition": "以亲友之间的理解、沟通、陪伴和关系维护为主要目标。",
+      "in_scope": [
+        "伴侣、家庭成员与朋友的沟通支持",
+        "共同活动与关系维护安排"
+      ],
+      "out_of_scope": [
+        "正式争议或法律权利主张归 ADMIN.RIGHTS",
+        "心理健康本身为主要目标归 HEALTH.PSYCH"
+      ],
+      "need_examples": [
+        "准备一次与家人的重要沟通",
+        "安排兼顾双方时间与偏好的朋友见面"
+      ]
+    },
+    {
+      "code": "REL.HOUSEHOLD",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "家庭协商与分工",
+      "definition": "以家庭成员之间的责任分配、规则协商和共同承诺为主要目标。",
+      "in_scope": [
+        "家务、照看与经济责任的协商",
+        "家庭共同安排与分歧处理"
+      ],
+      "out_of_scope": [
+        "具体家政服务交付归 HOME.HOUSEKEEP",
+        "医疗护理服务安排归 HEALTH.NURSING"
+      ],
+      "need_examples": [
+        "协调家庭成员的接送与照看责任",
+        "约定家庭共同开支和家务分工"
+      ]
+    },
+    {
+      "code": "REL.SOCIAL",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "社交承诺与礼仪",
+      "definition": "以邀请、赴约、纪念日、礼物和婚丧庆典等社会承诺为主要目标。",
+      "in_scope": [
+        "邀请与社交礼仪",
+        "私人庆典、慰问和纪念安排"
+      ],
+      "out_of_scope": [
+        "只验收商品订单归 CON",
+        "证件与婚姻登记归 ADMIN.CIVIL_STATUS"
+      ],
+      "need_examples": [
+        "筹备家人生日及宾客安排",
+        "处理婚礼邀请、礼物和赴约安排"
+      ]
+    },
+    {
+      "code": "REL.CHILDCARE",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "托育与儿童日常照料",
+      "definition": "以儿童日常生活照看及照料服务安排为主要目标。",
+      "in_scope": [
+        "托育、临时看护与照料交接",
+        "学校托管和日常照看安排"
+      ],
+      "out_of_scope": [
+        "课程、择校和学习目标归 LEARN",
+        "医疗护理和就诊归 HEALTH"
+      ],
+      "need_examples": [
+        "安排假期中的儿童托管与交接",
+        "协调托育机构的日常照料需求"
+      ]
+    },
+    {
+      "code": "REL.DAILY_CARE",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "成人日常照料与支持",
+      "definition": "以老人、残障者或临时需要帮助者的非医疗生活支持为主要目标。",
+      "in_scope": [
+        "助餐、陪伴与生活照料服务",
+        "照料人员衔接和日常支持"
+      ],
+      "out_of_scope": [
+        "病情、护理或康复为主要目标归 HEALTH",
+        "独立社保权益办理归 ADMIN"
+      ],
+      "need_examples": [
+        "安排独居老人的助餐和日间照料",
+        "协调家人短期行动不便时的日常帮助"
+      ]
+    },
+    {
+      "code": "REL.COMMUNITY",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "社区与群体参与",
+      "definition": "以参与居住社区、同伴群体和非职业社群活动为主要目标。",
+      "in_scope": [
+        "邻里互助与社区活动",
+        "非职业社群的参与安排"
+      ],
+      "out_of_scope": [
+        "正式公共意见提交或程序参与归 ADMIN.CIVIC",
+        "主要是兴趣技巧与作品的需求归 INTEREST"
+      ],
+      "need_examples": [
+        "安排参加社区亲子活动",
+        "协调邻里互助活动的参与事项"
+      ]
+    },
+    {
+      "code": "REL.VOLUNTEER",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "公益与志愿服务",
+      "definition": "以个人参与无报酬公益、志愿行动或捐助项目为主要目标。",
+      "in_scope": [
+        "志愿机会选择与排班",
+        "公益项目个人参与与持续承诺"
+      ],
+      "out_of_scope": [
+        "有偿工作交付归 WORK",
+        "捐款税务申报归 FIN.TAX_FILING"
+      ],
+      "need_examples": [
+        "寻找与个人时间相符的志愿活动",
+        "安排连续几周的公益服务承诺"
+      ]
+    },
+    {
+      "code": "REL.FAITH",
+      "level1_code": "REL",
+      "level1_name": "家庭、人际与社会参与",
+      "name": "宗教与精神生活参与",
+      "definition": "围绕个人明确表达的宗教实践、精神生活及相应群体活动提供安排支持。",
+      "in_scope": [
+        "宗教活动时间与参与安排",
+        "宗教礼仪和个人信仰相关资料需求"
+      ],
+      "out_of_scope": [
+        "个人信仰体验本身不可由 PA 替代",
+        "以健康放松为目的的练习归 HEALTH"
+      ],
+      "need_examples": [
+        "安排本人已选择的宗教节日活动",
+        "整理参与宗教仪式前需要确认的事项"
+      ]
+    },
+    {
+      "code": "HOME.RESIDENCE",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "住房选择与租住管理",
+      "definition": "以获得和维持适合个人居住的住房为主要目标。",
+      "in_scope": [
+        "租购居住方案与房源需求",
+        "租住交接、续租及居住条件管理"
+      ],
+      "out_of_scope": [
+        "仅投资房产归 FIN.INVEST",
+        "独立产权登记归 ADMIN.PROPERTY",
+        "搬运入住执行归 HOME.MOVE"
+      ],
+      "need_examples": [
+        "选择满足通勤与预算约束的租住方案",
+        "安排租约到期后的续租或退租"
+      ]
+    },
+    {
+      "code": "HOME.MOVE",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "搬家与入住",
+      "definition": "围绕更换居所的搬迁、交接和入住恢复形成的完整需求。",
+      "in_scope": [
+        "搬家服务、物品清单与交接",
+        "新居基础生活安排衔接"
+      ],
+      "out_of_scope": [
+        "住房选择归 HOME.RESIDENCE",
+        "单独迁户口归 ADMIN.RESIDENCY"
+      ],
+      "need_examples": [
+        "安排一次跨区搬家与新居入住",
+        "衔接旧房退租和新房交接"
+      ]
+    },
+    {
+      "code": "HOME.RENOVATE",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "装修与空间改造",
+      "definition": "以改变居住空间及其功能、完成一项装修交付为主要目标。",
+      "in_scope": [
+        "装修需求、预算与施工衔接",
+        "家具设备安装及整体空间交付"
+      ],
+      "out_of_scope": [
+        "恢复既有设施功能归 HOME.REPAIR",
+        "独立购买家具商品归 CON"
+      ],
+      "need_examples": [
+        "推进厨房改造的选型与安装交付",
+        "协调适老化改造的需求和施工"
+      ]
+    },
+    {
+      "code": "HOME.REPAIR",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "家居设备与设施维护",
+      "definition": "以保持或恢复住宅、家具和家电的使用功能为主要目标。",
+      "in_scope": [
+        "故障报修和服务协调",
+        "检修保养与维修结果核验"
+      ],
+      "out_of_scope": [
+        "新商品订单退换以交易履约为目标归 CON",
+        "家庭整体空间改造归 HOME.RENOVATE"
+      ],
+      "need_examples": [
+        "处理家中漏水的维修与复查",
+        "安排家电保养和故障处理"
+      ]
+    },
+    {
+      "code": "HOME.UTILITIES",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "物业与公用事业",
+      "definition": "以住宅所需物业、水电气、供暖及通信接入等服务正常运作为目标。",
+      "in_scope": [
+        "开通、迁移、停复服务",
+        "物业报修、公用事业异常与服务协调"
+      ],
+      "out_of_scope": [
+        "只核对或支付账单归 FIN.PAYMENTS",
+        "账户数据迁移归 SELF"
+      ],
+      "need_examples": [
+        "衔接入住后的水电燃气与网络开通",
+        "处理供暖或物业服务异常"
+      ]
+    },
+    {
+      "code": "HOME.HOUSEKEEP",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "家政、清洁与物品整理",
+      "definition": "以家庭清洁、衣物护理、收纳和家政服务正常运行为目标。",
+      "in_scope": [
+        "保洁、洗护、家政人员安排",
+        "居家收纳、废弃物与闲置物处置"
+      ],
+      "out_of_scope": [
+        "家庭成员责任协商归 REL.HOUSEHOLD",
+        "数字文件整理归 SELF.INFORMATION"
+      ],
+      "need_examples": [
+        "安排稳定的家政服务及交接要求",
+        "整理换季衣物和闲置物处理方案"
+      ]
+    },
+    {
+      "code": "HOME.MEALS",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "家庭餐食与备餐",
+      "definition": "以日常家庭就餐供给、备餐和食材使用为主要目标。",
+      "in_scope": [
+        "家庭菜单与备餐安排",
+        "食材库存、保存与烹饪流程支持"
+      ],
+      "out_of_scope": [
+        "营养或疾病管理为主要目标归 HEALTH.NUTRITION",
+        "独立餐厅预订和外卖购买归 CON"
+      ],
+      "need_examples": [
+        "安排全家一周晚餐和备菜",
+        "根据现有食材规划餐食与补货"
+      ]
+    },
+    {
+      "code": "HOME.PETS",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "宠物照料与服务",
+      "definition": "以家庭宠物的日常照料、医疗和寄养等连续需求为主要目标。",
+      "in_scope": [
+        "喂养、寄养与日常照料安排",
+        "宠物就医、疫苗及服务记录"
+      ],
+      "out_of_scope": [
+        "单独宠物商品购买归 CON",
+        "人类医疗与照护归 HEALTH"
+      ],
+      "need_examples": [
+        "安排出差期间的宠物照料",
+        "衔接宠物复诊、用药记录和寄养要求"
+      ]
+    },
+    {
+      "code": "HOME.GARDEN",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "庭院与家庭种植",
+      "definition": "以家庭庭院、绿植或自用种植的日常管理为主要目标。",
+      "in_scope": [
+        "居家植物养护安排",
+        "自用种植计划与外包服务"
+      ],
+      "out_of_scope": [
+        "纯兴趣技艺学习归 INTEREST 或 LEARN",
+        "出售产品的经营目标归 WORK",
+        "不自动为所有自产自用活动生成 PA 任务"
+      ],
+      "need_examples": [
+        "安排长期出差期间的植物养护",
+        "规划家庭菜园的季节性种植与维护"
+      ]
+    },
+    {
+      "code": "HOME.SAFETY",
+      "level1_code": "HOME",
+      "level1_name": "居住与日常生活",
+      "name": "居家安全与应急准备",
+      "definition": "以家庭物理环境安全和可执行的应急准备为主要目标。",
+      "in_scope": [
+        "居家风险排查与改进安排",
+        "应急物资、联系人和家庭预案"
+      ],
+      "out_of_scope": [
+        "实时专业救援不由数字 PA 承担",
+        "数字账户安全归 SELF",
+        "临床跌倒风险管理归 HEALTH"
+      ],
+      "need_examples": [
+        "整理家庭停电或极端天气应对安排",
+        "安排居家安全检查与必要整改"
+      ]
+    },
+    {
+      "code": "FIN.PLAN",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "家庭预算与财务规划",
+      "definition": "以个人或家庭资金分配、储备及财务目标为主要交付。",
+      "in_scope": [
+        "预算与现金流规划",
+        "大额目标和应急资金安排"
+      ],
+      "out_of_scope": [
+        "具体投资组合归 FIN.INVEST",
+        "家庭成员分担协商归 REL.HOUSEHOLD"
+      ],
+      "need_examples": [
+        "制定兼顾房租与学习支出的月度预算",
+        "规划一项家庭大额支出的资金安排"
+      ]
+    },
+    {
+      "code": "FIN.ACCOUNTS",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "收支记录与账务核对",
+      "definition": "以获得准确、可追溯的个人财务记录为目标。",
+      "in_scope": [
+        "账单分类与对账",
+        "账户收支汇总和异常核查"
+      ],
+      "out_of_scope": [
+        "支付执行归 FIN.PAYMENTS",
+        "支出报销归 FIN.REIMBURSE"
+      ],
+      "need_examples": [
+        "核对多个账户的月度收支",
+        "整理家庭共同开支的账务记录"
+      ]
+    },
+    {
+      "code": "FIN.PAYMENTS",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "账单与日常支付",
+      "definition": "以正确完成个人账单或确定款项的支付、避免重复和逾期为目标。",
+      "in_scope": [
+        "账单核对与授权支付",
+        "周期缴费与支付凭据"
+      ],
+      "out_of_scope": [
+        "开通或修复住宅服务归 HOME.UTILITIES",
+        "贷款偿还归 FIN.CREDIT",
+        "购物支付作为订单步骤不另拆任务"
+      ],
+      "need_examples": [
+        "核对并处理到期的家庭账单",
+        "处理一笔重复扣款和支付凭据问题"
+      ]
+    },
+    {
+      "code": "FIN.RECEIVABLE",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "个人收入与应收款",
+      "definition": "以核对或收回已约定的个人收入和款项为主要目标。",
+      "in_scope": [
+        "薪酬、劳务款和应收核对",
+        "欠付记录与正常收款跟进"
+      ],
+      "out_of_scope": [
+        "争议升级为劳动仲裁或法律维权归 ADMIN.RIGHTS",
+        "商业客户履约与组织收款归 WORK",
+        "订单退款随原订单归 CON"
+      ],
+      "need_examples": [
+        "核对个人工资与实际到账差异",
+        "跟进个人已完成劳务的应收款项"
+      ]
+    },
+    {
+      "code": "FIN.CREDIT",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "借贷与债务管理",
+      "definition": "以个人贷款、信用安排和债务履约为主要目标。",
+      "in_scope": [
+        "贷款方案及资料准备",
+        "还款、提前还款与信用记录核对"
+      ],
+      "out_of_scope": [
+        "法律债务争议归 ADMIN.RIGHTS",
+        "一般账单归 FIN.PAYMENTS"
+      ],
+      "need_examples": [
+        "安排个人贷款的还款与到期事项",
+        "比较提前还款方案及所需办理条件"
+      ]
+    },
+    {
+      "code": "FIN.BANKING",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "银行账户与储蓄",
+      "definition": "以日常金融账户、存款和资金存取配置为主要目标。",
+      "in_scope": [
+        "账户开立、迁移和服务维护",
+        "存款到期、储蓄安排与转账条件"
+      ],
+      "out_of_scope": [
+        "个人数字账户凭据管理归 SELF",
+        "投资资产组合归 FIN.INVEST"
+      ],
+      "need_examples": [
+        "处理存款到期后的资金安排",
+        "整理日常银行账户及服务变更需求"
+      ]
+    },
+    {
+      "code": "FIN.INVEST",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "个人资产与投资",
+      "definition": "以个人金融资产、投资组合及财产配置为主要目标。",
+      "in_scope": [
+        "资产盘点与投资信息需求",
+        "组合记录、风险约束和到期事项"
+      ],
+      "out_of_scope": [
+        "以自住为目的的住房选择归 HOME.RESIDENCE",
+        "投资信息或计划不等于授权交易"
+      ],
+      "need_examples": [
+        "整理个人资产分布与集中风险",
+        "按个人约束比较长期投资方案"
+      ]
+    },
+    {
+      "code": "FIN.INSURANCE",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "商业保险与风险保障",
+      "definition": "以商业保险的保障匹配、合同维护和保险责任实现为目标。",
+      "in_scope": [
+        "保障盘点、投保与续期",
+        "商业保险报案和理赔"
+      ],
+      "out_of_scope": [
+        "法定医保、社保待遇归 ADMIN.SOCIAL_INSURANCE",
+        "升级为正式争议解决归 ADMIN.RIGHTS"
+      ],
+      "need_examples": [
+        "整理家庭商业保险保障与续期事项",
+        "准备一次商业保险理赔的材料和跟进"
+      ]
+    },
+    {
+      "code": "FIN.TAX_FILING",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "个人税务与申报",
+      "definition": "以个人税额、扣除、申报及正常退补税结算为主要目标。",
+      "in_scope": [
+        "个人所得税资料、申报和更正",
+        "适用扣除与完税账务核对"
+      ],
+      "out_of_scope": [
+        "税务行政争议归 ADMIN.RIGHTS",
+        "税务身份或资格证明且不涉及核算可归 ADMIN.CREDENTIAL",
+        "报销归 FIN.REIMBURSE"
+      ],
+      "need_examples": [
+        "整理个人年度汇算资料",
+        "核对个人扣除记录及退补税结果"
+      ]
+    },
+    {
+      "code": "FIN.REIMBURSE",
+      "level1_code": "FIN",
+      "level1_name": "个人财务与保障",
+      "name": "费用分摊与个人报销",
+      "definition": "以个人垫付款、共享费用或费用报销的核对和收回为目标。",
+      "in_scope": [
+        "个人费用报销与补正",
+        "共同消费分账与结清"
+      ],
+      "out_of_scope": [
+        "制定组织报销政策归 WORK",
+        "持续家庭预算归 FIN.PLAN",
+        "订单退款归 CON"
+      ],
+      "need_examples": [
+        "整理一次差旅的个人报销",
+        "核对朋友共同旅行的费用分摊"
+      ]
+    },
+    {
+      "code": "ADMIN.ID_DOCUMENT",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "身份证件与基础证明",
+      "definition": "以个人身份文件、基础证明的有效取得、更新或补发为主要目标。",
+      "in_scope": [
+        "身份证、护照等基础证件",
+        "个人证明与认证材料"
+      ],
+      "out_of_scope": [
+        "某次行程签证作为行程组成部分归 TRAVEL",
+        "专业资格归 ADMIN.CREDENTIAL",
+        "资料备份本身归 SELF"
+      ],
+      "need_examples": [
+        "安排身份证件到期换领",
+        "准备一项个人证明的补领与认证"
+      ]
+    },
+    {
+      "code": "ADMIN.RESIDENCY",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "户籍与居住登记",
+      "definition": "以个人居住身份、户籍和相关登记状态更新为目标。",
+      "in_scope": [
+        "户籍迁移和居住证",
+        "地址与居住登记变更"
+      ],
+      "out_of_scope": [
+        "搬家交付归 HOME.MOVE",
+        "房屋产权归 ADMIN.PROPERTY"
+      ],
+      "need_examples": [
+        "办理搬家后的居住登记更新",
+        "整理户籍迁移所需条件和材料"
+      ]
+    },
+    {
+      "code": "ADMIN.CIVIL_STATUS",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "婚育、监护与身后手续",
+      "definition": "以家庭关系和生命事件所需的正式登记、证明及法定手续为目标。",
+      "in_scope": [
+        "出生、婚姻和死亡相关登记",
+        "监护与遗产手续的程序支持"
+      ],
+      "out_of_scope": [
+        "婚丧庆典与亲友安排归 REL.SOCIAL",
+        "孕产诊疗归 HEALTH",
+        "资产投资与商业规划归 FIN"
+      ],
+      "need_examples": [
+        "整理新生儿出生后的登记事项",
+        "安排亲属身后需要办理的证明与注销"
+      ]
+    },
+    {
+      "code": "ADMIN.CREDENTIAL",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "个人资格与资质手续",
+      "definition": "以取得、保持或证明个人法定资格及资质状态为主要目标。",
+      "in_scope": [
+        "资格证书、执照的注册与续期",
+        "个人资质证明和认定材料"
+      ],
+      "out_of_scope": [
+        "备考学习归 LEARN",
+        "为组织取得经营许可归 WORK",
+        "个人税务核算申报归 FIN.TAX_FILING"
+      ],
+      "need_examples": [
+        "整理职业资格注册和续期材料",
+        "办理个人资质证明与状态更新"
+      ]
+    },
+    {
+      "code": "ADMIN.SOCIAL_INSURANCE",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "社会保险与公共保障",
+      "definition": "以法定社保、医保、公积金和相应待遇的连续有效为目标。",
+      "in_scope": [
+        "参保、转移与缴存状态",
+        "医保、养老、失业等法定待遇办理"
+      ],
+      "out_of_scope": [
+        "商业保险归 FIN.INSURANCE",
+        "就诊治疗本身归 HEALTH",
+        "面向困难条件的专项救助归 ADMIN.ASSISTANCE"
+      ],
+      "need_examples": [
+        "衔接换工作后的社保与医保关系",
+        "整理公积金或法定待遇申请的条件和材料"
+      ]
+    },
+    {
+      "code": "ADMIN.ASSISTANCE",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "公共补贴与社会救助",
+      "definition": "以获得符合条件的公共补贴、救助及支持资源为目标。",
+      "in_scope": [
+        "困难救助与住房等专项补贴",
+        "资格核对、申请和持续条件更新"
+      ],
+      "out_of_scope": [
+        "按参保关系取得待遇归 ADMIN.SOCIAL_INSURANCE",
+        "商业折扣和平台优惠归 CON"
+      ],
+      "need_examples": [
+        "核对家庭可申请的公共补贴",
+        "跟进一次社会救助申请的补充材料"
+      ]
+    },
+    {
+      "code": "ADMIN.PROPERTY",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "产权与财产登记",
+      "definition": "以获得或更新个人财产的法定登记、证明和权利状态为目标。",
+      "in_scope": [
+        "不动产登记、变更与注销",
+        "个人财产过户相关登记"
+      ],
+      "out_of_scope": [
+        "整体自住购房目标归 HOME.RESIDENCE",
+        "投资决策归 FIN.INVEST",
+        "常规购车交付归 TRAVEL 或 CON"
+      ],
+      "need_examples": [
+        "准备一次不动产登记变更",
+        "整理个人财产过户需要的证明事项"
+      ]
+    },
+    {
+      "code": "ADMIN.RIGHTS",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "权益与争议",
+      "definition": "以正式主张、恢复或保护个人权益为主要目标。",
+      "in_scope": [
+        "劳动、租赁、消费和行政争议",
+        "投诉、调解、仲裁或诉讼准备"
+      ],
+      "out_of_scope": [
+        "未形成独立维权目标的常规售后留在 CON",
+        "正常保险理赔归 FIN.INSURANCE",
+        "普通关系沟通归 REL.BOND"
+      ],
+      "need_examples": [
+        "整理劳动争议的事实与证据材料",
+        "准备租赁纠纷的正式投诉或调解"
+      ]
+    },
+    {
+      "code": "ADMIN.CIVIC",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "公民义务与公共程序参与",
+      "definition": "以履行个人公民义务或参与正式公共事务程序为主要目标。",
+      "in_scope": [
+        "公共意见和信息公开程序",
+        "证人义务、依法参与公共事务的准备"
+      ],
+      "out_of_scope": [
+        "一般社区活动归 REL.COMMUNITY",
+        "公益志愿服务归 REL.VOLUNTEER",
+        "本人依法必须作出的决定不能由 PA 替代"
+      ],
+      "need_examples": [
+        "整理一次公共意见征集的提交材料",
+        "准备履行证人义务所需的事项"
+      ]
+    },
+    {
+      "code": "ADMIN.CROSS_BORDER",
+      "level1_code": "ADMIN",
+      "level1_name": "身份、权益与公共服务",
+      "name": "跨境身份与居留手续",
+      "definition": "以跨境居留、移民或长期身份状态为主要目标。",
+      "in_scope": [
+        "居留许可和身份续期",
+        "跨境身份材料认证及资格衔接"
+      ],
+      "out_of_scope": [
+        "短期旅行签证随 TRAVEL",
+        "境内居住登记归 ADMIN.RESIDENCY",
+        "跨境税务核算归 FIN.TAX_FILING"
+      ],
+      "need_examples": [
+        "整理长期居留许可续期事项",
+        "准备跨境迁居所需的身份材料"
+      ]
+    },
+    {
+      "code": "TRAVEL.ITINERARY",
+      "level1_code": "TRAVEL",
+      "level1_name": "出行与旅行",
+      "name": "目的地与游览行程",
+      "definition": "围绕旅行目的地、游览线路与在地活动形成符合用户约束的安排。",
+      "in_scope": [
+        "目的地选择、游览顺序与每日活动安排",
+        "根据同行人员、开放时间和出行条件调整游览线路"
+      ],
+      "out_of_scope": [
+        "只有车票目标→TRAVEL.INTERCITY",
+        "只有酒店目标→TRAVEL.LODGING",
+        "出差中的业务交付仍归 WORK",
+        "包含交通住宿的组合目标按主文多 L2 规则记录，不为分类拆分 task_id"
+      ],
+      "need_examples": [
+        "为一家三代选择暑期目的地并安排游览线路",
+        "根据景点开放时间调整三天的城市游览行程"
+      ]
+    },
+    {
+      "code": "TRAVEL.INTERCITY",
+      "level1_code": "TRAVEL",
+      "level1_name": "出行与旅行",
+      "name": "城际与跨境客运",
+      "definition": "围绕一次城际或跨境交通取得满足约束的运输安排。",
+      "in_scope": [
+        "火车、飞机、长途汽车、轮渡等客运",
+        "班次、行李与换乘条件"
+      ],
+      "out_of_scope": [
+        "包含交通住宿的组合目标按主文多 L2 规则记录，不为分类拆分 task_id",
+        "独立证照办理→ADMIN",
+        "已有行程异常的独立修复委托→TRAVEL.DISRUPT"
+      ],
+      "need_examples": [
+        "订到适合带孩子出行的高铁班次",
+        "比较并落实带托运行李的往返机票"
+      ]
+    },
+    {
+      "code": "TRAVEL.LODGING",
+      "level1_code": "TRAVEL",
+      "level1_name": "出行与旅行",
+      "name": "旅行住宿与短期旅居",
+      "definition": "取得并维护离家期间的短期住宿安排及入住条件。",
+      "in_scope": [
+        "酒店、民宿及短住公寓",
+        "入住、同住人数、到店时间和设施约束"
+      ],
+      "out_of_scope": [
+        "长期居住租赁→HOME",
+        "住宿投诉的独立退款目标→CON.AFTERSALE",
+        "整段旅行的住宿步骤不另计任务"
+      ],
+      "need_examples": [
+        "安排可入住三人的家庭房",
+        "落实晚到店入住和次日延迟退房"
+      ]
+    },
+    {
+      "code": "TRAVEL.LOCAL",
+      "level1_code": "TRAVEL",
+      "level1_name": "出行与旅行",
+      "name": "通勤与市内交通",
+      "definition": "围绕本人日常往返与市内移动安排路线、交通方式和通行资源。",
+      "in_scope": [
+        "上班上学的日常通勤",
+        "市内公共交通、网约车和停车安排"
+      ],
+      "out_of_scope": [
+        "带有交接责任的接送→TRAVEL.ESCORT",
+        "车辆维护→TRAVEL.VEHICLE",
+        "搬家货物运输→HOME"
+      ],
+      "need_examples": [
+        "工作地点改变后的通勤方案",
+        "安排雨天赴约的交通与停车"
+      ]
+    },
+    {
+      "code": "TRAVEL.ESCORT",
+      "level1_code": "TRAVEL",
+      "level1_name": "出行与旅行",
+      "name": "接送与陪同出行",
+      "definition": "以让指定人员按约到达并完成接送交接为目标的出行服务安排。",
+      "in_scope": [
+        "儿童接送、长者陪同交通",
+        "接送人、时点与交接责任协调"
+      ],
+      "out_of_scope": [
+        "包含医疗沟通与护理责任的完整陪诊→HEALTH",
+        "家庭长期照看分工→REL",
+        "实际驾驶和现场陪同不视为数字 PA 已完成"
+      ],
+      "need_examples": [
+        "协调孩子课后接送与交接人员",
+        "安排长者从车站到家的陪同接送"
+      ]
+    },
+    {
+      "code": "TRAVEL.VEHICLE",
+      "level1_code": "TRAVEL",
+      "level1_name": "出行与旅行",
+      "name": "个人车辆使用与维护",
+      "definition": "围绕个人车辆或租用车辆的可用性、用车条件与维护安排提供服务。",
+      "in_scope": [
+        "租车及取还车条件",
+        "保养、维修预约与用车记录"
+      ],
+      "out_of_scope": [
+        "购买车辆的独立选购→CON.DURABLE",
+        "车辆证照和行政资格→ADMIN",
+        "保险保障目标→FIN"
+      ],
+      "need_examples": [
+        "安排车辆保养并保留可用车时段",
+        "落实自驾租车的车型和取还车条件"
+      ]
+    },
+    {
+      "code": "TRAVEL.DISRUPT",
+      "level1_code": "TRAVEL",
+      "level1_name": "出行与旅行",
+      "name": "行程调整与衔接",
+      "definition": "对已存在的出行安排提出独立变更或异常修复委托，恢复可行行程。",
+      "in_scope": [
+        "改签、取消、错过换乘后的重排",
+        "延误导致的住宿、接驳衔接"
+      ],
+      "out_of_scope": [
+        "原任务责任范围内的调整沿用原 task_id",
+        "仅追讨退款且不再安排出行→CON.AFTERSALE"
+      ],
+      "need_examples": [
+        "航班取消后安排当日可到达的替代路线",
+        "家人临时改期后的车票和酒店联动调整"
+      ]
+    },
+    {
+      "code": "CON.CONSUMABLE",
+      "level1_code": "CON",
+      "level1_name": "购物与消费服务",
+      "name": "食品与日常消耗品",
+      "definition": "以取得家庭日常消耗品为目标的选购和补货。",
+      "in_scope": [
+        "生鲜食品、清洁用品、纸品和文具等",
+        "常购清单、规格与补货约束"
+      ],
+      "out_of_scope": [
+        "完整餐食规划与家务运营→HOME",
+        "服饰美容用品→CON.APPAREL",
+        "治疗用药与医嘱相关采购→HEALTH"
+      ],
+      "need_examples": [
+        "补齐一周所需的家庭食材",
+        "按使用记录补购清洁用品"
+      ]
+    },
+    {
+      "code": "CON.DURABLE",
+      "level1_code": "CON",
+      "level1_name": "购物与消费服务",
+      "name": "耐用品与个人设备选购",
+      "definition": "以选定并购得耐用品或设备为独立目标。",
+      "in_scope": [
+        "家电、家具、数码产品与个人车辆等单品选购",
+        "规格适配、价格与交付约束"
+      ],
+      "out_of_scope": [
+        "装修整体交付中的设备采购→HOME",
+        "已购设备的设置维修→SELF 或 HOME",
+        "企业采购→WORK"
+      ],
+      "need_examples": [
+        "按桌面尺寸选购显示器",
+        "比较冰箱尺寸、能耗和到货时间后下单"
+      ]
+    },
+    {
+      "code": "CON.APPAREL",
+      "level1_code": "CON",
+      "level1_name": "购物与消费服务",
+      "name": "服饰与个人用品",
+      "definition": "围绕穿戴、美容与个人外观用途的商品取得。",
+      "in_scope": [
+        "服装鞋包、饰品与普通美容用品",
+        "尺码、场合、材质及搭配要求"
+      ],
+      "out_of_scope": [
+        "理发美容等服务→CON.PERSONALCARE",
+        "皮肤病治疗与药品→HEALTH",
+        "以关系维护为完整交付的送礼→REL"
+      ],
+      "need_examples": [
+        "准备适合面试场合的服饰清单",
+        "按已有尺码和穿着偏好选购鞋服"
+      ]
+    },
+    {
+      "code": "CON.DINING",
+      "level1_code": "CON",
+      "level1_name": "购物与消费服务",
+      "name": "餐饮与外食服务",
+      "definition": "以取得符合人数、口味、时间等条件的餐饮服务为目标。",
+      "in_scope": [
+        "餐厅、外卖、宴席与餐饮套餐",
+        "订位、菜品和就餐条件"
+      ],
+      "out_of_scope": [
+        "家庭日常备餐规划→HOME",
+        "以亲友聚会为整体目标→REL",
+        "营养干预或疾病饮食管理→HEALTH"
+      ],
+      "need_examples": [
+        "预约适合老人和孩子的餐厅",
+        "安排一次有忌口要求的多人外卖"
+      ]
+    },
+    {
+      "code": "CON.PERSONALCARE",
+      "level1_code": "CON",
+      "level1_name": "购物与消费服务",
+      "name": "美容、理发与个人照料服务",
+      "definition": "围绕非医疗个人照料服务的选择、预约与消费条件提供帮助。",
+      "in_scope": [
+        "理发、美甲、普通美容等预约",
+        "套餐、技师、时段和服务地点"
+      ],
+      "out_of_scope": [
+        "本人接受服务不计为 PA 执行",
+        "医疗美容、诊疗及功能性照护→HEALTH"
+      ],
+      "need_examples": [
+        "预约符合预算和时段的理发服务",
+        "核对美容套餐内容后安排到店"
+      ]
+    },
+    {
+      "code": "CON.SUBSCRIPTION",
+      "level1_code": "CON",
+      "level1_name": "购物与消费服务",
+      "name": "消费会员与订阅",
+      "definition": "以管理消费合同、会员权益、续订和取消为目标。",
+      "in_scope": [
+        "影音、阅读、电商和生活服务会员",
+        "续费条件、家庭共享、取消与权益核对"
+      ],
+      "out_of_scope": [
+        "账单汇总核对→FIN",
+        "账号登录恢复→SELF.ACCOUNT",
+        "内容选择与欣赏→INTEREST.MEDIA"
+      ],
+      "need_examples": [
+        "整理自动续费项目并取消不再需要的会员",
+        "核对家庭会员共享规则和续费方案"
+      ]
+    },
+    {
+      "code": "CON.AFTERSALE",
+      "level1_code": "CON",
+      "level1_name": "购物与消费服务",
+      "name": "收货与售后",
+      "definition": "围绕既有消费交易的履约、退换、维修责任或退款取得独立结果。",
+      "in_scope": [
+        "收货差异、漏发、破损与订单履约",
+        "退换货、质保与退款"
+      ],
+      "out_of_scope": [
+        "原购买委托包含的收货核验不新建任务",
+        "进入法律争议解决程序→ADMIN",
+        "仍以修复旅行安排为目标→TRAVEL.DISRUPT"
+      ],
+      "need_examples": [
+        "处理家电缺件并取得补发确认",
+        "按平台规则完成退货和退款核对"
+      ]
+    },
+    {
+      "code": "LEARN.COURSE",
+      "level1_code": "LEARN",
+      "level1_name": "学习与教育",
+      "name": "课程与学业支持",
+      "definition": "围绕已经确定的正式课程或学业要求提供学习支持和学习安排。",
+      "in_scope": [
+        "课程安排、作业辅导、复习与学业材料",
+        "在既定课程中的理解和练习"
+      ],
+      "out_of_scope": [
+        "替用户完成需独立考试或冒充本人学习不属于合理代理交付",
+        "独立备考目标→LEARN.EXAM",
+        "学校选择和入学申请→LEARN.EDUSELECT"
+      ],
+      "need_examples": [
+        "根据课程要求安排每周复习",
+        "针对作业中的薄弱知识点提供讲解与练习"
+      ]
+    },
+    {
+      "code": "LEARN.SKILL",
+      "level1_code": "LEARN",
+      "level1_name": "学习与教育",
+      "name": "技能与继续学习",
+      "definition": "围绕自愿形成一项技能或能力的非正式学习提供路径、练习和反馈支持。",
+      "in_scope": [
+        "语言、编程、驾驶知识及兴趣技能学习",
+        "短课、自学与非学历培训"
+      ],
+      "out_of_scope": [
+        "执行当前工作交付→WORK",
+        "以考试通过为目标→LEARN.EXAM",
+        "仅安排娱乐参与→INTEREST"
+      ],
+      "need_examples": [
+        "建立日常口语练习与反馈安排",
+        "为零基础摄影学习选择课程并安排练习"
+      ]
+    },
+    {
+      "code": "LEARN.EXAM",
+      "level1_code": "LEARN",
+      "level1_name": "学习与教育",
+      "name": "考试与学习资格准备",
+      "definition": "围绕特定考试的备考、报名和考试安排提供支持。",
+      "in_scope": [
+        "升学、语言、职业知识考试的准备",
+        "报考信息、复习计划与模拟练习"
+      ],
+      "out_of_scope": [
+        "本人应试不能由 PA 冒名替代",
+        "已取得资格的证件办理或年审→ADMIN",
+        "一般课程日常支持→LEARN.COURSE"
+      ],
+      "need_examples": [
+        "按剩余时间制定语言考试复习安排",
+        "核对职业资格考试报名条件和材料"
+      ]
+    },
+    {
+      "code": "LEARN.UNDERSTAND",
+      "level1_code": "LEARN",
+      "level1_name": "学习与教育",
+      "name": "理解、资料与探究",
+      "definition": "用户为个人理解某一问题而提出独立的解释、资料研究或求知目标。",
+      "in_scope": [
+        "概念解释与个人专题研究",
+        "带来源的问题探究与知识比较"
+      ],
+      "out_of_scope": [
+        "工作所需分析报告→WORK.RESEARCH",
+        "已知课程内的辅导→LEARN.COURSE",
+        "仅因不知道其他任务目的不能默认归此类"
+      ],
+      "need_examples": [
+        "理解家庭网络中路由器与交换机的区别",
+        "梳理一个历史问题的主要证据和争议"
+      ]
+    },
+    {
+      "code": "LEARN.EDUSELECT",
+      "level1_code": "LEARN",
+      "level1_name": "学习与教育",
+      "name": "教育选择与入学申请",
+      "definition": "围绕本人或家庭成员选择教育路径、学校及申请入学的目标。",
+      "in_scope": [
+        "升学、转学、留学与教育项目比较",
+        "入学申请材料、时点与进度"
+      ],
+      "out_of_scope": [
+        "日常学校沟通→LEARN.SCHOOL",
+        "户籍等一般资格手续→ADMIN",
+        "托育与照看服务安排→REL"
+      ],
+      "need_examples": [
+        "比较适合家庭约束的学校方案",
+        "整理研究生申请材料并跟进学校回执"
+      ]
+    },
+    {
+      "code": "LEARN.SCHOOL",
+      "level1_code": "LEARN",
+      "level1_name": "学习与教育",
+      "name": "家校协调与教育服务",
+      "definition": "围绕在校期间的学校沟通、教育支持资源和学业服务安排。",
+      "in_scope": [
+        "家长与学校沟通、学业支持和校内安排",
+        "特殊学习需求对应的教育资源协调"
+      ],
+      "out_of_scope": [
+        "儿童日常照看与托育→REL",
+        "独立接送目标→TRAVEL.ESCORT",
+        "家长帮助孩子具体学习→LEARN.COURSE"
+      ],
+      "need_examples": [
+        "整理家校沟通事项并跟进学校安排",
+        "协调孩子的课后学习支持与校内活动"
+      ]
+    },
+    {
+      "code": "WORK.PRODUCT",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "产品、工程与技术交付",
+      "definition": "围绕产品或技术系统的需求、设计、开发、发布和维护形成可验收交付。",
+      "in_scope": [
+        "软件、网站、技术方案和工程资料",
+        "产品问题、版本维护与技术运维"
+      ],
+      "out_of_scope": [
+        "纯宣传内容→WORK.MARKETING",
+        "独立研究报告→WORK.RESEARCH",
+        "跨职能协作本身为目标→WORK.TEAM"
+      ],
+      "need_examples": [
+        "完成产品版本的发布与问题修复",
+        "交付一套满足要求的内部工具和使用说明"
+      ]
+    },
+    {
+      "code": "WORK.RESEARCH",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "业务研究与分析",
+      "definition": "以供工作决策或专业交付使用的调查、研究和分析结论为目标。",
+      "in_scope": [
+        "行业、用户、经营与专业资料研究",
+        "有证据和口径要求的分析报告"
+      ],
+      "out_of_scope": [
+        "个人求知→LEARN.UNDERSTAND",
+        "分析只是产品或其他完整目标中的步骤时不拆任务"
+      ],
+      "need_examples": [
+        "完成竞品变化与用户反馈分析",
+        "按一致口径分析部门季度业务表现"
+      ]
+    },
+    {
+      "code": "WORK.COMMERCIAL",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "销售与商务拓展",
+      "definition": "围绕商机、交易或合作建立与推进商业承诺。",
+      "in_scope": [
+        "潜在客户、报价、合作方案与商务跟进",
+        "销售材料和合同商业条件协调"
+      ],
+      "out_of_scope": [
+        "已有客户的支持与履约服务→WORK.CLIENT",
+        "面向广泛受众的传播→WORK.MARKETING",
+        "个人购物→CON"
+      ],
+      "need_examples": [
+        "整理客户需求并准备报价方案",
+        "跟进合作方反馈直至明确下一步承诺"
+      ]
+    },
+    {
+      "code": "WORK.CLIENT",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "客户服务与关系维护",
+      "definition": "围绕既有客户的使用、履约、问题处理和服务承诺提供支持。",
+      "in_scope": [
+        "客户问题、交付协调、回访与续约支持",
+        "已有服务记录和客户约束维护"
+      ],
+      "out_of_scope": [
+        "主要目标是新交易成交→WORK.COMMERCIAL",
+        "实际技术修复为独立交付→WORK.PRODUCT",
+        "个人作为消费者的售后→CON.AFTERSALE"
+      ],
+      "need_examples": [
+        "协调客户交付延期后的补救安排",
+        "整理连续客户反馈并跟进处理结果"
+      ]
+    },
+    {
+      "code": "WORK.MARKETING",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "传播与内容运营",
+      "definition": "围绕组织、产品或个人职业业务的对外传播与受众运营形成交付。",
+      "in_scope": [
+        "宣传内容、活动传播与渠道运营",
+        "面向受众的文章、视频、页面和运营安排"
+      ],
+      "out_of_scope": [
+        "具体客户成交→WORK.COMMERCIAL",
+        "非职业的个人表达→INTEREST.EXPRESSION",
+        "技术网站本身的交付→WORK.PRODUCT"
+      ],
+      "need_examples": [
+        "安排一次产品发布的宣传内容",
+        "维护面向客户的内容更新计划"
+      ]
+    },
+    {
+      "code": "WORK.TEAM",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "团队协作与决策",
+      "definition": "以团队共识、责任分配、跨方协调及决定落实为独立交付目标。",
+      "in_scope": [
+        "会议结论、决策材料与行动项跟进",
+        "跨团队依赖、排期与工作承诺协调"
+      ],
+      "out_of_scope": [
+        "为其他完整目标服务的单封邮件或日程步骤不独立计任务",
+        "招聘培养→WORK.PEOPLE",
+        "个人跨领域时间管理→SELF.SCHEDULE"
+      ],
+      "need_examples": [
+        "跟进周会决议与未结行动项",
+        "协调两个团队的交付依赖和责任人"
+      ]
+    },
+    {
+      "code": "WORK.RESOURCE",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "组织采购与资源保障",
+      "definition": "围绕团队工作所需的物资、服务、供应商和设施资源形成供给安排。",
+      "in_scope": [
+        "组织采购、供应商与外部服务",
+        "场地、设备、库存及资源交付"
+      ],
+      "out_of_scope": [
+        "个人购物→CON",
+        "家庭装修采购→HOME",
+        "业务付款和财务合规为独立目标→WORK.BACKOFFICE"
+      ],
+      "need_examples": [
+        "为团队采购设备并协调到货",
+        "安排活动场地及供应商服务"
+      ]
+    },
+    {
+      "code": "WORK.BACKOFFICE",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "组织行政、财务与合规",
+      "definition": "围绕组织内部行政记录、资金流程和合规材料形成可验收交付。",
+      "in_scope": [
+        "组织报表、报销、合同归档与手续",
+        "制度材料、审计准备及合规证据"
+      ],
+      "out_of_scope": [
+        "用户个人家庭账务→FIN",
+        "员工个人权益争议→ADMIN",
+        "资源取得本身→WORK.RESOURCE"
+      ],
+      "need_examples": [
+        "核对团队报销材料和审批状态",
+        "准备一次内部审查所需的合同与凭证"
+      ]
+    },
+    {
+      "code": "WORK.PEOPLE",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "招聘、培养与人员管理",
+      "definition": "用户以管理者或招聘方身份处理人员招募、入职、培养和管理安排。",
+      "in_scope": [
+        "招聘需求、面试与录用流程协调",
+        "员工培训、入职和绩效资料"
+      ],
+      "out_of_scope": [
+        "本人求职→WORK.JOBSEARCH",
+        "本人在岗发展→WORK.DEVELOP",
+        "仅安排团队普通会议→WORK.TEAM"
+      ],
+      "need_examples": [
+        "组织岗位招聘的面试安排和反馈",
+        "跟进新同事入职材料与培训任务"
+      ]
+    },
+    {
+      "code": "WORK.JOBSEARCH",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "求职与职业转换",
+      "definition": "围绕本人获取工作机会或转换职业职位的目标。",
+      "in_scope": [
+        "职位选择、简历、申请与面试准备",
+        "机会比较和入职前协商"
+      ],
+      "out_of_scope": [
+        "作为招聘方处理候选人→WORK.PEOPLE",
+        "已入职的学习与发展→WORK.DEVELOP",
+        "劳动权益纠纷→ADMIN"
+      ],
+      "need_examples": [
+        "针对目标岗位调整求职材料",
+        "统筹多家公司面试及录用选择"
+      ]
+    },
+    {
+      "code": "WORK.DEVELOP",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "在岗成长与职业发展",
+      "definition": "围绕用户在已有职业中的适应、专业成长和发展机会提供支持。",
+      "in_scope": [
+        "个人入职适应、职业规划与晋升准备",
+        "岗位相关培训和专业能力发展"
+      ],
+      "out_of_scope": [
+        "完成当前业务交付→其他 WORK 子类",
+        "获取新的工作机会→WORK.JOBSEARCH",
+        "不绑定职业角色的一般技能学习→LEARN.SKILL"
+      ],
+      "need_examples": [
+        "梳理入职首月需要熟悉的业务与协作关系",
+        "准备晋升所需的工作证据与发展计划"
+      ]
+    },
+    {
+      "code": "WORK.VENTURE",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "创业与经营规划",
+      "definition": "围绕本人创办或经营业务的模式、经营目标和发展安排形成交付。",
+      "in_scope": [
+        "个体经营、自由职业业务与创业准备",
+        "定价、经营方案和阶段性经营计划"
+      ],
+      "out_of_scope": [
+        "具体产品研发→WORK.PRODUCT",
+        "具体客户交易→WORK.COMMERCIAL",
+        "个人理财→FIN"
+      ],
+      "need_examples": [
+        "梳理自由职业服务的定价与接单安排",
+        "准备小店开业的经营方案与事项清单"
+      ]
+    },
+    {
+      "code": "WORK.KNOWLEDGESERVICE",
+      "level1_code": "WORK",
+      "level1_name": "工作与职业",
+      "name": "专业内容与知识服务",
+      "definition": "以向他人提供知识、解释、教学或文字作品为直接服务结果的职业交付。",
+      "in_scope": [
+        "教学服务准备、专业咨询材料和编辑翻译作品",
+        "以职业服务为目的的创作交付"
+      ],
+      "out_of_scope": [
+        "技术产品→WORK.PRODUCT",
+        "独立研究报告→WORK.RESEARCH",
+        "宣传运营→WORK.MARKETING",
+        "无法判断目标的内容不能默认落入本类"
+      ],
+      "need_examples": [
+        "准备一次受委托授课的教材与练习",
+        "完成一份有质量要求的职业翻译交付"
+      ]
+    },
+    {
+      "code": "INTEREST.SPORT",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "业余运动与体育参与",
+      "definition": "以娱乐、运动体验或业余竞技参与为主要目的的支持需求。",
+      "in_scope": [
+        "球类、跑步、骑行及业余比赛的安排",
+        "场地、伙伴、报名和器材使用条件"
+      ],
+      "out_of_scope": [
+        "以疾病管理、康复或明确健康指标为目标→HEALTH",
+        "观看赛事→INTEREST.EVENTS",
+        "系统技能课程→LEARN.SKILL"
+      ],
+      "need_examples": [
+        "安排周末羽毛球活动和场地",
+        "准备一次业余跑步比赛的参赛安排"
+      ]
+    },
+    {
+      "code": "INTEREST.OUTDOOR",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "户外休闲与自然体验",
+      "definition": "以接触自然、户外休闲和休息体验为主要目的的活动支持。",
+      "in_scope": [
+        "公园、露营、自然观察等活动安排",
+        "天气、开放条件及活动资源"
+      ],
+      "out_of_scope": [
+        "完整异地旅行交通住宿→TRAVEL",
+        "以运动训练或竞赛为目标→INTEREST.SPORT",
+        "实际参加活动不能冒充 PA 结果"
+      ],
+      "need_examples": [
+        "安排附近公园的周末自然观察",
+        "准备适合家庭成员的露营活动方案"
+      ]
+    },
+    {
+      "code": "INTEREST.MAKING",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "手工与业余制作",
+      "definition": "以非职业的动手制作、模型、实验或园艺兴趣为目标的支持。",
+      "in_scope": [
+        "手工、模型、家庭兴趣实验和业余制作",
+        "材料、制作方案与兴趣活动组织"
+      ],
+      "out_of_scope": [
+        "维持居住功能的修理和植物养护→HOME",
+        "以掌握课程技能为目标→LEARN.SKILL",
+        "实物制作本身不等于数字 PA 可执行"
+      ],
+      "need_examples": [
+        "准备模型制作的材料与步骤说明",
+        "设计一套作为兴趣项目的阳台种植记录"
+      ]
+    },
+    {
+      "code": "INTEREST.EXPRESSION",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "个人文字、影像与艺术表达",
+      "definition": "以个人表达为目的的文字、影像、音频、图像或艺术创作支持。",
+      "in_scope": [
+        "个人文章、影集、音乐、视频与作品集",
+        "非商业个人网站或创作展示"
+      ],
+      "out_of_scope": [
+        "职业受托作品→WORK.KNOWLEDGESERVICE",
+        "营销内容→WORK.MARKETING",
+        "数字文件整理而无表达目标→SELF.INFORMATION"
+      ],
+      "need_examples": [
+        "制作记录家庭经历的影集",
+        "整理并发布个人兴趣文章和配图"
+      ]
+    },
+    {
+      "code": "INTEREST.EVENTS",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "文化活动与现场观赏",
+      "definition": "以参加文化活动或现场观赏演出、展览、赛事为目标的安排。",
+      "in_scope": [
+        "展览、演出、电影节及现场观赛",
+        "活动选择、门票和现场参加条件"
+      ],
+      "out_of_scope": [
+        "远程影音消费→INTEREST.MEDIA",
+        "本人参加体育活动→INTEREST.SPORT",
+        "以关系维护为完整目标的共同赴约→REL"
+      ],
+      "need_examples": [
+        "挑选并预约符合时间的展览",
+        "安排演唱会购票与入场条件"
+      ]
+    },
+    {
+      "code": "INTEREST.MEDIA",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "阅读、影音与休闲内容",
+      "definition": "以休闲阅读、收听、观看或发现内容为主要目的的支持。",
+      "in_scope": [
+        "书籍、音乐、影视、播客等内容选择与整理",
+        "个人休闲内容清单"
+      ],
+      "out_of_scope": [
+        "为工作或学习查资料→WORK.RESEARCH 或 LEARN",
+        "会员续费与取消→CON.SUBSCRIPTION",
+        "本人阅读观看不算 PA 已替代完成"
+      ],
+      "need_examples": [
+        "按阅读偏好整理下一季度书单",
+        "挑选适合家庭共同观看的影片"
+      ]
+    },
+    {
+      "code": "INTEREST.GAMES",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "游戏与益智活动",
+      "definition": "围绕非职业游戏、桌游、棋类和益智娱乐的参与支持。",
+      "in_scope": [
+        "游戏规则理解、攻略、配置与组局",
+        "桌游棋类活动和娱乐挑战"
+      ],
+      "out_of_scope": [
+        "系统课程学习→LEARN.SKILL",
+        "游戏开发的工作交付→WORK.PRODUCT",
+        "本人娱乐体验不能由代理结果替代"
+      ],
+      "need_examples": [
+        "为朋友聚会选择桌游并整理规则",
+        "根据已有进度提供不剧透的游戏建议"
+      ]
+    },
+    {
+      "code": "INTEREST.COLLECTION",
+      "level1_code": "INTEREST",
+      "level1_name": "兴趣、休闲与个人表达",
+      "name": "收藏与兴趣资料",
+      "definition": "围绕个人收藏、兴趣专题及其记录维护的支持。",
+      "in_scope": [
+        "收藏品资料、目录、来源和兴趣专题",
+        "非投资目的的收藏安排"
+      ],
+      "out_of_scope": [
+        "单纯购买交易→CON",
+        "以收益为目的的资产管理→FIN",
+        "跨领域个人档案管理→SELF.INFORMATION"
+      ],
+      "need_examples": [
+        "整理收藏品目录和缺失资料",
+        "持续整理一个兴趣专题的展讯与资料"
+      ]
+    },
+    {
+      "code": "SELF.SCHEDULE",
+      "level1_code": "SELF",
+      "level1_name": "个人管理与数字生活",
+      "name": "个人日程与待办",
+      "definition": "以用户整体时间和承诺管理为独立目标，协调多个来源的日程、待办和优先顺序。",
+      "in_scope": [
+        "跨领域日程、个人待办清理和承诺冲突",
+        "个人时间分配与整体安排"
+      ],
+      "out_of_scope": [
+        "某一任务内部的提醒与排期随该任务领域",
+        "团队成员工作协调→WORK.TEAM"
+      ],
+      "need_examples": [
+        "合并工作和家庭日历并处理冲突",
+        "整理本周未结事项和可执行时间安排"
+      ]
+    },
+    {
+      "code": "SELF.INFORMATION",
+      "level1_code": "SELF",
+      "level1_name": "个人管理与数字生活",
+      "name": "个人资料与信息组织",
+      "definition": "以个人资料库的可查找、可用、备份和整理为独立目标。",
+      "in_scope": [
+        "文件、照片、笔记、书签和个人档案",
+        "资料分类、去重、迁移与长期保管"
+      ],
+      "out_of_scope": [
+        "特定工作项目文档→WORK",
+        "某笔报销、就医等任务的材料整理随其领域",
+        "通信收件箱本身的治理→SELF.COMMUNICATION"
+      ],
+      "need_examples": [
+        "整理多个设备中的家庭照片与文件",
+        "建立个人重要资料的分类和备份"
+      ]
+    },
+    {
+      "code": "SELF.COMMUNICATION",
+      "level1_code": "SELF",
+      "level1_name": "个人管理与数字生活",
+      "name": "个人收件箱与通讯资料管理",
+      "definition": "以个人通信渠道和通讯资料的整体秩序为独立管理目标。",
+      "in_scope": [
+        "清理个人邮箱、消息分类和订阅通知",
+        "联系人去重、通讯录迁移及通信设置"
+      ],
+      "out_of_scope": [
+        "写给客户、亲友或物业的具体消息随实际目标",
+        "需要回复的具体任务须恢复其原领域",
+        "账号认证与安全问题→SELF.ACCOUNT"
+      ],
+      "need_examples": [
+        "清理个人邮箱并设置有用的分类规则",
+        "合并旧手机和新手机的重复联系人"
+      ]
+    },
+    {
+      "code": "SELF.ACCOUNT",
+      "level1_code": "SELF",
+      "level1_name": "个人管理与数字生活",
+      "name": "个人账户与数字身份",
+      "definition": "以个人数字账户的访问、身份资料、隐私和安全配置为独立目标。",
+      "in_scope": [
+        "账户恢复、迁移、授权和登录设置",
+        "公开个人资料、隐私控制与数字身份管理"
+      ],
+      "out_of_scope": [
+        "消费会员合同→CON.SUBSCRIPTION",
+        "政务身份资格→ADMIN",
+        "工作系统的组织级权限管理→WORK"
+      ],
+      "need_examples": [
+        "迁移个人账户并核对访问权限",
+        "整理第三方应用授权与隐私设置"
+      ]
+    },
+    {
+      "code": "SELF.DEVICE",
+      "level1_code": "SELF",
+      "level1_name": "个人管理与数字生活",
+      "name": "个人设备与数字环境",
+      "definition": "以个人设备、网络、软件和数字环境的可用性为独立目标。",
+      "in_scope": [
+        "个人电脑手机、家庭网络和软件设置",
+        "故障排查、设备迁移及维护安排"
+      ],
+      "out_of_scope": [
+        "选购设备→CON.DURABLE",
+        "家电及住房设施→HOME",
+        "组织产品或技术系统交付→WORK.PRODUCT"
+      ],
+      "need_examples": [
+        "配置新电脑并迁移日常使用环境",
+        "排查家庭网络断连并整理处理结果"
+      ]
+    },
+    {
+      "code": "SELF.ASSISTANT",
+      "level1_code": "SELF",
+      "level1_name": "个人管理与数字生活",
+      "name": "助手配置与个人自动化",
+      "definition": "以配置助手服务、个人工作流和自动化规则本身为独立交付目标。",
+      "in_scope": [
+        "助手偏好、持续委托、提醒与监测规则配置",
+        "跨应用个人自动化的建立、修改和停止"
+      ],
+      "out_of_scope": [
+        "特定领域中已经受托的提醒仍随原目标",
+        "配置成功不等于长期无人值守运行已通过",
+        "助手自行推测不构成授权"
+      ],
+      "need_examples": [
+        "设置跨日提醒规则并检查触发条件",
+        "调整助手通知偏好和持续监测范围"
+      ]
+    }
+  ]
+}
